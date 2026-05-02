@@ -1,0 +1,3600 @@
+{
+  "topLinks": [
+    {
+      "label": "Đăng nhập",
+      "href": "phim.php"
+    },
+    {
+      "label": "Đăng ký",
+      "href": "#"
+    }
+  ],
+  "nav": [
+    {
+      "label": "LỊCH CHIẾU THEO RẠP",
+      "href": "lich-chieu.php"
+    },
+    {
+      "label": "PHIM",
+      "href": "phim.php"
+    },
+    {
+      "label": "RẠP",
+      "href": "#"
+    },
+    {
+      "label": "GIÁ VÉ",
+      "href": "gia-ve.php"
+    },
+    {
+      "label": "TIN MỚI VÀ ƯU ĐÃI",
+      "href": "tin-moi-va-uu-dai.php"
+    },
+    {
+      "label": "NHƯỢNG QUYỀN",
+      "href": "nhuong-quyen.php"
+    },
+    {
+      "label": "THÀNH VIÊN",
+      "href": "thanh-vien.php"
+    }
+  ],
+  "hero": [
+    {
+      "title": "Beta Cinemas",
+      "subtitle": "Ưu đãi online và combo bắp nước",
+      "image": "assets/img/banner-1.jpg"
+    },
+    {
+      "title": "Beta Cinemas",
+      "subtitle": "Suất chiếu nổi bật trong tuần",
+      "image": "assets/img/banner-2.png"
+    },
+    {
+      "title": "Beta Cinemas",
+      "subtitle": "Khuyến mãi dành cho thành viên",
+      "image": "assets/img/banner-3.png"
+    },
+    {
+      "title": "Beta Cinemas",
+      "subtitle": "Thông tin mới và ưu đãi rạp phim",
+      "image": "assets/img/banner-4.png"
+    }
+  ],
+  "movieTabs": [
+    {
+      "id": "upcoming",
+      "label": "PHIM SẮP CHIẾU",
+      "active": false
+    },
+    {
+      "id": "now-showing",
+      "label": "PHIM ĐANG CHIẾU",
+      "active": true
+    },
+    {
+      "id": "special",
+      "label": "SUẤT CHIẾU ĐẶC BIỆT",
+      "active": false
+    }
+  ],
+  "defaultScheduleDates": [
+    {
+      "label": "29",
+      "suffix": "/04 - T4",
+      "active": true
+    },
+    {
+      "label": "30",
+      "suffix": "/04 - T5",
+      "active": false
+    },
+    {
+      "label": "01",
+      "suffix": "/05 - T6",
+      "active": false
+    }
+  ],
+  "scheduleByDateMovies": {
+    "29/04 - T4": [
+      "mui-pho",
+      "tho-oi",
+      "bau-vat-troi-cho",
+      "nha-ba-toi-mot-pho"
+    ],
+    "30/04 - T5": [
+      "cam-on-nguoi-da-th...",
+      "cu-nhay-ky-dieu",
+      "dem-ngay-xa-me",
+      "loi-nguyen-thu-vien"
+    ],
+    "01/05 - T6": [
+      "nha-minh-di-thoi",
+      "quoc-bao",
+      "quy-nhap-trang-2",
+      "tai"
+    ],
+    "02/05 - T7": [
+      "the-gioi-ket-thuc",
+      "ca-cho",
+      "bat-chuoc",
+      "hai-ngay-mot-dem"
+    ]
+  },
+  "defaultShowtimeGroups": [
+    {
+      "format": "2D PHỤ ĐỀ",
+      "legend": "Suất chiếu muộn từ 22h00",
+      "slots": [
+        {
+          "time": "15:45",
+          "seats": "122 ghế trống",
+          "active": false
+        },
+        {
+          "time": "18:00",
+          "seats": "122 ghế trống",
+          "active": false
+        },
+        {
+          "time": "19:00",
+          "seats": "139 ghế trống",
+          "active": false
+        },
+        {
+          "time": "20:15",
+          "seats": "86 ghế trống",
+          "active": false
+        },
+        {
+          "time": "21:40",
+          "seats": "100 ghế trống",
+          "active": false
+        },
+        {
+          "time": "22:30",
+          "seats": "103 ghế trống",
+          "active": true
+        },
+        {
+          "time": "23:55",
+          "seats": "106 ghế trống",
+          "active": true
+        }
+      ]
+    }
+  ],
+  "movies": [
+    {
+      "id": "mui-pho",
+      "section": "now-showing",
+      "title": "Mùi Phở",
+      "genre": "Hài hước, Tình cảm, Gia đình",
+      "duration": 111,
+      "label": "K",
+      "tag": "HOT",
+      "poster": "assets/img/poster-1.png",
+      "buyUrl": "detail.php?id=mui-pho",
+      "description": "Câu chuyện về món Phở và những xung đột thế hệ trong một gia đình Việt hiện đại, kết hợp chất hài duyên dáng với thông điệp ấm áp.",
+      "director": "Minh Beta",
+      "cast": "Nghệ sỹ Xuân Hinh, Diễn viên Thu Trang, Nghệ sỹ Thanh Thanh Hiền, Nghệ sỹ Quốc Tuấn, Bảo Nam, Hà Hương, Thanh Hương, Chu Mạnh Cường, Tiến Lộc",
+      "language": "Tiếng Việt",
+      "releaseDate": "17/02/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Minh Beta"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Nghệ sỹ Xuân Hinh, Diễn viên Thu Trang, Nghệ sỹ Thanh Thanh Hiền, Nghệ sỹ Quốc Tuấn, Bảo Nam, Hà Hương, Thanh Hương, Chu Mạnh Cường, Tiến Lộc"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Hài hước, Tình cảm, Gia đình"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "111 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "17/02/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        },
+        {
+          "label": "02",
+          "suffix": "/05 - T7",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "14:45",
+              "seats": "66 ghế trống",
+              "active": false
+            },
+            {
+              "time": "16:00",
+              "seats": "121 ghế trống",
+              "active": false
+            },
+            {
+              "time": "17:00",
+              "seats": "96 ghế trống",
+              "active": false
+            },
+            {
+              "time": "17:45",
+              "seats": "173 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:30",
+              "seats": "127 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:15",
+              "seats": "85 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:00",
+              "seats": "141 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:45",
+              "seats": "102 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:30",
+              "seats": "80 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:15",
+              "seats": "167 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:00",
+              "seats": "148 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:45",
+              "seats": "97 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "showtimes": [
+        {
+          "date": "17/02 - T2",
+          "format": "2D Phụ đề",
+          "time": "10:45",
+          "seats": "136 ghế trống"
+        },
+        {
+          "date": "18/02 - T3",
+          "format": "2D Phụ đề",
+          "time": "13:20",
+          "seats": "122 ghế trống"
+        }
+      ],
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "14:45",
+                  "seats": "66 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "16:00",
+                  "seats": "122 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "17:00",
+                  "seats": "98 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "17:45",
+                  "seats": "173 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:30",
+                  "seats": "128 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:15",
+                  "seats": "87 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:00",
+                  "seats": "141 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:45",
+                  "seats": "103 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:30",
+                  "seats": "82 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:15",
+                  "seats": "167 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:00",
+                  "seats": "149 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:45",
+                  "seats": "99 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "14:45",
+                  "seats": "70 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "16:00",
+                  "seats": "126 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "17:00",
+                  "seats": "102 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "17:45",
+                  "seats": "177 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:30",
+                  "seats": "132 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:15",
+                  "seats": "91 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:00",
+                  "seats": "145 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:45",
+                  "seats": "107 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:30",
+                  "seats": "86 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:15",
+                  "seats": "171 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:00",
+                  "seats": "153 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:45",
+                  "seats": "103 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "14:45",
+                  "seats": "74 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "16:00",
+                  "seats": "130 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "17:00",
+                  "seats": "106 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "17:45",
+                  "seats": "181 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:30",
+                  "seats": "136 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:15",
+                  "seats": "95 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:00",
+                  "seats": "149 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:45",
+                  "seats": "111 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:30",
+                  "seats": "90 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:15",
+                  "seats": "175 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:00",
+                  "seats": "157 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:45",
+                  "seats": "107 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tho-oi",
+      "section": "now-showing",
+      "title": "Thỏ Ơi!!",
+      "genre": "Tình cảm, Tâm lý",
+      "duration": 127,
+      "label": "P",
+      "tag": "HOT",
+      "poster": "assets/img/poster-2.jpg",
+      "buyUrl": "detail.php?id=tho-oi",
+      "description": "Một hành trình nhẹ nhàng nhưng nhiều cảm xúc về tình thân và những lựa chọn trưởng thành trong đời sống hiện đại.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "24/04/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Tình cảm, Tâm lý"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "127 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "24/04/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "124 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "142 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "87 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "102 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "106 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "107 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "128 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "146 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "91 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "106 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "110 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "111 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "132 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "150 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "95 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "110 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "114 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "115 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bau-vat-troi-cho",
+      "section": "now-showing",
+      "title": "Báu Vật Trời Cho",
+      "genre": "Gia đình, Tình cảm, Hài hước",
+      "duration": 124,
+      "label": "T13",
+      "tag": "HOT",
+      "poster": "assets/img/poster-3.jpg",
+      "buyUrl": "detail.php?id=bau-vat-troi-cho",
+      "description": "Một chuyến phiêu lưu ấm áp về niềm tin, gia đình và những món quà bất ngờ mà cuộc sống mang lại.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "24/04/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Gia đình, Tình cảm, Hài hước"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "124 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "24/04/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "122 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "141 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "86 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "101 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "105 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "106 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "126 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "145 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "90 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "105 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "109 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "110 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "130 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "149 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "94 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "109 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "113 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "114 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nha-ba-toi-mot-pho",
+      "section": "now-showing",
+      "title": "Nhà Ba Tôi Một Phò...",
+      "genre": "Hài hước, Gia đình",
+      "duration": 126,
+      "label": "K",
+      "tag": "HOT",
+      "poster": "assets/img/poster-4.png",
+      "buyUrl": "detail.php?id=nha-ba-toi-mot-pho",
+      "description": "Câu chuyện gia đình nhiều tiếng cười xoay quanh những khác biệt thế hệ, khi ba người đàn ông cùng sống dưới một mái nhà.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "24/04/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Hài hước, Gia đình"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "126 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "24/04/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "124 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "142 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "87 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "102 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "106 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "107 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "128 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "146 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "91 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "106 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "110 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "111 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "132 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "150 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "95 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "110 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "114 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "115 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cam-on-nguoi-da-th...",
+      "section": "now-showing",
+      "title": "Cảm Ơn Người Đã Th...",
+      "genre": "Tình cảm, Gia đình",
+      "duration": 137,
+      "label": "T16",
+      "tag": "HOT",
+      "poster": "assets/img/poster-5.jpg",
+      "buyUrl": "detail.php?id=cam-on-nguoi-da-th...",
+      "description": "Một câu chuyện giàu cảm xúc về lòng biết ơn, những mất mát và cách con người tìm lại nhau trong gia đình.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "03/04/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Tình cảm, Gia đình"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "137 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "03/04/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "122 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "141 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "86 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "101 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "105 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "106 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "126 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "145 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "90 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "105 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "109 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "110 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "130 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "149 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "94 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "109 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "113 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "114 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cu-nhay-ky-dieu",
+      "section": "upcoming",
+      "title": "Cú Nhảy Kỳ Diệu",
+      "genre": "Hoạt hình, Phiêu lưu",
+      "duration": 105,
+      "label": "P",
+      "tag": "",
+      "poster": "assets/img/poster-6.jpg",
+      "buyUrl": "detail.php?id=cu-nhay-ky-dieu",
+      "description": "Một chuyến phiêu lưu hoạt hình vui nhộn, đưa khán giả đi qua thế giới tưởng tượng đầy sắc màu và tình bạn.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "07/03/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Hoạt hình, Phiêu lưu"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "105 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "07/03/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "124 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "142 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "87 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "102 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "106 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "107 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "128 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "146 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "91 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "106 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "110 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "111 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "132 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "150 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "95 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "110 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "114 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "115 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dem-ngay-xa-me",
+      "section": "upcoming",
+      "title": "Đếm Ngày Xa Mẹ",
+      "genre": "Gia đình",
+      "duration": 109,
+      "label": "T16",
+      "tag": "",
+      "poster": "assets/img/poster-7.png",
+      "buyUrl": "detail.php?id=dem-ngay-xa-me",
+      "description": "Một bộ phim gia đình chạm đến những khoảnh khắc xa cách, chờ đợi và đoàn tụ.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "01/05/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Gia đình"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "109 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "01/05/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "122 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "141 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "86 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "101 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "105 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "106 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "126 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "145 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "90 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "105 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "109 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "110 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "130 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "149 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "94 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "109 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "113 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "114 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loi-nguyen-thu-vien",
+      "section": "upcoming",
+      "title": "Lời Nguyền Thư Việ...",
+      "genre": "Hoạt hình, Bí ẩn",
+      "duration": 85,
+      "label": "T16",
+      "tag": "",
+      "poster": "assets/img/poster-8.jpg",
+      "buyUrl": "detail.php?id=loi-nguyen-thu-vien",
+      "description": "Một câu chuyện bí ẩn, pha trộn yếu tố hoạt hình và khám phá thế giới sách cổ trong thư viện.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "10/05/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Hoạt hình, Bí ẩn"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "85 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "10/05/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "124 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "142 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "87 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "102 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "106 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "107 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "128 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "146 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "91 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "106 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "110 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "111 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "132 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "150 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "95 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "110 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "114 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "115 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nha-minh-di-thoi",
+      "section": "special",
+      "title": "Nhà Mình Đi Thôi",
+      "genre": "Hài hước, Gia đình, Phiêu lưu",
+      "duration": 115,
+      "label": "P",
+      "tag": "",
+      "poster": "assets/img/poster-1.png",
+      "buyUrl": "detail.php?id=nha-minh-di-thoi",
+      "description": "Một chuyến đi đầy tiếng cười và cảm xúc, nơi cả gia đình học cách lắng nghe nhau nhiều hơn.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "14/05/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Hài hước, Gia đình, Phiêu lưu"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "115 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "14/05/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "122 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "141 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "86 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "101 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "105 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "106 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "126 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "145 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "90 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "105 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "109 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "110 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "130 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "149 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "94 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "109 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "113 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "114 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quoc-bao",
+      "section": "special",
+      "title": "Quốc Bảo",
+      "genre": "Kịch",
+      "duration": 174,
+      "label": "T16",
+      "tag": "",
+      "poster": "assets/img/poster-2.jpg",
+      "buyUrl": "detail.php?id=quoc-bao",
+      "description": "Một câu chuyện kịch tính về lòng trung thành, trách nhiệm và những bí mật của một gia tộc.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "20/05/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Kịch"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "174 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "20/05/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "124 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "142 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "87 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "102 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "106 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "107 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "128 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "146 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "91 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "106 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "110 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "111 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "132 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "150 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "95 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "110 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "114 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "115 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quy-nhap-trang-2",
+      "section": "special",
+      "title": "Quỷ Nhập Tràng 2",
+      "genre": "Kinh dị, Hồi Hộp",
+      "duration": 127,
+      "label": "T18",
+      "tag": "",
+      "poster": "assets/img/poster-3.jpg",
+      "buyUrl": "detail.php?id=quy-nhap-trang-2",
+      "description": "Phần tiếp theo của series kinh dị, đẩy nỗi sợ lên cao hơn với bầu không khí u ám và nhiều lớp bí ẩn.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "22/05/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Kinh dị, Hồi Hộp"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "127 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "22/05/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "122 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "141 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "86 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "101 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "105 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "106 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "126 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "145 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "90 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "105 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "109 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "110 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "130 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "149 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "94 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "109 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "113 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "114 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tai",
+      "section": "special",
+      "title": "Tài",
+      "genre": "Tâm lý, Gia đình, Hành động",
+      "duration": 101,
+      "label": "T16",
+      "tag": "",
+      "poster": "assets/img/poster-4.png",
+      "buyUrl": "detail.php?id=tai",
+      "description": "Một hành trình về lựa chọn, trách nhiệm và khát vọng thay đổi số phận trong bối cảnh gia đình.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "24/05/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Tâm lý, Gia đình, Hành động"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "101 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "24/05/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "124 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "142 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "87 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "102 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "106 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "107 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "128 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "146 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "91 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "106 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "110 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "111 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "132 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "150 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "95 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "110 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "114 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "115 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toi-pham-101",
+      "section": "special",
+      "title": "Tội Phạm 101",
+      "genre": "Tội Phạm, Giật gân",
+      "duration": 140,
+      "label": "T18",
+      "tag": "",
+      "poster": "assets/img/poster-5.jpg",
+      "buyUrl": "detail.php?id=toi-pham-101",
+      "description": "Một câu chuyện hình sự căng thẳng, nơi mỗi quyết định đều kéo theo những hệ quả không thể lường trước.",
+      "director": "Đang cập nhật",
+      "cast": "Đang cập nhật",
+      "language": "Tiếng Việt",
+      "releaseDate": "30/05/2026",
+      "details": [
+        {
+          "label": "Đạo diễn",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Diễn viên",
+          "value": "Đang cập nhật"
+        },
+        {
+          "label": "Thể loại",
+          "value": "Tội Phạm, Giật gân"
+        },
+        {
+          "label": "Thời lượng",
+          "value": "140 phút"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Ngày khởi chiếu",
+          "value": "30/05/2026"
+        }
+      ],
+      "scheduleDates": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false
+        }
+      ],
+      "showtimeGroups": [
+        {
+          "format": "2D PHỤ ĐỀ",
+          "legend": "Suất chiếu muộn từ 22h00",
+          "slots": [
+            {
+              "time": "15:45",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "18:00",
+              "seats": "122 ghế trống",
+              "active": false
+            },
+            {
+              "time": "19:00",
+              "seats": "139 ghế trống",
+              "active": false
+            },
+            {
+              "time": "20:15",
+              "seats": "86 ghế trống",
+              "active": false
+            },
+            {
+              "time": "21:40",
+              "seats": "100 ghế trống",
+              "active": false
+            },
+            {
+              "time": "22:30",
+              "seats": "103 ghế trống",
+              "active": true
+            },
+            {
+              "time": "23:55",
+              "seats": "106 ghế trống",
+              "active": true
+            }
+          ]
+        }
+      ],
+      "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "scheduleByDate": [
+        {
+          "label": "29",
+          "suffix": "/04 - T4",
+          "active": true,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "122 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "123 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "141 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "86 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "101 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "105 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "106 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "30",
+          "suffix": "/04 - T5",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "126 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "127 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "145 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "90 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "105 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "109 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "110 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "01",
+          "suffix": "/05 - T6",
+          "active": false,
+          "groups": [
+            {
+              "format": "2D PHỤ ĐỀ",
+              "legend": "Suất chiếu muộn từ 22h00",
+              "slots": [
+                {
+                  "time": "15:45",
+                  "seats": "130 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "18:00",
+                  "seats": "131 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "19:00",
+                  "seats": "149 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "20:15",
+                  "seats": "94 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "21:40",
+                  "seats": "109 ghế trống",
+                  "active": false
+                },
+                {
+                  "time": "22:30",
+                  "seats": "113 ghế trống",
+                  "active": true
+                },
+                {
+                  "time": "23:55",
+                  "seats": "114 ghế trống",
+                  "active": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "links": [
+      {
+        "label": "Tuyển dụng",
+        "href": "#"
+      },
+      {
+        "label": "Giới thiệu",
+        "href": "#"
+      },
+      {
+        "label": "Liên hệ",
+        "href": "#"
+      },
+      {
+        "label": "F.A.Q",
+        "href": "#"
+      },
+      {
+        "label": "Hoạt động xã hội",
+        "href": "#"
+      },
+      {
+        "label": "Điều khoản sử dụng",
+        "href": "#"
+      },
+      {
+        "label": "Chính sách thanh toán, đổi trả - hoàn vé",
+        "href": "#"
+      },
+      {
+        "label": "Liên hệ quảng cáo",
+        "href": "#"
+      },
+      {
+        "label": "Điều khoản bảo mật",
+        "href": "#"
+      },
+      {
+        "label": "Hướng dẫn đặt vé online",
+        "href": "#"
+      }
+    ],
+    "cinemasTitle": "CỤM RẠP BETA",
+    "cinemas": [
+      "Beta Cinemas Xuân Thủy, Hà Nội - Hotline 0333 023 183",
+      "Beta Cinemas Tây Sơn, Hà Nội - Hotline 0976 894 773",
+      "Beta Cinemas Vĩnh Yên, Phú Thọ - Hotline 0977 632 215",
+      "Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873",
+      "Beta Cinemas Lào Cai - Hotline 0358 968 970",
+      "Beta Cinemas Trần Quang Khải, TP Hồ Chí Minh - Hotline 1900 638 362",
+      "Beta Cinemas TRMall Phú Quốc, An Giang - Hotline 0983 474 440",
+      "Beta Cinemas Empire Bình Dương, TP Hồ Chí Minh - Hotline 0784 531 525",
+      "Beta Cinemas Quang Trung, TP Hồ Chí Minh - Hotline 0706 075 509",
+      "Beta Cinemas Giải Phóng, Hà Nội - Hotline 0585 680 360",
+      "Beta Cinemas Thanh Xuân, Hà Nội - Hotline 082 4812878",
+      "Beta Cinemas Mỹ Đình, Hà Nội - Hotline 0866 154 610",
+      "Beta Cinemas Đan Phượng, Hà Nội - Hotline 0983 901 714",
+      "Beta Cinemas Thái Nguyên - Hotline 0867 460 053",
+      "Beta Cinemas Thanh Hóa - Hotline 0325 360 249",
+      "Beta Cinemas Bắc Giang, Bắc Ninh - Hotline 0866 493 413",
+      "Beta Cinemas Nha Trang, Khánh Hòa - Hotline 0399 475 165",
+      "Beta Cinemas Biên Hòa, Đồng Nai - Hotline 0979 460 002",
+      "Beta Cinemas Long Khánh, Đồng Nai - Hotline 0925 165 684",
+      "Beta Cinemas Hồ Tràm, TP Hồ Chí Minh - Hotline 0254 3788601",
+      "Beta Cinemas Tân Uyên, TP Hồ Chí Minh - Hotline 0937 905 925"
+    ],
+    "contactTitle": "LIÊN HỆ",
+    "companyName": "CÔNG TY CỔ PHẦN BETA MEDIA",
+    "companyInfo": "Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội",
+    "address": "Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, Phường Tương Mai, Thành phố Hà Nội, Việt Nam",
+    "supportLabel": "Liên hệ chăm sóc khách hàng:",
+    "hotline": "Hotline: 1900 636807",
+    "email": "Email: mkt@betacinemas.vn"
+  }
+}

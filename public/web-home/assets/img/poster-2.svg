@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="980" viewBox="0 0 700 980">
+  <defs><linearGradient id="p2" x1="0" x2="1"><stop offset="0%" stop-color="#3a2a26"/><stop offset="100%" stop-color="#0a0a0a"/></linearGradient></defs>
+  <rect width="700" height="980" rx="40" fill="url(#p2)"/>
+  <text x="350" y="120" fill="#9fd1ff" font-size="54" font-family="Arial" text-anchor="middle" font-weight="700">T13</text>
+  <text x="350" y="500" fill="#ffb03a" font-size="72" font-family="Arial" text-anchor="middle" font-weight="700">ANH HÙNG</text>
+</svg>

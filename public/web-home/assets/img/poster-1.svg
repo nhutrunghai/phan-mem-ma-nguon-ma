@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="980" viewBox="0 0 700 980">
+  <rect width="700" height="980" rx="40" fill="#182b3f"/>
+  <rect y="0" width="700" height="980" rx="40" fill="url(#p1)"/>
+  <defs><linearGradient id="p1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1b3c55"/><stop offset="100%" stop-color="#04070d"/></linearGradient></defs>
+  <text x="350" y="120" fill="#ffd76a" font-size="54" font-family="Arial" text-anchor="middle" font-weight="700">T16</text>
+  <text x="350" y="500" fill="#ff6d6d" font-size="72" font-family="Arial" text-anchor="middle" font-weight="700">POSTER</text>
+  <text x="350" y="565" fill="#fff" font-size="34" font-family="Arial" text-anchor="middle">Phí Phông: Quỷ Máu</text>
+</svg>

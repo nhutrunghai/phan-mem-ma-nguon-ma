@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="980" viewBox="0 0 700 980">
+  <defs><linearGradient id="p3" x1="0" x2="1"><stop offset="0%" stop-color="#1f3a2a"/><stop offset="100%" stop-color="#6d2d1b"/></linearGradient></defs>
+  <rect width="700" height="980" rx="40" fill="url(#p3)"/>
+  <text x="350" y="120" fill="#ffd76a" font-size="54" font-family="Arial" text-anchor="middle" font-weight="700">T16</text>
+  <text x="350" y="510" fill="#fff" font-size="60" font-family="Arial" text-anchor="middle" font-weight="700">TRĂNG MÁU</text>
+</svg>

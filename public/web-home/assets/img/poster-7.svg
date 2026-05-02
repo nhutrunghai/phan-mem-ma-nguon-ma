@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="980" viewBox="0 0 700 980">
+  <defs><linearGradient id="p7" x1="0" x2="1"><stop offset="0%" stop-color="#ffd44f"/><stop offset="100%" stop-color="#d05a23"/></linearGradient></defs>
+  <rect width="700" height="980" rx="40" fill="url(#p7)"/>
+  <text x="350" y="120" fill="#8ce058" font-size="54" font-family="Arial" text-anchor="middle" font-weight="700">P</text>
+  <text x="350" y="520" fill="#2d1400" font-size="64" font-family="Arial" text-anchor="middle" font-weight="700">CÚ NHẢY KỲ DIỆU</text>
+</svg>

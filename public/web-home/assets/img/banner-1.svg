@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#6a1c39"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="560" fill="url(#g)"/>
+  <circle cx="1430" cy="120" r="120" fill="#f0a84d" opacity=".9"/>
+  <circle cx="1580" cy="220" r="60" fill="#b5d43a" opacity=".75"/>
+  <text x="820" y="220" fill="#fff" font-size="82" font-family="Arial" font-weight="700" text-anchor="middle">DEAL TRẢNG MÁU</text>
+  <text x="1260" y="320" fill="#ff2a56" font-size="110" font-family="Arial" font-weight="700" text-anchor="middle">20K</text>
+  <text x="1260" y="380" fill="#fff" font-size="32" font-family="Arial" text-anchor="middle">Combo bắp nước</text>
+</svg>
