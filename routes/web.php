@@ -1,5 +1,15 @@
 <?php
 
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Models\Booking;
+use App\Models\BookingSeat;
+use App\Models\Cinema;
+use App\Models\Movie;
+use App\Models\Room;
+use App\Models\Seat;
+use App\Models\Showtime;
+use App\Services\MovieCatalog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -268,27 +278,33 @@ function betaNavItems(array $siteData): array
 
 function betaMergedMovies(array $siteData): array
 {
-    $trackerMovies = collect(betaTrackerMovies())->map(function (array $movie) {
-        $movie['buyUrl'] = route('movies.show', ['id' => $movie['id']]);
+    return app(MovieCatalog::class)->mergedMovies($siteData, betaTrackerMovies());
+}
 
-        return $movie;
-    });
+function betaFilterMovies(array $movies, string $tab = '', string $search = '', string $genre = ''): array
+{
+    $search = trim(mb_strtolower($search));
+    $genre = trim(mb_strtolower($genre));
 
-    $movies = collect($siteData['movies'] ?? [])->map(function (array $movie) {
-        $buyUrl = (string) ($movie['buyUrl'] ?? '');
+    return collect($movies)->filter(function (array $movie) use ($tab, $search, $genre) {
+        $movieTitle = mb_strtolower((string) ($movie['title'] ?? ''));
+        $movieGenre = mb_strtolower((string) ($movie['genre'] ?? ''));
+        $movieSection = (string) ($movie['section'] ?? '');
 
-        if (($movie['id'] ?? null) !== null) {
-            $movie['buyUrl'] = route('movies.show', ['id' => $movie['id']]);
-        } elseif (str_ends_with($buyUrl, '.php') || str_contains($buyUrl, '.php?')) {
-            $movie['buyUrl'] = '#';
+        if ($tab !== '' && $movieSection !== $tab) {
+            return false;
         }
 
-        return $movie;
-    })->reject(function (array $movie) {
-        return ($movie['section'] ?? null) === 'now-showing';
-    })->values();
+        if ($search !== '' && !str_contains($movieTitle, $search)) {
+            return false;
+        }
 
-    return $trackerMovies->concat($movies)->all();
+        if ($genre !== '' && !str_contains($movieGenre, $genre)) {
+            return false;
+        }
+
+        return true;
+    })->values()->all();
 }
 
 function betaResolvedNavItems(array $siteData): array
@@ -544,6 +560,10 @@ function betaTrackerAuthPageHtml(string $mode = 'login'): string
         if (!window.location.hash && typeof window.activaTab === 'function') {
             window.activaTab(defaultTab);
         }
+
+        closeFancy();
+        window.setTimeout(closeFancy, 100);
+        window.setTimeout(closeFancy, 500);
     });
 })();
 </script>
@@ -642,6 +662,10 @@ Route::get('/lich-chieu', function () {
     $siteData = betaSiteData();
     $movies = betaMergedMovies($siteData);
     $topScheduleDates = $siteData['defaultScheduleDates'] ?? [];
+    $search = trim((string) request()->query('q', ''));
+    $genre = trim((string) request()->query('genre', ''));
+    $requestedDate = trim((string) request()->query('date', ''));
+    $movies = betaFilterMovies($movies, '', $search, $genre);
 
     foreach ($movies as $movie) {
         if (!empty($movie['scheduleDates'])) {
@@ -650,16 +674,34 @@ Route::get('/lich-chieu', function () {
         }
     }
 
+    $availableDateKeys = collect($topScheduleDates)
+        ->map(fn (array $date): string => trim(($date['label'] ?? '') . ($date['suffix'] ?? '')))
+        ->filter()
+        ->values()
+        ->all();
+    $activeScheduleDate = in_array($requestedDate, $availableDateKeys, true)
+        ? $requestedDate
+        : ($availableDateKeys[0] ?? '');
+
+    $topScheduleDates = collect($topScheduleDates)->map(function (array $date) use ($activeScheduleDate) {
+        $key = trim(($date['label'] ?? '') . ($date['suffix'] ?? ''));
+        $date['active'] = $key === $activeScheduleDate;
+
+        return $date;
+    })->all();
+
     $scheduleMovies = [];
     foreach ($movies as $movie) {
         $scheduleDates = $movie['scheduleDates'] ?? ($siteData['defaultScheduleDates'] ?? []);
         $scheduleByDate = $movie['scheduleByDate'] ?? [];
-        $selectedDate = '';
+        $selectedDate = $activeScheduleDate;
 
-        foreach ($scheduleDates as $date) {
-            if (!empty($date['active'])) {
-                $selectedDate = trim(($date['label'] ?? '') . ($date['suffix'] ?? ''));
-                break;
+        if ($selectedDate === '') {
+            foreach ($scheduleDates as $date) {
+                if (!empty($date['active'])) {
+                    $selectedDate = trim(($date['label'] ?? '') . ($date['suffix'] ?? ''));
+                    break;
+                }
             }
         }
 
@@ -679,6 +721,7 @@ Route::get('/lich-chieu', function () {
         $scheduleMovies[] = [
             'movie' => $movie,
             'activeGroups' => $activeGroups,
+            'selectedDate' => $selectedDate,
         ];
     }
 
@@ -689,6 +732,9 @@ Route::get('/lich-chieu', function () {
         'footer' => $siteData['footer'] ?? [],
         'topScheduleDates' => $topScheduleDates,
         'scheduleMovies' => $scheduleMovies,
+        'search' => $search,
+        'genre' => $genre,
+        'activeScheduleDate' => $activeScheduleDate,
     ]);
 })->name('schedule.index');
 
@@ -697,10 +743,14 @@ Route::get('/phim', function (Request $request) {
     $movieTabs = $siteData['movieTabs'] ?? [];
     $movies = betaMergedMovies($siteData);
     $activeTab = (string) $request->query('tab', 'upcoming');
+    $search = (string) $request->query('q', '');
+    $genre = (string) $request->query('genre', '');
 
     if (!in_array($activeTab, array_column($movieTabs, 'id'), true)) {
         $activeTab = $movieTabs[0]['id'] ?? 'upcoming';
     }
+
+    $movies = betaFilterMovies($movies, $activeTab, $search, $genre);
 
     return view('movies', [
         'title' => 'Phim - Beta Cinemas',
@@ -710,6 +760,8 @@ Route::get('/phim', function (Request $request) {
         'movieTabs' => $movieTabs,
         'movies' => $movies,
         'activeTab' => $activeTab,
+        'search' => $search,
+        'genre' => $genre,
     ]);
 })->name('movies.index');
 
@@ -740,7 +792,7 @@ Route::get('/phim/{id}', function (string $id) {
     ]);
 })->name('movies.show');
 
-Route::get('/dat-ve/{id}', function (Request $request, string $id) {
+Route::get('/dat-ve-demo/{id}', function (Request $request, string $id) {
     $siteData = betaSiteData();
     $movies = collect(betaMergedMovies($siteData));
     $movie = $movies->firstWhere('id', $id);
@@ -766,7 +818,7 @@ Route::get('/dat-ve/{id}', function (Request $request, string $id) {
     $soldSeats = ['F7', 'D5', 'C1', 'B4'];
     $heldSeats = ['E4', 'E5', 'D6'];
     $reservedSeats = ['H3', 'H4', 'G5'];
-    $preselectedSeats = ['C7', 'C6', 'A6', 'A5', 'A4', 'A3'];
+    $preselectedSeats = [];
 
     $contentHtml = view('seat-selection-content', [
         'movie' => $movie,
@@ -784,7 +836,98 @@ Route::get('/dat-ve/{id}', function (Request $request, string $id) {
     return view('tracker-import', [
         'pageHtml' => betaTrackerWrappedContentHtml($contentHtml, 'Đặt vé - ' . ($movie['title'] ?? 'Beta Cinemas')),
     ]);
-})->name('booking.seats');
+})->name('booking.demo.seats');
+
+Route::post('/dat-ve-demo/{id}', function (Request $request, string $id) {
+    $siteData = betaSiteData();
+    $movies = collect(betaMergedMovies($siteData));
+    $movie = $movies->firstWhere('id', $id);
+
+    abort_if($movie === null, 404);
+
+    if (!session()->has('demo_user')) {
+        return redirect()->to(route('auth.login.form') . '#login')
+            ->with('status', 'Vui lòng đăng nhập trước khi tiếp tục đặt vé.');
+    }
+
+    $validated = $request->validate([
+        'cinema' => ['required', 'string', 'max:120'],
+        'show_date' => ['required', 'string', 'max:80'],
+        'show_time' => ['required', 'string', 'max:40'],
+        'format' => ['required', 'string', 'max:80'],
+        'seats' => ['required', 'string', 'max:200'],
+    ]);
+
+    $seats = collect(explode(',', $validated['seats']))
+        ->map(fn (string $seat): string => trim($seat))
+        ->filter()
+        ->unique()
+        ->values()
+        ->all();
+
+    if ($seats === []) {
+        return back()->withErrors(['seats' => 'Vui lòng chọn ít nhất một ghế.'])->withInput();
+    }
+
+    $bookings = session('demo_bookings', []);
+    $booking = [
+        'code' => 'BC' . now()->format('His'),
+        'movie_id' => $id,
+        'movie_title' => $movie['title'] ?? 'Beta Cinemas',
+        'cinema' => $validated['cinema'],
+        'show_date' => $validated['show_date'],
+        'show_time' => $validated['show_time'],
+        'format' => $validated['format'],
+        'seats' => $seats,
+        'total' => count($seats) * 50000,
+        'status' => 'Chờ thanh toán',
+        'created_at' => now()->format('d/m/Y H:i'),
+    ];
+
+    array_unshift($bookings, $booking);
+    session(['demo_bookings' => array_slice($bookings, 0, 10)]);
+
+    return redirect()
+        ->route('booking.demo.payment', ['code' => $booking['code']])
+        ->with('status', 'Đã giữ ghế ' . implode(', ', $seats) . ' cho phim ' . ($movie['title'] ?? 'Beta Cinemas') . '. Vui lòng thanh toán VNPay.');
+})->name('booking.demo.store');
+
+Route::get('/dat-ve/{id}', [BookingController::class, 'show'])->name('booking.seats');
+Route::post('/dat-ve/{id}', [BookingController::class, 'store'])->name('booking.store');
+Route::get('/thanh-toan/return/vnpay', [BookingController::class, 'paymentReturn'])->name('payment.return.vnpay');
+Route::post('/thanh-toan/ipn/vnpay', [BookingController::class, 'paymentIpn'])->name('payment.ipn.vnpay');
+Route::post('/thanh-toan/ipn/sepay', [BookingController::class, 'sePayWebhook'])->name('payment.ipn.sepay');
+Route::post('/api/v1/check-payment', [BookingController::class, 'sePayWebhook'])->name('payment.sepay.webhook');
+Route::get('/thanh-toan/{booking}', [BookingController::class, 'paymentPage'])->name('bookings.payment');
+Route::post('/thanh-toan/{booking}', [BookingController::class, 'confirmPayment'])->name('bookings.payment.confirm');
+Route::get('/thanh-toan-demo/{code}', function (string $code) {
+    $booking = collect(session('demo_bookings', []))->firstWhere('code', $code);
+
+    abort_if($booking === null, 404);
+
+    return view('payment-demo', [
+        'title' => 'Thanh toán SePay - Beta Cinemas',
+        'booking' => $booking,
+    ]);
+})->name('booking.demo.payment');
+Route::post('/thanh-toan-demo/{code}', function (string $code) {
+    $bookings = collect(session('demo_bookings', []))
+        ->map(function (array $booking) use ($code) {
+            if (($booking['code'] ?? '') === $code) {
+                $booking['status'] = 'Đã thanh toán';
+            }
+
+            return $booking;
+        })
+        ->values()
+        ->all();
+
+    session(['demo_bookings' => $bookings]);
+
+    return redirect()
+        ->route('account.demo', ['tab' => 'history'])
+        ->with('status', 'Đã mô phỏng thanh toán SePay thành công cho đơn vé ' . $code . '.');
+})->name('booking.demo.payment.confirm');
 
 Route::get('/thong-tin-rap', function () {
     return view('tracker-import', [
@@ -886,8 +1029,132 @@ Route::get('/tai-khoan', function (Request $request) {
         $activeTab = 'profile';
     }
 
+    $demoUser = session('demo_user', []);
+    $demoEmail = is_array($demoUser) ? (string) ($demoUser['email'] ?? '') : '';
+    $bookings = collect();
+
+    if ($demoEmail !== '') {
+        $bookings = Booking::query()
+            ->with(['showtime.movie', 'showtime.room.cinema', 'seats.seat'])
+            ->where('customer_email', $demoEmail)
+            ->orderByDesc('created_at')
+            ->get()
+            ->map(function (Booking $booking) {
+                $showtime = $booking->showtime;
+                $movie = $showtime?->movie;
+                $room = $showtime?->room;
+                $cinema = $room?->cinema;
+
+                return [
+                    'booking_id' => (string) $booking->getKey(),
+                    'code' => $booking->qr_code,
+                    'movie_title' => $movie?->title ?? 'Beta Cinemas',
+                    'cinema' => $cinema?->name ?? '',
+                    'show_date' => $showtime?->start_time?->format('d/m/Y') ?? '',
+                    'show_time' => $showtime?->start_time?->format('H:i') ?? '',
+                    'seats' => $booking->seats
+                        ->map(fn (BookingSeat $bookingSeat) => $bookingSeat->seat?->seat_number)
+                        ->filter()
+                        ->values()
+                        ->all(),
+                    'total' => (int) $booking->total_price,
+                    'status' => $booking->payment_status === 'paid' ? 'Đã thanh toán' : 'Chờ thanh toán',
+                    'is_pending_payment' => $booking->payment_status !== 'paid',
+                    'payment_url' => route('bookings.payment', ['booking' => (string) $booking->getKey()], false),
+                    'created_at' => $booking->created_at?->format('d/m/Y H:i') ?? '',
+                ];
+            });
+    }
+
+    $sessionBookings = collect(session('demo_bookings', []))
+        ->map(function (array $booking) {
+            $status = (string) ($booking['status'] ?? '');
+            $isPaid = str_contains($status, 'Đã thanh toán') || str_contains($status, 'Da thanh toan');
+
+            return array_merge($booking, [
+                'is_pending_payment' => ! $isPaid,
+                'payment_url' => !empty($booking['code'])
+                    ? route('booking.demo.payment', ['code' => $booking['code']], false)
+                    : null,
+            ]);
+        });
+
     return view('account', [
         'title' => 'Tài khoản | Beta Cinemas',
         'activeTab' => $activeTab,
+        'bookings' => $sessionBookings->concat($bookings)->values()->all(),
     ]);
 })->name('account.demo');
+
+Route::get('/admin/login', function () {
+    if (session('admin_authenticated') === true) {
+        return redirect()->route('admin.dashboard');
+    }
+
+    return view('admin.login');
+})->name('admin.login');
+
+Route::post('/admin/login', function (Request $request) {
+    $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required', 'string'],
+    ]);
+
+    $adminEmail = env('ADMIN_EMAIL', 'admin@example.com');
+    $adminPassword = env('ADMIN_PASSWORD', 'password');
+
+    if ($credentials['email'] !== $adminEmail || $credentials['password'] !== $adminPassword) {
+        return back()
+            ->withErrors(['email' => 'Thong tin dang nhap admin khong dung.'])
+            ->withInput();
+    }
+
+    session([
+        'admin_authenticated' => true,
+        'admin_email' => $credentials['email'],
+    ]);
+
+    return redirect()->route('admin.dashboard');
+})->name('admin.login.submit');
+
+Route::post('/admin/logout', function () {
+    session()->forget(['admin_authenticated', 'admin_email']);
+
+    return redirect()->route('admin.login')->with('status', 'Da dang xuat admin.');
+})->name('admin.logout');
+
+Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/movies', [AdminController::class, 'movies'])->name('movies.index');
+    Route::get('/movies/create', [AdminController::class, 'createMovie'])->name('movies.create');
+    Route::post('/movies', [AdminController::class, 'storeMovie'])->name('movies.store');
+    Route::get('/movies/{movie}/edit', [AdminController::class, 'editMovie'])->name('movies.edit');
+    Route::put('/movies/{movie}', [AdminController::class, 'updateMovie'])->name('movies.update');
+    Route::delete('/movies/{movie}', [AdminController::class, 'deleteMovie'])->name('movies.delete');
+
+    Route::get('/cinemas', [AdminController::class, 'cinemas'])->name('cinemas.index');
+    Route::post('/cinemas', [AdminController::class, 'storeCinema'])->name('cinemas.store');
+    Route::put('/cinemas/{cinema}', [AdminController::class, 'updateCinema'])->name('cinemas.update');
+    Route::delete('/cinemas/{cinema}', [AdminController::class, 'deleteCinema'])->name('cinemas.delete');
+    Route::post('/rooms', [AdminController::class, 'storeRoom'])->name('rooms.store');
+    Route::put('/rooms/{room}', [AdminController::class, 'updateRoom'])->name('rooms.update');
+    Route::delete('/rooms/{room}', [AdminController::class, 'deleteRoom'])->name('rooms.delete');
+    Route::get('/rooms/{room}/seats', [AdminController::class, 'seats'])->name('rooms.seats');
+    Route::put('/seats/{seat}', [AdminController::class, 'updateSeat'])->name('seats.update');
+
+    Route::get('/showtimes', [AdminController::class, 'showtimes'])->name('showtimes.index');
+    Route::post('/showtimes', [AdminController::class, 'storeShowtime'])->name('showtimes.store');
+    Route::put('/showtimes/{showtime}', [AdminController::class, 'updateShowtime'])->name('showtimes.update');
+    Route::delete('/showtimes/{showtime}', [AdminController::class, 'deleteShowtime'])->name('showtimes.delete');
+
+    Route::get('/bookings', [AdminController::class, 'bookings'])->name('bookings.index');
+    Route::get('/bookings/{booking}', [AdminController::class, 'bookingDetail'])->name('bookings.show');
+    Route::put('/bookings/{booking}', [AdminController::class, 'updateBooking'])->name('bookings.update');
+
+    Route::get('/users', [AdminController::class, 'users'])->name('users.index');
+    Route::put('/users/{user}', [AdminController::class, 'updateUser'])->name('users.update');
+
+    Route::get('/settings', [AdminController::class, 'settings'])->name('settings.index');
+    Route::put('/settings', [AdminController::class, 'updateSettings'])->name('settings.update');
+});

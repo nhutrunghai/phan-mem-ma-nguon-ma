@@ -12,6 +12,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title }}</title>
     <link rel="stylesheet" href="{{ $assetPath('assets/css/style.css') }}">
+    <style>
+        .movie-filter {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 220px 120px 120px;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .movie-empty {
+            grid-column: 1 / -1;
+            padding: 28px;
+            text-align: center;
+            color: #005198;
+            background: #f4f8fc;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+        @media (max-width: 767px) {
+            .movie-filter {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="page-shell phim-page-shell">
@@ -53,17 +75,23 @@
         <main class="phim-page">
             <section class="movies-section movies-section--phim">
                 <div class="container">
+                    <form class="movie-filter" method="get" action="{{ route('movies.index') }}" data-filter-form>
+                        <input type="hidden" name="tab" value="{{ $activeTab }}">
+                        <input type="text" name="q" class="form-control" placeholder="Tìm theo tên phim" value="{{ $search ?? '' }}">
+                        <input type="text" name="genre" class="form-control" placeholder="Lọc theo thể loại" value="{{ $genre ?? '' }}">
+                        <button type="submit" class="btn btn-primary">Lọc</button>
+                        <a href="{{ route('movies.index', ['tab' => $activeTab]) }}" class="btn btn-default">Xóa lọc</a>
+                    </form>
                     <div class="section-header section-header--phim" role="tablist" aria-label="Danh sách phim">
                         @foreach ($movieTabs as $tab)
-                            <a class="tab{{ ($tab['id'] ?? '') === $activeTab ? ' active' : '' }}" href="{{ route('movies.index', ['tab' => $tab['id'] ?? '']) }}">
+                            <a class="tab{{ ($tab['id'] ?? '') === $activeTab ? ' active' : '' }}" href="{{ route('movies.index', ['tab' => $tab['id'] ?? '', 'q' => $search ?? '', 'genre' => $genre ?? '']) }}">
                                 {{ $tab['label'] ?? '' }}
                             </a>
                         @endforeach
                     </div>
 
                     <div class="movie-grid phim-grid">
-                        @foreach ($movies as $movie)
-                            @continue(($movie['section'] ?? '') !== $activeTab)
+                        @forelse ($movies as $movie)
                             <article class="movie-card movie-card--phim">
                                 <a class="poster-wrap" href="{{ $movie['buyUrl'] ?? '#' }}">
                                     <img src="{{ $mediaPath($movie['poster'] ?? '') }}" alt="{{ $movie['title'] ?? '' }}">
@@ -82,7 +110,12 @@
                                     MUA VÉ
                                 </a>
                             </article>
-                        @endforeach
+                        @empty
+                            <div class="movie-empty">
+                                <div>Không tìm thấy phim phù hợp.</div>
+                                <a href="{{ route('movies.index', ['tab' => $activeTab]) }}" class="btn btn-default">Xóa lọc</a>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </section>
@@ -123,5 +156,16 @@
             </div>
         </footer>
     </div>
+    <script>
+        (() => {
+            document.querySelectorAll('[data-filter-form]').forEach((form) => {
+                form.addEventListener('click', (event) => {
+                    if (!event.target.matches('button[type="submit"]')) return;
+                    event.preventDefault();
+                    form.requestSubmit ? form.requestSubmit() : form.submit();
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -26,6 +26,19 @@
     $activeGroups = $scheduleByDate[$activeDateIndex]['groups'] ?? $showtimeGroups;
     $firstScheduleGroup = $activeGroups[0] ?? [];
     $firstScheduleSlot = $firstScheduleGroup['slots'][0] ?? [];
+    $firstScheduleDate = $scheduleByDate[$activeDateIndex] ?? ($scheduleDates[$activeDateIndex] ?? ($scheduleDates[0] ?? []));
+    $firstScheduleDateText = trim(($firstScheduleDate['label'] ?? '') . ($firstScheduleDate['suffix'] ?? ''));
+    $formatDateLabel = static function (array $date): string {
+        $label = trim((string) ($date['label'] ?? ''));
+        $suffix = trim((string) ($date['suffix'] ?? ''));
+        $suffix = trim(preg_replace('/\s+-\s+(T2|T3|T4|T5|T6|T7|CN)$/u', '', $suffix) ?? $suffix);
+
+        if ($suffix === '') {
+            return $label;
+        }
+
+        return str_contains($label, '/') ? $label : $label . '/' . ltrim($suffix, '/');
+    };
     $trailerUrl = $movie['trailer'] ?? null;
     preg_match('~(?:youtu\.be/|v=|embed/)([^?&/]+)~', (string) $trailerUrl, $trailerMatch);
     $trailerId = $trailerMatch[1] ?? '';
@@ -98,7 +111,11 @@
                     </div>
 
                     <div class="detail-actions">
-                        <a class="buy-ticket" href="javascript:void(0)">
+                        <a class="buy-ticket" href="{{ route('booking.seats', ['id' => $movie['id'], 'cinema' => 'Beta Thái Nguyên', 'date' => $firstScheduleDateText, 'time' => $firstScheduleSlot['time'] ?? '', 'format' => $firstScheduleGroup['format'] ?? '2D']) }}" data-showtime
+                            data-cinema="Beta Thái Nguyên"
+                            data-date="{{ $firstScheduleDateText }}"
+                            data-time="{{ $firstScheduleSlot['time'] ?? '' }}"
+                            data-format="{{ $firstScheduleGroup['format'] ?? '2D' }}">
                             <span class="ticket-icon">✦</span>
                             MUA VÉ NGAY
                         </a>
@@ -132,9 +149,10 @@
                                                             <button type="button" class="schedule-slot{{ !empty($slot['active']) ? ' active' : '' }}" data-showtime
                                                                 data-cinema="Beta Thái Nguyên"
                                                                 data-date="{{ ($date['label'] ?? '') . ($date['suffix'] ?? '') }}"
-                                                                data-time="{{ $slot['time'] ?? '' }}">
+                                                                data-time="{{ $slot['time'] ?? '' }}"
+                                                                data-format="{{ $group['format'] ?? '2D' }}">
                                                                 <span class="schedule-slot__time">{{ $slot['time'] ?? '' }}</span>
-                                                                <span class="schedule-slot__date{{ !empty($slot['active']) ? ' is-visible' : '' }}">{{ $date['label'] ?? '' }}/{{ str_replace([' - T2', ' - T3', ' - T4', ' - T5', ' - T6', ' - T7', ' - CN'], '', $date['suffix'] ?? '') }}</span>
+                                                                <span class="schedule-slot__date{{ !empty($slot['active']) ? ' is-visible' : '' }}">{{ $formatDateLabel($date) }}</span>
                                                             </button>
                                                             <div class="schedule-slot__seats">{{ $slot['seats'] ?? '' }}</div>
                                                         </div>
@@ -246,7 +264,7 @@
                     </div>
                     <div class="booking-modal__row">
                         <div data-modal-cinema>Beta Thái Nguyên</div>
-                        <div data-modal-date>{{ ($scheduleDates[0]['label'] ?? '') . ($scheduleDates[0]['suffix'] ?? '') }}</div>
+                        <div data-modal-date>{{ $firstScheduleDateText }}</div>
                         <div data-modal-time>{{ $firstScheduleSlot['time'] ?? ($showtimes[0]['time'] ?? '') }}</div>
                     </div>
                 </div>

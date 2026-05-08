@@ -44,6 +44,12 @@ return [
             'transaction_mode' => 'DEFERRED',
         ],
 
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('MONGODB_URI', 'mongodb://127.0.0.1:27017'),
+            'database' => env('DB_DATABASE', 'beta_cinemas'),
+        ],
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),

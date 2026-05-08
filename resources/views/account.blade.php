@@ -12,6 +12,7 @@
         'points' => 'Điểm Beta',
         'password' => 'Đổi mật khẩu',
     ];
+    $bookings = $bookings ?? session('demo_bookings', []);
 @endphp
 
 @section('content')
@@ -41,6 +42,11 @@
                 </aside>
 
                 <div class="member-content">
+                    @if (session('status'))
+                        <div class="member-panel" style="margin-bottom:16px;">
+                            <span class="status-ok">{{ session('status') }}</span>
+                        </div>
+                    @endif
                     @if ($activeTab === 'profile')
                         <div class="member-panel">
                             <div class="member-panel__head">
@@ -128,38 +134,44 @@
                         <div class="member-panel">
                             <div class="member-panel__head">
                                 <h1>Lịch sử giao dịch</h1>
-                                <span>Danh sách vé đã mua gần đây</span>
+                                <span>Danh sách vé đã giữ trong phiên này</span>
                             </div>
-                            <div class="member-table">
-                                <div class="member-table__row member-table__row--head">
-                                    <span>Mã vé</span>
-                                    <span>Phim</span>
-                                    <span>Rạp</span>
-                                    <span>Ngày chiếu</span>
-                                    <span>Trạng thái</span>
+                            @if (empty($bookings))
+                                <p>Bạn chưa có giao dịch nào.</p>
+                            @else
+                                <div class="member-table">
+                                    <div class="member-table__row member-table__row--head member-table__row--history">
+                                        <span>Mã vé</span>
+                                        <span>Phim</span>
+                                        <span>Rạp</span>
+                                        <span>Ngày chiếu</span>
+                                        <span>Trạng thái</span>
+                                        <span>Thanh toán</span>
+                                    </div>
+                                    @foreach ($bookings as $booking)
+                                        @php
+                                            $status = (string) ($booking['status'] ?? '');
+                                            $isPendingPayment = ($booking['is_pending_payment'] ?? false)
+                                                || str_contains($status, 'Chờ thanh toán');
+                                            $paymentUrl = $booking['payment_url'] ?? null;
+                                        @endphp
+                                        <div class="member-table__row member-table__row--history">
+                                            <span>{{ $booking['code'] ?? '' }}</span>
+                                            <span>{{ $booking['movie_title'] ?? '' }}<br>{{ implode(', ', $booking['seats'] ?? []) }}</span>
+                                            <span>{{ $booking['cinema'] ?? '' }}</span>
+                                            <span>{{ ($booking['show_date'] ?? '') . ' ' . ($booking['show_time'] ?? '') }}</span>
+                                            <span class="{{ $isPendingPayment ? 'status-warn' : 'status-ok' }}">{{ $booking['status'] ?? '' }}</span>
+                                            <span class="member-table__payment">
+                                                @if ($isPendingPayment && $paymentUrl)
+                                                    <a class="btn-mua-ve" style="padding:8px 12px;font-size:12px;" href="{{ $paymentUrl }}">Thanh toán tiếp</a>
+                                                @else
+                                                    <span class="status-ok">Hoàn tất</span>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    @endforeach
                                 </div>
-                                <div class="member-table__row">
-                                    <span>BC1024</span>
-                                    <span>Lật Mặt 8</span>
-                                    <span>Beta Thái Nguyên</span>
-                                    <span>29/04/2026 19:30</span>
-                                    <span class="status-ok">Hoàn tất</span>
-                                </div>
-                                <div class="member-table__row">
-                                    <span>BC1011</span>
-                                    <span>Avengers: Secret Wars</span>
-                                    <span>Beta Mỹ Đình</span>
-                                    <span>24/04/2026 21:00</span>
-                                    <span class="status-ok">Hoàn tất</span>
-                                </div>
-                                <div class="member-table__row">
-                                    <span>BC0998</span>
-                                    <span>Doraemon Movie</span>
-                                    <span>Beta Thanh Xuân</span>
-                                    <span>18/04/2026 10:15</span>
-                                    <span class="status-warn">Đã sử dụng</span>
-                                </div>
-                            </div>
+                            @endif
                         </div>
                     @endif
 

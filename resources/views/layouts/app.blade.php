@@ -311,6 +311,24 @@
             align-items: center;
         }
 
+        .member-table__row--history {
+            grid-template-columns: .9fr 1.3fr 1fr 1fr .8fr 1.05fr;
+        }
+
+        .member-table__payment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .member-table__payment .btn-mua-ve {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            white-space: nowrap;
+        }
+
         .member-table__row--head {
             font-weight: 700;
             color: #223241;
@@ -427,6 +445,10 @@
 
             .member-table__row {
                 min-width: 700px;
+            }
+
+            .member-table__row--history {
+                min-width: 900px;
             }
 
             .page-placeholder {

@@ -148,6 +148,17 @@
             align-items: center;
             padding-bottom: 14px;
         }
+        .seat-map-wrap {
+            overflow-x: auto;
+            padding: 0 8px 14px;
+        }
+        .seat-map-hint {
+            display: none;
+            margin: -4px 0 10px;
+            color: #005198;
+            font: 700 12px "Montserrat-Medium", Arial, sans-serif;
+            text-align: center;
+        }
         .seat-row {
             display: flex;
             gap: 8px;
@@ -211,6 +222,13 @@
         .seat.is-held .seat__label,
         .seat.is-reserved .seat__label {
             color: #fff;
+        }
+        .seat.is-selected .seat__back {
+            background: #1c78c8;
+            border-color: #005fb3;
+        }
+        .seat.is-selected .seat__base {
+            border-color: #005fb3;
         }
         .seat.is-held .seat__back {
             background: #7aceff;
@@ -347,6 +365,11 @@
             opacity: .5;
             cursor: not-allowed;
         }
+        .seat-helper {
+            margin: 10px 22px 0;
+            color: #d44817;
+            font: 700 12px "Montserrat-Medium", Arial, sans-serif;
+        }
         .seat-continue:not([disabled]):hover {
             transform: translateY(-1px);
         }
@@ -407,10 +430,35 @@
             .seat__base {
                 width: 27px;
             }
+            .seat-map {
+                align-items: flex-start;
+                min-width: 390px;
+            }
+            .seat-map-hint {
+                display: block;
+            }
         }
     </style>
 
     <div class="seat-page">
+        @if (session('status'))
+            <div style="margin-bottom:16px;padding:12px 14px;background:#e8f5e9;color:#1b5e20;font-weight:700;border-radius:10px;">
+                {{ session('status') }}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div style="margin-bottom:16px;padding:12px 14px;background:#ffebee;color:#b71c1c;font-weight:700;border-radius:10px;">
+                {{ $errors->first() }}
+            </div>
+        @endif
+
+        <form method="POST" action="{{ route('booking.store', ['id' => $movie['id'] ?? '']) }}" id="bookingForm">
+            @csrf
+            <input type="hidden" name="cinema" value="{{ $selectedCinema }}">
+            <input type="hidden" name="show_date" value="{{ $selectedDate }}">
+            <input type="hidden" name="show_time" value="{{ $selectedTime }}">
+            <input type="hidden" name="format" value="{{ $selectedFormat }}">
+            <input type="hidden" name="seats" value="{{ implode(',', $preselectedSeats) }}" data-seat-input>
         <div class="seat-breadcrumb">
             <a href="{{ url('/') }}">Trang chủ</a> &gt; Đặt vé &gt; {{ $movie['title'] ?? '' }}
         </div>
@@ -433,6 +481,8 @@
                     <div class="seat-screen__label">MÀN HÌNH CHIẾU</div>
                 </div>
 
+                <div class="seat-map-hint">Vuốt ngang để xem thêm ghế</div>
+                <div class="seat-map-wrap">
                 <div class="seat-map" data-seat-map>
                     @foreach ($seatRows as $rowLabel => $numbers)
                         <div class="seat-row">
@@ -463,6 +513,7 @@
                             @endforeach
                         </div>
                     @endforeach
+                </div>
                 </div>
 
                 <div class="seat-bottom">
@@ -523,10 +574,12 @@
                         </div>
                     </div>
 
-                    <button type="button" class="seat-continue" data-seat-continue>TIẾP TỤC</button>
+                    <button type="submit" class="seat-continue" data-seat-continue>TIẾP TỤC</button>
+                    <div class="seat-helper" data-seat-helper>Vui lòng chọn ghế để tiếp tục.</div>
                 </div>
             </aside>
         </div>
+        </form>
     </div>
 
     <script>
@@ -536,9 +589,13 @@
             var continueButton = document.querySelector('[data-seat-continue]');
             var total = document.querySelector('[data-seat-total]');
             var timer = document.querySelector('[data-seat-timer]');
+            var seatInput = document.querySelector('[data-seat-input]');
+            var seatMap = document.querySelector('[data-seat-map]');
+            var helper = document.querySelector('[data-seat-helper]');
             var selectedSeats = seatButtons
                 .filter(function (button) { return button.dataset.state === 'selected'; })
                 .map(function (button) { return button.dataset.seat; });
+            var seatPrice = 50000;
             var remainingSeconds = 600;
 
             function renderCountdown() {
@@ -562,20 +619,33 @@
                 }
 
                 if (total) {
-                    total.textContent = '0 vnđ';
+                    total.textContent = (selectedSeats.length * seatPrice).toLocaleString('vi-VN') + ' vnđ';
+                }
+
+                if (seatInput) {
+                    seatInput.value = selectedSeats.join(',');
                 }
 
                 if (continueButton) {
                     continueButton.disabled = selectedSeats.length === 0;
                 }
+
+                if (helper) {
+                    helper.style.display = selectedSeats.length === 0 ? 'block' : 'none';
+                }
             }
 
-            seatButtons.forEach(function (button) {
-                if (button.dataset.state !== 'available' && button.dataset.state !== 'selected') {
-                    return;
-                }
+            if (seatMap) {
+                seatMap.addEventListener('click', function (event) {
+                    var button = event.target.closest('[data-seat]');
+                    if (!button || button.disabled) {
+                        return;
+                    }
 
-                button.addEventListener('click', function () {
+                    if (button.dataset.state !== 'available' && button.dataset.state !== 'selected') {
+                        return;
+                    }
+
                     var seatCode = button.dataset.seat;
                     var index = selectedSeats.indexOf(seatCode);
 
@@ -591,18 +661,30 @@
 
                     renderSelection();
                 });
-            });
-
-            if (continueButton) {
-                continueButton.addEventListener('click', function () {
-                    if (!selectedSeats.length) {
+            } else {
+                seatButtons.forEach(function (button) {
+                    if (button.dataset.state !== 'available' && button.dataset.state !== 'selected') {
                         return;
                     }
 
-                    alert('Đã chọn ghế: ' + selectedSeats.join(', ') + '. Bước thanh toán tôi có thể làm tiếp nếu bạn muốn.');
+                    button.addEventListener('click', function () {
+                        var seatCode = button.dataset.seat;
+                        var index = selectedSeats.indexOf(seatCode);
+
+                        if (index >= 0) {
+                            selectedSeats.splice(index, 1);
+                            button.dataset.state = 'available';
+                            button.classList.remove('is-selected');
+                        } else {
+                            selectedSeats.push(seatCode);
+                            button.dataset.state = 'selected';
+                            button.classList.add('is-selected');
+                        }
+
+                        renderSelection();
+                    });
                 });
             }
-
             renderSelection();
             renderCountdown();
 
