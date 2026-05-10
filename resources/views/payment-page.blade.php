@@ -4,7 +4,6 @@
     $showtime = $booking->showtime;
     $movie = $showtime?->movie;
     $room = $showtime?->room;
-    $cinema = $room?->cinema;
     $seatNumbers = $booking->seats
         ->map(fn ($bookingSeat) => $bookingSeat->seat?->seat_number)
         ->filter()
@@ -17,12 +16,12 @@
         <div class="container">
             <div class="member-panel">
                 <div class="member-panel__head">
-                    <h1>Thanh toán SePay</h1>
+                    <h1>Thanh toán</h1>
                     <span>Đơn vé {{ $booking->qr_code }}</span>
                 </div>
 
                 @if (session('status'))
-                    <div style="margin-bottom:16px;">
+                    <div class="payment-status">
                         <span class="status-ok">{{ session('status') }}</span>
                     </div>
                 @endif
@@ -37,8 +36,8 @@
                         <input type="text" class="form-control" value="{{ $movie?->title ?? 'Beta Cinemas' }}" readonly>
                     </div>
                     <div class="member-field">
-                        <label>Rạp</label>
-                        <input type="text" class="form-control" value="{{ $cinema?->name ?? '' }}" readonly>
+                        <label>Phòng</label>
+                        <input type="text" class="form-control" value="{{ $room?->name ?? '' }}" readonly>
                     </div>
                     <div class="member-field">
                         <label>Ngày giờ</label>
@@ -54,7 +53,7 @@
                     </div>
                 </div>
 
-                <div class="member-panel" style="margin-top:18px;">
+                <div class="member-panel payment-transfer-card">
                     <div class="member-panel__head">
                         <h1>Quét QR chuyển khoản</h1>
                         <span>{{ $sepayInfo['order_code'] ?? '' }}</span>
@@ -89,20 +88,17 @@
                                 <input type="text" class="form-control" value="{{ $sepayInfo['transfer_content'] ?? '' }}" readonly>
                             </div>
                         </div>
-                        <p style="margin-top:12px;color:#5c6b7a;">
-                            Sau khi SePay gửi webhook, đơn vé sẽ tự chuyển sang trạng thái đã thanh toán.
-                        </p>
                     @else
                         <p style="color:#d44817;font-weight:700;">
-                            SePay chưa được cấu hình đủ trong .env. Cần có ngân hàng, số tài khoản và tên chủ tài khoản.
+                            SePay chưa được cấu hình đầy đủ.
                         </p>
                     @endif
                 </div>
 
-                <div class="member-actions">
-                    <form method="post" action="{{ route('bookings.payment.confirm', ['booking' => (string) $booking->getKey()]) }}">
+                <div class="member-actions payment-action-row">
+                    <form class="payment-action-form" method="post" action="{{ route('bookings.payment.confirm', ['booking' => (string) $booking->getKey()]) }}">
                         @csrf
-                        <button type="submit" name="method" value="sepay" class="btn-mua-ve">Tôi đã chuyển khoản SePay</button>
+                        <button type="submit" name="method" value="sepay" class="btn-mua-ve">Tôi đã chuyển khoản</button>
                         @if ($vnpayUrl)
                             <button type="submit" name="method" value="vnpay" class="btn-mua-ve">Thanh toán qua VNPay</button>
                         @endif

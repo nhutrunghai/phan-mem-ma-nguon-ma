@@ -297,6 +297,44 @@
             padding: 0 24px 24px;
         }
 
+        .payment-status {
+            margin: 18px 24px 0;
+            padding: 12px 14px;
+            border: 1px solid #c9ead9;
+            background: #f2fbf6;
+            border-radius: 6px;
+            line-height: 1.5;
+        }
+
+        .payment-transfer-card {
+            margin: 0 24px 22px;
+            border: 1px solid #edf1f5;
+            box-shadow: none;
+        }
+
+        .payment-action-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .payment-action-form {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        .payment-action-row .btn-mua-ve {
+            min-height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
         .member-table {
             padding: 0 24px 24px;
         }
@@ -312,13 +350,14 @@
         }
 
         .member-table__row--history {
-            grid-template-columns: .9fr 1.3fr 1fr 1fr .8fr 1.05fr;
+            grid-template-columns: minmax(95px, .9fr) minmax(180px, 1.35fr) minmax(90px, .8fr) minmax(125px, 1fr) minmax(120px, .9fr) minmax(130px, .85fr);
         }
 
         .member-table__payment {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            min-width: 0;
         }
 
         .member-table__payment .btn-mua-ve {
@@ -434,6 +473,21 @@
                 grid-column: auto;
             }
 
+            .payment-transfer-card {
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+
+            .payment-action-row,
+            .payment-action-form {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .payment-action-row .btn-mua-ve {
+                width: 100%;
+            }
+
             .member-upload {
                 flex-direction: column;
                 align-items: flex-start;
@@ -448,7 +502,7 @@
             }
 
             .member-table__row--history {
-                min-width: 900px;
+                min-width: 780px;
             }
 
             .page-placeholder {

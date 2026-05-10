@@ -63,7 +63,6 @@
                 <a class="brand" href="{{ url('/') }}">
                     <img class="brand-img" src="{{ $assetPath('assets/img/beta-logo.png') }}" alt="Beta Cinemas">
                 </a>
-                <button class="location-pill" type="button">Beta Thái Nguyên <span class="caret">▾</span></button>
                 <nav class="nav">
                     @foreach ($navItems as $item)
                         <a href="{{ $item['href'] ?? '#' }}">{{ $item['label'] ?? '' }}</a>

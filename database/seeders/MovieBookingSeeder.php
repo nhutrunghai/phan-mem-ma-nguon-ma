@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Booking;
 use App\Models\BookingSeat;
-use App\Models\Cinema;
 use App\Models\Movie;
 use App\Models\Payment;
 use App\Models\Room;
@@ -21,12 +20,8 @@ class MovieBookingSeeder extends Seeder
     public function run(): void
     {
         $siteData = $this->siteData();
-        $cinema = Cinema::query()->firstOrCreate(
-            ['name' => 'Beta Thai Nguyen'],
-            ['address' => 'Beta Thai Nguyen', 'city' => 'Thai Nguyen']
-        );
         $room = Room::query()->firstOrCreate(
-            ['cinema_id' => (string) $cinema->getKey(), 'name' => 'Phong 1'],
+            ['name' => 'Phong 1'],
             ['total_seats' => 82]
         );
 

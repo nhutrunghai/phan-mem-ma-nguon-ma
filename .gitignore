@@ -1,5 +1,12 @@
 *.log
 .DS_Store
+.playwright-mcp/
+.auth-check.html
+.header-auth.html
+.header-home.html
+wordpress-beta-*.png
+wp-*-mirror.png
+cinema-phim.png
 .env
 .env.backup
 .env.production

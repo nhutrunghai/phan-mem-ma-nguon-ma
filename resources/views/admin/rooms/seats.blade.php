@@ -11,27 +11,27 @@
 @endphp
 <section class="admin-panel">
     <div class="admin-panel__head">
-        <h2>{{ $cinema->name ?? '' }} / {{ $room->name }}</h2>
-        <a class="btn btn-default" href="{{ route('admin.cinemas.index') }}">Quay lại rạp</a>
+        <h2>{{ $room->name }}</h2>
+        <a class="btn btn-default" href="{{ route('admin.rooms.index') }}">Quay lại phòng chiếu</a>
     </div>
     <div class="admin-panel__body">
         @if ($seats->isEmpty())
-            <div class="admin-empty">Phòng này chưa có ghế. Cập nhật số ghế ở trang rạp để tạo ghế tự động.</div>
+            <div class="admin-empty">Phòng này chưa có ghế. Cập nhật số ghế ở trang phòng chiếu để tạo ghế tự động.</div>
         @else
             <div class="table-responsive">
                 <table class="table table-striped">
-                    <thead><tr><th>Ghế</th><th>Loại ghế</th><th></th></tr></thead>
+                    <thead><tr><th>Ghế</th><th>Loại ghế</th><th>Thao tác</th></tr></thead>
                     <tbody>
                     @foreach ($seats as $seat)
                         <tr>
-                            <td><strong>{{ $seat->seat_number }}</strong></td>
+                            <td>{{ $seat->seat_number }}</td>
                             <td>{{ $seatTypeLabels[$seat->seat_type] ?? $seat->seat_type }}</td>
                             <td>
                                 <form method="post" action="{{ route('admin.seats.update', ['seat' => (string) $seat->getKey()]) }}" class="admin-actions">
                                     @csrf @method('PUT')
-                                    <select class="form-control" style="max-width:180px;" name="seat_type">
-                                        @foreach (['normal', 'vip', 'couple', 'blocked'] as $type)
-                                            <option value="{{ $type }}" @selected($seat->seat_type === $type)>{{ $seatTypeLabels[$type] ?? $type }}</option>
+                                    <select class="form-control" style="max-width:160px;" name="seat_type">
+                                        @foreach ($seatTypeLabels as $value => $label)
+                                            <option value="{{ $value }}" @selected($seat->seat_type === $value)>{{ $label }}</option>
                                         @endforeach
                                     </select>
                                     <button class="btn btn-default btn-sm" type="submit">Lưu</button>

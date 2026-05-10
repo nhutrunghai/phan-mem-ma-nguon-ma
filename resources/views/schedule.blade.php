@@ -60,7 +60,6 @@
         <header class="header">
             <div class="container header-inner">
                 <a class="brand" href="{{ url('/') }}"><img class="brand-img" src="{{ $assetPath('assets/img/beta-logo.png') }}" alt="Beta Cinemas"></a>
-                <button class="location-pill" type="button">Beta Thái Nguyên <span class="caret">▾</span></button>
                 <nav class="nav">
                     @foreach ($navItems as $item)
                         <a href="{{ $item['href'] ?? '#' }}">{{ $item['label'] ?? '' }}</a>
@@ -111,7 +110,7 @@
                                         <div class="schedule-group__title">{{ $group['format'] ?? '' }}</div>
                                         <div class="schedule-slot-grid">
                                             @foreach (($group['slots'] ?? []) as $slot)
-                                                <a class="schedule-slot{{ !empty($slot['active']) ? ' active' : '' }}" href="{{ route('booking.seats', ['id' => $movie['id'] ?? '', 'cinema' => 'Beta Thái Nguyên', 'date' => $entry['selectedDate'] ?? ($activeScheduleDate ?? ''), 'time' => $slot['time'] ?? '', 'format' => $group['format'] ?? '2D']) }}">
+                                                <a class="schedule-slot{{ !empty($slot['active']) ? ' active' : '' }}" href="{{ route('booking.seats', ['id' => $movie['id'] ?? '', 'showtime' => $slot['id'] ?? '', 'date' => $entry['selectedDate'] ?? ($activeScheduleDate ?? ''), 'time' => $slot['time'] ?? '', 'format' => $group['format'] ?? '2D']) }}">
                                                     <span class="schedule-slot__time">{{ $slot['time'] ?? '' }}</span>
                                                     <span class="schedule-slot__seats">{{ $slot['seats'] ?? '' }}</span>
                                                 </a>

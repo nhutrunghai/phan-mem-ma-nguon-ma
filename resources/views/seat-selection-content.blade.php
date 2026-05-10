@@ -454,10 +454,10 @@
 
         <form method="POST" action="{{ route('booking.store', ['id' => $movie['id'] ?? '']) }}" id="bookingForm">
             @csrf
-            <input type="hidden" name="cinema" value="{{ $selectedCinema }}">
             <input type="hidden" name="show_date" value="{{ $selectedDate }}">
             <input type="hidden" name="show_time" value="{{ $selectedTime }}">
             <input type="hidden" name="format" value="{{ $selectedFormat }}">
+            <input type="hidden" name="showtime_id" value="{{ $selectedShowtimeId ?? '' }}">
             <input type="hidden" name="seats" value="{{ implode(',', $preselectedSeats) }}" data-seat-input>
         <div class="seat-breadcrumb">
             <a href="{{ url('/') }}">Trang chủ</a> &gt; Đặt vé &gt; {{ $movie['title'] ?? '' }}
@@ -557,10 +557,6 @@
                             <div class="seat-summary__value">{{ $duration }}</div>
                         </div>
                         <div class="seat-summary__row">
-                            <div class="seat-summary__label"><i class="fa fa-university" aria-hidden="true"></i>Rạp chiếu</div>
-                            <div class="seat-summary__value">{{ $selectedCinema }}</div>
-                        </div>
-                        <div class="seat-summary__row">
                             <div class="seat-summary__label"><i class="fa fa-calendar" aria-hidden="true"></i>Ngày chiếu</div>
                             <div class="seat-summary__value">{{ $selectedDate }}</div>
                         </div>
@@ -595,7 +591,7 @@
             var selectedSeats = seatButtons
                 .filter(function (button) { return button.dataset.state === 'selected'; })
                 .map(function (button) { return button.dataset.seat; });
-            var seatPrice = 50000;
+            var seatPrice = {{ (int) ($selectedTicketPrice ?? 50000) }};
             var remainingSeconds = 600;
 
             function renderCountdown() {

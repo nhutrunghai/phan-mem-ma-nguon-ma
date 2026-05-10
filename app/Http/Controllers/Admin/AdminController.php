@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\AdminSetting;
 use App\Models\Booking;
 use App\Models\BookingSeat;
-use App\Models\Cinema;
 use App\Models\Movie;
 use App\Models\Payment;
 use App\Models\Room;
@@ -32,7 +31,7 @@ class AdminController extends Controller
             'title' => 'Dashboard',
             'stats' => [
                 'movies' => Movie::query()->count(),
-                'cinemas' => Cinema::query()->count(),
+                'rooms' => Room::query()->count(),
                 'showtimes' => Showtime::query()->count(),
                 'bookings' => Booking::query()->count(),
                 'users' => User::query()->count(),
@@ -54,7 +53,7 @@ class AdminController extends Controller
         }
 
         return view('admin.movies.index', [
-            'title' => 'Quan ly phim',
+            'title' => 'Quản lý phim',
             'movies' => $query->paginate(12)->withQueryString(),
             'search' => $search,
         ]);
@@ -63,7 +62,7 @@ class AdminController extends Controller
     public function createMovie(): View
     {
         return view('admin.movies.form', [
-            'title' => 'Them phim',
+            'title' => 'Thêm phim',
             'movie' => new Movie(),
             'action' => route('admin.movies.store'),
             'method' => 'POST',
@@ -74,13 +73,13 @@ class AdminController extends Controller
     {
         Movie::create($this->movieData($request));
 
-        return redirect()->route('admin.movies.index')->with('status', 'Da them phim.');
+        return redirect()->route('admin.movies.index')->with('status', 'Đã thêm phim.');
     }
 
     public function editMovie(string $movieId): View
     {
         return view('admin.movies.form', [
-            'title' => 'Sua phim',
+            'title' => 'Sửa phim',
             'movie' => Movie::query()->findOrFail($movieId),
             'action' => route('admin.movies.update', ['movie' => $movieId]),
             'method' => 'PUT',
@@ -91,50 +90,24 @@ class AdminController extends Controller
     {
         Movie::query()->findOrFail($movieId)->update($this->movieData($request, $movieId));
 
-        return redirect()->route('admin.movies.index')->with('status', 'Da cap nhat phim.');
+        return redirect()->route('admin.movies.index')->with('status', 'Đã cập nhật phim.');
     }
 
     public function deleteMovie(string $movieId): RedirectResponse
     {
-        abort_if(Showtime::query()->where('movie_id', $movieId)->exists(), 422, 'Khong the xoa phim dang co suat chieu.');
+        abort_if(Showtime::query()->where('movie_id', $movieId)->exists(), 422, 'Không thể xóa phim đang có suất chiếu.');
 
         Movie::query()->findOrFail($movieId)->delete();
 
-        return back()->with('status', 'Da xoa phim.');
+        return back()->with('status', 'Đã xóa phim.');
     }
 
-    public function cinemas(): View
+    public function rooms(): View
     {
-        $cinemas = Cinema::query()->orderBy('name')->get();
-
-        return view('admin.cinemas.index', [
-            'title' => 'Quan ly rap',
-            'cinemas' => $cinemas,
-            'roomsByCinema' => Room::query()->orderBy('name')->get()->groupBy('cinema_id'),
+        return view('admin.rooms.index', [
+            'title' => 'Quản lý phòng chiếu',
+            'rooms' => Room::query()->orderBy('name')->get(),
         ]);
-    }
-
-    public function storeCinema(Request $request): RedirectResponse
-    {
-        Cinema::create($this->cinemaData($request));
-
-        return back()->with('status', 'Da them rap.');
-    }
-
-    public function updateCinema(Request $request, string $cinemaId): RedirectResponse
-    {
-        Cinema::query()->findOrFail($cinemaId)->update($this->cinemaData($request));
-
-        return back()->with('status', 'Da cap nhat rap.');
-    }
-
-    public function deleteCinema(string $cinemaId): RedirectResponse
-    {
-        abort_if(Room::query()->where('cinema_id', $cinemaId)->exists(), 422, 'Khong the xoa rap dang co phong chieu.');
-
-        Cinema::query()->findOrFail($cinemaId)->delete();
-
-        return back()->with('status', 'Da xoa rap.');
     }
 
     public function storeRoom(Request $request): RedirectResponse
@@ -143,7 +116,7 @@ class AdminController extends Controller
         $room = Room::create($data);
         $this->syncSeats($room, (int) $data['total_seats']);
 
-        return back()->with('status', 'Da them phong chieu.');
+        return back()->with('status', 'Đã thêm phòng chiếu.');
     }
 
     public function updateRoom(Request $request, string $roomId): RedirectResponse
@@ -153,20 +126,20 @@ class AdminController extends Controller
         $room->update($data);
         $this->syncSeats($room, (int) $data['total_seats']);
 
-        return back()->with('status', 'Da cap nhat phong chieu.');
+        return back()->with('status', 'Đã cập nhật phòng chiếu.');
     }
 
     public function deleteRoom(string $roomId): RedirectResponse
     {
-        abort_if(Showtime::query()->where('room_id', $roomId)->exists(), 422, 'Khong the xoa phong dang co suat chieu.');
+        abort_if(Showtime::query()->where('room_id', $roomId)->exists(), 422, 'Không thể xóa phòng đang có suất chiếu.');
 
         $seatIds = Seat::query()->where('room_id', $roomId)->pluck('_id')->map(fn ($id) => (string) $id)->all();
-        abort_if($seatIds !== [] && BookingSeat::query()->whereIn('seat_id', $seatIds)->exists(), 422, 'Khong the xoa phong co ghe da duoc booking.');
+        abort_if($seatIds !== [] && BookingSeat::query()->whereIn('seat_id', $seatIds)->exists(), 422, 'Không thể xóa phòng có ghế đã được đặt.');
 
         Seat::query()->where('room_id', $roomId)->delete();
         Room::query()->findOrFail($roomId)->delete();
 
-        return back()->with('status', 'Da xoa phong chieu.');
+        return back()->with('status', 'Đã xóa phòng chiếu.');
     }
 
     public function seats(string $roomId): View
@@ -174,9 +147,8 @@ class AdminController extends Controller
         $room = Room::query()->findOrFail($roomId);
 
         return view('admin.rooms.seats', [
-            'title' => 'Quan ly ghe',
+            'title' => 'Quản lý ghế',
             'room' => $room,
-            'cinema' => Cinema::query()->find($room->cinema_id),
             'seats' => Seat::query()->where('room_id', $roomId)->orderBy('seat_number')->get(),
         ]);
     }
@@ -189,7 +161,7 @@ class AdminController extends Controller
 
         Seat::query()->findOrFail($seatId)->update($data);
 
-        return back()->with('status', 'Da cap nhat ghe.');
+        return back()->with('status', 'Đã cập nhật ghế.');
     }
 
     public function showtimes(): View
@@ -198,13 +170,12 @@ class AdminController extends Controller
         $rooms = Room::query()->orderBy('name')->get();
 
         return view('admin.showtimes.index', [
-            'title' => 'Quan ly suat chieu',
+            'title' => 'Quản lý suất chiếu',
             'showtimes' => Showtime::query()->orderByDesc('start_time')->paginate(15)->withQueryString(),
             'movies' => $movies,
             'rooms' => $rooms,
             'moviesById' => $movies->keyBy(fn ($movie) => (string) $movie->getKey()),
             'roomsById' => $rooms->keyBy(fn ($room) => (string) $room->getKey()),
-            'cinemasById' => Cinema::query()->get()->keyBy(fn ($cinema) => (string) $cinema->getKey()),
         ]);
     }
 
@@ -212,23 +183,23 @@ class AdminController extends Controller
     {
         Showtime::create($this->showtimeData($request));
 
-        return back()->with('status', 'Da them suat chieu.');
+        return back()->with('status', 'Đã thêm suất chiếu.');
     }
 
     public function updateShowtime(Request $request, string $showtimeId): RedirectResponse
     {
         Showtime::query()->findOrFail($showtimeId)->update($this->showtimeData($request, $showtimeId));
 
-        return back()->with('status', 'Da cap nhat suat chieu.');
+        return back()->with('status', 'Đã cập nhật suất chiếu.');
     }
 
     public function deleteShowtime(string $showtimeId): RedirectResponse
     {
-        abort_if(Booking::query()->where('showtime_id', $showtimeId)->exists(), 422, 'Khong the xoa suat chieu dang co booking.');
+        abort_if(Booking::query()->where('showtime_id', $showtimeId)->exists(), 422, 'Không thể xóa suất chiếu đang có đặt vé.');
 
         Showtime::query()->findOrFail($showtimeId)->delete();
 
-        return back()->with('status', 'Da xoa suat chieu.');
+        return back()->with('status', 'Đã xóa suất chiếu.');
     }
 
     public function bookings(Request $request): View
@@ -243,7 +214,7 @@ class AdminController extends Controller
         $bookings = $query->paginate(15)->withQueryString();
 
         return view('admin.bookings.index', [
-            'title' => 'Quan ly booking',
+            'title' => 'Quản lý đặt vé',
             'bookings' => $bookings,
             'status' => $status,
             'moviesById' => $this->moviesByShowtime($bookings->getCollection()),
@@ -257,17 +228,15 @@ class AdminController extends Controller
         $showtime = Showtime::query()->find($booking->showtime_id);
         $movie = $showtime ? Movie::query()->find($showtime->movie_id) : null;
         $room = $showtime ? Room::query()->find($showtime->room_id) : null;
-        $cinema = $room ? Cinema::query()->find($room->cinema_id) : null;
         $bookingSeats = BookingSeat::query()->where('booking_id', $bookingId)->get();
         $seatIds = $bookingSeats->pluck('seat_id')->all();
 
         return view('admin.bookings.show', [
-            'title' => 'Chi tiet booking',
+            'title' => 'Chi tiết đặt vé',
             'booking' => $booking,
             'showtime' => $showtime,
             'movie' => $movie,
             'room' => $room,
-            'cinema' => $cinema,
             'bookingSeats' => $bookingSeats,
             'seatsById' => $seatIds === [] ? collect() : Seat::query()->whereIn('_id', $seatIds)->get()->keyBy(fn ($seat) => (string) $seat->getKey()),
             'payments' => Payment::query()->where('booking_id', $bookingId)->orderByDesc('created_at')->get(),
@@ -282,7 +251,7 @@ class AdminController extends Controller
 
         Booking::query()->findOrFail($bookingId)->update($data);
 
-        return back()->with('status', 'Da cap nhat booking.');
+        return back()->with('status', 'Đã cập nhật đặt vé.');
     }
 
     public function users(Request $request): View
@@ -295,7 +264,7 @@ class AdminController extends Controller
         }
 
         return view('admin.users.index', [
-            'title' => 'Quan ly nguoi dung',
+            'title' => 'Quản lý người dùng',
             'users' => $query->paginate(15)->withQueryString(),
             'search' => $search,
         ]);
@@ -324,13 +293,13 @@ class AdminController extends Controller
 
         User::query()->findOrFail($userId)->update($payload);
 
-        return back()->with('status', 'Da cap nhat nguoi dung.');
+        return back()->with('status', 'Đã cập nhật người dùng.');
     }
 
     public function settings(): View
     {
         return view('admin.settings.index', [
-            'title' => 'Cau hinh admin',
+            'title' => 'Cấu hình quản trị',
             'settings' => $this->adminSettings(),
         ]);
     }
@@ -349,7 +318,7 @@ class AdminController extends Controller
             ['type' => 'admin', 'value' => $data]
         );
 
-        return back()->with('status', 'Da luu cau hinh.');
+        return back()->with('status', 'Đã lưu cấu hình.');
     }
 
     private function movieData(Request $request, ?string $movieId = null): array
@@ -386,26 +355,12 @@ class AdminController extends Controller
         return $data;
     }
 
-    private function cinemaData(Request $request): array
-    {
-        return $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'address' => ['required', 'string', 'max:500'],
-            'city' => ['required', 'string', 'max:120'],
-        ]);
-    }
-
     private function roomData(Request $request): array
     {
-        $data = $request->validate([
-            'cinema_id' => ['required', 'string'],
+        return $request->validate([
             'name' => ['required', 'string', 'max:120'],
             'total_seats' => ['required', 'integer', 'min:1', 'max:300'],
         ]);
-
-        abort_unless(Cinema::query()->where('_id', $data['cinema_id'])->exists(), 422);
-
-        return $data;
     }
 
     private function showtimeData(Request $request, ?string $ignoreShowtimeId = null): array
@@ -425,7 +380,7 @@ class AdminController extends Controller
         $data['start_time'] = Carbon::parse($data['start_time']);
         $data['end_time'] = Carbon::parse($data['end_time']);
         $data['price'] = (int) $data['price'];
-        $data['format'] = $data['format'] ?: '2D Phu de';
+        $data['format'] = $data['format'] ?: '2D Phụ đề';
         $data['is_active'] = true;
 
         $overlaps = Showtime::query()
@@ -436,7 +391,7 @@ class AdminController extends Controller
             ->filter(fn (Showtime $showtime) => $ignoreShowtimeId === null || (string) $showtime->getKey() !== $ignoreShowtimeId)
             ->isNotEmpty();
 
-        abort_if($overlaps, 422, 'Phong nay da co suat chieu trung thoi gian.');
+        abort_if($overlaps, 422, 'Phòng này đã có suất chiếu trùng thời gian.');
 
         return $data;
     }

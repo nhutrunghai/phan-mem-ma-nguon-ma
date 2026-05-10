@@ -17,7 +17,7 @@
 @endphp
 <div class="admin-stats">
     <div class="admin-stat"><strong>{{ $stats['movies'] }}</strong><span>Phim</span></div>
-    <div class="admin-stat"><strong>{{ $stats['cinemas'] }}</strong><span>Rạp</span></div>
+    <div class="admin-stat"><strong>{{ $stats['rooms'] }}</strong><span>Phòng chiếu</span></div>
     <div class="admin-stat"><strong>{{ $stats['showtimes'] }}</strong><span>Suất chiếu</span></div>
     <div class="admin-stat"><strong>{{ $stats['bookings'] }}</strong><span>Tổng lượt đặt vé</span></div>
     <div class="admin-stat"><strong>{{ number_format($stats['paid_revenue']) }}đ</strong><span>Doanh thu đã thanh toán</span></div>

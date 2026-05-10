@@ -66,7 +66,7 @@ try {
   console.log('2. Kiểm tra điều hướng sidebar');
   const navItems = [
     ['Phim', /\/admin\/movies/],
-    ['Rạp & phòng', /\/admin\/cinemas/],
+    ['Phòng chiếu', /\/admin\/rooms/],
     ['Suất chiếu', /\/admin\/showtimes/],
     ['Đặt vé', /\/admin\/bookings/],
     ['Người dùng', /\/admin\/users/],
@@ -116,11 +116,11 @@ try {
   await submitAndWait(page, () => page.getByRole('button', { name: 'Xóa' }).first().click());
   await expectText(page, 'Đã xóa phim');
 
-  console.log('5. Kiểm tra rạp, phòng, ghế');
+  console.log('5. Kiểm tra phòng, ghế');
   const roomName = `Phòng test ${Date.now()}`;
-  await page.goto(`${baseURL}/admin/cinemas`, { waitUntil: 'networkidle' });
-  await expectText(page, 'Thêm rạp');
-  assert(await firstCount(page.locator('.admin-panel')) > 1, 'Trang Rạp chưa có dữ liệu');
+  await page.goto(`${baseURL}/admin/rooms`, { waitUntil: 'networkidle' });
+  await expectText(page, 'Them phong');
+  assert(await firstCount(page.locator('.admin-panel')) > 1, 'Trang phòng chưa có dữ liệu');
   await page.locator('input[name="name"][placeholder="Tên phòng"]').first().fill(roomName);
   await page.locator('input[name="total_seats"][placeholder="Số ghế"]').first().fill('6');
   await submitAndWait(page, () => page.getByRole('button', { name: 'Thêm phòng' }).first().click());
@@ -131,7 +131,7 @@ try {
   await page.locator('select[name="seat_type"]').first().selectOption('vip');
   await submitAndWait(page, () => page.getByRole('button', { name: 'Lưu' }).first().click());
   await expectText(page, 'Đã cập nhật ghế');
-  await page.goto(`${baseURL}/admin/cinemas`, { waitUntil: 'networkidle' });
+  await page.goto(`${baseURL}/admin/rooms`, { waitUntil: 'networkidle' });
   page.once('dialog', dialog => dialog.accept());
   await submitAndWait(page, () => page.locator(`xpath=//tr[.//input[@name="name" and @value="${roomName}"]]//button[normalize-space()="Xóa"]`).click());
   await expectText(page, 'Đã xóa phòng chiếu');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\BookingSeat;
-use App\Models\Cinema;
 use App\Models\Movie;
 use App\Models\Payment;
 use App\Models\Room;
@@ -28,19 +27,20 @@ class BookingController extends Controller
     public function show(Request $request, string $id)
     {
         $movie = $this->catalog->findMovie($id, null, $this->trackerMovies()) ?? abort(404);
-        $selectedCinema = trim((string) $request->query('cinema', 'Beta Thái Nguyên'));
         $selectedDate = trim((string) $request->query('date', $movie['releaseDate'] ?? now()->format('d/m/Y')));
         $selectedTime = trim((string) $request->query('time', '19:00'));
         $selectedFormat = trim((string) $request->query('format', '2D Phụ đề'));
-        $showtime = $this->resolveShowtime($movie, $selectedCinema, $selectedDate, $selectedTime, $selectedFormat);
+        $selectedShowtimeId = trim((string) $request->query('showtime', ''));
+        $showtime = $this->resolveShowtime($movie, $selectedDate, $selectedTime, $selectedFormat, $selectedShowtimeId);
 
         return view('seat-selection', [
             'title' => 'Đặt vé - ' . ($movie['title'] ?? 'Beta Cinemas'),
             'movie' => $movie,
-            'selectedCinema' => $selectedCinema,
             'selectedDate' => $selectedDate,
             'selectedTime' => $selectedTime,
             'selectedFormat' => $selectedFormat,
+            'selectedShowtimeId' => (string) $showtime->getKey(),
+            'selectedTicketPrice' => (int) $showtime->price,
             'seatRows' => $this->seatRows(),
             'soldSeats' => $this->soldSeats($showtime),
             'heldSeats' => [],
@@ -60,10 +60,10 @@ class BookingController extends Controller
 
         $movie = $this->catalog->findMovie($id, null, $this->trackerMovies()) ?? abort(404);
         $validated = $request->validate([
-            'cinema' => ['required', 'string', 'max:120'],
             'show_date' => ['required', 'string', 'max:40'],
             'show_time' => ['required', 'string', 'max:20'],
             'format' => ['nullable', 'string', 'max:60'],
+            'showtime_id' => ['required', 'string'],
             'seats' => ['required', 'string', 'max:255'],
             'customer_name' => ['nullable', 'string', 'max:120'],
             'customer_email' => ['nullable', 'email', 'max:120'],
@@ -77,16 +77,16 @@ class BookingController extends Controller
 
         $showtime = $this->resolveShowtime(
             $movie,
-            $validated['cinema'],
             $validated['show_date'],
             $validated['show_time'],
-            $validated['format'] ?? '2D Phụ đề'
+            $validated['format'] ?? '2D Phụ đề',
+            $validated['showtime_id']
         );
         $seats = $this->resolveSeats($showtime->room, $seatCodes);
         $conflicts = $this->conflictingSeats($showtime, $seats->pluck('_id')->map(fn ($id) => (string) $id)->all());
 
         if ($conflicts !== []) {
-            abort(409, 'Ghe da duoc dat: ' . implode(', ', $conflicts));
+            abort(409, 'Ghế đã được đặt: ' . implode(', ', $conflicts));
         }
 
         $booking = Booking::create([
@@ -111,13 +111,13 @@ class BookingController extends Controller
 
         return redirect()
             ->route('bookings.payment', ['booking' => (string) $booking->getKey()])
-            ->with('status', 'Đặt vé thành công. Vui lòng thanh toán VNPay để hoàn tất đơn vé.');
+            ->with('status', 'Đặt vé thành công. Vui lòng thanh toán để hoàn tất đơn vé.');
     }
 
     public function paymentPage(string $bookingId)
     {
         $booking = Booking::query()
-            ->with(['showtime.movie', 'showtime.room.cinema', 'seats.seat'])
+            ->with(['showtime.movie', 'showtime.room', 'seats.seat'])
             ->findOrFail($bookingId);
 
         $this->authorizeBooking($booking);
@@ -281,48 +281,42 @@ class BookingController extends Controller
         return response()->json(['status' => 'ok']);
     }
 
-    private function resolveShowtime(array $movieData, string $cinemaName, string $showDate, string $showTime, string $format): Showtime
+    private function resolveShowtime(array $movieData, string $showDate, string $showTime, string $format, ?string $showtimeId = null): Showtime
     {
-        $movie = Movie::query()->firstOrCreate(
-            ['slug' => (string) $movieData['id']],
-            [
-                'title' => (string) ($movieData['title'] ?? $movieData['id']),
-                'section' => (string) ($movieData['section'] ?? 'now-showing'),
-                'genre' => $movieData['genre'] ?? null,
-                'duration' => $movieData['duration'] ?? null,
-                'age_label' => $movieData['label'] ?? null,
-                'poster' => $movieData['poster'] ?? null,
-                'description' => $movieData['description'] ?? null,
-                'release_date' => $this->parseDate($movieData['releaseDate'] ?? null),
-                'language' => $movieData['language'] ?? null,
-                'trailer' => $movieData['trailer'] ?? null,
-                'details' => $movieData['details'] ?? null,
-            ]
-        );
+        $movie = Movie::query()->where('slug', (string) $movieData['id'])->first();
+        abort_if($movie === null, 404, 'Phim này chưa có dữ liệu trong quản trị.');
 
-        $cinema = Cinema::query()->firstOrCreate(
-            ['name' => $cinemaName],
-            ['address' => $cinemaName, 'city' => 'Vietnam']
-        );
-        $room = Room::query()->firstOrCreate(
-            ['cinema_id' => (string) $cinema->getKey(), 'name' => 'Phòng 1'],
-            ['total_seats' => 82]
-        );
-        $this->ensureRoomSeats($room);
+        if ($showtimeId !== null && trim($showtimeId) !== '') {
+            $showtime = Showtime::query()
+                ->with('room')
+                ->where('_id', trim($showtimeId))
+                ->where('movie_id', (string) $movie->getKey())
+                ->where('is_active', true)
+                ->first();
+
+            abort_if($showtime === null, 404, 'Suất chiếu không tồn tại hoặc đã ngừng bán.');
+            abort_if($showtime->room === null, 422, 'Suất chiếu chưa được gắn phòng chiếu.');
+            abort_if($showtime->start_time->lt(now()), 422, 'Suất chiếu đã quá giờ đặt vé.');
+            $this->ensureRoomSeats($showtime->room);
+
+            return $showtime;
+        }
+
         $startAt = $this->parseScheduleDateTime($showDate, $showTime);
+        $showtime = Showtime::query()
+            ->with('room')
+            ->where('movie_id', (string) $movie->getKey())
+            ->where('start_time', $startAt)
+            ->where('format', $format)
+            ->where('is_active', true)
+            ->first();
 
-        return Showtime::query()->firstOrCreate(
-            [
-                'movie_id' => (string) $movie->getKey(),
-                'room_id' => (string) $room->getKey(),
-                'start_time' => $startAt,
-                'format' => $format,
-            ],
-            [
-                'end_time' => (clone $startAt)->addMinutes((int) ($movieData['duration'] ?? 120)),
-                'price' => 75000,
-            ]
-        );
+        abort_if($showtime === null, 404, 'Không tìm thấy suất chiếu do quản trị thiết lập.');
+        abort_if($showtime->room === null, 422, 'Suất chiếu chưa được gắn phòng chiếu.');
+        abort_if($showtime->start_time->lt(now()), 422, 'Suất chiếu đã quá giờ đặt vé.');
+        $this->ensureRoomSeats($showtime->room);
+
+        return $showtime;
     }
 
     private function trackerMovies(): array

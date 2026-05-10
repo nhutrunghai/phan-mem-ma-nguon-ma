@@ -23,7 +23,7 @@
     <div class="admin-panel__body">
         <div class="admin-form-grid">
             <div><strong>Phim:</strong> {{ $movie->title ?? 'Không có dữ liệu' }}</div>
-            <div><strong>Rạp:</strong> {{ $cinema->name ?? 'Không có dữ liệu' }} - {{ $room->name ?? '' }}</div>
+            <div><strong>Phòng:</strong> {{ $room->name ?? 'Không có dữ liệu' }}</div>
             <div><strong>Suất:</strong> {{ optional($showtime?->start_time)->format('d/m/Y H:i') }}</div>
             <div><strong>Người dùng:</strong> {{ $user->email ?? $booking->user_id }}</div>
             <div><strong>Tổng tiền:</strong> {{ number_format((int) $booking->total_price) }}đ</div>

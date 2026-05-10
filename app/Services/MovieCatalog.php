@@ -40,7 +40,11 @@ class MovieCatalog
             $byId[$id] = array_replace($byId->get($id, []), $movie);
         }
 
-        return $byId->values()->all();
+        return $byId
+            ->values()
+            ->sortBy(fn (array $movie) => (empty($movie['scheduleDates']) ? '1' : '0') . '|' . (string) ($movie['title'] ?? ''))
+            ->values()
+            ->all();
     }
 
     public function findMovie(string $id, ?array $siteData = null, array $trackerMovies = []): ?array
@@ -78,7 +82,9 @@ class MovieCatalog
         try {
             $movies = Movie::query()
                 ->with(['showtimes' => fn ($query) => $query
+                    ->with('room')
                     ->where('is_active', true)
+                    ->where('start_time', '>=', now())
                     ->orderBy('start_time')])
                 ->where('is_active', true)
                 ->orderBy('release_date')
@@ -144,10 +150,12 @@ class MovieCatalog
             'showtimeGroups' => $scheduleByDate[0]['groups'] ?? [],
             'scheduleByDate' => $scheduleByDate,
             'showtimes' => $showtimes->map(fn (Showtime $showtime) => [
+                'id' => (string) $showtime->getKey(),
                 'date' => $showtime->start_time->format('d/m'),
                 'time' => $showtime->start_time->format('H:i'),
                 'format' => $showtime->format,
                 'seats' => $this->availableSeatLabel($showtime),
+                'room' => $showtime->room?->name,
             ])->all(),
         ];
     }
@@ -159,8 +167,10 @@ class MovieCatalog
             ->map(fn ($items, string $format) => [
                 'format' => $format,
                 'slots' => $items->values()->map(fn (Showtime $showtime, int $index) => [
+                    'id' => (string) $showtime->getKey(),
                     'time' => $showtime->start_time->format('H:i'),
                     'seats' => $this->availableSeatLabel($showtime),
+                    'room' => $showtime->room?->name,
                     'active' => $index === 0,
                 ])->all(),
             ])->values()->all();
@@ -186,10 +196,10 @@ class MovieCatalog
     private function defaultDetails(Movie $movie): array
     {
         return [
-            ['label' => 'The loai', 'value' => $movie->genre ?? 'Dang cap nhat'],
-            ['label' => 'Thoi luong', 'value' => $movie->duration ? ($movie->duration . ' phut') : 'Dang cap nhat'],
-            ['label' => 'Ngon ngu', 'value' => $movie->language ?? 'Tieng Viet'],
-            ['label' => 'Ngay khoi chieu', 'value' => $movie->release_date?->format('d/m/Y') ?? 'Dang cap nhat'],
+            ['label' => 'Thể loại', 'value' => $movie->genre ?? 'Đang cập nhật'],
+            ['label' => 'Thời lượng', 'value' => $movie->duration ? ($movie->duration . ' phút') : 'Đang cập nhật'],
+            ['label' => 'Ngôn ngữ', 'value' => $movie->language ?? 'Tiếng Việt'],
+            ['label' => 'Ngày khởi chiếu', 'value' => $movie->release_date?->format('d/m/Y') ?? 'Đang cập nhật'],
         ];
     }
 }

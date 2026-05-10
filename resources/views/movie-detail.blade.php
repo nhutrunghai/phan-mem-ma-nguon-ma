@@ -80,7 +80,6 @@
                 <a class="brand" href="{{ url('/') }}">
                     <img class="brand-img" src="{{ $assetPath('assets/img/beta-logo.png') }}" alt="Beta Cinemas">
                 </a>
-                <button class="location-pill" type="button">Beta Thái Nguyên <span class="caret">▾</span></button>
                 <nav class="nav">
                     @foreach ($navItems as $item)
                         <a href="{{ $item['href'] ?? '#' }}">{{ $item['label'] ?? '' }}</a>
@@ -110,9 +109,10 @@
                         @endforeach
                     </div>
 
+                    @if (!empty($firstScheduleSlot['id']))
                     <div class="detail-actions">
-                        <a class="buy-ticket" href="{{ route('booking.seats', ['id' => $movie['id'], 'cinema' => 'Beta Thái Nguyên', 'date' => $firstScheduleDateText, 'time' => $firstScheduleSlot['time'] ?? '', 'format' => $firstScheduleGroup['format'] ?? '2D']) }}" data-showtime
-                            data-cinema="Beta Thái Nguyên"
+                        <a class="buy-ticket" href="{{ route('booking.seats', ['id' => $movie['id'], 'showtime' => $firstScheduleSlot['id'] ?? '', 'date' => $firstScheduleDateText, 'time' => $firstScheduleSlot['time'] ?? '', 'format' => $firstScheduleGroup['format'] ?? '2D']) }}" data-showtime
+                            data-showtime-id="{{ $firstScheduleSlot['id'] ?? '' }}"
                             data-date="{{ $firstScheduleDateText }}"
                             data-time="{{ $firstScheduleSlot['time'] ?? '' }}"
                             data-format="{{ $firstScheduleGroup['format'] ?? '2D' }}">
@@ -120,6 +120,7 @@
                             MUA VÉ NGAY
                         </a>
                     </div>
+                    @endif
 
                     @if ($scheduleDates || $showtimeGroups)
                         <section class="detail-schedule">
@@ -147,7 +148,7 @@
                                                     @foreach (($group['slots'] ?? []) as $slot)
                                                         <div class="schedule-slot-item">
                                                             <button type="button" class="schedule-slot{{ !empty($slot['active']) ? ' active' : '' }}" data-showtime
-                                                                data-cinema="Beta Thái Nguyên"
+                                                                data-showtime-id="{{ $slot['id'] ?? '' }}"
                                                                 data-date="{{ ($date['label'] ?? '') . ($date['suffix'] ?? '') }}"
                                                                 data-time="{{ $slot['time'] ?? '' }}"
                                                                 data-format="{{ $group['format'] ?? '2D' }}">
@@ -197,7 +198,7 @@
                     <div class="showtime-list">
                         @foreach ($showtimes as $slot)
                             <article class="showtime-card" data-showtime
-                                data-cinema="Beta Thái Nguyên"
+                                data-showtime-id="{{ $slot['id'] ?? '' }}"
                                 data-date="{{ $slot['date'] ?? '' }}"
                                 data-time="{{ $slot['time'] ?? '' }}">
                                 <div class="showtime-date">{{ $slot['date'] ?? '' }}</div>
@@ -258,12 +259,10 @@
                 </div>
                 <div class="booking-modal__table">
                     <div class="booking-modal__row booking-modal__row--head">
-                        <div>Rạp chiếu</div>
                         <div>Ngày chiếu</div>
                         <div>Giờ chiếu</div>
                     </div>
                     <div class="booking-modal__row">
-                        <div data-modal-cinema>Beta Thái Nguyên</div>
                         <div data-modal-date>{{ $firstScheduleDateText }}</div>
                         <div data-modal-time>{{ $firstScheduleSlot['time'] ?? ($showtimes[0]['time'] ?? '') }}</div>
                     </div>

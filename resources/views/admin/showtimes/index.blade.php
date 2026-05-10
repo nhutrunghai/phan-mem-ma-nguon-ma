@@ -20,8 +20,7 @@
                 <select class="form-control" name="room_id" required>
                     <option value="">Chọn phòng</option>
                     @foreach ($rooms as $room)
-                        @php $cinema = $cinemasById[(string) $room->cinema_id] ?? null; @endphp
-                        <option value="{{ (string) $room->getKey() }}">{{ $cinema->name ?? 'Không có dữ liệu' }} - {{ $room->name }}</option>
+                        <option value="{{ (string) $room->getKey() }}">{{ $room->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -48,11 +47,10 @@
                         @php
                             $movie = $moviesById[(string) $showtime->movie_id] ?? null;
                             $room = $roomsById[(string) $showtime->room_id] ?? null;
-                            $cinema = $room ? ($cinemasById[(string) $room->cinema_id] ?? null) : null;
                         @endphp
                         <tr>
                             <td>{{ $movie->title ?? 'Không có dữ liệu' }}</td>
-                            <td>{{ $cinema->name ?? 'Không có dữ liệu' }} - {{ $room->name ?? '' }}</td>
+                            <td>{{ $room->name ?? 'Không có dữ liệu' }}</td>
                             <td>{{ optional($showtime->start_time)->format('d/m/Y H:i') }}</td>
                             <td>{{ number_format((int) $showtime->price) }}đ</td>
                             <td>

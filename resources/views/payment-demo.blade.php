@@ -5,12 +5,12 @@
         <div class="container">
             <div class="member-panel">
                 <div class="member-panel__head">
-                    <h1>Thanh toán SePay</h1>
+                    <h1>Thanh toán</h1>
                     <span>Đơn vé {{ $booking['code'] ?? '' }}</span>
                 </div>
 
                 @if (session('status'))
-                    <div style="margin-bottom:16px;">
+                    <div class="payment-status">
                         <span class="status-ok">{{ session('status') }}</span>
                     </div>
                 @endif
@@ -23,10 +23,6 @@
                     <div class="member-field">
                         <label>Phim</label>
                         <input type="text" class="form-control" value="{{ $booking['movie_title'] ?? '' }}" readonly>
-                    </div>
-                    <div class="member-field">
-                        <label>Rạp</label>
-                        <input type="text" class="form-control" value="{{ $booking['cinema'] ?? '' }}" readonly>
                     </div>
                     <div class="member-field">
                         <label>Ngày giờ</label>
@@ -42,10 +38,10 @@
                     </div>
                 </div>
 
-                <div class="member-actions">
-                    <form method="post" action="{{ route('booking.demo.payment.confirm', ['code' => $booking['code'] ?? '']) }}">
+                <div class="member-actions payment-action-row">
+                    <form class="payment-action-form" method="post" action="{{ route('booking.demo.payment.confirm', ['code' => $booking['code'] ?? '']) }}">
                         @csrf
-                        <button type="submit" class="btn-mua-ve">Xác nhận thanh toán SePay</button>
+                        <button type="submit" class="btn-mua-ve">Tôi đã chuyển khoản</button>
                     </form>
                     <a class="btn-mua-ve" href="{{ route('account.demo', ['tab' => 'history']) }}">Xem lịch sử</a>
                 </div>

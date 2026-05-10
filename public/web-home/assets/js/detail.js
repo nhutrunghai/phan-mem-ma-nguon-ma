@@ -26,15 +26,18 @@
   const openModal = (card) => {
     const wrapper = card.closest('[data-showtime]');
     if (!wrapper) return;
-    cinemaEl.textContent = wrapper.dataset.cinema || 'Beta Thái Nguyên';
+    if (cinemaEl) {
+      cinemaEl.textContent = wrapper.dataset.cinema || '';
+    }
     dateEl.textContent = wrapper.dataset.date || modalDateFallback;
     timeEl.textContent = wrapper.dataset.time || '';
     if (confirmBtn && bookingUrl) {
       const params = new URLSearchParams({
-        cinema: cinemaEl.textContent.trim(),
+        showtime: wrapper.dataset.showtimeId || '',
         date: dateEl.textContent.trim(),
         time: timeEl.textContent.trim(),
         format:
+          wrapper.dataset.format ||
           wrapper.querySelector('.schedule-group__title')?.textContent?.trim() ||
           wrapper.querySelector('.showtime-format')?.textContent?.trim() ||
           '2D Phụ đề',

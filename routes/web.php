@@ -4,7 +4,6 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Models\Booking;
 use App\Models\BookingSeat;
-use App\Models\Cinema;
 use App\Models\Movie;
 use App\Models\Room;
 use App\Models\Seat;
@@ -661,7 +660,7 @@ Route::get('/', function () {
 Route::get('/lich-chieu', function () {
     $siteData = betaSiteData();
     $movies = betaMergedMovies($siteData);
-    $topScheduleDates = $siteData['defaultScheduleDates'] ?? [];
+    $topScheduleDates = [];
     $search = trim((string) request()->query('q', ''));
     $genre = trim((string) request()->query('genre', ''));
     $requestedDate = trim((string) request()->query('date', ''));
@@ -692,7 +691,7 @@ Route::get('/lich-chieu', function () {
 
     $scheduleMovies = [];
     foreach ($movies as $movie) {
-        $scheduleDates = $movie['scheduleDates'] ?? ($siteData['defaultScheduleDates'] ?? []);
+        $scheduleDates = $movie['scheduleDates'] ?? [];
         $scheduleByDate = $movie['scheduleByDate'] ?? [];
         $selectedDate = $activeScheduleDate;
 
@@ -709,13 +708,17 @@ Route::get('/lich-chieu', function () {
             $selectedDate = trim(($scheduleDates[0]['label'] ?? '') . ($scheduleDates[0]['suffix'] ?? ''));
         }
 
-        $activeGroups = $movie['showtimeGroups'] ?? ($siteData['defaultShowtimeGroups'] ?? []);
+        $activeGroups = $movie['showtimeGroups'] ?? [];
         foreach ($scheduleByDate as $date) {
             $key = trim(($date['label'] ?? '') . ($date['suffix'] ?? ''));
             if ($key === $selectedDate) {
                 $activeGroups = $date['groups'] ?? $activeGroups;
                 break;
             }
+        }
+
+        if ($activeGroups === []) {
+            continue;
         }
 
         $scheduleMovies[] = [
@@ -778,8 +781,8 @@ Route::get('/phim/{id}', function (string $id) {
         ['label' => 'Ngôn ngữ', 'value' => $movie['language'] ?? 'Tiếng Việt'],
         ['label' => 'Ngày khởi chiếu', 'value' => $movie['releaseDate'] ?? 'Đang cập nhật'],
     ];
-    $movie['scheduleDates'] = $movie['scheduleDates'] ?? ($siteData['defaultScheduleDates'] ?? []);
-    $movie['showtimeGroups'] = $movie['showtimeGroups'] ?? ($siteData['defaultShowtimeGroups'] ?? []);
+    $movie['scheduleDates'] = $movie['scheduleDates'] ?? [];
+    $movie['showtimeGroups'] = $movie['showtimeGroups'] ?? [];
     $movie['scheduleByDate'] = $movie['scheduleByDate'] ?? [];
     $movie['showtimes'] = $movie['showtimes'] ?? [];
 
@@ -799,7 +802,6 @@ Route::get('/dat-ve-demo/{id}', function (Request $request, string $id) {
 
     abort_if($movie === null, 404);
 
-    $selectedCinema = trim((string) $request->query('cinema', 'Beta Thái Nguyên'));
     $selectedDate = trim((string) $request->query('date', $movie['releaseDate'] ?? '01/05/2026'));
     $selectedTime = trim((string) $request->query('time', '19:00'));
     $selectedFormat = trim((string) $request->query('format', '2D Phụ đề'));
@@ -822,7 +824,6 @@ Route::get('/dat-ve-demo/{id}', function (Request $request, string $id) {
 
     $contentHtml = view('seat-selection-content', [
         'movie' => $movie,
-        'selectedCinema' => $selectedCinema,
         'selectedDate' => $selectedDate,
         'selectedTime' => $selectedTime,
         'selectedFormat' => $selectedFormat,
@@ -851,7 +852,6 @@ Route::post('/dat-ve-demo/{id}', function (Request $request, string $id) {
     }
 
     $validated = $request->validate([
-        'cinema' => ['required', 'string', 'max:120'],
         'show_date' => ['required', 'string', 'max:80'],
         'show_time' => ['required', 'string', 'max:40'],
         'format' => ['required', 'string', 'max:80'],
@@ -874,7 +874,6 @@ Route::post('/dat-ve-demo/{id}', function (Request $request, string $id) {
         'code' => 'BC' . now()->format('His'),
         'movie_id' => $id,
         'movie_title' => $movie['title'] ?? 'Beta Cinemas',
-        'cinema' => $validated['cinema'],
         'show_date' => $validated['show_date'],
         'show_time' => $validated['show_time'],
         'format' => $validated['format'],
@@ -1035,7 +1034,7 @@ Route::get('/tai-khoan', function (Request $request) {
 
     if ($demoEmail !== '') {
         $bookings = Booking::query()
-            ->with(['showtime.movie', 'showtime.room.cinema', 'seats.seat'])
+            ->with(['showtime.movie', 'showtime.room', 'seats.seat'])
             ->where('customer_email', $demoEmail)
             ->orderByDesc('created_at')
             ->get()
@@ -1043,13 +1042,11 @@ Route::get('/tai-khoan', function (Request $request) {
                 $showtime = $booking->showtime;
                 $movie = $showtime?->movie;
                 $room = $showtime?->room;
-                $cinema = $room?->cinema;
-
                 return [
                     'booking_id' => (string) $booking->getKey(),
                     'code' => $booking->qr_code,
                     'movie_title' => $movie?->title ?? 'Beta Cinemas',
-                    'cinema' => $cinema?->name ?? '',
+                    'room' => $room?->name ?? '',
                     'show_date' => $showtime?->start_time?->format('d/m/Y') ?? '',
                     'show_time' => $showtime?->start_time?->format('H:i') ?? '',
                     'seats' => $booking->seats
@@ -1105,7 +1102,7 @@ Route::post('/admin/login', function (Request $request) {
 
     if ($credentials['email'] !== $adminEmail || $credentials['password'] !== $adminPassword) {
         return back()
-            ->withErrors(['email' => 'Thong tin dang nhap admin khong dung.'])
+            ->withErrors(['email' => 'Thông tin đăng nhập quản trị không đúng.'])
             ->withInput();
     }
 
@@ -1120,7 +1117,7 @@ Route::post('/admin/login', function (Request $request) {
 Route::post('/admin/logout', function () {
     session()->forget(['admin_authenticated', 'admin_email']);
 
-    return redirect()->route('admin.login')->with('status', 'Da dang xuat admin.');
+    return redirect()->route('admin.login')->with('status', 'Đã đăng xuất quản trị.');
 })->name('admin.logout');
 
 Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
@@ -1133,10 +1130,7 @@ Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::put('/movies/{movie}', [AdminController::class, 'updateMovie'])->name('movies.update');
     Route::delete('/movies/{movie}', [AdminController::class, 'deleteMovie'])->name('movies.delete');
 
-    Route::get('/cinemas', [AdminController::class, 'cinemas'])->name('cinemas.index');
-    Route::post('/cinemas', [AdminController::class, 'storeCinema'])->name('cinemas.store');
-    Route::put('/cinemas/{cinema}', [AdminController::class, 'updateCinema'])->name('cinemas.update');
-    Route::delete('/cinemas/{cinema}', [AdminController::class, 'deleteCinema'])->name('cinemas.delete');
+    Route::get('/rooms', [AdminController::class, 'rooms'])->name('rooms.index');
     Route::post('/rooms', [AdminController::class, 'storeRoom'])->name('rooms.store');
     Route::put('/rooms/{room}', [AdminController::class, 'updateRoom'])->name('rooms.update');
     Route::delete('/rooms/{room}', [AdminController::class, 'deleteRoom'])->name('rooms.delete');

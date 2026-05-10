@@ -143,7 +143,7 @@
                                     <div class="member-table__row member-table__row--head member-table__row--history">
                                         <span>Mã vé</span>
                                         <span>Phim</span>
-                                        <span>Rạp</span>
+                                        <span>Phòng</span>
                                         <span>Ngày chiếu</span>
                                         <span>Trạng thái</span>
                                         <span>Thanh toán</span>
@@ -158,7 +158,7 @@
                                         <div class="member-table__row member-table__row--history">
                                             <span>{{ $booking['code'] ?? '' }}</span>
                                             <span>{{ $booking['movie_title'] ?? '' }}<br>{{ implode(', ', $booking['seats'] ?? []) }}</span>
-                                            <span>{{ $booking['cinema'] ?? '' }}</span>
+                                            <span>{{ $booking['room'] ?? '' }}</span>
                                             <span>{{ ($booking['show_date'] ?? '') . ' ' . ($booking['show_time'] ?? '') }}</span>
                                             <span class="{{ $isPendingPayment ? 'status-warn' : 'status-ok' }}">{{ $booking['status'] ?? '' }}</span>
                                             <span class="member-table__payment">

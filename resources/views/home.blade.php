@@ -42,10 +42,6 @@
                     <img class="brand-img" src="{{ $assetPath('assets/img/beta-logo.png') }}" alt="Beta Cinemas">
                 </a>
 
-                <button class="location-pill" type="button">
-                    Beta Thái Nguyên <span class="caret">▾</span>
-                </button>
-
                 <nav class="nav">
                     @foreach ($navItems as $item)
                         <a href="{{ $item['href'] ?? '#' }}">{{ $item['label'] ?? '' }}</a>
@@ -105,7 +101,7 @@
                                 <h3><a href="{{ $movie['buyUrl'] ?? '#' }}">{{ $movie['title'] ?? '' }}</a></h3>
                                 <p><strong>Thể loại:</strong> {{ $movie['genre'] ?? '' }}</p>
                                 <p><strong>Thời lượng:</strong> {{ $movie['duration'] ?? '' }} phút</p>
-                                <a class="buy-ticket" href="{{ $movie['buyUrl'] ?? '#' }}">
+                                <a class="buy-ticket" href="{{ !empty($movie['scheduleDates']) ? ($movie['buyUrl'] ?? '#') : route('movies.index') }}">
                                     <span class="ticket-icon">✦</span>
                                     MUA VÉ
                                 </a>

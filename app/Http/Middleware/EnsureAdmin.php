@@ -14,6 +14,6 @@ class EnsureAdmin
             return $next($request);
         }
 
-        return redirect()->route('admin.login')->with('status', 'Vui long dang nhap admin.');
+        return redirect()->route('admin.login')->with('status', 'Vui lòng đăng nhập quản trị.');
     }
 }
