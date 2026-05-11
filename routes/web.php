@@ -629,8 +629,8 @@ Route::get('/tai-khoan', function (Request $request) {
                         ->all(),
                     'total' => (int) $booking->total_price,
                     'status' => $booking->booking_status === 'expired'
-                        ? 'H?t h?n'
-                        : ($booking->payment_status === 'paid' ? 'Ðã thanh toán' : 'Ch? thanh toán'),
+                        ? 'Het han'
+                        : ($booking->payment_status === 'paid' ? 'Da thanh toan' : 'Cho thanh toan'),
                     'is_expired' => $booking->booking_status === 'expired',
                     'is_pending_payment' => $booking->booking_status !== 'expired' && $booking->payment_status !== 'paid',
                     'payment_url' => $booking->booking_status !== 'expired'
