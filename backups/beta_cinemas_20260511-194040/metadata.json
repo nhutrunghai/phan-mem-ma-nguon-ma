@@ -1,0 +1,79 @@
+{
+    "database": "beta_cinemas",
+    "connection": "mongodb",
+    "exported_at": "2026-05-11T19:40:40+00:00",
+    "collections": [
+        {
+            "name": "admin_settings",
+            "count": 1
+        },
+        {
+            "name": "booking_seats",
+            "count": 8
+        },
+        {
+            "name": "bookings",
+            "count": 7
+        },
+        {
+            "name": "cache",
+            "count": 0
+        },
+        {
+            "name": "cache_locks",
+            "count": 0
+        },
+        {
+            "name": "failed_jobs",
+            "count": 0
+        },
+        {
+            "name": "job_batches",
+            "count": 0
+        },
+        {
+            "name": "jobs",
+            "count": 0
+        },
+        {
+            "name": "migrations",
+            "count": 4
+        },
+        {
+            "name": "movies",
+            "count": 21
+        },
+        {
+            "name": "password_reset_otps",
+            "count": 0
+        },
+        {
+            "name": "password_reset_tokens",
+            "count": 0
+        },
+        {
+            "name": "payments",
+            "count": 11
+        },
+        {
+            "name": "rooms",
+            "count": 3
+        },
+        {
+            "name": "seats",
+            "count": 240
+        },
+        {
+            "name": "sessions",
+            "count": 0
+        },
+        {
+            "name": "showtimes",
+            "count": 281
+        },
+        {
+            "name": "users",
+            "count": 9
+        }
+    ]
+}

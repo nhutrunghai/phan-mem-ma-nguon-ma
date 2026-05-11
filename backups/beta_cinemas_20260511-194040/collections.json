@@ -1,0 +1,20 @@
+[
+    "admin_settings",
+    "booking_seats",
+    "bookings",
+    "cache",
+    "cache_locks",
+    "failed_jobs",
+    "job_batches",
+    "jobs",
+    "migrations",
+    "movies",
+    "password_reset_otps",
+    "password_reset_tokens",
+    "payments",
+    "rooms",
+    "seats",
+    "sessions",
+    "showtimes",
+    "users"
+]
