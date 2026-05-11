@@ -348,453 +348,6 @@ function betaResolvedNavItems(array $siteData): array
     })->all();
 }
 
-function betaTrackerSourcePath(string $file): string
-{
-    $repoPath = resource_path('tracker-pages/' . ltrim(str_replace('\\', '/', $file), '/'));
-
-    if (is_readable($repoPath)) {
-        return $repoPath;
-    }
-
-    return 'D:\\My Web Sites\\beta\\betacinemas.vn\\' . ltrim(str_replace('/', '\\', $file), '\\');
-}
-
-function betaTrackerAssetUrl(string $path): string
-{
-    return asset('beta-mirror/' . ltrim(str_replace('\\', '/', $path), '/'));
-}
-
-function betaTrackerExternalUrl(string $path): string
-{
-    return 'https://betacinemas.vn/' . ltrim($path, '/');
-}
-
-function betaTrackerRouteMap(): array
-{
-    return [
-        'home.html' => url('/'),
-        'home.php' => url('/'),
-        'lich-chieu.html' => route('schedule.index', [], false),
-        'lich-chieu.php' => route('schedule.index', [], false),
-        'phim.html' => route('movies.index', [], false),
-        'phim.php' => route('movies.index', [], false),
-        'thong-tin-rap.html' => route('cinemas.info', [], false),
-        'thong-tin-rap.php' => route('cinemas.info', [], false),
-        'gia-ve.html' => route('prices.index', [], false),
-        'gia-ve.php' => route('prices.index', [], false),
-        'tin-moi-va-uu-dai.html' => route('promotions.index', [], false),
-        'tin-moi-va-uu-dai.php' => route('promotions.index', [], false),
-        'nhuong-quyen.html' => route('franchise.index', [], false),
-        'nhuong-quyen.php' => route('franchise.index', [], false),
-        'thanh-vien.html' => route('member.index', [], false),
-        'thanh-vien.php' => route('member.index', [], false),
-        'login-2.html#thongtintaikhoan' => route('member.index', [], false),
-        'login.html#login' => route('auth.login.form', [], false) . '#login',
-        'login.php#login' => route('auth.login.form', [], false) . '#login',
-        'login.html#register' => route('auth.register.form', [], false) . '#register',
-        'login.php#register' => route('auth.register.form', [], false) . '#register',
-    ];
-}
-
-function betaTrackerFallbackPageHtml(string $file): string
-{
-    $pages = [
-        'thong-tin-rap.html' => [
-            'title' => 'Rạp - Beta Cinemas',
-            'eyebrow' => 'Cụm rạp Beta',
-            'heading' => 'Thông tin rạp',
-            'paragraphs' => [
-                'Beta Cinemas mang đến trải nghiệm điện ảnh hiện đại với hệ thống phòng chiếu, âm thanh, hình ảnh và dịch vụ phù hợp cho nhóm bạn trẻ, gia đình và khách hàng thành viên.',
-                'Bạn có thể theo dõi lịch chiếu theo rạp, chọn phim, chọn suất chiếu và đặt vé trực tuyến ngay trên website.',
-            ],
-            'items' => [
-                'Beta Cinemas Xuân Thủy, Hà Nội',
-                'Beta Cinemas Tây Sơn, Hà Nội',
-                'Beta Cinemas Thanh Xuân, Hà Nội',
-                'Beta Cinemas Mỹ Đình, Hà Nội',
-                'Beta Cinemas Thái Nguyên',
-                'Beta Cinemas Biên Hòa, Đồng Nai',
-            ],
-        ],
-        'gia-ve.html' => [
-            'title' => 'Giá vé - Beta Cinemas',
-            'eyebrow' => 'Bảng giá',
-            'heading' => 'Giá vé Beta Cinemas',
-            'paragraphs' => [
-                'Giá vé có thể thay đổi theo rạp, ngày chiếu, định dạng phòng chiếu và từng chương trình ưu đãi.',
-                'Vui lòng chọn phim và suất chiếu cụ thể để xem giá vé chính xác trước khi thanh toán.',
-            ],
-            'items' => [
-                'Suất chiếu 2D tiêu chuẩn áp dụng theo từng cụm rạp.',
-                'Giá vé cuối tuần, ngày lễ và suất chiếu đặc biệt có thể khác ngày thường.',
-                'Thành viên có thể nhận thêm ưu đãi theo chương trình hiện hành.',
-            ],
-        ],
-        'tin-moi-va-uu-dai.html' => [
-            'title' => 'Tin mới và ưu đãi - Beta Cinemas',
-            'eyebrow' => 'Tin tức',
-            'heading' => 'Tin mới và ưu đãi',
-            'paragraphs' => [
-                'Cập nhật các chương trình khuyến mãi, ưu đãi thành viên, thông tin khai trương rạp và tin tức mới nhất từ Beta Cinemas.',
-                'Các ưu đãi có thời hạn và điều kiện áp dụng riêng, vui lòng kiểm tra thông tin tại rạp hoặc trong bước đặt vé.',
-            ],
-            'items' => [
-                'Ưu đãi vé xem phim cho học sinh, sinh viên.',
-                'Combo bắp nước theo từng chiến dịch.',
-                'Tin tức khai trương và hoạt động cộng đồng của Beta Cinemas.',
-            ],
-        ],
-        'nhuong-quyen.html' => [
-            'title' => 'Nhượng quyền - Beta Cinemas',
-            'eyebrow' => 'Hợp tác',
-            'heading' => 'Nhượng quyền Beta Cinemas',
-            'paragraphs' => [
-                'Beta Cinemas phát triển mô hình rạp chiếu phim tối ưu chi phí đầu tư, phù hợp với nhiều thị trường địa phương và trung tâm thương mại.',
-                'Đối tác quan tâm mô hình nhượng quyền có thể liên hệ Beta Cinemas để được tư vấn về vận hành, thương hiệu và tiêu chuẩn triển khai.',
-            ],
-            'items' => [
-                'Mô hình rạp chiếu phim hiện đại, dễ mở rộng.',
-                'Hỗ trợ nhận diện thương hiệu và quy trình vận hành.',
-                'Phù hợp với thành phố vệ tinh, tỉnh thành và khu dân cư đang phát triển.',
-            ],
-        ],
-    ];
-
-    $page = $pages[$file] ?? [
-        'title' => 'Beta Cinemas',
-        'eyebrow' => 'Beta Cinemas',
-        'heading' => 'Nội dung đang được cập nhật',
-        'paragraphs' => ['Trang này đang được cập nhật nội dung.'],
-        'items' => [],
-    ];
-
-    $siteData = betaSiteData();
-
-    return view('static-page', array_merge($page, [
-        'topLinks' => betaTopLinks($siteData),
-        'navItems' => betaResolvedNavItems($siteData),
-        'footer' => $siteData['footer'] ?? [],
-    ]))->render();
-}
-
-function betaTrackerInjectTopBarState(string $html): string
-{
-    $html = preg_replace(
-        '/<ul class="list-unstyled list-inline pull-right" style="margin-bottom:\s*4px;\s*margin-top:\s*4px;">.*?<\/ul>/is',
-        betaTrackerTopBarMenuHtml(),
-        $html,
-        1
-    ) ?? $html;
-
-    $topBarStyle = <<<'HTML'
-<style>
-    .tracker-user-menu .fa-sign-out {
-        font-size: 20px;
-        line-height: 1;
-        vertical-align: middle;
-    }
-    .tracker-user-menu__greeting a {
-        white-space: nowrap;
-    }
-</style>
-</head>
-HTML;
-
-    if (str_contains($html, '</head>') && !str_contains($html, '.tracker-user-menu__greeting')) {
-        $html = str_replace('</head>', $topBarStyle, $html);
-    }
-
-    return $html;
-}
-
-function betaTrackerPageHtml(string $file): string
-{
-    $sourcePath = betaTrackerSourcePath($file);
-
-    if (!is_readable($sourcePath)) {
-        return betaTrackerFallbackPageHtml($file);
-    }
-
-    $html = file_get_contents($sourcePath);
-
-    if ($html === false) {
-        return betaTrackerFallbackPageHtml($file);
-    }
-
-    $assetReplacements = [
-        'href="Assets/' => 'href="' . betaTrackerAssetUrl('Assets') . '/',
-        "href='Assets/" => "href='" . betaTrackerAssetUrl('Assets') . '/',
-        'src="Assets/' => 'src="' . betaTrackerAssetUrl('Assets') . '/',
-        "src='Assets/" => "src='" . betaTrackerAssetUrl('Assets') . '/',
-        'href="assets/' => 'href="' . betaTrackerAssetUrl('Assets/assets') . '/',
-        "href='assets/" => "href='" . betaTrackerAssetUrl('Assets/assets') . '/',
-        'src="assets/' => 'src="' . betaTrackerAssetUrl('Assets/assets') . '/',
-        "src='assets/" => "src='" . betaTrackerAssetUrl('Assets/assets') . '/',
-        'href="fonts/' => 'href="' . betaTrackerAssetUrl('fonts') . '/',
-        "href='fonts/" => "href='" . betaTrackerAssetUrl('fonts') . '/',
-        'src="fonts/' => 'src="' . betaTrackerAssetUrl('fonts') . '/',
-        "src='fonts/" => "src='" . betaTrackerAssetUrl('fonts') . '/',
-        'href="favicon-' => 'href="' . betaTrackerAssetUrl('favicon-'),
-        "href='favicon-" => "href='" . betaTrackerAssetUrl('favicon-'),
-        'src="favicon-' => 'src="' . betaTrackerAssetUrl('favicon-'),
-        "src='favicon-" => "src='" . betaTrackerAssetUrl('favicon-'),
-    ];
-
-    $html = str_replace(array_keys($assetReplacements), array_values($assetReplacements), $html);
-    $html = str_replace('../files.betacorp.vn/', 'https://files.betacorp.vn/', $html);
-    $html = str_replace('..\\files.betacorp.vn\\', 'https://files.betacorp.vn/', $html);
-
-    foreach (betaTrackerRouteMap() as $from => $to) {
-        $html = str_replace($from, $to, $html);
-    }
-
-    $html = preg_replace_callback('/\b(href|src)=("|\')(?!https?:\/\/|\/|#|javascript:|mailto:|tel:)([^"\']+)\2/i', function (array $matches) {
-        return $matches[1] . '=' . $matches[2] . betaTrackerExternalUrl($matches[3]) . $matches[2];
-    }, $html);
-
-    $html = preg_replace_callback("/RedirectUrl\\('([^']+)'\\)/", function (array $matches) {
-        return "RedirectUrl('" . betaTrackerExternalUrl($matches[1]) . "')";
-    }, $html);
-
-    return betaTrackerInjectTopBarState($html);
-}
-
-function betaTrackerAuthPageHtml(string $mode = 'login'): string
-{
-    $html = betaTrackerPageHtml('login.html');
-
-    $html = preg_replace(
-        '/\s*<div class="clearfix"><\/div>\s*<div class="form-group">\s*<div class="col-md-16 text-center">\s*<div class="form-group">\s*<button[^>]*class="[^"]*btn-loginfacebook[^"]*"[^>]*>.*?<\/button>\s*<\/div>\s*<\/div>\s*<\/div>/is',
-        '',
-        $html
-    ) ?? $html;
-
-    $html = preg_replace('/\s*<p[^>]*>.*?facebook.*?<\/p>/is', '', $html) ?? $html;
-
-    $html = str_replace(
-        "        //Add Enter\r\n        var input = document.getElementById(\"txtLoginCaptcha\");\r\n        input.addEventListener(\"keyup\", function (event) {\r\n            event.preventDefault();\r\n            if (event.keyCode === 13) {\r\n                document.getElementById(\"btnLogin\").click();\r\n            }\r\n        });",
-        "        //Add Enter\r\n        var input = document.getElementById(\"txtLoginPassword\");\r\n        if (input) {\r\n            input.addEventListener(\"keyup\", function (event) {\r\n                event.preventDefault();\r\n                if (event.keyCode === 13) {\r\n                    document.getElementById(\"btnLogin\").click();\r\n                }\r\n            });\r\n        }",
-        $html
-    );
-
-    $defaultTab = $mode === 'register' ? 'register' : 'login';
-    $loginUrl = route('auth.demo.login', [], false);
-    $registerUrl = route('auth.demo.register', [], false);
-    $defaultTabJson = json_encode($defaultTab, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    $loginUrlJson = json_encode($loginUrl, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    $registerUrlJson = json_encode($registerUrl, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    $forgotMessage = 'TÃ­nh nÄƒng quÃªn máº­t kháº©u chÆ°a ná»‘i backend PHP. Hiá»‡n táº¡i báº¡n dÃ¹ng tab Ä‘Äƒng nháº­p/Ä‘Äƒng kÃ½ demo trÆ°á»›c.';
-
-    $forgotMessageJson = json_encode($forgotMessage, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-
-    $overrideScript = <<<HTML
-<script>
-(function () {
-    var defaultTab = {$defaultTabJson};
-    var loginUrl = {$loginUrlJson};
-    var registerUrl = {$registerUrlJson};
-    var forgotMessage = {$forgotMessageJson};
-
-    function isEmail(value) {
-        return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(value);
-    }
-
-    function closeFancy() {
-        if (window.jQuery && jQuery.fancybox && typeof jQuery.fancybox.close === 'function') {
-            jQuery.fancybox.close();
-        }
-    }
-
-    window.login = function () {
-        var email = (document.getElementById('txtLoginName') || {}).value || '';
-        var password = (document.getElementById('txtLoginPassword') || {}).value || '';
-
-        email = email.trim();
-
-        if (!email) {
-            alert('Vui lÃ²ng nháº­p email!');
-            document.getElementById('txtLoginName').focus();
-            return;
-        }
-
-        if (!isEmail(email)) {
-            alert('Email chÆ°a Ä‘Ãºng Ä‘á»‹nh dáº¡ng!');
-            document.getElementById('txtLoginName').focus();
-            return;
-        }
-
-        if (!password) {
-            alert('Vui lÃ²ng nháº­p máº­t kháº©u!');
-            document.getElementById('txtLoginPassword').focus();
-            return;
-        }
-
-        window.location.href = loginUrl + '?email=' + encodeURIComponent(email);
-    };
-
-    window.dangKy = function () {
-        var name = ((document.getElementById('txtName') || {}).value || '').trim();
-        var email = ((document.getElementById('txtEmail') || {}).value || '').trim();
-        var password = (document.getElementById('txtMatKhau') || {}).value || '';
-        var confirmPassword = (document.getElementById('txtXacNhanMatKhau') || {}).value || '';
-        var birthday = ((document.getElementById('txtNgaySinh') || {}).value || '').trim();
-        var phone = ((document.getElementById('txtDienThoai') || {}).value || '').trim();
-        var accepted = !!((document.getElementById('chk') || {}).checked);
-
-        if (!name) {
-            alert('Vui lÃ²ng nháº­p há» tÃªn!');
-            document.getElementById('txtName').focus();
-            return;
-        }
-
-        if (!email) {
-            alert('Vui lÃ²ng nháº­p email!');
-            document.getElementById('txtEmail').focus();
-            return;
-        }
-
-        if (!isEmail(email)) {
-            alert('Email chÆ°a Ä‘Ãºng Ä‘á»‹nh dáº¡ng!');
-            document.getElementById('txtEmail').focus();
-            return;
-        }
-
-        if (!password) {
-            alert('Vui lÃ²ng nháº­p máº­t kháº©u!');
-            document.getElementById('txtMatKhau').focus();
-            return;
-        }
-
-        if (!confirmPassword) {
-            alert('Vui lÃ²ng xÃ¡c nháº­n láº¡i máº­t kháº©u!');
-            document.getElementById('txtXacNhanMatKhau').focus();
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            alert('Máº­t kháº©u xÃ¡c nháº­n láº¡i chÆ°a chÃ­nh xÃ¡c!');
-            document.getElementById('txtXacNhanMatKhau').focus();
-            return;
-        }
-
-        if (!birthday) {
-            alert('Vui lÃ²ng nháº­p ngÃ y sinh!');
-            document.getElementById('txtNgaySinh').focus();
-            return;
-        }
-
-        if (!phone) {
-            alert('Vui lÃ²ng nháº­p sá»‘ Ä‘iá»‡n thoáº¡i!');
-            document.getElementById('txtDienThoai').focus();
-            return;
-        }
-
-        if (!accepted) {
-            alert('Báº¡n cáº§n Ä‘á»“ng Ã½ vá»›i chÃ­nh sÃ¡ch vÃ  Ä‘iá»u khoáº£n sá»­ dá»¥ng!');
-            return;
-        }
-
-        var gender = ((document.getElementById('cboSex') || {}).value || '').trim();
-        window.location.href = registerUrl
-            + '?name=' + encodeURIComponent(name)
-            + '&email=' + encodeURIComponent(email)
-            + '&birthday=' + encodeURIComponent(birthday)
-            + '&phone=' + encodeURIComponent(phone)
-            + '&gender=' + encodeURIComponent(gender);
-    };
-
-    window.forgotpass = function () {
-        alert(forgotMessage);
-        closeFancy();
-    };
-
-    document.addEventListener('DOMContentLoaded', function () {
-        [
-            'captchalogin',
-            'captcharegister',
-            'captchachangepass',
-            'txtLoginCaptcha',
-            'txtMaXacThuc',
-            'txtChangePassCaptcha'
-        ].forEach(function (id) {
-            var element = document.getElementById(id);
-            if (!element) {
-                return;
-            }
-
-            var row = element.closest('.form-group');
-            if (row) {
-                row.style.display = 'none';
-            }
-        });
-
-        if (!window.location.hash && typeof window.activaTab === 'function') {
-            window.activaTab(defaultTab);
-        }
-
-        closeFancy();
-        window.setTimeout(closeFancy, 100);
-        window.setTimeout(closeFancy, 500);
-    });
-})();
-</script>
-HTML;
-
-    $html = str_replace('</body>', $overrideScript . "\n</body>", $html);
-
-    return $html;
-}
-
-function betaTrackerTopBarMenuHtml(): string
-{
-    $demoUser = session('demo_user');
-
-    if (is_array($demoUser) && !empty($demoUser['name'])) {
-        $name = e((string) $demoUser['name']);
-        $accountUrl = e(route('account.demo', [], false));
-        $logoutUrl = e(route('auth.demo.logout', [], false));
-
-        return <<<HTML
-<ul class="list-unstyled list-inline pull-right tracker-user-menu" style="margin-bottom: 4px;margin-top: 4px;">
-    <li class="tracker-user-menu__greeting"><a href="{$accountUrl}">Xin chào: {$name} <i class="fa fa-angle-down"></i></a></li>
-    <li class="tracker-user-menu__logout" style="border-left: 1px solid; padding-left: 10px !important;"><a href="{$logoutUrl}" aria-label="Đăng xuất"><i class="fa fa-sign-out"></i></a></li>
-</ul>
-HTML;
-    }
-
-    $loginUrl = e(route('auth.login.form', [], false) . '#login');
-    $registerUrl = e(route('auth.register.form', [], false) . '#register');
-
-    return <<<HTML
-<ul class="list-unstyled list-inline pull-right tracker-user-menu" style="margin-bottom: 4px;margin-top: 4px;">
-    <li class="tracker-user-menu__login"><a href="{$loginUrl}">Đăng nhập</a></li>
-    <li class="tracker-user-menu__register" style="border-left: 1px solid; padding-left: 10px !important;"><a href="{$registerUrl}">Đăng ký</a></li>
-</ul>
-HTML;
-}
-
-function betaTrackerWrappedContentHtml(string $contentHtml, string $title = 'Beta Cinemas', string $shellFile = 'chi-tiet-phim3fbb.html'): string
-{
-    $html = betaTrackerPageHtml($shellFile);
-
-    $html = preg_replace('/<title>\s*.*?\s*<\/title>/is', '<title>' . e($title) . '</title>', $html) ?? $html;
-    $html = betaTrackerInjectTopBarState($html);
-
-    $startMarker = '<div class="margin-none">';
-    $endMarker = '<!-- BEGIN PRE-FOOTER -->';
-    $start = strpos($html, $startMarker);
-    $end = strpos($html, $endMarker);
-
-    if ($start === false || $end === false || $end <= $start) {
-        return $html;
-    }
-
-    return substr($html, 0, $start)
-        . $contentHtml
-        . "\n      "
-        . substr($html, $end);
-}
-
 Route::get('/', function () {
     $siteData = betaSiteData();
 
@@ -974,7 +527,8 @@ Route::get('/dat-ve-demo/{id}', function (Request $request, string $id) {
     $reservedSeats = ['H3', 'H4', 'G5'];
     $preselectedSeats = [];
 
-    $contentHtml = view('seat-selection-content', [
+    return view('booking.demo-seats', [
+        'title' => 'Đặt vé - ' . ($movie['title'] ?? 'Beta Cinemas'),
         'movie' => $movie,
         'selectedDate' => $selectedDate,
         'selectedTime' => $selectedTime,
@@ -984,10 +538,6 @@ Route::get('/dat-ve-demo/{id}', function (Request $request, string $id) {
         'heldSeats' => $heldSeats,
         'reservedSeats' => $reservedSeats,
         'preselectedSeats' => $preselectedSeats,
-    ])->render();
-
-    return view('tracker-import', [
-        'pageHtml' => betaTrackerWrappedContentHtml($contentHtml, 'Äáº·t vÃ© - ' . ($movie['title'] ?? 'Beta Cinemas')),
     ]);
 })->name('booking.demo.seats');
 
@@ -1081,27 +631,19 @@ Route::post('/thanh-toan-demo/{code}', function (string $code) {
 })->name('booking.demo.payment.confirm');
 
 Route::get('/thong-tin-rap', function () {
-    return view('tracker-import', [
-        'pageHtml' => betaTrackerPageHtml('thong-tin-rap.html'),
-    ]);
+    return view('cinemas-info');
 })->name('cinemas.info');
 
 Route::get('/gia-ve', function () {
-    return view('tracker-import', [
-        'pageHtml' => betaTrackerPageHtml('gia-ve.html'),
-    ]);
+    return view('prices');
 })->name('prices.index');
 
 Route::get('/tin-moi-va-uu-dai', function () {
-    return view('tracker-import', [
-        'pageHtml' => betaTrackerPageHtml('tin-moi-va-uu-dai.html'),
-    ]);
+    return view('promotions');
 })->name('promotions.index');
 
 Route::get('/nhuong-quyen', function () {
-    return view('tracker-import', [
-        'pageHtml' => betaTrackerPageHtml('nhuong-quyen.html'),
-    ]);
+    return view('franchise');
 })->name('franchise.index');
 
 Route::get('/thanh-vien', function () {
@@ -1135,9 +677,14 @@ Route::get('/demo-auth/login', function (Request $request) {
 })->name('auth.demo.login');
 
 Route::get('/dang-nhap', function () {
-    return view('tracker-import', [
-        'title' => 'ÄÄƒng nháº­p - Beta Cinemas',
-        'pageHtml' => betaTrackerAuthPageHtml('login'),
+    $siteData = betaSiteData();
+
+    return view('auth', [
+        'title' => 'Đăng nhập - Beta Cinemas',
+        'mode' => 'login',
+        'topLinks' => betaTopLinks($siteData),
+        'navItems' => betaResolvedNavItems($siteData),
+        'footer' => $siteData['footer'] ?? [],
     ]);
 })->name('auth.login.form');
 
@@ -1162,9 +709,14 @@ Route::get('/demo-auth/register', function (Request $request) {
 })->name('auth.demo.register');
 
 Route::get('/dang-ky', function () {
-    return view('tracker-import', [
-        'title' => 'ÄÄƒng kÃ½ - Beta Cinemas',
-        'pageHtml' => betaTrackerAuthPageHtml('register'),
+    $siteData = betaSiteData();
+
+    return view('auth', [
+        'title' => 'Đăng ký - Beta Cinemas',
+        'mode' => 'register',
+        'topLinks' => betaTopLinks($siteData),
+        'navItems' => betaResolvedNavItems($siteData),
+        'footer' => $siteData['footer'] ?? [],
     ]);
 })->name('auth.register.form');
 

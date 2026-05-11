@@ -1,0 +1,1157 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from betacinemas.vn/nhuong-quyen.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Apr 2026 07:52:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>
+	Beta Cinemas chào đón các đối tác nhượng quyền
+</title><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><meta name="apple-itunes-app" content="app-id=1403107666" /><meta name="google-play-app" content="app-id=com.beta.betacineplex" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/css/bootstrap.min.css') }}" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/css/bootstrap-theme.min.css') }}" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/font-awesome/css/font-awesome.min.css') }}" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('beta-mirror/Assets/assets/global/css/components0e34.css?v=33') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/fancybox/source/jquery.fancybox1bce.css?v=6') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/css/layerslider.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/pages/css/style-layer-slider.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/Common/css/style0e34.css?v=33') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/Common/css/css9bf4.css?v=31') }}" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="{{ asset('beta-mirror/Assets/assets/global/plugins/select2/select2.css') }}" /><link href="{{ asset('beta-mirror/Assets/assets/global/css/plugins.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/pages/css/style-shop9bf4.css?v=31') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/layout/css/themes/blue9bf4.css?v=31') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/layout/css/custom71de.css?v=34') }}" rel="stylesheet" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/assets/Specific/smart-app-banner/smart-app-banner.css') }}" type="text/css" media="screen" /><link rel="android-touch-icon" sizes="57x57" href="https://betacinemas.vn/apple-icon-57x57.html" /><link rel="apple-touch-icon" sizes="57x57" href="https://betacinemas.vn/apple-icon-57x57.html" /><link rel="apple-touch-icon" sizes="60x60" href="https://betacinemas.vn/apple-icon-60x60.html" /><link rel="apple-touch-icon" sizes="72x72" href="https://betacinemas.vn/apple-icon-72x72.html" /><link rel="apple-touch-icon" sizes="76x76" href="https://betacinemas.vn/apple-icon-76x76.html" /><link rel="apple-touch-icon" sizes="114x114" href="https://betacinemas.vn/apple-icon-114x114.html" /><link rel="apple-touch-icon" sizes="120x120" href="https://betacinemas.vn/apple-icon-120x120.html" /><link rel="apple-touch-icon" sizes="144x144" href="https://betacinemas.vn/apple-icon-144x144.html" /><link rel="apple-touch-icon" sizes="152x152" href="https://betacinemas.vn/apple-icon-152x152.html" /><link rel="apple-touch-icon" sizes="180x180" href="https://betacinemas.vn/apple-icon-180x180.html" /><link rel="icon" type="image/png" sizes="192x192" href="https://betacinemas.vn/android-icon-192x192.html" /><link rel="icon" type="image/png" sizes="32x32" href="{{ asset('beta-mirror/favicon-32x32.png') }}" /><link rel="icon" type="image/png" sizes="96x96" href="{{ asset('beta-mirror/favicon-96x96.png') }}" /><link rel="icon" type="image/png" sizes="16x16" href="{{ asset('beta-mirror/favicon-16x16.png') }}" /><link rel="manifest" href="https://betacinemas.vn/manifest.html" /><meta name="msapplication-TileColor" content="#ffffff" /><meta name="msapplication-TileImage" content="ms-icon-144x144.html" /><meta name="theme-color" content="#ffffff" />
+    
+
+
+    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/JQuery/jquery-1.11.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/Slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/locales/bootstrap-datepicker.vi.min.js') }}"></script>
+    <script src="{{ asset('beta-mirror/Assets/global/plugins/fancybox/source/jquery.fancybox1bce.js?v=6') }}" type="text/javascript"></script>
+    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
+    <!-- pop up -->
+    <!-- Start mandatories scripts -->
+    <script type="text/javascript" defer="defer" src="{{ asset('beta-mirror/Assets/Common/Plugins/Modernizr/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+    <!-- End mandatories scripts -->
+    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js') }}" type="text/javascript"></script>
+    <!-- slider for products -->
+    <script src="{{ asset('beta-mirror/Assets/Common/Plugins/image-scale/image-scale.js') }}" type="text/javascript"></script>
+    <!-- BEGIN LayerSlider -->
+    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/js/greensock.js') }}" type="text/javascript"></script>
+    <!-- External libraries: GreenSock -->
+    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js') }}" type="text/javascript"></script>
+    <!-- LayerSlider script files -->
+    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js') }}" type="text/javascript"></script>
+    <!-- LayerSlider script files -->
+    <script src="{{ asset('beta-mirror/Assets/assets/frontend/pages/scripts/layerslider-init.js') }}" type="text/javascript"></script>
+    <!-- END LayerSlider -->
+    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/assets/global/plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/jquery-mixitup/jquery.mixitup.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('beta-mirror/Assets/assets/frontend/pages/scripts/portfolio.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('beta-mirror/Assets/assets/frontend/layout/scripts/back-to-top.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/scripts/layout.js') }}"></script>
+
+
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=G-GEWKW597G3"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GEWKW597G3', { send_page_view: false });
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    
+    <!-- End Facebook Pixel Code -->
+    <!-- Google Tag Manager -->
+    <script type="text/javascript">(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PZ45WZ5');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    <script type="text/javascript">(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K5K46MZT');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <style type="text/css">
+        .fb_customer_chat_bubble_animated_no_badge {
+            box-shadow: none !important;
+        }
+
+            .fb_customer_chat_bubble_animated_no_badge:hover {
+                box-shadow: none !important;
+            }
+    </style>
+<meta name="og:url" content="https://betacinemas.vn/nhuong-quyen/beta-cinemas-chao-don-cac-doi-tac-nhuong-quyen.htm" /><meta name="og:type" content="article" /><meta name="og:title" content="Beta Cinemas - Beta Cinemas chào đón các đối tác nhượng quyền" /><meta name="og:description" content="Beta Cinemas tự hào là cụm rạp chiếu phim mang đến trải nghiệm điện ảnh Hollywood với mức giá hợp lý nhất - chỉ từ 40.000/vé xem phim. Được trang bị hệ thống máy móc thiết bị hiện đại, khuôn viên giải trí kết hợp ẩm thực phong phú đa dạng từ nhiều quốc gia - Beta Cineplex đã và đang trở thành địa điểm giải trí lý tưởng cho các nhóm bạn trẻ và gia đình." /><meta name="og:image:url" content="https://files.betacorp.vn/cms/images/2024/04/03/1920x1080-nhuong-quyen-1-135145-030424-63.jpg" /><meta name="og:site_name" content="Beta Cinemas" /><style>
+    .tracker-user-menu .fa-sign-out {
+        font-size: 20px;
+        line-height: 1;
+        vertical-align: middle;
+    }
+    .tracker-user-menu__greeting a {
+        white-space: nowrap;
+    }
+</style>
+</head>
+<body class="corporate">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ45WZ5"
+            height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5K46MZT"
+            height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="fb-root"></div>
+    <script>
+        // Load the SDK asynchronously
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '367174740769877',
+                xfbml: true,
+                version: 'v17.0'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "../connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- Chat box facebook -->
+    <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="372534489582129"
+        logged_in_greeting="Xin chào tín đồ điện ảnh, Beta có thể giúp gì cho bạn? 😍"
+        logged_out_greeting="Xin chào tín đồ điện ảnh, Beta có thể giúp gì cho bạn? 😍">
+    </div>
+    <!-- End Chat box facebook -->
+    
+    
+<div>
+
+    <div class="desktop-panel" id="desktop-panel">
+        <div>
+            <div>
+                <!--//--- Top Panel ---//-->
+                <div id="BodyContent_ctl00_topPanel" class="ecm-panel">
+<script>
+    $(function () {
+        Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+        //jQuery(".fancybox-choosecinema").fancybox({
+        //    afterLoad: function () {
+        //        alert("OK");
+        //    }
+        //});
+        $('#cboTinhThanh').select2({
+            allowClear: true
+        });
+        $("#cboTinhThanh").change(function () {
+
+            var cityId = $("#cboTinhThanh").select2('data').id;
+            var cityName = $("#cboTinhThanh").select2('data').text;
+
+            var aData = [];
+            aData[0] = cityId;
+            aData[1] = cityName;
+
+            var jsonData = JSON.stringify({ aData: aData });
+            $.ajax({
+                type: "POST",
+                url: "../Ajax.aspx/ChooseCinemaByCity",
+                data: jsonData,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $('#cboRap').html(data.d);
+                    $("#cboRap").select2({
+                        allowClear: true
+                    });
+                },
+                error: function () {
+                    alert("Error loading data! Please try again.");
+                }
+            })//done handler
+                .done(function (msg) {
+                });
+
+        });
+        $("#cboRap").change(function () {
+
+            var cinemaId = $("#cboRap").select2('data').id;
+            var cinemaName = $("#cboRap").select2('data').text;
+
+            if (cinemaId !== "0") {
+                var aData = [];
+                aData[0] = cinemaId;
+                aData[1] = cinemaName;
+
+                var jsonData = JSON.stringify({ aData: aData });
+                $.ajax({
+                    type: "POST",
+                    url: "../Ajax.aspx/ChooseCinema",
+                    data: jsonData,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        RedirectUrl(window.location.href);
+                        //window.location.href = window.location.href;
+                    },
+                    error: function () {
+                        alert("Error loading data! Please try again.");
+                    }
+                })//done handler
+                    .done(function (msg) {
+                    });
+            }
+        });
+
+        localStorage["lang"] = $('#hfLanguage').val();
+    });
+    function ChooseCinema(cinemaId, cinemaName) {
+
+        gtag('event', 'select_theater', {
+            'cinema_id': cinemaId,
+            'cinema_name': cinemaName
+        });
+
+        var aData = [];
+        aData[0] = cinemaId;
+        aData[1] = cinemaName;
+
+        var jsonData = JSON.stringify({ aData: aData });
+        $.ajax({
+            type: "POST",
+            url: "../Ajax.aspx/ChooseCinema",
+            data: jsonData,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                //$('#tab-content').html(data.d);
+                window.location.href = window.location.href;
+            },
+            error: function () {
+                alert("Error loading data! Please try again.");
+            }
+        })//done handler
+            .done(function (msg) {
+            });
+    };
+    function RedirectUrl(url) {
+        if (url !== "") {
+            window.location.href = url;
+            location.reload();
+        }
+    };
+    function RedirectUrl2(url) {
+        if (url !== "") {
+            window.location.href = url;
+        }
+    };
+    function logout() {
+        var aData = [];
+        var jsonData = JSON.stringify({ aData: aData });
+        $.ajax({
+            type: "POST",
+            url: "../Ajax.aspx/Logout",
+            data: jsonData,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                RedirectUrl(window.location.href);
+            },
+            error: function () {
+                alert("Error loading data! Please try again.");
+            }
+        })//done handler
+            .done(function (msg) {
+            });
+    }
+    function changelang(lang) {
+        var aData = [];
+        aData[0] = lang;
+        var jsonData = JSON.stringify({ aData: aData });
+        $.ajax({
+            type: "POST",
+            url: "../Ajax.aspx/ChangeLanguage",
+            data: jsonData,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                RedirectUrl(window.location.href);
+            },
+            error: function () {
+                alert("Error loading data! Please try again.");
+            }
+        })//done handler
+            .done(function (msg) {
+                localStorage["lang"] = lang;
+            });
+    }
+
+    $(document).ready(function () {
+        // Lặp qua tất cả các thẻ li trong div
+        $('div.header-navigation ul li a').each(function () {
+            // Kiểm tra nếu href của thẻ a trùng với URL hiện tại của trang
+            if (window.location.pathname === $(this).attr('href')) {
+                // Thêm class "active" vào thẻ li chứa thẻ a
+                $(this).parent('li').addClass('active');
+            }
+        });
+    });
+</script>
+<input type="hidden" id="hfLanguage" value="vie"/>
+<div class="main-header">
+    <!-- BEGIN TOP BAR -->
+<div class="pre-header">
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN TOP BAR MENU -->
+            <div class="col-md-16 col-sm-16 additional-nav">
+                <div class="pull-right padding-left-10">
+                    
+                    <a id="BodyContent_ctl00_ctl03_hlEn" onclick="changelang(&#39;eng&#39;);"><img src="{{ asset('beta-mirror/Assets/Common/icons/united-kingdom.png') }}" class="img-responsive"/></a>
+                </div>
+                @include('partials.tracker-topbar-menu')
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END TOP BAR MENU -->
+        </div>
+    </div>        
+</div>
+<!-- END TOP BAR -->
+<!-- BEGIN HEADER -->
+<div class="header">
+    <div class="container">
+        <div class="row">
+        <a class="site-logo" href="{{ url('/') }}"><img alt="" style="height: 55px;" src="{{ asset('beta-mirror/Assets/Common/logo/logo.png') }}" alt="Beta Cinemas"/></a>
+
+        <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+        <div class="top-cart-block">
+            <div class="top-cart-info">
+                <!-- BEGIN NAVIGATION -->
+                <div class="header-navigation font-transform-inherit font-family-san menu-cinema">
+                    <ul>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle no-padding" data-toggle="dropdown" data-target="#" href="javascript:;">Beta Thái Nguyên <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Hà Nội <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('1f0b7d55-9dd6-4c46-bd4d-3b50024d14ec', 'Beta Thanh Xuân');">Beta Thanh Xuân</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('86fa4c35-8d26-4f60-9cf2-fbaaba0ee25d', 'Beta Mỹ Đình');">Beta Mỹ Đình</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('8bdac2c9-2cc7-464b-8cff-4bc41403b74f', 'Beta Đan Phượng');">Beta Đan Phượng</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('94d6c0ca-125b-43d0-8f65-9f0880b90beb', 'Beta Giải Phóng');">Beta Giải Phóng</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('ea1c1507-9560-49ff-b5e7-3fc94d5dd409', 'Beta Xuân Thủy');">Beta Xuân Thủy</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('381f745f-c110-4d0c-9117-3a79f36ba9c4', 'Beta Tây Sơn');">Beta Tây Sơn</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>TP. Hồ Chí Minh <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('0fdbe392-734d-402b-9399-d22bd37b6cee', 'Beta Quang Trung');">Beta Quang Trung</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('a4ed71b7-2af3-46d4-acff-b7778fb2c91d', 'Beta Empire Bình Dương');">Beta Empire Bình Dương</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('98b7a985-235f-4488-a795-4a9b9577a70a', 'Beta Ung Văn Khiêm');">Beta Ung Văn Khiêm</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('3aa17be3-387c-4271-a313-2e5bb069b509', 'Beta Hồ Tràm');">Beta Hồ Tràm</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('65966bb8-ec4a-4ef6-bd0d-429deb2b563e', 'Beta Tân Uyên');">Beta Tân Uyên</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('8f2c1f5f-d274-4081-9c87-441e13dab3ee', 'Beta Trần Quang Khải');">Beta Trần Quang Khải</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>An Giang <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('6e476e92-a262-4792-8120-daeb4433c025', 'Beta TRMall Phú Quốc');">Beta TRMall Phú Quốc</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Đồng Nai <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('6af5c313-0e3e-4e72-86d6-2e4ed45e7e35', 'Beta Biên Hòa');">Beta Biên Hòa</a></li>
+                                                
+                                                    <li><a onclick="ChooseCinema('d1678477-49ce-4417-bc39-a080cad0e9e8', 'Beta Long Khánh');">Beta Long Khánh</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Khánh Hòa <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('b0e45ea2-443f-404f-9412-b97a6001f157', 'Beta Nha Trang');">Beta Nha Trang</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Thái Nguyên <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('dfd9306f-fbc8-4807-a8c6-5e6c3f7ad71c', 'Beta Thái Nguyên');">Beta Thái Nguyên</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Thanh Hóa <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('7d4980ac-eb8f-4bcb-97eb-77cbcd75dba2', 'Beta Thanh Hóa');">Beta Thanh Hóa</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Bắc Ninh <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('ed75f9eb-4f2c-4448-aef8-7804178df564', 'Beta Bắc Giang');">Beta Bắc Giang</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Lào Cai <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('dac58b9b-f8f7-4f75-8586-2b43fb8824c0', 'Beta Lào Cai');">Beta Lào Cai</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                                    <li class='dropdown-submenu'>
+                                        <a>Phú Thọ <i class='fa fa-angle-right'></i></a>
+                                        
+                                            <ul class="dropdown-menu" role="menu">
+                                                
+                                                    <li><a onclick="ChooseCinema('6bffc6ab-b2ac-408c-a92e-b7b3a0832075', 'Beta Vĩnh Yên');">Beta Vĩnh Yên</a></li>
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END NAVIGATION -->
+            </div>
+        </div>
+        <!-- BEGIN NAVIGATION -->
+        <div class="header-navigation pull-right font-transform-inherit">
+            <ul>
+                
+                        
+                        <li id="BodyContent_ctl00_ctl03_rptMenu2_liNoChild_0">
+                            <a href="{{ route('schedule.index', [], false) }}">LỊCH CHIẾU THEO RẠP</a>
+                        </li>
+                    
+                        
+                        <li id="BodyContent_ctl00_ctl03_rptMenu2_liNoChild_1">
+                            <a href="{{ route('movies.index', [], false) }}">PHIM</a>
+                        </li>
+                    
+                        
+                        <li id="BodyContent_ctl00_ctl03_rptMenu2_liNoChild_2">
+                            <a href="{{ route('cinemas.info', [], false) }}">RẠP</a>
+                        </li>
+                    
+                        
+                        <li id="BodyContent_ctl00_ctl03_rptMenu2_liNoChild_3">
+                            <a href="{{ route('prices.index', [], false) }}">GIÁ VÉ</a>
+                        </li>
+                    
+                        
+                        <li id="BodyContent_ctl00_ctl03_rptMenu2_liNoChild_4">
+                            <a href="{{ route('promotions.index', [], false) }}">TIN MỚI VÀ ƯU ĐÃI</a>
+                        </li>
+                    
+                        
+                        <li id="BodyContent_ctl00_ctl03_rptMenu2_liNoChild_5">
+                            <a href="{{ route('franchise.index', [], false) }}">NHƯỢNG QUYỀN</a>
+                        </li>
+                    
+                        
+                        <li id="BodyContent_ctl00_ctl03_rptMenu2_liNoChild_6">
+                            <a href="{{ route('member.index', [], false) }}">THÀNH VIÊN</a>
+                        </li>
+                    
+
+                <!-- BEGIN TOP SEARCH -->
+                
+                <!-- END TOP SEARCH -->
+            </ul>
+        </div>
+        <!-- END NAVIGATION -->
+        </div>
+    </div>
+</div>
+<!-- Header END -->
+</div>
+<a href="#popup_choosecinema" class="fancybox-choosecinema"></a>
+<div id="popup_choosecinema" style="display: none;width: 700px; margin-top: -200px; background-color: #005198; border-radius: 30px !important">
+    <div class="modal-body text-center">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label style="color: #fff">Tỉnh/ Thành phố</label>
+                    <select id="cboTinhThanh" class="form-control" data-placeholder="Chọn Tỉnh/ Thành phố" tabindex="1">
+                        <option class="option-item" value="0">Chọn Tỉnh/ Thành phố</option>
+                        
+                            <option class="option-item" value="5f672cb2-d9c2-442e-a8e7-12939fec65ab">Hà Nội</option>
+                        
+                            <option class="option-item" value="1c5f58bb-f1ac-4ca0-8df8-b65869d69b7f">TP. Hồ Chí Minh</option>
+                        
+                            <option class="option-item" value="e1d557c6-04cd-4eea-9ba0-ae99b00f203b">An Giang</option>
+                        
+                            <option class="option-item" value="a0f4b33c-58ce-4047-b54f-2fa28f47311e">Đồng Nai</option>
+                        
+                            <option class="option-item" value="46015d6d-3f96-4dad-a487-415be85dd24d">Khánh Hòa</option>
+                        
+                            <option class="option-item" value="3fd25e4b-8f3e-4d39-8a8a-a647627d8459">Thái Nguyên</option>
+                        
+                            <option class="option-item" value="f4b0a1f8-95d0-46dd-8595-7b1d9e41985c">Thanh Hóa</option>
+                        
+                            <option class="option-item" value="cbc4ee4d-fb11-466e-91f5-07b1216208a1">Bắc Ninh</option>
+                        
+                            <option class="option-item" value="ed582715-4369-435f-833c-33dd026af238">Lào Cai</option>
+                        
+                            <option class="option-item" value="3da52289-9fa5-44a2-b0eb-badc2b59ae46">Phú Thọ</option>
+                        
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label style="color: #fff">Tên rạp</label>
+                    <select id="cboRap" class="form-control" data-placeholder="Chọn rạp phim" tabindex="1">
+
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+    </div>
+</div></div>
+            </div>
+            <div class="margin-none">
+                <!--//--- Time Panel ---//-->
+                <div id="BodyContent_ctl00_sliderPanel" class="ecm-panel sliderpanel"></div>
+                <div id="BodyContent_ctl00_mainPanel" class="ecm-panel" style="position: relative;">
+
+<style>
+    table {
+        border-bottom-width: 1px;
+    }
+
+    img {
+        /*display: block;*/
+        max-width: 100%;
+        /*height: auto !important;
+        width: auto !important;*/
+    }
+</style>
+
+<a href="#popup_getvouchercode" class="fancybox-getvouchercode"></a>
+<div id="popup_getvouchercode" style="display: none;width: 500px; margin-top: -200px;">
+    <div class="modal-body text-center">
+        <div class="row">
+            <label id="lblFirstMessage" class="col-md-16" style="font-family: Montserrat;font-size: 20px;font-weight: 600;font-style: normal;font-stretch: normal;line-height: normal;letter-spacing: normal;text-align: center;color: #005198;"></label>
+            <label id="lblSecondMessage" class="col-md-16" style="font-family: SourceSansPro;font-size: 18px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: normal;letter-spacing: normal;text-align: center;color: #1e1f28;padding-bottom: 30px;"></label>
+        </div>
+        <div class="row">
+            <div class=" text-center">
+                <input type="hidden" id="hdPopupStatus" name="hdPopupStatus" value="">
+                <button type="button" onclick="closeFancyPopup()" class="btn btn-2 btn-mua-ve"><span id="spnPopupButton"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<link href="{{ asset('beta-mirror/Assets/Common/Plugins/LightboxImage/swipebox/css/swipebox.css') }}" rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+
+    function PrintElem(elem) {
+
+        document.getElementById('btnPrintContent').style.visibility = 'hidden';
+        document.getElementById('btnIncreaseFontSize').style.visibility = 'hidden';
+        document.getElementById('btnDecreaseFontSize').style.visibility = 'hidden';
+
+        Popup($(elem).html());
+
+        document.getElementById('btnPrintContent').style.visibility = '';
+        document.getElementById('btnIncreaseFontSize').style.visibility = '';
+        document.getElementById('btnDecreaseFontSize').style.visibility = '';
+    }
+
+    function Popup(data) {
+        var currentLocation = window.location;
+        var mywindow = window.open('', 'my div', 'height=600,width=800');
+        mywindow.document.write('<html><head><title>In bài viết</title>');
+        mywindow.document.write('<style>
+    .tracker-user-menu .fa-sign-out {
+        font-size: 20px;
+        line-height: 1;
+        vertical-align: middle;
+    }
+    .tracker-user-menu__greeting a {
+        white-space: nowrap;
+    }
+</style>
+</head><body>');
+        mywindow.document.write('<p style="color: #004175;font-weight: bold;font-style: italic;">Link nội dung: <a style="color: #004175;text-decoration: none;" href="' + currentLocation + '">' + currentLocation + '</a></p></body></html>');
+        mywindow.document.write(data);
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+
+    function getVoucherCode() {
+        var jsonData = JSON.stringify({ aData: '' });
+        $.ajax({
+            type: "POST",
+            url: "/Ajax.aspx/GetVoucherCode",
+            data: jsonData,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                if (data.d === "") {
+                    document.getElementById('lblFirstMessage').innerHTML = 'Có lỗi khi xử lý';
+                    document.getElementById('lblSecondMessage').innerHTML = '';
+                    document.getElementById('hdPopupStatus').value = -1;
+                    document.getElementById('spnPopupButton').textContent = 'Đóng';
+                    jQuery('.fancybox-getvouchercode').fancybox({afterLoad: function() {}}).trigger('click');
+                } else {
+                    var obj = JSON.parse(data.d);
+                    document.getElementById('lblFirstMessage').innerHTML = obj.FirstMessage;
+                    document.getElementById('lblSecondMessage').innerHTML = obj.SecondMessage;
+                    document.getElementById('hdPopupStatus').value = obj.Status;
+                    if (obj.Status == -1) {
+                        document.getElementById('spnPopupButton').textContent = 'Đóng';
+                    }
+                    if (obj.Status == 0) {
+                        document.getElementById('spnPopupButton').textContent = 'Danh sách voucher public';
+                    }
+                    if (obj.Status == 1) {
+                        document.getElementById('spnPopupButton').textContent = 'Danh sách voucher của bạn';
+                    }
+                    if (obj.Status == 2) {
+                        document.getElementById('spnPopupButton').textContent = 'Danh sách voucher public';
+                    }
+                    jQuery('.fancybox-getvouchercode').fancybox({afterLoad: function() {}}).trigger('click');
+                }
+            },
+            error: function () {
+                alert("Error loading data! Please try again.");
+            }
+        })
+            .done(function (msg) {
+        });
+    }
+    function closeFancyPopup() {
+        if (document.getElementById('hdPopupStatus').value == -1) {
+            $.fancybox.close();
+        }
+        if (document.getElementById('hdPopupStatus').value == 0) {
+            window.location.href = '{{ url('/') }}';
+        }
+        if (document.getElementById('hdPopupStatus').value == 1) {
+            window.location.href = 'login-2.html#voucher';
+        }
+        if (document.getElementById('hdPopupStatus').value == 2) {
+            window.location.href = '{{ url('/') }}';
+        }
+    }
+</script>
+
+<div id="BodyContent_ctl00_ctl05_storylineDetails">
+
+</div>
+<!--//========================== NEWS INFO ================================//-->
+<div class="news-info margin-top-20 margin-sm-top-20 margin-xs-top-20 padding-left-15 padding-right-15">
+    <div id="printContent">
+        <div class="">
+            <div id="BodyContent_ctl00_ctl05_showImage" class="text-center" style="margin-bottom: 10px; text-align: center; display: none;">
+                <a href='https://files.betacorp.vn/cms/images/2024/04/03/1920x1080-nhuong-quyen-1-135145-030424-63.jpg' title="" class="swipebox">
+                    <img src='https://files.betacorp.vn/cms/images/2024/04/03/1920x1080-nhuong-quyen-1-135145-030424-63.jpg' class="img-responsive" style="display: initial;" /></a>
+                <p style="font-style: italic"></p>
+            </div>
+            <br />
+            <h3 class="no-margin">
+                Beta Cinemas chào đón các đối tác nhượng quyền
+            </h3>
+            <div class="fb-like hidden-xs" data-href="https://betacinemas.vn/nhuong-quyen/beta-cinemas-chao-don-cac-doi-tac-nhuong-quyen.htm" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            <h4>
+                <span id="BodyContent_ctl00_ctl05_newsContent"></span>
+            </h4>
+        </div>
+        <div class=" font-family-san font-14" id="divNewsDetails">
+            
+                    
+                    <h2 align="center"><span style="color:#000000;"><strong>LỊCH SỬ PH&Aacute;T TRIỂN</strong></span></h2>
+
+<p>&nbsp;</p>
+
+<p><img alt="" src="https://files.betacorp.vn/media/images/2025/02/17/update-ho-so-nang-luc-beta-group-2025-pptx-165623-170225-44.png" style="width: 100%; height: 100%;" /></p>
+
+<p>&nbsp;</p>
+
+<h2 align="center"><span style="color:#000000;"><strong>CHUỖI RẠP BETA CINEMAS</strong></span></h2>
+
+<p>&nbsp;</p>
+
+<p style="text-align: center;"><img alt="" src="https://files.betacorp.vn/media/images/2025/07/10/screenshot-2025-07-10-at-15-47-12-154721-100725-72.png" style="width: 100%; height: 100%;" /></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<h2 align="center"><span style="color:#000000;"><strong>TẠI SAO CHỌN BETA CINEMAS?</strong></span></h2>
+
+<p>&nbsp;</p>
+
+<p><span style="color:#FF8C00;"><strong>1. ĐI ĐẦU V&Agrave; LU&Ocirc;N DẪN ĐẦU</strong></span></p>
+
+<p>Beta Cinemas l&agrave; chuỗi rạp&nbsp;chiếu phim&nbsp;<strong><em>dẫn đầu trong ph&acirc;n kh&uacute;c thị trường trung cấp</em>&nbsp;</strong>v&agrave; l&agrave; chuỗi rạp đầu ti&ecirc;n&nbsp;ho&agrave;n thiện ch&iacute;nh&nbsp;s&aacute;ch&nbsp;nhượng quyền thương hiệu, tiềm năng ph&aacute;t triển mạnh&nbsp;nhất trong thị trường.</p>
+
+<p><span style="color:#FF8C00;"><strong>2. ĐỘI NGŨ CHUY&Ecirc;N NGHIỆP&nbsp;</strong></span></p>
+
+<p>M&ocirc; h&igrave;nh đầu tư v&agrave; đội ngũ quản l&yacute; chuy&ecirc;n nghiệp. Đ&agrave;o tạo nh&acirc;n sự thường xuy&ecirc;n để đảm bảo duy tr&igrave; chất lượng dịch vụ.</p>
+
+<p><span style="color:#FF8C00;"><strong>3. CHI PH&Iacute; THẤP, HO&Agrave;N VỐN NHANH</strong></span></p>
+
+<p>Với kinh nghiệm nhiều năm trong đầu tư &amp; vận h&agrave;nh c&aacute;c rạp chiếu phim tại Việt Nam, Beta Media lu&ocirc;n đi đầu trong việc sử dụng hiệu quả chi ph&iacute; đầu tư &amp; tối ưu việc vận h&agrave;nh kinh doanh. Thời gian ho&agrave;n vốn nhanh từ 3 &ndash; 5 năm, tỷ suất lợi nhuận cao, ổn định v&agrave; dịch chuyển theo hướng t&iacute;ch cực.</p>
+
+<p><span style="color:#FF8C00;"><strong>4. SẢN PHẨM ĐA DẠNG</strong></span></p>
+
+<p>Với 3 m&ocirc; h&igrave;nh nhượng quyền rạp phim, ph&ugrave; hợp với mong muốn của c&aacute;c nh&agrave; đầu tư v&agrave; thị trường.</p>
+
+<p><span style="color:#FF8C00;"><strong>6. HỖ TRỢ TỐI ĐA</strong></span></p>
+
+<p>Hỗ trợ truyền th&ocirc;ng, nguy&ecirc;n vật liệu, danh mục phim, tư vấn kinh doanh, quản l&yacute; vận h&agrave;nh,...</p>
+
+<p>&nbsp;</p>
+
+<h2 align="center"><span style="color:#000000;"><strong>QUYỀN LỢI CỦA ĐỐI T&Aacute;C</strong></span></h2>
+
+<p><span style="color:#FF8C00;"><strong>1. QUYỀN SỬ DỤNG THƯƠNG HIỆU</strong></span></p>
+
+<p>Được sử dụng thương hiệu của Beta Cinemas để mở rạp v&agrave; quảng c&aacute;o truyền th&ocirc;ng.</p>
+
+<p><span style="color:#FF8C00;"><strong>2. TƯ VẤN THIẾT KẾ X&Acirc;Y DỰNG</strong></span></p>
+
+<p>Hỗ trợ tư vấn&nbsp;thiết kế x&acirc;y dựng, gi&aacute;m s&aacute;t thi c&ocirc;ng x&acirc;y dựng theo đ&uacute;ng&nbsp;ti&ecirc;u chuẩn của&nbsp;Beta Cinemas đảm bảo hiệu suất đầu tư hiệu quả.</p>
+
+<p><span style="color:#FF8C00;"><strong>3. SẢN PHẨM, NGUY&Ecirc;N VẬT LIỆU</strong></span></p>
+
+<p>Sản phẩm thường xuy&ecirc;n được cập nhật v&agrave; n&acirc;ng cấp. Nhập nguy&ecirc;n vật liệu ch&iacute;nh gốc với gi&aacute; ưu đ&atilde;i nhất theo chuỗi của Beta Cinemas.</p>
+
+<p><span style="color:#FF8C00;"><strong>4. CHUYỂN NHƯỢNG M&Aacute;Y M&Oacute;C &amp; C&Ocirc;NG THỨC CHẾ BIẾN</strong></span></p>
+
+<p>Được chuyển nhượng to&agrave;n bộ hệ thống m&aacute;y m&oacute;c thiết bị c&ugrave;ng với c&ocirc;ng thức chế biến.</p>
+
+<p><span style="color:#FF8C00;"><strong>5. Đ&Agrave;O TẠO, QUẢN L&Yacute; NH&Acirc;N SỰ</strong></span></p>
+
+<p>Đ&agrave;o tạo v&agrave; quản l&yacute; nh&acirc;n sự thường xuy&ecirc;n để đảm bảo duy tr&igrave; chất lượng dịch vụ &amp; tối ưu chi ph&iacute; hoạt động.</p>
+
+<p><span style="color:#FF8C00;"><strong>6. NGUỒN PHIM HOLLYWOOD</strong></span></p>
+
+<p>Nguồn phim được cập nhật li&ecirc;n tục v&agrave; mới nhất theo danh mục phim đang hiện c&oacute; tại Việt Nam v&agrave; thế giới. Tỉ lệ chia sẻ được ưu đ&atilde;i theo chuỗi của Beta Cinemas.</p>
+
+<p><span style="color:#FF8C00;"><strong>7. KHAI TH&Aacute;C QUẢNG C&Aacute;O</strong></span></p>
+
+<p>Beta Cinemas&nbsp;chịu tr&aacute;ch nhiệm&nbsp;khai th&aacute;c quảng c&aacute;o&nbsp;thương mại tại rạp đối t&aacute;c. Doanh thu quảng c&aacute;o được hai b&ecirc;n chia sẻ&nbsp;theo từng&nbsp;g&oacute;i hợp đồng&nbsp;cụ thể.</p>
+
+<p><span style="color:#FF8C00;"><strong>8. HỖ TRỢ TRUYỀN TH&Ocirc;NG</strong></span></p>
+
+<p>Được hưởng c&aacute;c chương tr&igrave;nh truyền th&ocirc;ng chung của thương hiệu, được tư vấn về PR, marketing, kế hoạch ph&aacute;t triển của rạp.&nbsp;</p>
+
+<p align="right">&nbsp;</p>
+
+<h2 align="center"><span style="color:#000000;"><strong>CHI PH&Iacute; NHƯỢNG QUYỀN</strong></span></h2>
+
+<p><strong>1. NHƯỢNG QUYỀN THƯƠNG HIỆU</strong></p>
+
+<p><strong>2. TƯ VẤN THIẾT KẾ 2D-3D &amp; SET UP RẠP TI&Ecirc;U CHUẨN</strong></p>
+
+<p><strong>3. QUẢNG C&Aacute;O TRUYỀN TH&Ocirc;NG</strong></p>
+
+<p><strong>4. Đ&Agrave;O TẠO NH&Acirc;N SỰ CHUY&Ecirc;N NGHIỆP</strong></p>
+
+<p><strong>5. HỆ THỐNG M&Aacute;Y M&Oacute;C TI&Ecirc;U CHUẨN QUỐC TẾ</strong></p>
+
+<p><strong>6. QUẢN L&Yacute; HỆ THỐNG PHẦN MỀM ĐỘC QUYỀN</strong></p>
+
+<p>&nbsp;</p>
+
+<h2 align="center"><span style="color:#000000;"><strong>TIỀM LỰC ĐỐI T&Aacute;C</strong></span></h2>
+
+<p><span style="color:#FF8C00;"><strong>1. VỊ TR&Iacute; TIỀM NĂNG</strong></span></p>
+
+<p>C&aacute;c khu vực thuận tiện giao th&ocirc;ng, mật độ d&acirc;n cư cao (70 ng&agrave;n d&acirc;n cư), c&oacute; trường học, si&ecirc;u thị xung quanh. Đặc biệt c&aacute;c khu vực huyện lỵ&nbsp;tại c&aacute;c th&agrave;nh phố nhỏ đang l&agrave; địa điểm ph&ugrave; hợp nhất.</p>
+
+<p><span style="color:#FF8C00;"><strong>2.</strong>&nbsp;<strong>MẶT BẰNG TỐI ƯU</strong></span></p>
+
+<ul>
+	<li>Diện t&iacute;ch tối thiểu 350m2 cho tới 2000m2 t&ugrave;y thuộc số ph&ograve;ng chiếu</li>
+	<li>Số ph&ograve;ng chiếu từ 2 tới&nbsp;8 ph&ograve;ng tuy theo m&ocirc; h&igrave;nh rạp kinh doanh</li>
+	<li>Chiều cao th&ocirc;ng thủy mặt bằng: 5m</li>
+	<li>Thời hạn sử dụng mặt bằng: tối thiểu&nbsp;5 năm</li>
+</ul>
+
+<p><span style="color:#FF8C00;"><strong>3.&nbsp;T&Agrave;I CH&Iacute;NH</strong></span></p>
+
+<p>Ng&acirc;n s&aacute;ch đầu tư cho 3 m&ocirc; h&igrave;nh kh&aacute;c nhau, trong đ&oacute; :&nbsp;</p>
+
+<ul>
+	<li>Beta Cinemas Diamond từ 6&nbsp;tỉ/ph&ograve;ng chiếu</li>
+	<li>
+	<p>Beta Cinemas Platinum từ 5 tỉ/ph&ograve;ng chiếu</p>
+	</li>
+	<li>Beta Cinemas Gold&nbsp;từ 4&nbsp;tỉ/ph&ograve;ng chiếu</li>
+</ul>
+
+<p>Chi ph&iacute; đ&atilde; bao gồm ph&iacute; nhượng quyền v&agrave; đầu tư x&acirc;y dựng, trang thiết bị để đi v&agrave;o vận h&agrave;nh kinh doanh.</p>
+
+<h2 align="center"><span style="color:#000000;"><strong>QUY TR&Igrave;NH THAM GIA</strong></span></h2>
+
+<h2 align="center">&nbsp;</h2>
+
+<p><img alt="" src="https://files.betacorp.vn/media/images/2024/06/20/quytrinh-final-164314-200624-13.png" style="width: 100%; height: 100%;" /></p>
+
+<p>&nbsp;</p>
+
+<h2 align="center"><span style="color:#000000;"><strong>ĐĂNG K&Iacute; THAM GIA</strong></span></h2>
+
+<p>&nbsp;</p>
+
+<p>Beta Cinemas lu&ocirc;n ch&agrave;o đ&oacute;n c&aacute;c c&aacute; nh&acirc;n, tổ chức c&oacute; chung định hướng ph&aacute;t triển m&ocirc; h&igrave;nh kinh doanh rạp chiếu phim, h&igrave;nh th&agrave;nh phong c&aacute;ch, lối sống văn minh hiện đại.</p>
+
+<p><em><strong>H&atilde;y hợp t&aacute;c c&ugrave;ng Beta Cinemas để nắm bắt, dẫn đầu xu hướng v&agrave; đột ph&aacute;!</strong></em></p>
+
+<p>&nbsp;</p>
+
+<p><em><a href="https://betagroup.vn/nhuong-quyen"><strong>LI&Ecirc;N HỆ ĐỂ NẮM BẮT CƠ HỘI ĐẦU TƯ NGAY H&Ocirc;M NAY!!!</strong></a></em></p>
+
+<p><strong>Hotline: 1800 646 420</strong></p>
+
+<p><strong>Email: <a href="https://betacinemas.vn/cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="234551424d404b4a50466341465742404a4d464e42500d554d">[email&#160;protected]</a></strong></p>
+<coccocgrammar></coccocgrammar><coccocgrammar></coccocgrammar>
+                        <div class="clearfix margin-bottom-10" style="margin-bottom: 10px;"></div>
+                    
+                    
+                    
+                
+        </div>
+        <div class="" style="display: none">
+            <div class="savis-news-info-layout">
+                <div class="news-info-head-style-1">
+                    <div class="news-info-title">
+                        <span style="font-weight: bold;"><i class="fa fa-paperclip" aria-hidden="true"></i>&nbsp; Tệp đính kèm</span>
+                    </div>
+                </div>
+                <div class="news-info-body-style-1">
+                    <div class="row">
+                        <ol>
+                            
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <p class="pull-right">
+                <strong>
+                    <span id="BodyContent_ctl00_ctl05_lblTacgia"></span></strong>
+                    <span id="BodyContent_ctl00_ctl05_lblNguonThongTin"></span>
+            </p>
+        </div>
+        <div class=" text-center" style="display:none;">
+            <div class="form-group">
+                <button type="button" onclick="getVoucherCode();" class="btn btn-2 btn-mua-ve">
+                    Lấy mã voucher</button>
+            </div>
+        </div>
+        <div class=" ">
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_sharing_toolbox pull-right"></div>
+        </div>
+        <div id="BodyContent_ctl00_ctl05_newInfoComment">
+
+</div>
+    </div>
+
+    <div class="" style="display: none">
+        <div class="row">
+            <div>
+                <div class="" style="border-bottom: none !important">
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            <a style="font-size: 20px !important">Từ khóa</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="" style="border: none;">
+                    <div class="row">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-16 margin-bottom-35">
+        <div class="fb-comments" data-href="https://betacinemas.vn/nhuong-quyen/beta-cinemas-chao-don-cac-doi-tac-nhuong-quyen.htm" data-numposts="5" data-width="auto" data-colorscheme="light"></div>
+    </div>
+    <!--Tin bài liên quan-->
+    <div class="row" style="display: normal">
+        <div class="col-lg-16">
+            <h2 class="text-uppercase margin-bottom-30">Tin tức khác</h2>
+            
+                    <div class="col-lg-4 col-md-8 col-sm-8 col-xs-16">
+                        <a href="https://betacinemas.vn/tin-ben-le/muon-mau-beta-van-qua-xinh-xiu.html">
+                            <div class="mix-inner" style="height: 107.5px; border-radius: 10px 10px 10px 10px !important;">
+                                <img src="https://files.betacorp.vn/cms/images/2024/04/03/mer-resize-545-x-415-144213-030424-51.png" class="scale" />
+                            </div>
+                        </a>
+                        <h4 class="padding-top-10 padding-bottom-10 text-center" style="height: 100px; overflow: hidden;">
+                            <a style="color: #000000" title="MUÔN MÀU BETA - VẠN QUÀ XINH XỈU" href="https://betacinemas.vn/tin-ben-le/muon-mau-beta-van-qua-xinh-xiu.html">MUÔN MÀU BETA - VẠN QUÀ XINH XỈU</a>
+                        </h4>
+                    </div>
+                
+        </div>
+    </div>
+
+    <div class="col-xs-16 hidden-xs hidden-sm hidden-md hidden-lg margin-bottom-20" style="display: normal">
+        <div class="">
+            <ul class="nav nav-pills">
+                <li class="active font-transform-uppercase">
+                    <a>Tin tức khác</a>
+                </li>
+            </ul>
+        </div>
+        <div class="">
+            
+                    <div class="item">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <a class="color1 font-15" title="MUÔN MÀU BETA - VẠN QUÀ XINH XỈU" href="https://betacinemas.vn/tin-ben-le/muon-mau-beta-van-qua-xinh-xiu.html">MUÔN MÀU BETA - VẠN QUÀ XINH XỈU
+                        </a>
+                    </div>
+                
+        </div>
+    </div>
+</div></div>
+            </div>
+        </div>
+      <!-- BEGIN PRE-FOOTER -->
+      <div class="pre-footer">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-3 col-sm-16 pre-footer-col">
+					<div id="BodyContent_ctl00_bottomPanel" class="ecm-panel">
+<ul class="list-unstyled">
+    <li style="margin-bottom: 25px;" class="col-lg-16 col-md-16 col-xs-16 margin-xs-bottom-25">
+        <a class="site-logo" href="{{ url('/') }}"><img style="width: 120px;" alt="" src="{{ asset('beta-mirror/Assets/Common/logo/logo-white.png') }}" alt="Beta Cinemas"/></a>
+    </li>
+    
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-3" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-3')">Tuyển dụng</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-1" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-1')">Giới thiệu</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-2" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-2')">Liên hệ</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-4" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-4')">F.A.Q</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/gioi-thieu/trach-nhiem-xa-hoi-va-cong-dong.html" onclick="RedirectUrl('https://betacinemas.vn/gioi-thieu/trach-nhiem-xa-hoi-va-cong-dong.html')">Hoạt động xã hội</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-7" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-7')">Điều khoản sử dụng</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/dieu-khoan/dieu-khoan-thanh-toan.html" onclick="RedirectUrl('https://betacinemas.vn/dieu-khoan/dieu-khoan-thanh-toan.html')">Chính sách thanh toán, đổi trả - hoàn vé</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-8" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-8')">Liên hệ quảng cáo</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-9" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-9')">Điều khoản bảo mật</a></li>
+            
+        
+            <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/dieu-khoan/huong-dan-dat-ve-online.html" onclick="RedirectUrl('https://betacinemas.vn/dieu-khoan/huong-dan-dat-ve-online.html')">Hướng dẫn đặt vé online</a></li>
+            
+        
+</ul>
+
+<div style="display: inline-block">
+    <h2>Tải ứng dụng</h2>
+    <ul class="list-unstyled">
+        <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a target="_blank" href="https://apps.apple.com/vn/app/beta-cinemas/id1403107666?l=vi">Beta Cinemas cho iOS</a></li>
+        <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a target="_blank" href="https://play.google.com/store/apps/details?id=com.beta.betacineplex&amp;hl=vi">Beta Cinemas cho Android</a></li>
+    </ul>
+</div>
+</div>
+                  </div>
+                  <div class="col-md-13 col-sm-16 pre-footer-col">
+					<div id="BodyContent_ctl00_bottomRightPanel" class="ecm-panel">
+<div class="col-md-9 col-sm-16 pre-footer-col">
+    <h2>CỤM RẠP BETA</h2>
+    <ul class="list-unstyled" style="float: left;">
+        <li><i class="fa fa-angle-right"></i><a
+            href="https://betacinemas.vn/tin-ben-le/beta-xuan-thuy-sap-khai-truong.html">Beta Cinemas Xuân Thủy, Hà Nội - Hotline 0333 023 183 </a></li>
+        <li><i class="fa fa-angle-right"></i><a
+            href="https://betacinemas.vn/tin-ben-le/beta-cinemas-tay-son-sap-khai-truong.html">Beta Cinemas Tây Sơn, Hà Nội - Hotline 0976 894 773 </a></li>
+        <li><i class="fa fa-angle-right"></i><a
+            href="https://betacinemas.vn/thong-tin-rap/beta-cinemas-vinh-yen-vinh-phuc.html">Beta Cinemas Vĩnh Yên, Phú Thọ - Hotline 0977 632 215 </a></li>
+        <li><i class="fa fa-angle-right"></i><a
+            href="https://betacinemas.vn/beta-cinemas-ung-van-khiem-sieu-pham-trong-thoi-gian-toi.html">Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873 </a></li>
+        <li><i class="fa fa-angle-right"></i><a
+            href="https://betacinemas.vn/thong-tin-rap/beta-lao-cai.html">Beta Cinemas Lào Cai - Hotline 0358 968 970 </a></li>
+        <li><i class="fa fa-angle-right"></i><a
+            href="https://betacinemas.vn/beta-imc-tran-quang-khai.html">Beta Cinemas Trần Quang Khải, TP Hồ Chí Minh - Hotline 1900 638 362 </a></li>
+        <li><i class="fa fa-angle-right"></i><a
+            href="https://betacinemas.vn/thong-tin-rap/beta-trmall-phu-quoc.html">Beta Cinemas TRMall Phú Quốc, An Giang - Hotline 0983 474 440 </a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-empire.html">Beta Cinemas Empire Bình Dương, TP Hồ Chí Minh - Hotline 0784 531 525 </a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-cinemas-quang-trung-khai-truong-dau-nam-2021.html">Beta Cinemas Quang Trung, TP Hồ Chí Minh - Hotline 0706 075 509 </a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-cinemas-giai-phong.html">Beta Cinemas Giải Phóng, Hà Nội - Hotline 0585 680 360 </a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-thanh-xuan.html">Beta Cinemas Thanh Xuân, Hà Nội - Hotline 082 4812878 </a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/rap-my-dinh.html">Beta Cinemas Mỹ Đình, Hà Nội - Hotline 0866 154 610</a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/rap-dan-phuong.html">Beta Cinemas Đan Phượng, Hà Nội - Hotline 0983 901 714 </a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-thai-nguyen.html">Beta Cinemas Thái Nguyên - Hotline 0867 460 053</a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-thanh-hoa.html">Beta Cinemas Thanh Hóa - Hotline 0325 360 249</a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-bac-giang.html">Beta Cinemas Bắc Giang, Bắc Ninh - Hotline 0866 493 413</a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-nha-trang.html">Beta Cinemas Nha Trang, Khánh Hòa - Hotline 0399 475 165</a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-bien-hoa.html">Beta Cinemas Biên Hòa, Đồng Nai - Hotline 0979 460 002</a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-cinemas-long-khanh.html">Beta Cinemas Long Khánh, Đồng Nai - Hotline 0925 165 684</a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-ho-tram.html">Beta Cinemas Hồ Tràm, TP Hồ Chí Minh - Hotline 0254 3788601 </a></li>
+        <li><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-rap/beta-tan-uyen.html">Beta Cinemas Tân Uyên, TP Hồ Chí Minh - Hotline 0937 905 925 </a></li>
+    </ul>
+</div>
+
+<div class="col-md-7 col-sm-16 pre-footer-col">
+    <div style="float: left;">
+        <h2>LIÊN HỆ</h2>
+        <div class="contact" style="float: left;">
+            <h5 class="no-margin">CÔNG TY CỔ PHẦN BETA MEDIA</h5>
+            <h6 class="font-12">Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội
+            </h6>
+            <h6 class="font-12">Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, Phường Tương Mai, Thành phố Hà Nội, Việt Nam</h6>
+            <p>
+                <h5 class="uppercase">Liên hệ chăm sóc khách hàng:</h5>
+                <h6 class="no-margin font-12">Hotline: 1900 636807 </h6>
+                <h6 class="no-margin font-12">Email: <a href="https://betacinemas.vn/cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="422f29360220273623212b2c272f23316c342c">[email&#160;protected]</a></h6>
+            </p>
+            <p>
+                <h5>LIÊN HỆ QUẢNG CÁO:</h5>
+                <h6 class="no-margin font-12">Hotline: 0934 632 682 </h6>
+                <h6 class="no-margin font-12">Email: <a href="https://betacinemas.vn/cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="46272206242332272134293336683028">[email&#160;protected]</a></h6>
+            </p>
+            <p>
+                <h5>LIÊN HỆ HỢP TÁC KINH DOANH:</h5>
+                <h6 class="no-margin font-12">Hotline: 1800 646420</h6>
+                <h6 class="no-margin font-12">Email: <a href="https://betacinemas.vn/cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="157774767d616d557770617472677a60653b637b">[email&#160;protected]</a></h6>
+            </p>
+        </div>
+    </div>
+
+    <div style="float: left;">
+        <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
+        <div>
+            <ul class="social-icons">
+                <li><a class="facebook" target="_blank" data-original-title="facebook" href="https://www.facebook.com/betacinemas"></a></li>
+                <li><a class="youtube" target="_blank" data-original-title="youtube" href="https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw"></a></li>
+                <li><a class="tiktok" target="_blank" data-original-title="tiktok" href="https://www.tiktok.com/@beta_cinemas"></a></li>
+                <li><a class="instagram" target="_blank" data-original-title="instagram" href="https://www.instagram.com/betacinemas/"></a></li>
+                
+            </ul>
+            <img style="width: 180px;" alt="" src="{{ asset('beta-mirror/Assets/Common/logo/dathongbao.png') }}" alt="Beta Cinemas" />
+        </div>
+    </div>
+</div>
+</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- END PRE-FOOTER -->
+    </div>
+	
+    
+</div>
+
+    <script data-cfasync="false" src="https://betacinemas.vn/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+        $(document).ready(function () {
+            jQuery(document).ready(function () {
+                Layout.init();
+                Layout.initOWL();
+            });
+            $("img.scale").imageScale();
+        });
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"b706ab488d034371a85357d552200363","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3cb8a02ca787c6',t:'MTc3NzQ0OTA4Mg=='};var a=document.createElement('script');a.src="https://betacinemas.vn/cdn-cgi/challenge-platform/h/b/scripts/jsd/0b8fb825cb67/maind41d.js";document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+<!-- Mirrored from betacinemas.vn/nhuong-quyen.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Apr 2026 07:52:42 GMT -->
+</html>
