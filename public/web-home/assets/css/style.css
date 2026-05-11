@@ -89,8 +89,6 @@ img { display: block; width: 100%; }
 .footer p { margin: 8px 0; line-height: 1.35; font-size: 13px; }
 
 .page-shell { position: relative; overflow: hidden; }
-.home-page.page-shell::before,
-.home-page.page-shell::after { display: none; }
 .page-shell::before,
 .page-shell::after {
   content: "";
@@ -202,9 +200,6 @@ main, header, footer, .topbar { position: relative; z-index: 2; }
 .home-page .poster-wrap { width: 100%; }
 .home-page .footer { margin-top: 28px; }
 .home-page .footer-inner { width: min(1240px, calc(100% - 120px)); }
-.home-page.page-shell::before,
-.home-page.page-shell::after { display: none; }
-
 .detail-shell .page-shell::before,
 .detail-shell .page-shell::after {
   display: none;

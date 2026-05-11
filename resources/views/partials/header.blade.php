@@ -49,11 +49,11 @@
                     <ul>
                         <li><a href="{{ route('schedule.index') }}">LỊCH CHIẾU THEO RẠP</a></li>
                         <li><a href="{{ route('movies.index') }}">PHIM</a></li>
-                        <li><a href="#">RẠP</a></li>
-                        <li><a href="#">GIÁ VÉ</a></li>
-                        <li><a href="#">TIN MỚI VÀ ƯU ĐÃI</a></li>
-                        <li><a href="#">NHƯỢNG QUYỀN</a></li>
-                        <li><a href="{{ route('account.demo') }}">THÀNH VIÊN</a></li>
+                        <li><a href="{{ route('cinemas.info') }}">RẠP</a></li>
+                        <li><a href="{{ route('prices.index') }}">GIÁ VÉ</a></li>
+                        <li><a href="{{ route('promotions.index') }}">TIN MỚI VÀ ƯU ĐÃI</a></li>
+                        <li><a href="{{ route('franchise.index') }}">NHƯỢNG QUYỀN</a></li>
+                        <li><a href="{{ route('member.index') }}">THÀNH VIÊN</a></li>
                     </ul>
                 </div>
             </div>

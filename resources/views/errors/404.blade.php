@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Khong tim thay trang - Beta Cinemas</title>
+    <title>Không tìm thấy trang - Beta Cinemas</title>
     <link rel="stylesheet" href="{{ asset('web-home/assets/css/style.css') }}">
     <style>
         .error-page {
@@ -69,18 +69,18 @@
                     <img class="brand-img" src="{{ asset('web-home/assets/img/beta-logo.png') }}" alt="Beta Cinemas">
                 </a>
                 <nav class="nav">
-                    <a href="{{ route('schedule.index') }}">LICH CHIEU</a>
+                    <a href="{{ route('schedule.index') }}">LỊCH CHIẾU</a>
                     <a href="{{ route('movies.index') }}">PHIM</a>
                 </nav>
             </div>
         </header>
         <main class="error-main">
             <section class="error-panel">
-                <h1>Khong tim thay trang</h1>
-                <p>Duong dan phim hoac noi dung nay khong ton tai.</p>
+                <h1>Không tìm thấy trang</h1>
+                <p>Đường dẫn phim hoặc nội dung này không tồn tại.</p>
                 <div class="error-actions">
-                    <a class="primary" href="{{ route('movies.index') }}">Ve trang phim</a>
-                    <a class="secondary" href="{{ url('/') }}">Ve trang chu</a>
+                    <a class="primary" href="{{ route('movies.index') }}">Về trang phim</a>
+                    <a class="secondary" href="{{ url('/') }}">Về trang chủ</a>
                 </div>
             </section>
         </main>

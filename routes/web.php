@@ -277,7 +277,33 @@ function betaNavItems(array $siteData): array
 
 function betaMergedMovies(array $siteData): array
 {
-    return app(MovieCatalog::class)->mergedMovies($siteData, betaTrackerMovies());
+    return betaRepairMovieText(app(MovieCatalog::class)->mergedMovies($siteData, betaTrackerMovies()));
+}
+
+function betaRepairMojibakeString(string $value): string
+{
+    if (!preg_match('/(?:Ã|Â|Æ|Ä|áº|á»|â€)/u', $value)) {
+        return $value;
+    }
+
+    $bytes = @mb_convert_encoding($value, 'Windows-1252', 'UTF-8');
+
+    if (!is_string($bytes) || !mb_check_encoding($bytes, 'UTF-8')) {
+        return $value;
+    }
+
+    return $bytes;
+}
+
+function betaRepairMovieText(array $value): array
+{
+    array_walk_recursive($value, function (&$item): void {
+        if (is_string($item)) {
+            $item = betaRepairMojibakeString($item);
+        }
+    });
+
+    return $value;
 }
 
 function betaFilterMovies(array $movies, string $tab = '', string $search = '', string $genre = ''): array
@@ -341,27 +367,153 @@ function betaTrackerRouteMap(): array
 {
     return [
         'home.html' => url('/'),
+        'home.php' => url('/'),
         'lich-chieu.html' => route('schedule.index', [], false),
+        'lich-chieu.php' => route('schedule.index', [], false),
         'phim.html' => route('movies.index', [], false),
+        'phim.php' => route('movies.index', [], false),
         'thong-tin-rap.html' => route('cinemas.info', [], false),
+        'thong-tin-rap.php' => route('cinemas.info', [], false),
         'gia-ve.html' => route('prices.index', [], false),
+        'gia-ve.php' => route('prices.index', [], false),
         'tin-moi-va-uu-dai.html' => route('promotions.index', [], false),
+        'tin-moi-va-uu-dai.php' => route('promotions.index', [], false),
         'nhuong-quyen.html' => route('franchise.index', [], false),
+        'nhuong-quyen.php' => route('franchise.index', [], false),
+        'thanh-vien.html' => route('member.index', [], false),
+        'thanh-vien.php' => route('member.index', [], false),
         'login-2.html#thongtintaikhoan' => route('member.index', [], false),
         'login.html#login' => route('auth.login.form', [], false) . '#login',
+        'login.php#login' => route('auth.login.form', [], false) . '#login',
         'login.html#register' => route('auth.register.form', [], false) . '#register',
+        'login.php#register' => route('auth.register.form', [], false) . '#register',
     ];
+}
+
+function betaTrackerFallbackPageHtml(string $file): string
+{
+    $pages = [
+        'thong-tin-rap.html' => [
+            'title' => 'Rạp - Beta Cinemas',
+            'eyebrow' => 'Cụm rạp Beta',
+            'heading' => 'Thông tin rạp',
+            'paragraphs' => [
+                'Beta Cinemas mang đến trải nghiệm điện ảnh hiện đại với hệ thống phòng chiếu, âm thanh, hình ảnh và dịch vụ phù hợp cho nhóm bạn trẻ, gia đình và khách hàng thành viên.',
+                'Bạn có thể theo dõi lịch chiếu theo rạp, chọn phim, chọn suất chiếu và đặt vé trực tuyến ngay trên website.',
+            ],
+            'items' => [
+                'Beta Cinemas Xuân Thủy, Hà Nội',
+                'Beta Cinemas Tây Sơn, Hà Nội',
+                'Beta Cinemas Thanh Xuân, Hà Nội',
+                'Beta Cinemas Mỹ Đình, Hà Nội',
+                'Beta Cinemas Thái Nguyên',
+                'Beta Cinemas Biên Hòa, Đồng Nai',
+            ],
+        ],
+        'gia-ve.html' => [
+            'title' => 'Giá vé - Beta Cinemas',
+            'eyebrow' => 'Bảng giá',
+            'heading' => 'Giá vé Beta Cinemas',
+            'paragraphs' => [
+                'Giá vé có thể thay đổi theo rạp, ngày chiếu, định dạng phòng chiếu và từng chương trình ưu đãi.',
+                'Vui lòng chọn phim và suất chiếu cụ thể để xem giá vé chính xác trước khi thanh toán.',
+            ],
+            'items' => [
+                'Suất chiếu 2D tiêu chuẩn áp dụng theo từng cụm rạp.',
+                'Giá vé cuối tuần, ngày lễ và suất chiếu đặc biệt có thể khác ngày thường.',
+                'Thành viên có thể nhận thêm ưu đãi theo chương trình hiện hành.',
+            ],
+        ],
+        'tin-moi-va-uu-dai.html' => [
+            'title' => 'Tin mới và ưu đãi - Beta Cinemas',
+            'eyebrow' => 'Tin tức',
+            'heading' => 'Tin mới và ưu đãi',
+            'paragraphs' => [
+                'Cập nhật các chương trình khuyến mãi, ưu đãi thành viên, thông tin khai trương rạp và tin tức mới nhất từ Beta Cinemas.',
+                'Các ưu đãi có thời hạn và điều kiện áp dụng riêng, vui lòng kiểm tra thông tin tại rạp hoặc trong bước đặt vé.',
+            ],
+            'items' => [
+                'Ưu đãi vé xem phim cho học sinh, sinh viên.',
+                'Combo bắp nước theo từng chiến dịch.',
+                'Tin tức khai trương và hoạt động cộng đồng của Beta Cinemas.',
+            ],
+        ],
+        'nhuong-quyen.html' => [
+            'title' => 'Nhượng quyền - Beta Cinemas',
+            'eyebrow' => 'Hợp tác',
+            'heading' => 'Nhượng quyền Beta Cinemas',
+            'paragraphs' => [
+                'Beta Cinemas phát triển mô hình rạp chiếu phim tối ưu chi phí đầu tư, phù hợp với nhiều thị trường địa phương và trung tâm thương mại.',
+                'Đối tác quan tâm mô hình nhượng quyền có thể liên hệ Beta Cinemas để được tư vấn về vận hành, thương hiệu và tiêu chuẩn triển khai.',
+            ],
+            'items' => [
+                'Mô hình rạp chiếu phim hiện đại, dễ mở rộng.',
+                'Hỗ trợ nhận diện thương hiệu và quy trình vận hành.',
+                'Phù hợp với thành phố vệ tinh, tỉnh thành và khu dân cư đang phát triển.',
+            ],
+        ],
+    ];
+
+    $page = $pages[$file] ?? [
+        'title' => 'Beta Cinemas',
+        'eyebrow' => 'Beta Cinemas',
+        'heading' => 'Nội dung đang được cập nhật',
+        'paragraphs' => ['Trang này đang được cập nhật nội dung.'],
+        'items' => [],
+    ];
+
+    $siteData = betaSiteData();
+
+    return view('static-page', array_merge($page, [
+        'topLinks' => betaTopLinks($siteData),
+        'navItems' => betaResolvedNavItems($siteData),
+        'footer' => $siteData['footer'] ?? [],
+    ]))->render();
+}
+
+function betaTrackerInjectTopBarState(string $html): string
+{
+    $html = preg_replace(
+        '/<ul class="list-unstyled list-inline pull-right" style="margin-bottom:\s*4px;\s*margin-top:\s*4px;">.*?<\/ul>/is',
+        betaTrackerTopBarMenuHtml(),
+        $html,
+        1
+    ) ?? $html;
+
+    $topBarStyle = <<<'HTML'
+<style>
+    .tracker-user-menu .fa-sign-out {
+        font-size: 20px;
+        line-height: 1;
+        vertical-align: middle;
+    }
+    .tracker-user-menu__greeting a {
+        white-space: nowrap;
+    }
+</style>
+</head>
+HTML;
+
+    if (str_contains($html, '</head>') && !str_contains($html, '.tracker-user-menu__greeting')) {
+        $html = str_replace('</head>', $topBarStyle, $html);
+    }
+
+    return $html;
 }
 
 function betaTrackerPageHtml(string $file): string
 {
     $sourcePath = betaTrackerSourcePath($file);
 
-    abort_unless(is_readable($sourcePath), 404);
+    if (!is_readable($sourcePath)) {
+        return betaTrackerFallbackPageHtml($file);
+    }
 
     $html = file_get_contents($sourcePath);
 
-    abort_if($html === false, 404);
+    if ($html === false) {
+        return betaTrackerFallbackPageHtml($file);
+    }
 
     $assetReplacements = [
         'href="Assets/' => 'href="' . betaTrackerAssetUrl('Assets') . '/',
@@ -398,12 +550,20 @@ function betaTrackerPageHtml(string $file): string
         return "RedirectUrl('" . betaTrackerExternalUrl($matches[1]) . "')";
     }, $html);
 
-    return $html;
+    return betaTrackerInjectTopBarState($html);
 }
 
 function betaTrackerAuthPageHtml(string $mode = 'login'): string
 {
     $html = betaTrackerPageHtml('login.html');
+
+    $html = preg_replace(
+        '/\s*<div class="clearfix"><\/div>\s*<div class="form-group">\s*<div class="col-md-16 text-center">\s*<div class="form-group">\s*<button[^>]*class="[^"]*btn-loginfacebook[^"]*"[^>]*>.*?<\/button>\s*<\/div>\s*<\/div>\s*<\/div>/is',
+        '',
+        $html
+    ) ?? $html;
+
+    $html = preg_replace('/\s*<p[^>]*>.*?facebook.*?<\/p>/is', '', $html) ?? $html;
 
     $html = str_replace(
         "        //Add Enter\r\n        var input = document.getElementById(\"txtLoginCaptcha\");\r\n        input.addEventListener(\"keyup\", function (event) {\r\n            event.preventDefault();\r\n            if (event.keyCode === 13) {\r\n                document.getElementById(\"btnLogin\").click();\r\n            }\r\n        });",
@@ -590,8 +750,8 @@ function betaTrackerTopBarMenuHtml(): string
 
         return <<<HTML
 <ul class="list-unstyled list-inline pull-right tracker-user-menu" style="margin-bottom: 4px;margin-top: 4px;">
-    <li class="tracker-user-menu__greeting"><a href="{$accountUrl}">Xin chÃ o: {$name} <i class="fa fa-angle-down"></i></a></li>
-    <li class="tracker-user-menu__logout" style="border-left: 1px solid; padding-left: 10px !important;"><a href="{$logoutUrl}" aria-label="ÄÄƒng xuáº¥t"><i class="fa fa-sign-out"></i></a></li>
+    <li class="tracker-user-menu__greeting"><a href="{$accountUrl}">Xin chào: {$name} <i class="fa fa-angle-down"></i></a></li>
+    <li class="tracker-user-menu__logout" style="border-left: 1px solid; padding-left: 10px !important;"><a href="{$logoutUrl}" aria-label="Đăng xuất"><i class="fa fa-sign-out"></i></a></li>
 </ul>
 HTML;
     }
@@ -601,8 +761,8 @@ HTML;
 
     return <<<HTML
 <ul class="list-unstyled list-inline pull-right tracker-user-menu" style="margin-bottom: 4px;margin-top: 4px;">
-    <li class="tracker-user-menu__login"><a href="{$loginUrl}">ÄÄƒng nháº­p</a></li>
-    <li class="tracker-user-menu__register" style="border-left: 1px solid; padding-left: 10px !important;"><a href="{$registerUrl}">ÄÄƒng kÃ½</a></li>
+    <li class="tracker-user-menu__login"><a href="{$loginUrl}">Đăng nhập</a></li>
+    <li class="tracker-user-menu__register" style="border-left: 1px solid; padding-left: 10px !important;"><a href="{$registerUrl}">Đăng ký</a></li>
 </ul>
 HTML;
 }
@@ -612,27 +772,7 @@ function betaTrackerWrappedContentHtml(string $contentHtml, string $title = 'Bet
     $html = betaTrackerPageHtml($shellFile);
 
     $html = preg_replace('/<title>\s*.*?\s*<\/title>/is', '<title>' . e($title) . '</title>', $html) ?? $html;
-    $html = preg_replace(
-        '/<ul class="list-unstyled list-inline pull-right" style="margin-bottom: 4px;margin-top: 4px;">.*?<\/ul>/is',
-        betaTrackerTopBarMenuHtml(),
-        $html,
-        1
-    ) ?? $html;
-
-    $topBarStyle = <<<'HTML'
-<style>
-    .tracker-user-menu .fa-sign-out {
-        font-size: 20px;
-        line-height: 1;
-        vertical-align: middle;
-    }
-    .tracker-user-menu__greeting a {
-        white-space: nowrap;
-    }
-</style>
-</head>
-HTML;
-    $html = str_replace('</head>', $topBarStyle, $html);
+    $html = betaTrackerInjectTopBarState($html);
 
     $startMarker = '<div class="margin-none">';
     $endMarker = '<!-- BEGIN PRE-FOOTER -->';
