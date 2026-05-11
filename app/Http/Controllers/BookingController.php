@@ -13,6 +13,7 @@ use App\Services\MovieCatalog;
 use App\Services\PaymentGatewayService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
@@ -56,7 +57,7 @@ class BookingController extends Controller
 
         $demoUser = session('demo_user');
 
-        if (! auth()->check() && (! is_array($demoUser) || empty($demoUser['email']))) {
+        if (! Auth::check() && (! is_array($demoUser) || empty($demoUser['email']))) {
             return redirect()->to(route('auth.login.form').'#login')
                 ->with('status', 'Vui lòng đăng nhập trước khi tiếp tục đặt vé.');
         }
@@ -93,13 +94,13 @@ class BookingController extends Controller
         }
 
         $booking = Booking::create([
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
             'showtime_id' => (string) $showtime->getKey(),
             'total_price' => $seats->count() * (int) $showtime->price,
             'payment_status' => 'pending',
             'booking_status' => 'booked',
-            'customer_name' => $validated['customer_name'] ?? auth()->user()?->name ?? ($demoUser['name'] ?? null),
-            'customer_email' => $validated['customer_email'] ?? auth()->user()?->email ?? ($demoUser['email'] ?? null),
+            'customer_name' => $validated['customer_name'] ?? Auth::user()?->name ?? ($demoUser['name'] ?? null),
+            'customer_email' => $validated['customer_email'] ?? Auth::user()?->email ?? ($demoUser['email'] ?? null),
             'customer_phone' => $validated['customer_phone'] ?? null,
             'qr_code' => 'BK-'.strtoupper(Str::random(10)),
             'hold_expires_at' => now()->addMinutes(10),
@@ -280,10 +281,10 @@ class BookingController extends Controller
     {
         $demoUser = session('demo_user');
         $demoEmail = is_array($demoUser) ? (string) ($demoUser['email'] ?? '') : '';
-        $authEmail = (string) (auth()->user()?->email ?? '');
+        $authEmail = (string) (Auth::user()?->email ?? '');
 
         abort_unless(
-            ((string) ($booking->user_id ?? '') !== '' && (string) $booking->user_id === (string) auth()->id())
+            ((string) ($booking->user_id ?? '') !== '' && (string) $booking->user_id === (string) Auth::id())
                 || ($authEmail !== '' && (string) $booking->customer_email === $authEmail)
                 || ($demoEmail !== '' && (string) $booking->customer_email === $demoEmail),
             403
