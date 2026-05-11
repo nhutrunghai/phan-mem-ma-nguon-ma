@@ -137,7 +137,6 @@ class BookingController extends Controller
             'sepayConfigured' => $this->payments->sePayConfigured(),
             'sepayPayment' => $sepayPayment = $this->payments->ensureSePayPayment($booking),
             'sepayInfo' => $this->payments->createSePayInfo($booking, $sepayPayment),
-            'vnpayUrl' => $this->payments->createVnpayUrl($booking),
         ]);
     }
 
@@ -154,45 +153,13 @@ class BookingController extends Controller
                 ->with('status', 'Đơn vé này đã được thanh toán.');
         }
 
-        $method = (string) $request->input('method', 'sepay');
-
-        if ($method === 'sepay') {
-            $this->payments->ensureSePayPayment($booking);
-            $this->refreshHold($booking);
-            $booking->forceFill(['payment_status' => 'pending_gateway'])->save();
-
-            return redirect()
-                ->route('bookings.payment', ['booking' => (string) $booking->getKey()])
-                ->with('status', 'Đơn vé đang chờ thanh toán SePay. Vui lòng chuyển khoản đúng nội dung hiển thị.');
-        }
-
-        $paymentUrl = $this->payments->createVnpayUrl($booking);
-
-        Payment::create([
-            'booking_id' => (string) $booking->getKey(),
-            'method' => 'vnpay',
-            'amount' => (int) $booking->total_price,
-            'transaction_code' => 'VNP-' . strtoupper(Str::random(12)),
-            'payment_date' => now(),
-            'status' => $paymentUrl ? 'pending' : 'success',
-        ]);
-
-        if ($paymentUrl) {
-            $this->refreshHold($booking);
-            $booking->forceFill(['payment_status' => 'pending_gateway'])->save();
-
-            return redirect()->away($paymentUrl);
-        }
-
-        $booking->forceFill([
-            'payment_status' => 'paid',
-            'booking_status' => 'booked',
-            'hold_expires_at' => null,
-        ])->save();
+        $this->payments->ensureSePayPayment($booking);
+        $this->refreshHold($booking);
+        $booking->forceFill(['payment_status' => 'pending_gateway'])->save();
 
         return redirect()
-            ->route('account.show', ['tab' => 'history'])
-            ->with('status', 'Đã mô phỏng thanh toán VNPay thành công cho đơn vé ' . $booking->qr_code . '.');
+            ->route('bookings.payment', ['booking' => (string) $booking->getKey()])
+            ->with('status', 'Đơn vé đang chờ thanh toán SePay. Vui lòng chuyển khoản đúng nội dung hiển thị.');
     }
 
     public function sePayWebhook(Request $request)
@@ -263,90 +230,6 @@ class BookingController extends Controller
             'status' => 'success',
             'payment_date' => now(),
         ])->save();
-
-        $booking->forceFill([
-            'payment_status' => 'paid',
-            'booking_status' => 'booked',
-            'hold_expires_at' => null,
-        ])->save();
-
-        return response()->json(['status' => 'ok']);
-    }
-
-    public function paymentReturn(Request $request)
-    {
-        $payload = $request->all();
-        $bookingId = $this->payments->extractVnpayBookingId($payload);
-
-        if (! $this->payments->verifyVnpayReturn($payload) || $bookingId === null) {
-            return redirect()->route('account.show', ['tab' => 'history'])
-                ->with('status', 'Xác thực thanh toán VNPay không hợp lệ.');
-        }
-
-        $booking = Booking::query()->find($bookingId);
-        if ($booking === null) {
-            return redirect()->route('account.show', ['tab' => 'history'])
-                ->with('status', 'Không tìm thấy đơn vé sau thanh toán.');
-        }
-
-        if (! $this->payments->isSuccessfulVnpayReturn($payload)) {
-            $payment = Payment::query()
-                ->where('booking_id', (string) $booking->getKey())
-                ->where('method', 'vnpay')
-                ->latest()
-                ->first();
-
-            if ($payment !== null) {
-                $payment->forceFill(['status' => 'failed', 'payment_date' => now()])->save();
-            }
-
-            return redirect()
-                ->route('bookings.payment', ['booking' => (string) $booking->getKey()])
-                ->with('status', 'Thanh toán VNPay chưa thành công. Vui lòng thử lại.');
-        }
-
-        abort_if($booking->booking_status === 'expired' || ($booking->hold_expires_at !== null && $booking->hold_expires_at->lt(now())), 410, 'Đơn vé đã hết thời gian giữ ghế. Vui lòng đặt lại.');
-
-        $booking->forceFill([
-            'payment_status' => 'paid',
-            'booking_status' => 'booked',
-            'hold_expires_at' => null,
-        ])->save();
-
-        $payment = Payment::query()
-            ->where('booking_id', (string) $booking->getKey())
-            ->where('method', 'vnpay')
-            ->latest()
-            ->first();
-
-        if ($payment !== null) {
-            $payment->forceFill(['status' => 'success', 'payment_date' => now()])->save();
-        }
-
-        return redirect()
-            ->route('account.show', ['tab' => 'history'])
-            ->with('status', 'Thanh toán VNPay thành công cho đơn vé ' . $booking->qr_code . '.');
-    }
-
-    public function paymentIpn(Request $request)
-    {
-        $payload = $request->all();
-        $bookingId = $this->payments->extractVnpayBookingId($payload);
-
-        if (! $this->payments->verifyVnpayReturn($payload) || $bookingId === null || ! $this->payments->isSuccessfulVnpayReturn($payload)) {
-            return response()->json(['status' => 'invalid'], 422);
-        }
-
-        $booking = Booking::query()->find($bookingId);
-        if ($booking === null) {
-            return response()->json(['status' => 'not_found'], 404);
-        }
-
-        if ($booking->booking_status === 'expired' || ($booking->hold_expires_at !== null && $booking->hold_expires_at->lt(now()))) {
-            $booking->forceFill(['booking_status' => 'expired'])->save();
-
-            return response()->json(['status' => 'expired'], 410);
-        }
 
         $booking->forceFill([
             'payment_status' => 'paid',

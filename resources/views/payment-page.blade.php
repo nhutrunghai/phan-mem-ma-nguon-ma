@@ -99,9 +99,6 @@
                     <form class="payment-action-form" method="post" action="{{ route('bookings.payment.confirm', ['booking' => (string) $booking->getKey()]) }}">
                         @csrf
                         <button type="submit" name="method" value="sepay" class="btn-mua-ve">Tôi đã chuyển khoản</button>
-                        @if ($vnpayUrl)
-                            <button type="submit" name="method" value="vnpay" class="btn-mua-ve">Thanh toán qua VNPay</button>
-                        @endif
                     </form>
                     <a class="btn-mua-ve" href="{{ route('account.show', ['tab' => 'history']) }}">Xem lịch sử</a>
                 </div>

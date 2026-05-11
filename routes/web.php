@@ -319,8 +319,6 @@ Route::get('/phim/{id}', function (string $id) {
 
 Route::get('/dat-ve/{id}', [BookingController::class, 'show'])->name('booking.seats');
 Route::post('/dat-ve/{id}', [BookingController::class, 'store'])->name('booking.store');
-Route::get('/thanh-toan/return/vnpay', [BookingController::class, 'paymentReturn'])->name('payment.return.vnpay');
-Route::post('/thanh-toan/ipn/vnpay', [BookingController::class, 'paymentIpn'])->name('payment.ipn.vnpay');
 Route::post('/thanh-toan/ipn/sepay', [BookingController::class, 'sePayWebhook'])->name('payment.ipn.sepay');
 Route::post('/api/v1/check-payment', [BookingController::class, 'sePayWebhook'])->name('payment.sepay.webhook');
 Route::get('/thanh-toan/{booking}', [BookingController::class, 'paymentPage'])->name('bookings.payment');

@@ -5,8 +5,6 @@ namespace App\Services;
 use App\Models\Booking;
 use App\Models\Payment;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
 
 class PaymentGatewayService
 {
@@ -118,79 +116,6 @@ class PaymentGatewayService
         $expected = (string) config('payment-gateways.sepay.webhook_secret', '');
 
         return $expected === '' || hash_equals($expected, (string) $receivedSecret);
-    }
-
-    public function createVnpayUrl(Booking $booking): ?string
-    {
-        $config = config('payment-gateways.vnpay');
-
-        if (
-            !($config['enabled'] ?? false)
-            || empty($config['tmn_code'])
-            || empty($config['hash_secret'])
-            || empty($config['url'])
-        ) {
-            return null;
-        }
-
-        $params = [
-            'vnp_Version' => $config['version'] ?? '2.1.0',
-            'vnp_Command' => 'pay',
-            'vnp_TmnCode' => $config['tmn_code'],
-            'vnp_Amount' => ((int) $booking->total_price) * 100,
-            'vnp_CurrCode' => $config['currency'] ?? 'VND',
-            'vnp_TxnRef' => (string) $booking->getKey() . '-' . Str::upper(Str::random(8)),
-            'vnp_OrderInfo' => 'Thanh toan don ve ' . $booking->qr_code,
-            'vnp_OrderType' => 'billpayment',
-            'vnp_Locale' => $config['locale'] ?? 'vn',
-            'vnp_ReturnUrl' => $config['return_url'] ?? url('/thanh-toan/return/vnpay'),
-            'vnp_IpnUrl' => $config['ipn_url'] ?? url('/thanh-toan/ipn/vnpay'),
-            'vnp_IpAddr' => request()->ip() ?? '127.0.0.1',
-            'vnp_CreateDate' => Carbon::now()->format('YmdHis'),
-        ];
-
-        ksort($params);
-
-        $query = http_build_query($params, '', '&', PHP_QUERY_RFC3986);
-        $secureHash = hash_hmac('sha512', urldecode($query), (string) $config['hash_secret']);
-
-        return rtrim((string) $config['url'], '?') . '?' . $query . '&vnp_SecureHash=' . $secureHash;
-    }
-
-    public function verifyVnpayReturn(array $payload): bool
-    {
-        $config = config('payment-gateways.vnpay');
-        $secureHash = (string) ($payload['vnp_SecureHash'] ?? '');
-
-        if ($secureHash === '' || empty($config['hash_secret'])) {
-            return false;
-        }
-
-        $data = $payload;
-        unset($data['vnp_SecureHash'], $data['vnp_SecureHashType']);
-        ksort($data);
-
-        $query = http_build_query($data, '', '&', PHP_QUERY_RFC3986);
-        $expected = hash_hmac('sha512', urldecode($query), (string) $config['hash_secret']);
-
-        return hash_equals($expected, $secureHash);
-    }
-
-    public function isSuccessfulVnpayReturn(array $payload): bool
-    {
-        return ($payload['vnp_ResponseCode'] ?? null) === '00'
-            && ($payload['vnp_TransactionStatus'] ?? null) === '00';
-    }
-
-    public function extractVnpayBookingId(array $payload): ?string
-    {
-        $txnRef = (string) ($payload['vnp_TxnRef'] ?? '');
-
-        if ($txnRef === '') {
-            return null;
-        }
-
-        return explode('-', $txnRef, 2)[0] ?: null;
     }
 
     private function sePayOrderCode(Booking $booking): string
