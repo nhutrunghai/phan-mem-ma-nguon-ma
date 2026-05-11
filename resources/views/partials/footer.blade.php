@@ -5,7 +5,7 @@
                 <ul class="list-unstyled">
                     <li style="margin-bottom: 25px;" class="col-lg-16 col-md-16 col-xs-16 margin-xs-bottom-25">
                         <a class="site-logo" href="{{ url('/') }}">
-                            <img style="width: 120px;" src="{{ asset('beta-mirror/Assets/Common/logo/logo-white.png') }}" alt="Beta Cinemas">
+                            <img style="width: 120px;" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/logo/logo-white.png') }}" alt="Beta Cinemas">
                         </a>
                     </li>
                     <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="#">Tuyển dụng</a></li>
@@ -91,7 +91,7 @@
                                 <li><a class="tiktok" target="_blank" data-original-title="tiktok" href="https://www.tiktok.com/@beta_cinemas"></a></li>
                                 <li><a class="instagram" target="_blank" data-original-title="instagram" href="https://www.instagram.com/betacinemas/"></a></li>
                             </ul>
-                            <img style="width: 180px;" src="{{ asset('beta-mirror/Assets/Common/logo/dathongbao.png') }}" alt="Đã thông báo Bộ Công Thương">
+                            <img style="width: 180px;" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/logo/dathongbao.png') }}" alt="Đã thông báo Bộ Công Thương">
                         </div>
                     </div>
                 </div>

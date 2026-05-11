@@ -37,8 +37,8 @@
         ];
     @endphp
     <title>{{ $adminPageTitle }} - Beta Cinemas</title>
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/font-awesome/css/font-awesome.min.css') }}">
     <style>
         :root {
             --admin-bg: #f5f7fb;

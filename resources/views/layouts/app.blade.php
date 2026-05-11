@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Beta Cinemas' }}</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('beta-mirror/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('beta-mirror/favicon-16x16.png') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/css/bootstrap-theme.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/global/css/components0e34.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/css/style0e34.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/css/css9bf4.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/global/css/plugins.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/frontend/pages/css/style-shop9bf4.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/frontend/layout/css/themes/blue9bf4.css') }}">
-    <link rel="stylesheet" href="{{ asset('beta-mirror/Assets/frontend/layout/css/custom71de.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('web-home/assets/legacy-beta/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('web-home/assets/legacy-beta/favicon-16x16.png') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Bootstrap/css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/global/css/components0e34.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/css/style0e34.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/css/css9bf4.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/global/css/plugins.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/frontend/pages/css/style-shop9bf4.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/frontend/layout/css/themes/blue9bf4.css') }}">
+    <link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/frontend/layout/css/custom71de.css') }}">
     <style>
         body.corporate {
             background: #fff;
@@ -534,9 +534,9 @@
         @include('partials.footer')
     </div>
 
-    <script src="{{ asset('beta-mirror/Assets/Common/Plugins/JQuery/jquery-1.11.2.min.js') }}"></script>
-    <script src="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('beta-mirror/Assets/Common/scripts/layout.js') }}"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/JQuery/jquery-1.11.2.min.js') }}"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/Common/scripts/layout.js') }}"></script>
     <script>
         jQuery(function ($) {
             if (window.Layout && typeof window.Layout.init === 'function') {

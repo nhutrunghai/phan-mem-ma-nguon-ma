@@ -7,38 +7,38 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head><title>
 	Thông tin rạp
-</title><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><meta name="apple-itunes-app" content="app-id=1403107666" /><meta name="google-play-app" content="app-id=com.beta.betacineplex" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/css/bootstrap.min.css') }}" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/css/bootstrap-theme.min.css') }}" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/Common/Plugins/font-awesome/css/font-awesome.min.css') }}" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('beta-mirror/Assets/assets/global/css/components0e34.css?v=33') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/fancybox/source/jquery.fancybox1bce.css?v=6') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/css/layerslider.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/pages/css/style-layer-slider.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/Common/css/style0e34.css?v=33') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/Common/css/css9bf4.css?v=31') }}" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="{{ asset('beta-mirror/Assets/assets/global/plugins/select2/select2.css') }}" /><link href="{{ asset('beta-mirror/Assets/assets/global/css/plugins.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/pages/css/style-shop9bf4.css?v=31') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/layout/css/themes/blue9bf4.css?v=31') }}" rel="stylesheet" /><link href="{{ asset('beta-mirror/Assets/assets/frontend/layout/css/custom71de.css?v=34') }}" rel="stylesheet" /><link rel="stylesheet" href="{{ asset('beta-mirror/Assets/assets/Specific/smart-app-banner/smart-app-banner.css') }}" type="text/css" media="screen" /><link rel="android-touch-icon" sizes="57x57" href="https://betacinemas.vn/apple-icon-57x57.html" /><link rel="apple-touch-icon" sizes="57x57" href="https://betacinemas.vn/apple-icon-57x57.html" /><link rel="apple-touch-icon" sizes="60x60" href="https://betacinemas.vn/apple-icon-60x60.html" /><link rel="apple-touch-icon" sizes="72x72" href="https://betacinemas.vn/apple-icon-72x72.html" /><link rel="apple-touch-icon" sizes="76x76" href="https://betacinemas.vn/apple-icon-76x76.html" /><link rel="apple-touch-icon" sizes="114x114" href="https://betacinemas.vn/apple-icon-114x114.html" /><link rel="apple-touch-icon" sizes="120x120" href="https://betacinemas.vn/apple-icon-120x120.html" /><link rel="apple-touch-icon" sizes="144x144" href="https://betacinemas.vn/apple-icon-144x144.html" /><link rel="apple-touch-icon" sizes="152x152" href="https://betacinemas.vn/apple-icon-152x152.html" /><link rel="apple-touch-icon" sizes="180x180" href="https://betacinemas.vn/apple-icon-180x180.html" /><link rel="icon" type="image/png" sizes="192x192" href="https://betacinemas.vn/android-icon-192x192.html" /><link rel="icon" type="image/png" sizes="32x32" href="{{ asset('beta-mirror/favicon-32x32.png') }}" /><link rel="icon" type="image/png" sizes="96x96" href="{{ asset('beta-mirror/favicon-96x96.png') }}" /><link rel="icon" type="image/png" sizes="16x16" href="{{ asset('beta-mirror/favicon-16x16.png') }}" /><link rel="manifest" href="https://betacinemas.vn/manifest.html" /><meta name="msapplication-TileColor" content="#ffffff" /><meta name="msapplication-TileImage" content="ms-icon-144x144.html" /><meta name="theme-color" content="#ffffff" />
+</title><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><meta name="apple-itunes-app" content="app-id=1403107666" /><meta name="google-play-app" content="app-id=com.beta.betacineplex" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Bootstrap/css/bootstrap.min.css') }}" /><link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Bootstrap/css/bootstrap-theme.min.css') }}" /><link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/font-awesome/css/font-awesome.min.css') }}" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/css/components0e34.css?v=33') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/fancybox/source/jquery.fancybox1bce.css?v=6') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/slider-layer-slider/css/layerslider.css') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/frontend/pages/css/style-layer-slider.css') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/Common/css/style0e34.css?v=33') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/Common/css/css9bf4.css?v=31') }}" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/select2/select2.css') }}" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/css/plugins.css') }}" rel="stylesheet" type="text/css" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/frontend/pages/css/style-shop9bf4.css?v=31') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/frontend/layout/css/themes/blue9bf4.css?v=31') }}" rel="stylesheet" /><link href="{{ asset('web-home/assets/legacy-beta/Assets/assets/frontend/layout/css/custom71de.css?v=34') }}" rel="stylesheet" /><link rel="stylesheet" href="{{ asset('web-home/assets/legacy-beta/Assets/assets/Specific/smart-app-banner/smart-app-banner.css') }}" type="text/css" media="screen" /><link rel="android-touch-icon" sizes="57x57" href="https://betacinemas.vn/apple-icon-57x57.html" /><link rel="apple-touch-icon" sizes="57x57" href="https://betacinemas.vn/apple-icon-57x57.html" /><link rel="apple-touch-icon" sizes="60x60" href="https://betacinemas.vn/apple-icon-60x60.html" /><link rel="apple-touch-icon" sizes="72x72" href="https://betacinemas.vn/apple-icon-72x72.html" /><link rel="apple-touch-icon" sizes="76x76" href="https://betacinemas.vn/apple-icon-76x76.html" /><link rel="apple-touch-icon" sizes="114x114" href="https://betacinemas.vn/apple-icon-114x114.html" /><link rel="apple-touch-icon" sizes="120x120" href="https://betacinemas.vn/apple-icon-120x120.html" /><link rel="apple-touch-icon" sizes="144x144" href="https://betacinemas.vn/apple-icon-144x144.html" /><link rel="apple-touch-icon" sizes="152x152" href="https://betacinemas.vn/apple-icon-152x152.html" /><link rel="apple-touch-icon" sizes="180x180" href="https://betacinemas.vn/apple-icon-180x180.html" /><link rel="icon" type="image/png" sizes="192x192" href="https://betacinemas.vn/android-icon-192x192.html" /><link rel="icon" type="image/png" sizes="32x32" href="{{ asset('web-home/assets/legacy-beta/favicon-32x32.png') }}" /><link rel="icon" type="image/png" sizes="96x96" href="{{ asset('web-home/assets/legacy-beta/favicon-32x32.png') }}" /><link rel="icon" type="image/png" sizes="16x16" href="{{ asset('web-home/assets/legacy-beta/favicon-16x16.png') }}" /><link rel="manifest" href="https://betacinemas.vn/manifest.html" /><meta name="msapplication-TileColor" content="#ffffff" /><meta name="msapplication-TileImage" content="ms-icon-144x144.html" /><meta name="theme-color" content="#ffffff" />
     
 
 
-    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/JQuery/jquery-1.11.2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/Bootstrap/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/Slimscroll/jquery.slimscroll.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/locales/bootstrap-datepicker.vi.min.js') }}"></script>
-    <script src="{{ asset('beta-mirror/Assets/global/plugins/fancybox/source/jquery.fancybox1bce.js?v=6') }}" type="text/javascript"></script>
-    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/JQuery/jquery-1.11.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Bootstrap/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/DownloadPlugin/bootstrap-datepicker-master/dist/locales/bootstrap-datepicker.vi.min.js') }}"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/global/plugins/fancybox/source/jquery.fancybox1bce.js?v=6') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
     <!-- pop up -->
     <!-- Start mandatories scripts -->
-    <script type="text/javascript" defer="defer" src="{{ asset('beta-mirror/Assets/Common/Plugins/Modernizr/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+    <script type="text/javascript" defer="defer" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/Modernizr/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
     <!-- End mandatories scripts -->
-    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js') }}" type="text/javascript"></script>
     <!-- slider for products -->
-    <script src="{{ asset('beta-mirror/Assets/Common/Plugins/image-scale/image-scale.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/image-scale/image-scale.js') }}" type="text/javascript"></script>
     <!-- BEGIN LayerSlider -->
-    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/js/greensock.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/slider-layer-slider/js/greensock.js') }}" type="text/javascript"></script>
     <!-- External libraries: GreenSock -->
-    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js') }}" type="text/javascript"></script>
     <!-- LayerSlider script files -->
-    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js') }}" type="text/javascript"></script>
     <!-- LayerSlider script files -->
-    <script src="{{ asset('beta-mirror/Assets/assets/frontend/pages/scripts/layerslider-init.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/frontend/pages/scripts/layerslider-init.js') }}" type="text/javascript"></script>
     <!-- END LayerSlider -->
-    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/assets/global/plugins/select2/select2.min.js') }}"></script>
-    <script src="{{ asset('beta-mirror/Assets/assets/global/plugins/jquery-mixitup/jquery.mixitup.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('beta-mirror/Assets/assets/frontend/pages/scripts/portfolio.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('beta-mirror/Assets/assets/frontend/layout/scripts/back-to-top.js') }}" type="text/javascript"></script>
-    <script type="text/javascript" src="{{ asset('beta-mirror/Assets/Common/scripts/layout.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/global/plugins/jquery-mixitup/jquery.mixitup.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/frontend/pages/scripts/portfolio.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('web-home/assets/legacy-beta/Assets/assets/frontend/layout/scripts/back-to-top.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/scripts/layout.js') }}"></script>
 
 
     
@@ -325,7 +325,7 @@
             <div class="col-md-16 col-sm-16 additional-nav">
                 <div class="pull-right padding-left-10">
                     
-                    <a id="BodyContent_ctl00_ctl06_hlEn" onclick="changelang(&#39;eng&#39;);"><img src="{{ asset('beta-mirror/Assets/Common/icons/united-kingdom.png') }}" class="img-responsive"/></a>
+                    <a id="BodyContent_ctl00_ctl06_hlEn" onclick="changelang(&#39;eng&#39;);"><img src="{{ asset('web-home/assets/legacy-beta/Assets/Common/icons/united-kingdom.png') }}" class="img-responsive"/></a>
                 </div>
                 @include('partials.tracker-topbar-menu')
                 <!-- BEGIN TOP NAVIGATION MENU -->
@@ -341,7 +341,7 @@
 <div class="header">
     <div class="container">
         <div class="row">
-        <a class="site-logo" href="{{ url('/') }}"><img alt="" style="height: 55px;" src="{{ asset('beta-mirror/Assets/Common/logo/logo.png') }}" alt="Beta Cinemas"/></a>
+        <a class="site-logo" href="{{ url('/') }}"><img alt="" style="height: 55px;" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/logo/logo.png') }}" alt="Beta Cinemas"/></a>
 
         <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
         <div class="top-cart-block">
@@ -609,7 +609,7 @@
 </style>
 
 
-<link href="{{ asset('beta-mirror/Assets/Common/Plugins/LightboxImage/swipebox/css/swipebox.css') }}" rel='stylesheet' type='text/css'>
+<link href="{{ asset('web-home/assets/legacy-beta/Assets/Common/Plugins/LightboxImage/swipebox/css/swipebox.css') }}" rel='stylesheet' type='text/css'>
 <script type="text/javascript">
 
     function PrintElem(elem) {
@@ -788,7 +788,7 @@
             <div class="pi-img-wrapper">
                 <img class="img-responsive border-radius-20" alt="" src="https://files.betacorp.vn/media/images/2026/04/16/400x633-102941-160426-44.jpg">
                 <span style="position: absolute; top: 10px; left: 10px;">
-                    <img src="{{ asset('beta-mirror/Assets/Common/icons/films/c-16.png') }}" class="img-responsive" />
+                    <img src="{{ asset('web-home/assets/legacy-beta/Assets/Common/icons/films/c-16.png') }}" class="img-responsive" />
                 </span>
                 <div class="border-radius-20">
                     <a href="#product-pop-up" onclick="viewTrailer('Đại Tiệc Trăng Máu 8', 'https://www.youtube.com/watch?v=NZ9-wGErh4o');" class="fancybox-fast-view"><i class="fa fa-play-circle"></i></a>
@@ -807,7 +807,7 @@
             <div class="pi-img-wrapper">
                 <img class="img-responsive border-radius-20" alt="" src="https://files.betacorp.vn/media/images/2026/04/10/400x633-1-141724-100426-34.jpg">
                 <span style="position: absolute; top: 10px; left: 10px;">
-                    <img src="{{ asset('beta-mirror/Assets/Common/icons/films/k.png') }}" class="img-responsive" />
+                    <img src="{{ asset('web-home/assets/legacy-beta/Assets/Common/icons/films/k.png') }}" class="img-responsive" />
                 </span>
                 <div class="border-radius-20">
                     <a href="#product-pop-up" onclick="viewTrailer('Trùm Sò', 'https://www.youtube.com/watch?v=QoKBpq_p61Q');" class="fancybox-fast-view"><i class="fa fa-play-circle"></i></a>
@@ -826,7 +826,7 @@
             <div class="pi-img-wrapper">
                 <img class="img-responsive border-radius-20" alt="" src="https://files.betacorp.vn/media/images/2026/03/31/400wx633h-113142-310326-81.jpg">
                 <span style="position: absolute; top: 10px; left: 10px;">
-                    <img src="{{ asset('beta-mirror/Assets/Common/icons/films/c-13.png') }}" class="img-responsive" />
+                    <img src="{{ asset('web-home/assets/legacy-beta/Assets/Common/icons/films/c-13.png') }}" class="img-responsive" />
                 </span>
                 <div class="border-radius-20">
                     <a href="#product-pop-up" onclick="viewTrailer('Anh Hùng', 'https://www.youtube.com/watch?v=P74tpiZ8kuU');" class="fancybox-fast-view"><i class="fa fa-play-circle"></i></a>
@@ -845,7 +845,7 @@
             <div class="pi-img-wrapper">
                 <img class="img-responsive border-radius-20" alt="" src="https://files.betacorp.vn/media/images/2026/04/08/anh-chup-man-hinh-2026-04-08-161626-161707-080426-39.png">
                 <span style="position: absolute; top: 10px; left: 10px;">
-                    <img src="{{ asset('beta-mirror/Assets/Common/icons/films/c-18.png') }}" class="img-responsive" />
+                    <img src="{{ asset('web-home/assets/legacy-beta/Assets/Common/icons/films/c-18.png') }}" class="img-responsive" />
                 </span>
                 <div class="border-radius-20">
                     <a href="#product-pop-up" onclick="viewTrailer('Heo Năm Móng', 'https://www.youtube.com/watch?v=ShknvbpzZxg');" class="fancybox-fast-view"><i class="fa fa-play-circle"></i></a>
@@ -881,7 +881,7 @@
                       <div id="BodyContent_ctl00_bottomPanel" class="ecm-panel">
 <ul class="list-unstyled">
     <li style="margin-bottom: 25px;" class="col-lg-16 col-md-16 col-xs-16 margin-xs-bottom-25">
-        <a class="site-logo" href="{{ url('/') }}"><img style="width: 120px;" alt="" src="{{ asset('beta-mirror/Assets/Common/logo/logo-white.png') }}" alt="Beta Cinemas"/></a>
+        <a class="site-logo" href="{{ url('/') }}"><img style="width: 120px;" alt="" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/logo/logo-white.png') }}" alt="Beta Cinemas"/></a>
     </li>
     
             <li class="col-lg-16 col-md-8 col-sm-8 col-xs-8"><i class="fa fa-angle-right"></i><a href="https://betacinemas.vn/thong-tin-chung.html#tab-3" onclick="RedirectUrl('https://betacinemas.vn/thong-tin-chung.html#tab-3')">Tuyển dụng</a></li>
@@ -997,7 +997,7 @@
                 <li><a class="instagram" target="_blank" data-original-title="instagram" href="https://www.instagram.com/betacinemas/"></a></li>
                 
             </ul>
-            <img style="width: 180px;" alt="" src="{{ asset('beta-mirror/Assets/Common/logo/dathongbao.png') }}" alt="Beta Cinemas" />
+            <img style="width: 180px;" alt="" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/logo/dathongbao.png') }}" alt="Beta Cinemas" />
         </div>
     </div>
 </div>

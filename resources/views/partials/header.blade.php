@@ -9,7 +9,7 @@
                 <div class="col-md-16 col-sm-16 additional-nav">
                     <div class="pull-right padding-left-10">
                         <a href="#">
-                            <img src="{{ asset('beta-mirror/Assets/Common/icons/united-kingdom.png') }}" class="img-responsive" alt="English">
+                            <img src="{{ asset('web-home/assets/legacy-beta/Assets/Common/icons/united-kingdom.png') }}" class="img-responsive" alt="English">
                         </a>
                     </div>
 
@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <a class="site-logo" href="{{ url('/') }}">
-                    <img style="height: 55px;" src="{{ asset('beta-mirror/Assets/Common/logo/logo.png') }}" alt="Beta Cinemas">
+                    <img style="height: 55px;" src="{{ asset('web-home/assets/legacy-beta/Assets/Common/logo/logo.png') }}" alt="Beta Cinemas">
                 </a>
 
                 <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
