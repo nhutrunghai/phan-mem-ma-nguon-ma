@@ -1,10 +1,26 @@
 @extends('layouts.app')
 
 @php
-    $demoUser = session('demo_user', [
-        'name' => 'Beta Member',
-        'email' => 'member@betacinemas.vn',
-    ]);
+    $demoUser = session('demo_user', []);
+    $profile = array_merge([
+        'name' => '',
+        'email' => '',
+        'phone' => '',
+        'birthday' => '',
+        'gender' => '',
+        'identity_number' => '',
+        'province' => '',
+        'district' => '',
+        'address' => '',
+        'favorite_cinema' => '',
+        'member_code' => '',
+    ], is_array($demoUser) ? $demoUser : []);
+
+    $genderLabels = [
+        'male' => 'Nam',
+        'female' => 'Nữ',
+        'other' => 'Khác',
+    ];
 
     $tabs = [
         'profile' => 'Thông tin tài khoản',
@@ -12,7 +28,10 @@
         'points' => 'Điểm Beta',
         'password' => 'Đổi mật khẩu',
     ];
+
     $bookings = $bookings ?? session('demo_bookings', []);
+    $emptyText = 'Chưa cập nhật';
+    $avatarLetter = strtoupper(mb_substr((string) ($profile['name'] ?: 'B'), 0, 1));
 @endphp
 
 @section('content')
@@ -21,12 +40,10 @@
             <div class="member-layout">
                 <aside class="member-sidebar">
                     <div class="member-card">
-                        <div class="member-avatar">
-                            {{ strtoupper(mb_substr($demoUser['name'], 0, 1)) }}
-                        </div>
+                        <div class="member-avatar">{{ $avatarLetter }}</div>
                         <div class="member-summary">
-                            <h2>{{ $demoUser['name'] }}</h2>
-                            <p>{{ $demoUser['email'] }}</p>
+                            <h2>{{ $profile['name'] ?: $emptyText }}</h2>
+                            <p>{{ $profile['email'] ?: $emptyText }}</p>
                         </div>
                     </div>
 
@@ -47,81 +64,69 @@
                             <span class="status-ok">{{ session('status') }}</span>
                         </div>
                     @endif
+
                     @if ($activeTab === 'profile')
                         <div class="member-panel">
                             <div class="member-panel__head">
                                 <h1>Thông tin tài khoản</h1>
-                                <span>Đã đăng nhập thành công</span>
+                                <span>Dữ liệu lấy từ thông tin bạn đã nhập</span>
                             </div>
                             <div class="member-grid">
                                 <div class="member-field member-field--full">
                                     <label>Ảnh đại diện</label>
                                     <div class="member-upload">
-                                        <div class="member-upload__preview">
-                                            {{ strtoupper(mb_substr($demoUser['name'], 0, 1)) }}
-                                        </div>
+                                        <div class="member-upload__preview">{{ $avatarLetter }}</div>
                                         <div class="member-upload__controls">
-                                            <label class="member-upload__button" for="profileAvatar">
-                                                Chọn ảnh
-                                            </label>
+                                            <label class="member-upload__button" for="profileAvatar">Chọn ảnh</label>
                                             <input id="profileAvatar" type="file" class="member-upload__input" accept="image/png,image/jpeg,image/webp">
-                                            <p>Hỗ trợ JPG, PNG, WEBP. Đây là giao diện upload tạm thời.</p>
+                                            <p>Chưa lưu ảnh đại diện vào hệ thống.</p>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="member-field">
                                     <label>Họ tên</label>
-                                    <input type="text" class="form-control" value="{{ $demoUser['name'] }}">
+                                    <input type="text" class="form-control" value="{{ $profile['name'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" value="{{ $demoUser['email'] }}">
+                                    <input type="text" class="form-control" value="{{ $profile['email'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Số điện thoại</label>
-                                    <input type="text" class="form-control" value="0987 654 321">
+                                    <input type="text" class="form-control" value="{{ $profile['phone'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Ngày sinh</label>
-                                    <input type="text" class="form-control" value="01/01/2000">
+                                    <input type="text" class="form-control" value="{{ $profile['birthday'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Giới tính</label>
-                                    <input type="text" class="form-control" value="Nam">
+                                    <input type="text" class="form-control" value="{{ $genderLabels[$profile['gender']] ?? $profile['gender'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>CMND / CCCD</label>
-                                    <input type="text" class="form-control" value="012345678901">
+                                    <input type="text" class="form-control" value="{{ $profile['identity_number'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Tỉnh / Thành phố</label>
-                                    <select class="form-control">
-                                        <option>Thái Nguyên</option>
-                                        <option>Hà Nội</option>
-                                        <option>TP. Hồ Chí Minh</option>
-                                        <option>Thanh Hóa</option>
-                                    </select>
+                                    <input type="text" class="form-control" value="{{ $profile['province'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Quận / Huyện</label>
-                                    <select class="form-control">
-                                        <option>TP. Thái Nguyên</option>
-                                        <option>Ba Đình</option>
-                                        <option>Cầu Giấy</option>
-                                        <option>Quận 1</option>
-                                    </select>
+                                    <input type="text" class="form-control" value="{{ $profile['district'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field member-field--full">
                                     <label>Địa chỉ</label>
-                                    <input type="text" class="form-control" value="Số 595 đường Giải Phóng, Phường Tương Mai">
+                                    <input type="text" class="form-control" value="{{ $profile['address'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Rạp yêu thích</label>
-                                    <input type="text" class="form-control" value="Beta Thái Nguyên">
+                                    <input type="text" class="form-control" value="{{ $profile['favorite_cinema'] }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Mã thành viên</label>
-                                    <input type="text" class="form-control" value="BETA-000128" readonly>
+                                    <input type="text" class="form-control" value="{{ $profile['member_code'] }}" placeholder="{{ $emptyText }}" readonly>
                                 </div>
                             </div>
                             <div class="member-actions">
@@ -134,7 +139,7 @@
                         <div class="member-panel">
                             <div class="member-panel__head">
                                 <h1>Lịch sử giao dịch</h1>
-                                <span>Danh sách vé đã giữ trong phiên này</span>
+                                <span>Danh sách vé của tài khoản này</span>
                             </div>
                             @if (empty($bookings))
                                 <p>Bạn chưa có giao dịch nào.</p>
@@ -151,8 +156,8 @@
                                     @foreach ($bookings as $booking)
                                         @php
                                             $status = (string) ($booking['status'] ?? '');
-                                            $isPendingPayment = ($booking['is_pending_payment'] ?? false)
-                                                || str_contains($status, 'Chờ thanh toán');
+                                            $isExpired = ($booking['is_expired'] ?? false) || str_contains($status, 'Hết hạn');
+                                            $isPendingPayment = ($booking['is_pending_payment'] ?? false) || str_contains($status, 'Chờ thanh toán');
                                             $paymentUrl = $booking['payment_url'] ?? null;
                                         @endphp
                                         <div class="member-table__row member-table__row--history">
@@ -160,10 +165,12 @@
                                             <span>{{ $booking['movie_title'] ?? '' }}<br>{{ implode(', ', $booking['seats'] ?? []) }}</span>
                                             <span>{{ $booking['room'] ?? '' }}</span>
                                             <span>{{ ($booking['show_date'] ?? '') . ' ' . ($booking['show_time'] ?? '') }}</span>
-                                            <span class="{{ $isPendingPayment ? 'status-warn' : 'status-ok' }}">{{ $booking['status'] ?? '' }}</span>
+                                            <span class="{{ $isExpired || $isPendingPayment ? 'status-warn' : 'status-ok' }}">{{ $booking['status'] ?? '' }}</span>
                                             <span class="member-table__payment">
                                                 @if ($isPendingPayment && $paymentUrl)
                                                     <a class="btn-mua-ve" style="padding:8px 12px;font-size:12px;" href="{{ $paymentUrl }}">Thanh toán tiếp</a>
+                                                @elseif ($isExpired)
+                                                    <span class="status-warn">Hết hạn</span>
                                                 @else
                                                     <span class="status-ok">Hoàn tất</span>
                                                 @endif
@@ -179,44 +186,23 @@
                         <div class="member-panel">
                             <div class="member-panel__head">
                                 <h1>Điểm Beta</h1>
-                                <span>Thông tin khách hàng thân thiết</span>
+                                <span>Chưa nối dữ liệu điểm thành viên</span>
                             </div>
                             <div class="points-hero">
                                 <div>
-                                    <strong>1,250</strong>
+                                    <strong>0</strong>
                                     <p>Điểm hiện có</p>
                                 </div>
                                 <div>
-                                    <strong>Bạc</strong>
+                                    <strong>{{ $emptyText }}</strong>
                                     <p>Hạng thành viên</p>
                                 </div>
                                 <div>
-                                    <strong>250</strong>
-                                    <p>Điểm để lên hạng Vàng</p>
+                                    <strong>0</strong>
+                                    <p>Điểm sắp hết hạn</p>
                                 </div>
                             </div>
-                            <div class="member-table">
-                                <div class="member-table__row member-table__row--head">
-                                    <span>Ngày</span>
-                                    <span>Nội dung</span>
-                                    <span>Điểm</span>
-                                </div>
-                                <div class="member-table__row">
-                                    <span>29/04/2026</span>
-                                    <span>Mua vé online</span>
-                                    <span class="status-ok">+120</span>
-                                </div>
-                                <div class="member-table__row">
-                                    <span>20/04/2026</span>
-                                    <span>Đổi combo bắp nước</span>
-                                    <span class="status-warn">-80</span>
-                                </div>
-                                <div class="member-table__row">
-                                    <span>12/04/2026</span>
-                                    <span>Ưu đãi thành viên</span>
-                                    <span class="status-ok">+50</span>
-                                </div>
-                            </div>
+                            <p>Chưa có lịch sử điểm.</p>
                         </div>
                     @endif
 
@@ -224,7 +210,7 @@
                         <div class="member-panel">
                             <div class="member-panel__head">
                                 <h1>Đổi mật khẩu</h1>
-                                <span>Form giao diện mẫu cho thành viên</span>
+                                <span>Chưa nối chức năng đổi mật khẩu</span>
                             </div>
                             <div class="member-grid member-grid--single">
                                 <div class="member-field">

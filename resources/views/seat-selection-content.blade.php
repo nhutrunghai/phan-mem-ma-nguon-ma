@@ -352,15 +352,6 @@
             font: 700 17px "Montserrat", Arial, sans-serif;
             margin-top: 34px;
         }
-        .seat-bottom__countdown {
-            text-align: center;
-            color: #161e31;
-            font: 700 31px/1 "Montserrat", Arial, sans-serif;
-            margin-top: 16px;
-        }
-        .seat-bottom__countdown.is-warning {
-            color: #d44817;
-        }
         .seat-continue[disabled] {
             opacity: .5;
             cursor: not-allowed;
@@ -528,10 +519,6 @@
                         <div class="seat-bottom__title">Tổng tiền</div>
                         <div class="seat-bottom__value" data-seat-total>0 vnđ</div>
                     </div>
-                    <div class="seat-bottom__section">
-                        <div class="seat-bottom__title">Thời gian còn lại</div>
-                        <div class="seat-bottom__countdown" data-seat-timer>10:00</div>
-                    </div>
                 </div>
             </div>
 
@@ -584,7 +571,6 @@
             var summary = document.querySelector('[data-seat-summary]');
             var continueButton = document.querySelector('[data-seat-continue]');
             var total = document.querySelector('[data-seat-total]');
-            var timer = document.querySelector('[data-seat-timer]');
             var seatInput = document.querySelector('[data-seat-input]');
             var seatMap = document.querySelector('[data-seat-map]');
             var helper = document.querySelector('[data-seat-helper]');
@@ -592,18 +578,6 @@
                 .filter(function (button) { return button.dataset.state === 'selected'; })
                 .map(function (button) { return button.dataset.seat; });
             var seatPrice = {{ (int) ($selectedTicketPrice ?? 50000) }};
-            var remainingSeconds = 600;
-
-            function renderCountdown() {
-                if (!timer) {
-                    return;
-                }
-
-                var minutes = Math.floor(remainingSeconds / 60);
-                var seconds = remainingSeconds % 60;
-                timer.textContent = minutes + ':' + String(seconds).padStart(2, '0');
-                timer.classList.toggle('is-warning', remainingSeconds <= 120);
-            }
 
             function renderSelection() {
                 selectedSeats.sort(function (a, b) {
@@ -682,16 +656,6 @@
                 });
             }
             renderSelection();
-            renderCountdown();
-
-            window.setInterval(function () {
-                if (remainingSeconds === 0) {
-                    return;
-                }
-
-                remainingSeconds -= 1;
-                renderCountdown();
-            }, 1000);
         })();
     </script>
 </div>

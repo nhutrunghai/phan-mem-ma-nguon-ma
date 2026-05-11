@@ -13,6 +13,7 @@
         'booked' => 'Đã đặt',
         'cancelled' => 'Đã hủy',
         'checked_in' => 'Đã check-in',
+        'expired' => 'Hết hạn giữ ghế',
     ];
 @endphp
 <section class="admin-panel">
@@ -40,7 +41,7 @@
             @csrf @method('PUT')
             <span class="admin-badge {{ $booking->payment_status === 'paid' ? 'ok' : 'warn' }}">Thanh toán: {{ $paymentLabels[$booking->payment_status] ?? $booking->payment_status }}</span>
             <select class="form-control" style="max-width:180px;" name="booking_status">
-                @foreach (['booked', 'cancelled', 'checked_in'] as $item)
+                @foreach (['booked', 'cancelled', 'checked_in', 'expired'] as $item)
                     <option value="{{ $item }}" @selected($booking->booking_status === $item)>{{ $bookingLabels[$item] ?? $item }}</option>
                 @endforeach
             </select>

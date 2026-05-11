@@ -13,6 +13,7 @@
         'booked' => 'Đã đặt',
         'cancelled' => 'Đã hủy',
         'checked_in' => 'Đã check-in',
+        'expired' => 'Hết hạn giữ ghế',
     ];
 @endphp
 <section class="admin-panel">

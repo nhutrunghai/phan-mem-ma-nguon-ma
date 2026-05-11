@@ -1,4 +1,5 @@
 *.log
+backups/
 .DS_Store
 .playwright-mcp/
 .auth-check.html

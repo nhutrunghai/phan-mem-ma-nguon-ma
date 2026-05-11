@@ -25,11 +25,10 @@ class PaymentGatewayService
         $payment = Payment::query()
             ->where('booking_id', (string) $booking->getKey())
             ->where('method', 'sepay')
-            ->where('status', 'pending')
             ->latest()
             ->first();
 
-        if ($payment !== null) {
+        if ($payment !== null && in_array($payment->status, ['pending', 'success'], true)) {
             return $payment;
         }
 

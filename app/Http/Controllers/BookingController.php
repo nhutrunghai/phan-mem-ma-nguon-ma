@@ -13,6 +13,7 @@ use App\Services\MovieCatalog;
 use App\Services\PaymentGatewayService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class BookingController extends Controller
@@ -26,6 +27,8 @@ class BookingController extends Controller
 
     public function show(Request $request, string $id)
     {
+        $this->releaseExpiredHolds();
+
         $movie = $this->catalog->findMovie($id, null, $this->trackerMovies()) ?? abort(404);
         $selectedDate = trim((string) $request->query('date', $movie['releaseDate'] ?? now()->format('d/m/Y')));
         $selectedTime = trim((string) $request->query('time', '19:00'));
@@ -43,7 +46,7 @@ class BookingController extends Controller
             'selectedTicketPrice' => (int) $showtime->price,
             'seatRows' => $this->seatRows(),
             'soldSeats' => $this->soldSeats($showtime),
-            'heldSeats' => [],
+            'heldSeats' => $this->heldSeats($showtime),
             'reservedSeats' => [],
             'preselectedSeats' => [],
         ]);
@@ -51,6 +54,8 @@ class BookingController extends Controller
 
     public function store(Request $request, string $id)
     {
+        $this->releaseExpiredHolds();
+
         $demoUser = session('demo_user');
 
         if (! auth()->check() && (! is_array($demoUser) || empty($demoUser['email']))) {
@@ -83,7 +88,7 @@ class BookingController extends Controller
             $validated['showtime_id']
         );
         $seats = $this->resolveSeats($showtime->room, $seatCodes);
-        $conflicts = $this->conflictingSeats($showtime, $seats->pluck('_id')->map(fn ($id) => (string) $id)->all());
+        $conflicts = $this->conflictingSeats($showtime, $seats->map(fn (Seat $seat) => (string) $seat->getKey())->all());
 
         if ($conflicts !== []) {
             abort(409, 'Ghế đã được đặt: ' . implode(', ', $conflicts));
@@ -99,6 +104,7 @@ class BookingController extends Controller
             'customer_email' => $validated['customer_email'] ?? auth()->user()?->email ?? ($demoUser['email'] ?? null),
             'customer_phone' => $validated['customer_phone'] ?? null,
             'qr_code' => 'BK-' . strtoupper(Str::random(10)),
+            'hold_expires_at' => now()->addMinutes(10),
         ]);
 
         foreach ($seats as $seat) {
@@ -116,11 +122,14 @@ class BookingController extends Controller
 
     public function paymentPage(string $bookingId)
     {
+        $this->releaseExpiredHolds();
+
         $booking = Booking::query()
             ->with(['showtime.movie', 'showtime.room', 'seats.seat'])
             ->findOrFail($bookingId);
 
         $this->authorizeBooking($booking);
+        abort_if($booking->booking_status === 'expired', 410, 'Đơn vé đã hết thời gian giữ ghế. Vui lòng đặt lại.');
 
         return view('payment-page', [
             'title' => 'Thanh toán - Beta Cinemas',
@@ -135,12 +144,21 @@ class BookingController extends Controller
     public function confirmPayment(Request $request, string $bookingId)
     {
         $booking = Booking::query()->findOrFail($bookingId);
+        $this->releaseExpiredHolds();
         $this->authorizeBooking($booking);
+        abort_if($booking->booking_status === 'expired', 410, 'Đơn vé đã hết thời gian giữ ghế. Vui lòng đặt lại.');
+
+        if ($booking->payment_status === 'paid') {
+            return redirect()
+                ->route('account.demo', ['tab' => 'history'])
+                ->with('status', 'Đơn vé này đã được thanh toán.');
+        }
 
         $method = (string) $request->input('method', 'sepay');
 
         if ($method === 'sepay') {
             $this->payments->ensureSePayPayment($booking);
+            $this->refreshHold($booking);
             $booking->forceFill(['payment_status' => 'pending_gateway'])->save();
 
             return redirect()
@@ -160,12 +178,17 @@ class BookingController extends Controller
         ]);
 
         if ($paymentUrl) {
+            $this->refreshHold($booking);
             $booking->forceFill(['payment_status' => 'pending_gateway'])->save();
 
             return redirect()->away($paymentUrl);
         }
 
-        $booking->forceFill(['payment_status' => 'paid'])->save();
+        $booking->forceFill([
+            'payment_status' => 'paid',
+            'booking_status' => 'booked',
+            'hold_expires_at' => null,
+        ])->save();
 
         return redirect()
             ->route('account.demo', ['tab' => 'history'])
@@ -182,8 +205,20 @@ class BookingController extends Controller
         }
 
         $payload = $this->payments->normalizeSePayWebhook($request->all());
+        Log::info('SePay webhook received', [
+            'payload' => $payload,
+            'headers' => [
+                'authorization_present' => $authorization !== '',
+                'x_secret_present' => $request->header('X-Secret-Key') !== null,
+            ],
+        ]);
 
         if (! in_array($payload['transfer_type'], ['in', 'credit'], true) || empty($payload['code'])) {
+            Log::warning('SePay webhook ignored', [
+                'reason' => 'missing_or_non_credit',
+                'payload' => $payload,
+            ]);
+
             return response()->json(['status' => 'ignored', 'reason' => 'missing_or_non_credit']);
         }
 
@@ -194,11 +229,34 @@ class BookingController extends Controller
             ->first();
 
         if ($payment === null) {
+            Log::warning('SePay webhook ignored', [
+                'reason' => 'payment_not_found',
+                'code' => $payload['code'],
+            ]);
+
             return response()->json(['status' => 'ignored', 'reason' => 'payment_not_found']);
         }
 
         if (($payload['transfer_amount'] ?? 0) < (int) $payment->amount) {
+            Log::warning('SePay webhook ignored', [
+                'reason' => 'amount_mismatch',
+                'expected' => (int) $payment->amount,
+                'actual' => $payload['transfer_amount'] ?? null,
+                'code' => $payload['code'],
+            ]);
+
             return response()->json(['status' => 'ignored', 'reason' => 'amount_mismatch']);
+        }
+
+        $booking = Booking::query()->find((string) $payment->booking_id);
+        if ($booking === null) {
+            return response()->json(['status' => 'ignored', 'reason' => 'booking_not_found']);
+        }
+
+        if ($booking->booking_status === 'expired' || ($booking->hold_expires_at !== null && $booking->hold_expires_at->lt(now()))) {
+            $booking->forceFill(['booking_status' => 'expired'])->save();
+
+            return response()->json(['status' => 'ignored', 'reason' => 'booking_expired']);
         }
 
         $payment->forceFill([
@@ -206,9 +264,11 @@ class BookingController extends Controller
             'payment_date' => now(),
         ])->save();
 
-        Booking::query()
-            ->where('_id', (string) $payment->booking_id)
-            ->update(['payment_status' => 'paid']);
+        $booking->forceFill([
+            'payment_status' => 'paid',
+            'booking_status' => 'booked',
+            'hold_expires_at' => null,
+        ])->save();
 
         return response()->json(['status' => 'ok']);
     }
@@ -245,7 +305,13 @@ class BookingController extends Controller
                 ->with('status', 'Thanh toán VNPay chưa thành công. Vui lòng thử lại.');
         }
 
-        $booking->forceFill(['payment_status' => 'paid'])->save();
+        abort_if($booking->booking_status === 'expired' || ($booking->hold_expires_at !== null && $booking->hold_expires_at->lt(now())), 410, 'Đơn vé đã hết thời gian giữ ghế. Vui lòng đặt lại.');
+
+        $booking->forceFill([
+            'payment_status' => 'paid',
+            'booking_status' => 'booked',
+            'hold_expires_at' => null,
+        ])->save();
 
         $payment = Payment::query()
             ->where('booking_id', (string) $booking->getKey())
@@ -276,7 +342,17 @@ class BookingController extends Controller
             return response()->json(['status' => 'not_found'], 404);
         }
 
-        $booking->forceFill(['payment_status' => 'paid'])->save();
+        if ($booking->booking_status === 'expired' || ($booking->hold_expires_at !== null && $booking->hold_expires_at->lt(now()))) {
+            $booking->forceFill(['booking_status' => 'expired'])->save();
+
+            return response()->json(['status' => 'expired'], 410);
+        }
+
+        $booking->forceFill([
+            'payment_status' => 'paid',
+            'booking_status' => 'booked',
+            'hold_expires_at' => null,
+        ])->save();
 
         return response()->json(['status' => 'ok']);
     }
@@ -397,12 +473,7 @@ class BookingController extends Controller
 
     private function conflictingSeats(Showtime $showtime, array $seatIds): array
     {
-        $bookingIds = Booking::query()
-            ->where('showtime_id', (string) $showtime->getKey())
-            ->where('booking_status', 'booked')
-            ->pluck('_id')
-            ->map(fn ($id) => (string) $id)
-            ->all();
+        $bookingIds = $this->unavailableBookingIds($showtime);
 
         if ($bookingIds === []) {
             return [];
@@ -426,13 +497,71 @@ class BookingController extends Controller
 
     private function soldSeats(Showtime $showtime): array
     {
-        $bookingIds = Booking::query()
+        $bookingIds = $this->paidBookingIds($showtime);
+
+        return $this->seatNumbersForBookings($bookingIds);
+    }
+
+    private function heldSeats(Showtime $showtime): array
+    {
+        $bookingIds = $this->activeHoldBookingIds($showtime);
+
+        return $this->seatNumbersForBookings($bookingIds);
+    }
+
+    private function unavailableBookingIds(Showtime $showtime): array
+    {
+        return collect($this->paidBookingIds($showtime))
+            ->merge($this->activeHoldBookingIds($showtime))
+            ->unique()
+            ->values()
+            ->all();
+    }
+
+    private function paidBookingIds(Showtime $showtime): array
+    {
+        return Booking::query()
             ->where('showtime_id', (string) $showtime->getKey())
             ->where('booking_status', 'booked')
-            ->pluck('_id')
-            ->map(fn ($id) => (string) $id)
+            ->where('payment_status', 'paid')
+            ->get()
+            ->map(fn (Booking $booking) => (string) $booking->getKey())
             ->all();
+    }
 
+    private function activeHoldBookingIds(Showtime $showtime): array
+    {
+        $this->normalizeMissingHoldExpiry($showtime);
+
+        return Booking::query()
+            ->where('showtime_id', (string) $showtime->getKey())
+            ->where('booking_status', 'booked')
+            ->whereIn('payment_status', ['pending', 'pending_gateway'])
+            ->where('hold_expires_at', '>', now())
+            ->get()
+            ->map(fn (Booking $booking) => (string) $booking->getKey())
+            ->all();
+    }
+
+    private function refreshHold(Booking $booking): void
+    {
+        if ($booking->hold_expires_at === null || $booking->hold_expires_at->lt(now())) {
+            $booking->forceFill(['hold_expires_at' => now()->addMinutes(10)])->save();
+        }
+    }
+
+    private function normalizeMissingHoldExpiry(Showtime $showtime): void
+    {
+        Booking::query()
+            ->where('showtime_id', (string) $showtime->getKey())
+            ->where('booking_status', 'booked')
+            ->whereIn('payment_status', ['pending', 'pending_gateway'])
+            ->whereNull('hold_expires_at')
+            ->update(['hold_expires_at' => now()->addMinutes(10)]);
+    }
+
+    private function seatNumbersForBookings(array $bookingIds): array
+    {
         if ($bookingIds === []) {
             return [];
         }
@@ -451,6 +580,16 @@ class BookingController extends Controller
             ->orderBy('seat_number')
             ->pluck('seat_number')
             ->all();
+    }
+
+    private function releaseExpiredHolds(): void
+    {
+        Booking::query()
+            ->where('booking_status', 'booked')
+            ->whereIn('payment_status', ['pending', 'pending_gateway'])
+            ->whereNotNull('hold_expires_at')
+            ->where('hold_expires_at', '<=', now())
+            ->update(['booking_status' => 'expired']);
     }
 
     private function parseScheduleDateTime(string $showDate, string $showTime): Carbon

@@ -178,19 +178,64 @@ class MovieCatalog
 
     private function availableSeatLabel(Showtime $showtime): string
     {
-        $capacity = (int) ($showtime->room?->total_seats ?: $showtime->room?->seats()->count() ?: 0);
-        $bookingIds = Booking::query()
-            ->where('showtime_id', (string) $showtime->getKey())
-            ->where('booking_status', 'booked')
-            ->pluck('_id')
-            ->map(fn ($id) => (string) $id)
-            ->all();
+        $this->releaseExpiredHolds();
 
-        $sold = $bookingIds === []
+        $capacity = (int) ($showtime->room?->total_seats ?: $showtime->room?->seats()->count() ?: 0);
+        $bookingIds = $this->unavailableBookingIds($showtime);
+
+        $unavailable = $bookingIds === []
             ? 0
             : BookingSeat::query()->whereIn('booking_id', $bookingIds)->count();
 
-        return max(0, $capacity - $sold) . ' ghế trống';
+        return max(0, $capacity - $unavailable) . ' ghế trống';
+    }
+
+    private function unavailableBookingIds(Showtime $showtime): array
+    {
+        $this->normalizeMissingHoldExpiry($showtime);
+
+        $paidBookingIds = Booking::query()
+            ->where('showtime_id', (string) $showtime->getKey())
+            ->where('booking_status', 'booked')
+            ->where('payment_status', 'paid')
+            ->get()
+            ->map(fn (Booking $booking) => (string) $booking->getKey())
+            ->all();
+
+        $activeHoldBookingIds = Booking::query()
+            ->where('showtime_id', (string) $showtime->getKey())
+            ->where('booking_status', 'booked')
+            ->whereIn('payment_status', ['pending', 'pending_gateway'])
+            ->where('hold_expires_at', '>', now())
+            ->get()
+            ->map(fn (Booking $booking) => (string) $booking->getKey())
+            ->all();
+
+        return collect($paidBookingIds)
+            ->merge($activeHoldBookingIds)
+            ->unique()
+            ->values()
+            ->all();
+    }
+
+    private function normalizeMissingHoldExpiry(Showtime $showtime): void
+    {
+        Booking::query()
+            ->where('showtime_id', (string) $showtime->getKey())
+            ->where('booking_status', 'booked')
+            ->whereIn('payment_status', ['pending', 'pending_gateway'])
+            ->whereNull('hold_expires_at')
+            ->update(['hold_expires_at' => now()->addMinutes(10)]);
+    }
+
+    private function releaseExpiredHolds(): void
+    {
+        Booking::query()
+            ->where('booking_status', 'booked')
+            ->whereIn('payment_status', ['pending', 'pending_gateway'])
+            ->whereNotNull('hold_expires_at')
+            ->where('hold_expires_at', '<=', now())
+            ->update(['booking_status' => 'expired']);
     }
 
     private function defaultDetails(Movie $movie): array

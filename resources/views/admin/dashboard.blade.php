@@ -6,6 +6,7 @@
         'pending' => 'Chờ thanh toán',
         'pending_gateway' => 'Chờ cổng thanh toán',
         'paid' => 'Đã thanh toán',
+        'success' => 'Thành công',
         'failed' => 'Thất bại',
         'refunded' => 'Đã hoàn tiền',
     ];
@@ -13,15 +14,18 @@
         'booked' => 'Đã đặt',
         'cancelled' => 'Đã hủy',
         'checked_in' => 'Đã check-in',
+        'expired' => 'Hết hạn giữ ghế',
     ];
 @endphp
 <div class="admin-stats">
     <div class="admin-stat"><strong>{{ $stats['movies'] }}</strong><span>Phim</span></div>
     <div class="admin-stat"><strong>{{ $stats['rooms'] }}</strong><span>Phòng chiếu</span></div>
     <div class="admin-stat"><strong>{{ $stats['showtimes'] }}</strong><span>Suất chiếu</span></div>
-    <div class="admin-stat"><strong>{{ $stats['bookings'] }}</strong><span>Tổng lượt đặt vé</span></div>
-    <div class="admin-stat"><strong>{{ number_format($stats['paid_revenue']) }}đ</strong><span>Doanh thu đã thanh toán</span></div>
-    <div class="admin-stat"><strong>{{ $stats['pending_bookings'] }}</strong><span>Đơn chờ thanh toán</span></div>
+    <div class="admin-stat"><strong>{{ $stats['bookings'] }}</strong><span>Đơn còn hiệu lực</span></div>
+    <div class="admin-stat"><strong>{{ $stats['paid_bookings'] }}</strong><span>Đơn đã thanh toán</span></div>
+    <div class="admin-stat"><strong>{{ number_format($stats['paid_revenue']) }}đ</strong><span>Doanh thu xác nhận</span></div>
+    <div class="admin-stat"><strong>{{ $stats['pending_bookings'] }}</strong><span>Đơn đang giữ ghế</span></div>
+    <div class="admin-stat"><strong>{{ $stats['expired_bookings'] }}</strong><span>Đơn hết hạn</span></div>
     <div class="admin-stat"><strong>{{ $stats['users'] }}</strong><span>Người dùng</span></div>
 </div>
 
@@ -50,7 +54,9 @@
                         @foreach ($recentBookings as $booking)
                             @php
                                 $movie = $moviesById[(string) $booking->showtime_id] ?? null;
-                                $paymentClass = $booking->payment_status === 'paid' ? 'ok' : ($booking->payment_status === 'failed' ? 'danger' : 'warn');
+                                $paymentClass = $booking->payment_status === 'paid'
+                                    ? 'ok'
+                                    : ($booking->payment_status === 'failed' || $booking->booking_status === 'expired' ? 'danger' : 'warn');
                             @endphp
                             <tr>
                                 <td><strong>{{ $booking->qr_code }}</strong></td>

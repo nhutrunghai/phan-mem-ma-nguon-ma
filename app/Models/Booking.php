@@ -18,6 +18,11 @@ class Booking extends Model
         'customer_email',
         'customer_phone',
         'qr_code',
+        'hold_expires_at',
+    ];
+
+    protected $casts = [
+        'hold_expires_at' => 'datetime',
     ];
 
     public function showtime(): BelongsTo

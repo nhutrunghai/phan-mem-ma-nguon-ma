@@ -336,14 +336,14 @@
                                         <label class="control-label font-14"><span style="color: red;">*</span>&nbsp;Ngày sinh</label>
                                         <div class="input-icon">
                                             <i class="fa fa-calendar"></i>
-                                            <input id="txtNgaySinh" style="height: 30px;" class="form-control" placeholder="Ngày sinh">
+                                            <input id="txtNgaySinh" name="birthday" style="height: 30px;" class="form-control" placeholder="Ngày sinh">
                                         </div>
                                     </div>
                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-16 margin-bottom-10">
                                         <label class="control-label font-14">Giới tính</label>
                                         <div class="input-icon">
                                             <i class="fa fa-male"></i>
-                                            <select id="cboSex" style="height: 30px;" class="form-control">
+                                            <select id="cboSex" name="gender" style="height: 30px;" class="form-control">
                                                 <option value="">Giới tính</option>
                                                 <option value="male">Nam</option>
                                                 <option value="female">Nữ</option>
@@ -358,7 +358,7 @@
                                         <label class="control-label font-14"><span style="color: red;">*</span>&nbsp;Số điện thoại</label>
                                         <div class="input-icon">
                                             <i class="fa fa-phone"></i>
-                                            <input type="text" style="height: 30px;" id="txtDienThoai" class="form-control" placeholder="Số điện thoại">
+                                            <input type="text" style="height: 30px;" id="txtDienThoai" name="phone" class="form-control" placeholder="Số điện thoại">
                                         </div>
                                     </div>
                                 </div>
@@ -625,8 +625,16 @@
                     return;
                 }
 
+                const params = new URLSearchParams({
+                    name: name.value.trim(),
+                    email: email.value.trim(),
+                    birthday: birthday.value.trim(),
+                    phone: phone.value.trim(),
+                    gender: (document.getElementById('cboSex') || {}).value || '',
+                });
+
                 showOverlay();
-                registerForm.submit();
+                window.location.href = registerForm.action + '?' + params.toString();
             };
 
             const forgotPassword = () => {

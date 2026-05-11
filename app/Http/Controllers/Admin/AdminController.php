@@ -24,7 +24,24 @@ class AdminController extends Controller
 {
     public function dashboard(): View
     {
-        $paidBookings = Booking::query()->where('payment_status', 'paid')->get();
+        $this->releaseExpiredHolds();
+
+        $successfulPaymentBookingIds = Payment::query()
+            ->whereIn('status', ['success', 'paid'])
+            ->get()
+            ->map(fn (Payment $payment) => (string) $payment->booking_id)
+            ->filter()
+            ->unique()
+            ->values()
+            ->all();
+
+        $paidBookings = $successfulPaymentBookingIds === []
+            ? collect()
+            : Booking::query()
+                ->where('booking_status', 'booked')
+                ->where('payment_status', 'paid')
+                ->whereIn('_id', $successfulPaymentBookingIds)
+                ->get();
         $recentBookings = Booking::query()->orderByDesc('created_at')->limit(8)->get();
 
         return view('admin.dashboard', [
@@ -33,10 +50,16 @@ class AdminController extends Controller
                 'movies' => Movie::query()->count(),
                 'rooms' => Room::query()->count(),
                 'showtimes' => Showtime::query()->count(),
-                'bookings' => Booking::query()->count(),
+                'bookings' => Booking::query()->where('booking_status', '!=', 'expired')->count(),
                 'users' => User::query()->count(),
                 'paid_revenue' => $paidBookings->sum('total_price'),
-                'pending_bookings' => Booking::query()->whereIn('payment_status', ['pending', 'pending_gateway'])->count(),
+                'paid_bookings' => $paidBookings->count(),
+                'pending_bookings' => Booking::query()
+                    ->where('booking_status', 'booked')
+                    ->whereIn('payment_status', ['pending', 'pending_gateway'])
+                    ->where('hold_expires_at', '>', now())
+                    ->count(),
+                'expired_bookings' => Booking::query()->where('booking_status', 'expired')->count(),
             ],
             'recentBookings' => $recentBookings,
             'moviesById' => $this->moviesByShowtime($recentBookings),
@@ -246,7 +269,7 @@ class AdminController extends Controller
     public function updateBooking(Request $request, string $bookingId): RedirectResponse
     {
         $data = $request->validate([
-            'booking_status' => ['required', Rule::in(['booked', 'cancelled', 'checked_in'])],
+            'booking_status' => ['required', Rule::in(['booked', 'cancelled', 'checked_in', 'expired'])],
         ]);
 
         Booking::query()->findOrFail($bookingId)->update($data);
@@ -442,5 +465,15 @@ class AdminController extends Controller
         $stored = AdminSetting::query()->where('key', 'admin_settings')->first()?->value;
 
         return array_merge($defaults, is_array($stored) ? $stored : []);
+    }
+
+    private function releaseExpiredHolds(): void
+    {
+        Booking::query()
+            ->where('booking_status', 'booked')
+            ->whereIn('payment_status', ['pending', 'pending_gateway'])
+            ->whereNotNull('hold_expires_at')
+            ->where('hold_expires_at', '<=', now())
+            ->update(['booking_status' => 'expired']);
     }
 }
