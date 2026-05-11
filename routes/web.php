@@ -350,6 +350,12 @@ function betaResolvedNavItems(array $siteData): array
 
 function betaTrackerSourcePath(string $file): string
 {
+    $repoPath = resource_path('tracker-pages/' . ltrim(str_replace('\\', '/', $file), '/'));
+
+    if (is_readable($repoPath)) {
+        return $repoPath;
+    }
+
     return 'D:\\My Web Sites\\beta\\betacinemas.vn\\' . ltrim(str_replace('/', '\\', $file), '\\');
 }
 
