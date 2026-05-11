@@ -33,15 +33,7 @@ class MovieCatalog
             return $staticMovies;
         }
 
-        $byId = collect($staticMovies)->keyBy(fn (array $movie) => (string) ($movie['id'] ?? ''));
-
-        foreach ($dbMovies as $movie) {
-            $id = (string) ($movie['id'] ?? '');
-            $byId[$id] = array_replace($byId->get($id, []), $movie);
-        }
-
-        return $byId
-            ->values()
+        return collect($dbMovies)
             ->sortBy(fn (array $movie) => (empty($movie['scheduleDates']) ? '1' : '0') . '|' . (string) ($movie['title'] ?? ''))
             ->values()
             ->all();
