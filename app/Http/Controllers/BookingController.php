@@ -21,9 +21,7 @@ class BookingController extends Controller
     public function __construct(
         private readonly MovieCatalog $catalog,
         private readonly PaymentGatewayService $payments
-    )
-    {
-    }
+    ) {}
 
     public function show(Request $request, string $id)
     {
@@ -37,7 +35,7 @@ class BookingController extends Controller
         $showtime = $this->resolveShowtime($movie, $selectedDate, $selectedTime, $selectedFormat, $selectedShowtimeId);
 
         return view('seat-selection', [
-            'title' => 'Đặt vé - ' . ($movie['title'] ?? 'Beta Cinemas'),
+            'title' => 'Đặt vé - '.($movie['title'] ?? 'Beta Cinemas'),
             'movie' => $movie,
             'selectedDate' => $selectedDate,
             'selectedTime' => $selectedTime,
@@ -59,7 +57,7 @@ class BookingController extends Controller
         $demoUser = session('demo_user');
 
         if (! auth()->check() && (! is_array($demoUser) || empty($demoUser['email']))) {
-            return redirect()->to(route('auth.login.form') . '#login')
+            return redirect()->to(route('auth.login.form').'#login')
                 ->with('status', 'Vui lòng đăng nhập trước khi tiếp tục đặt vé.');
         }
 
@@ -91,7 +89,7 @@ class BookingController extends Controller
         $conflicts = $this->conflictingSeats($showtime, $seats->map(fn (Seat $seat) => (string) $seat->getKey())->all());
 
         if ($conflicts !== []) {
-            abort(409, 'Ghế đã được đặt: ' . implode(', ', $conflicts));
+            abort(409, 'Ghế đã được đặt: '.implode(', ', $conflicts));
         }
 
         $booking = Booking::create([
@@ -103,7 +101,7 @@ class BookingController extends Controller
             'customer_name' => $validated['customer_name'] ?? auth()->user()?->name ?? ($demoUser['name'] ?? null),
             'customer_email' => $validated['customer_email'] ?? auth()->user()?->email ?? ($demoUser['email'] ?? null),
             'customer_phone' => $validated['customer_phone'] ?? null,
-            'qr_code' => 'BK-' . strtoupper(Str::random(10)),
+            'qr_code' => 'BK-'.strtoupper(Str::random(10)),
             'hold_expires_at' => now()->addMinutes(10),
         ]);
 
@@ -286,8 +284,8 @@ class BookingController extends Controller
 
         abort_unless(
             ((string) ($booking->user_id ?? '') !== '' && (string) $booking->user_id === (string) auth()->id())
-            || ($authEmail !== '' && (string) $booking->customer_email === $authEmail)
-            || ($demoEmail !== '' && (string) $booking->customer_email === $demoEmail),
+                || ($authEmail !== '' && (string) $booking->customer_email === $authEmail)
+                || ($demoEmail !== '' && (string) $booking->customer_email === $demoEmail),
             403
         );
     }
@@ -310,7 +308,7 @@ class BookingController extends Controller
     {
         foreach ($this->seatRows() as $row => $numbers) {
             foreach ($numbers as $number) {
-                $code = $row . $number;
+                $code = $row.$number;
                 Seat::query()->firstOrCreate(
                     ['room_id' => (string) $room->getKey(), 'seat_number' => $code],
                     ['seat_type' => in_array($row, ['A', 'B'], true) ? 'vip' : 'normal']
@@ -475,10 +473,10 @@ class BookingController extends Controller
         $time = preg_match('/\d{1,2}:\d{2}/', $showTime, $timeMatch) ? $timeMatch[0] : '19:00';
         $date = preg_match('/\d{1,2}\/\d{1,2}\/\d{4}/', $showDate, $fullDate)
             ? $fullDate[0]
-            : (preg_match('/\d{1,2}\/\d{1,2}/', $showDate, $shortDate) ? $shortDate[0] . '/' . now()->year : now()->format('d/m/Y'));
+            : (preg_match('/\d{1,2}\/\d{1,2}/', $showDate, $shortDate) ? $shortDate[0].'/'.now()->year : now()->format('d/m/Y'));
 
         try {
-            return Carbon::createFromFormat('d/m/Y H:i', $date . ' ' . $time);
+            return Carbon::createFromFormat('d/m/Y H:i', $date.' '.$time);
         } catch (\Throwable) {
             return now()->setTimeFromTimeString($time);
         }
