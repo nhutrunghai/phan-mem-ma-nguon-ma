@@ -66,11 +66,17 @@
                     @endif
 
                     @if ($activeTab === 'profile')
-                        <div class="member-panel">
+                        <form class="member-panel" method="post" action="{{ route('account.demo.update') }}">
+                            @csrf
                             <div class="member-panel__head">
                                 <h1>Thông tin tài khoản</h1>
                                 <span>Dữ liệu lấy từ thông tin bạn đã nhập</span>
                             </div>
+                            @if ($errors->any())
+                                <div class="status-warn" style="margin:0 0 16px;">
+                                    {{ $errors->first() }}
+                                </div>
+                            @endif
                             <div class="member-grid">
                                 <div class="member-field member-field--full">
                                     <label>Ảnh đại diện</label>
@@ -86,43 +92,48 @@
 
                                 <div class="member-field">
                                     <label>Họ tên</label>
-                                    <input type="text" class="form-control" value="{{ $profile['name'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="name" class="form-control" value="{{ old('name', $profile['name']) }}" placeholder="{{ $emptyText }}" required>
                                 </div>
                                 <div class="member-field">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" value="{{ $profile['email'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="email" name="email" class="form-control" value="{{ old('email', $profile['email']) }}" placeholder="{{ $emptyText }}" required>
                                 </div>
                                 <div class="member-field">
                                     <label>Số điện thoại</label>
-                                    <input type="text" class="form-control" value="{{ $profile['phone'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="phone" class="form-control" value="{{ old('phone', $profile['phone']) }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Ngày sinh</label>
-                                    <input type="text" class="form-control" value="{{ $profile['birthday'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="birthday" class="form-control" value="{{ old('birthday', $profile['birthday']) }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Giới tính</label>
-                                    <input type="text" class="form-control" value="{{ $genderLabels[$profile['gender']] ?? $profile['gender'] }}" placeholder="{{ $emptyText }}">
+                                    <select name="gender" class="form-control">
+                                        <option value="">Chưa cập nhật</option>
+                                        @foreach ($genderLabels as $value => $label)
+                                            <option value="{{ $value }}" @selected(old('gender', $profile['gender']) === $value)>{{ $label }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="member-field">
                                     <label>CMND / CCCD</label>
-                                    <input type="text" class="form-control" value="{{ $profile['identity_number'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="identity_number" class="form-control" value="{{ old('identity_number', $profile['identity_number']) }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Tỉnh / Thành phố</label>
-                                    <input type="text" class="form-control" value="{{ $profile['province'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="province" class="form-control" value="{{ old('province', $profile['province']) }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Quận / Huyện</label>
-                                    <input type="text" class="form-control" value="{{ $profile['district'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="district" class="form-control" value="{{ old('district', $profile['district']) }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field member-field--full">
                                     <label>Địa chỉ</label>
-                                    <input type="text" class="form-control" value="{{ $profile['address'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="address" class="form-control" value="{{ old('address', $profile['address']) }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Rạp yêu thích</label>
-                                    <input type="text" class="form-control" value="{{ $profile['favorite_cinema'] }}" placeholder="{{ $emptyText }}">
+                                    <input type="text" name="favorite_cinema" class="form-control" value="{{ old('favorite_cinema', $profile['favorite_cinema']) }}" placeholder="{{ $emptyText }}">
                                 </div>
                                 <div class="member-field">
                                     <label>Mã thành viên</label>
@@ -130,9 +141,9 @@
                                 </div>
                             </div>
                             <div class="member-actions">
-                                <button type="button" class="btn-mua-ve">Cập nhật thông tin</button>
+                                <button type="submit" class="btn-mua-ve">Cập nhật thông tin</button>
                             </div>
-                        </div>
+                        </form>
                     @endif
 
                     @if ($activeTab === 'history')

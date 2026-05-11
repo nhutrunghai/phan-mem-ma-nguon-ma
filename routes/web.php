@@ -5,11 +5,15 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Models\Booking;
 use App\Models\BookingSeat;
 use App\Models\Movie;
+use App\Models\PasswordResetOtp;
 use App\Models\Room;
 use App\Models\Seat;
 use App\Models\Showtime;
+use App\Models\User;
 use App\Services\MovieCatalog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 function betaTrackerMovies(): array
@@ -225,6 +229,47 @@ function betaTrackerMovies(): array
     ];
 }
 
+function betaDemoUserSessionPayload(User $user): array
+{
+    return [
+        'id' => (string) $user->getKey(),
+        'name' => $user->name ?: 'Beta Member',
+        'email' => $user->email,
+        'phone' => $user->phone ?? '',
+        'role' => $user->role ?? 'user',
+        'status' => (bool) ($user->status ?? true),
+        'birthday' => $user->birthday ?? '',
+        'gender' => $user->gender ?? '',
+        'identity_number' => $user->identity_number ?? '',
+        'province' => $user->province ?? '',
+        'district' => $user->district ?? '',
+        'address' => $user->address ?? '',
+        'favorite_cinema' => $user->favorite_cinema ?? '',
+    ];
+}
+
+function betaRefreshActiveDemoUserSession(): bool
+{
+    $demoUser = session('demo_user', []);
+    $userId = is_array($demoUser) ? ($demoUser['id'] ?? null) : null;
+
+    if ($userId === null) {
+        return session()->has('demo_user');
+    }
+
+    $user = User::query()->find((string) $userId);
+
+    if (! $user || ($user->status ?? true) === false) {
+        session()->forget('demo_user');
+
+        return false;
+    }
+
+    session(['demo_user' => array_merge($demoUser, betaDemoUserSessionPayload($user))]);
+
+    return true;
+}
+
 function betaSiteData(): array
 {
     $dataPath = resource_path('data/web-home.json');
@@ -379,7 +424,7 @@ Route::get('/lich-chieu', function () {
     }
 
     $availableDateKeys = collect($topScheduleDates)
-        ->map(fn (array $date): string => trim(($date['label'] ?? '') . ($date['suffix'] ?? '')))
+        ->map(fn(array $date): string => trim(($date['label'] ?? '') . ($date['suffix'] ?? '')))
         ->filter()
         ->values()
         ->all();
@@ -561,7 +606,7 @@ Route::post('/dat-ve-demo/{id}', function (Request $request, string $id) {
     ]);
 
     $seats = collect(explode(',', $validated['seats']))
-        ->map(fn (string $seat): string => trim($seat))
+        ->map(fn(string $seat): string => trim($seat))
         ->filter()
         ->unique()
         ->values()
@@ -647,7 +692,7 @@ Route::get('/nhuong-quyen', function () {
 })->name('franchise.index');
 
 Route::get('/thanh-vien', function () {
-    if (session()->has('demo_user')) {
+    if (betaRefreshActiveDemoUserSession()) {
         return redirect()->route('account.demo');
     }
 
@@ -655,23 +700,27 @@ Route::get('/thanh-vien', function () {
 })->name('member.index');
 
 Route::get('/demo-auth/login', function (Request $request) {
-    $name = trim((string) $request->query('name', ''));
     $email = trim((string) $request->query('email', ''));
+    $password = (string) $request->query('password', '');
+    $user = $email !== '' ? User::query()->where('email', $email)->first() : null;
 
-    if ($name === '') {
-        if ($email !== '' && str_contains($email, '@')) {
-            $name = ucfirst((string) str($email)->before('@'));
-        } else {
-            $name = 'Beta Member';
-        }
+    if (! $user || ! Hash::check($password, (string) $user->password)) {
+        return redirect()
+            ->to(route('auth.login.form') . '#login')
+            ->withErrors(['email' => 'Email hoặc mật khẩu không đúng.'])
+            ->withInput(['email' => $email]);
     }
 
-    session([
-        'demo_user' => [
-            'name' => $name,
-            'email' => $email !== '' ? $email : 'member@betacinemas.vn',
-        ],
-    ]);
+    if (($user->status ?? true) === false) {
+        session()->forget(['demo_user', 'admin_authenticated', 'admin_email', 'admin_user_id']);
+
+        return redirect()
+            ->to(route('auth.login.form') . '#login')
+            ->withErrors(['email' => 'Tài khoản đã bị khóa.'])
+            ->withInput(['email' => $email]);
+    }
+
+    session(['demo_user' => betaDemoUserSessionPayload($user)]);
 
     return redirect()->route('account.demo');
 })->name('auth.demo.login');
@@ -688,22 +737,178 @@ Route::get('/dang-nhap', function () {
     ]);
 })->name('auth.login.form');
 
+Route::post('/quen-mat-khau/gui-ma', function (Request $request) {
+    $data = $request->validate([
+        'email' => ['required', 'email', 'max:160'],
+    ]);
+
+    $email = mb_strtolower(trim($data['email']));
+    $user = User::query()->where('email', $email)->first();
+
+    if (! $user) {
+        return back()
+            ->withErrors(['email' => 'Email này chưa được đăng ký.'])
+            ->withInput(['email' => $email]);
+    }
+
+    if (($user->status ?? true) === false) {
+        return back()
+            ->withErrors(['email' => 'Tài khoản đã bị khóa, không thể đặt lại mật khẩu.'])
+            ->withInput(['email' => $email]);
+    }
+
+    $code = (string) random_int(100000, 999999);
+
+    PasswordResetOtp::query()
+        ->where('email', $email)
+        ->whereNull('used_at')
+        ->delete();
+
+    PasswordResetOtp::query()->create([
+        'email' => $email,
+        'code_hash' => Hash::make($code),
+        'attempts' => 0,
+        'expires_at' => now()->addMinutes(10),
+        'used_at' => null,
+    ]);
+
+    try {
+        Mail::raw(
+            "Mã OTP đặt lại mật khẩu Beta Cinemas của bạn là: {$code}\n\nMã này hết hạn sau 10 phút.",
+            function ($message) use ($email): void {
+                $message->to($email)->subject('Mã OTP đặt lại mật khẩu Beta Cinemas');
+            }
+        );
+    } catch (Throwable) {
+        PasswordResetOtp::query()
+            ->where('email', $email)
+            ->whereNull('used_at')
+            ->delete();
+
+        return back()
+            ->withErrors(['email' => 'Không gửi được email OTP. Vui lòng thử lại sau.'])
+            ->withInput(['email' => $email]);
+    }
+
+    return redirect()
+        ->route('password.reset.form', ['email' => $email])
+        ->with('status', 'Mã OTP đã được gửi về email của bạn.');
+})->name('password.otp.send');
+
+Route::get('/dat-lai-mat-khau', function (Request $request) {
+    return view('password-reset', [
+        'title' => 'Đặt lại mật khẩu | Beta Cinemas',
+        'email' => trim((string) $request->query('email', '')),
+    ]);
+})->name('password.reset.form');
+
+Route::post('/dat-lai-mat-khau', function (Request $request) {
+    $data = $request->validate([
+        'email' => ['required', 'email', 'max:160'],
+        'otp' => ['required', 'digits:6'],
+        'password' => ['required', 'string', 'min:6', 'confirmed'],
+    ]);
+
+    $email = mb_strtolower(trim($data['email']));
+    $otp = PasswordResetOtp::query()
+        ->where('email', $email)
+        ->whereNull('used_at')
+        ->where('expires_at', '>', now())
+        ->orderByDesc('created_at')
+        ->first();
+
+    if (! $otp) {
+        return back()
+            ->withErrors(['otp' => 'Mã OTP không tồn tại hoặc đã hết hạn.'])
+            ->withInput(['email' => $email]);
+    }
+
+    if (($otp->attempts ?? 0) >= 5) {
+        $otp->forceFill(['used_at' => now()])->save();
+
+        return back()
+            ->withErrors(['otp' => 'Mã OTP đã bị khóa do nhập sai quá nhiều lần. Vui lòng gửi mã mới.'])
+            ->withInput(['email' => $email]);
+    }
+
+    if (! Hash::check($data['otp'], (string) $otp->code_hash)) {
+        $otp->increment('attempts');
+
+        return back()
+            ->withErrors(['otp' => 'Mã OTP không đúng.'])
+            ->withInput(['email' => $email]);
+    }
+
+    $user = User::query()->where('email', $email)->first();
+
+    if (! $user || ($user->status ?? true) === false) {
+        return back()
+            ->withErrors(['email' => 'Tài khoản không tồn tại hoặc đã bị khóa.'])
+            ->withInput(['email' => $email]);
+    }
+
+    $user->forceFill([
+        'password' => Hash::make($data['password']),
+    ])->save();
+
+    $otp->forceFill(['used_at' => now()])->save();
+    PasswordResetOtp::query()
+        ->where('email', $email)
+        ->whereNull('used_at')
+        ->delete();
+
+    session()->forget('demo_user');
+
+    return redirect()
+        ->to(route('auth.login.form') . '#login')
+        ->with('status', 'Đã đổi mật khẩu. Vui lòng đăng nhập lại.');
+})->name('password.reset.update');
+
 Route::get('/demo-auth/register', function (Request $request) {
     $name = trim((string) $request->query('name', 'Beta Member'));
     $email = trim((string) $request->query('email', 'member@betacinemas.vn'));
+    $password = (string) $request->query('password', '');
     $birthday = trim((string) $request->query('birthday', ''));
     $phone = trim((string) $request->query('phone', ''));
     $gender = trim((string) $request->query('gender', ''));
+    $gender = [
+        '1' => 'male',
+        '2' => 'female',
+        '3' => 'other',
+        'male' => 'male',
+        'female' => 'female',
+        'other' => 'other',
+    ][$gender] ?? '';
 
-    session([
-        'demo_user' => [
-            'name' => $name !== '' ? $name : 'Beta Member',
-            'email' => $email !== '' ? $email : 'member@betacinemas.vn',
-            'birthday' => $birthday,
-            'phone' => $phone,
-            'gender' => $gender,
-        ],
+    $data = validator([
+        'name' => $name,
+        'email' => $email,
+        'password' => $password,
+        'birthday' => $birthday,
+        'phone' => $phone,
+        'gender' => $gender,
+    ], [
+        'name' => ['required', 'string', 'max:120'],
+        'email' => ['required', 'email', 'max:160', 'unique:users,email'],
+        'password' => ['required', 'string', 'min:6'],
+        'birthday' => ['nullable', 'string', 'max:40'],
+        'phone' => ['nullable', 'string', 'max:40'],
+        'gender' => ['nullable', 'string', 'in:male,female,other'],
+    ])->validate();
+
+    $user = User::query()->create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => $data['password'],
+        'phone' => $data['phone'] ?? null,
+        'role' => 'user',
+        'status' => true,
     ]);
+
+    session(['demo_user' => array_merge(betaDemoUserSessionPayload($user), [
+        'birthday' => $data['birthday'] ?? '',
+        'gender' => $data['gender'] ?? '',
+    ])]);
 
     return redirect()->route('account.demo');
 })->name('auth.demo.register');
@@ -727,7 +932,7 @@ Route::get('/dang-xuat', function () {
 })->name('auth.demo.logout');
 
 Route::get('/tai-khoan', function (Request $request) {
-    if (!session()->has('demo_user')) {
+    if (! betaRefreshActiveDemoUserSession()) {
         return redirect()->to(route('auth.login.form') . '#login');
     }
 
@@ -767,7 +972,7 @@ Route::get('/tai-khoan', function (Request $request) {
                     'show_date' => $showtime?->start_time?->format('d/m/Y') ?? '',
                     'show_time' => $showtime?->start_time?->format('H:i') ?? '',
                     'seats' => $booking->seats
-                        ->map(fn (BookingSeat $bookingSeat) => $bookingSeat->seat?->seat_number)
+                        ->map(fn(BookingSeat $bookingSeat) => $bookingSeat->seat?->seat_number)
                         ->filter()
                         ->values()
                         ->all(),
@@ -805,6 +1010,87 @@ Route::get('/tai-khoan', function (Request $request) {
     ]);
 })->name('account.demo');
 
+Route::post('/tai-khoan', function (Request $request) {
+    if (! betaRefreshActiveDemoUserSession()) {
+        return redirect()->to(route('auth.login.form') . '#login');
+    }
+
+    $validated = $request->validate([
+        'name' => ['required', 'string', 'max:120'],
+        'email' => ['required', 'email', 'max:160'],
+        'phone' => ['nullable', 'string', 'max:40'],
+        'birthday' => ['nullable', 'string', 'max:40'],
+        'gender' => ['nullable', 'string', 'in:male,female,other'],
+        'identity_number' => ['nullable', 'string', 'max:40'],
+        'province' => ['nullable', 'string', 'max:120'],
+        'district' => ['nullable', 'string', 'max:120'],
+        'address' => ['nullable', 'string', 'max:255'],
+        'favorite_cinema' => ['nullable', 'string', 'max:160'],
+    ]);
+
+    $demoUser = session('demo_user', []);
+    $demoUser = is_array($demoUser) ? $demoUser : [];
+
+    $updatedProfile = array_merge($demoUser, [
+        'name' => trim($validated['name']),
+        'email' => trim($validated['email']),
+        'phone' => trim((string) ($validated['phone'] ?? '')),
+        'birthday' => trim((string) ($validated['birthday'] ?? '')),
+        'gender' => trim((string) ($validated['gender'] ?? '')),
+        'identity_number' => trim((string) ($validated['identity_number'] ?? '')),
+        'province' => trim((string) ($validated['province'] ?? '')),
+        'district' => trim((string) ($validated['district'] ?? '')),
+        'address' => trim((string) ($validated['address'] ?? '')),
+        'favorite_cinema' => trim((string) ($validated['favorite_cinema'] ?? '')),
+    ]);
+
+    if (empty($updatedProfile['member_code'])) {
+        $updatedProfile['member_code'] = 'BC' . now()->format('ymdHis');
+    }
+
+    $userId = $demoUser['id'] ?? null;
+
+    if ($userId !== null) {
+        $duplicateEmail = User::query()
+            ->where('email', $updatedProfile['email'])
+            ->where('_id', '!=', (string) $userId)
+            ->exists();
+
+        if ($duplicateEmail) {
+            return back()
+                ->withErrors(['email' => 'Email này đã được sử dụng bởi tài khoản khác.'])
+                ->withInput();
+        }
+
+        $user = User::query()->find((string) $userId);
+
+        if (! $user || ($user->status ?? true) === false) {
+            session()->forget('demo_user');
+
+            return redirect()->to(route('auth.login.form') . '#login');
+        }
+
+        $user->forceFill([
+            'name' => $updatedProfile['name'],
+            'email' => $updatedProfile['email'],
+            'phone' => $updatedProfile['phone'],
+            'birthday' => $updatedProfile['birthday'],
+            'gender' => $updatedProfile['gender'],
+            'identity_number' => $updatedProfile['identity_number'],
+            'province' => $updatedProfile['province'],
+            'district' => $updatedProfile['district'],
+            'address' => $updatedProfile['address'],
+            'favorite_cinema' => $updatedProfile['favorite_cinema'],
+        ])->save();
+    }
+
+    session(['demo_user' => $updatedProfile]);
+
+    return redirect()
+        ->route('account.demo', ['tab' => 'profile'])
+        ->with('status', 'Đã cập nhật thông tin tài khoản.');
+})->name('account.demo.update');
+
 Route::get('/admin/login', function () {
     if (session('admin_authenticated') === true) {
         return redirect()->route('admin.dashboard');
@@ -822,22 +1108,47 @@ Route::post('/admin/login', function (Request $request) {
     $adminEmail = env('ADMIN_EMAIL', 'admin@example.com');
     $adminPassword = env('ADMIN_PASSWORD', 'password');
 
-    if ($credentials['email'] !== $adminEmail || $credentials['password'] !== $adminPassword) {
+    if ($credentials['email'] === $adminEmail && $credentials['password'] === $adminPassword) {
+        session([
+            'admin_authenticated' => true,
+            'admin_email' => $credentials['email'],
+            'admin_user_id' => null,
+        ]);
+
+        return redirect()->route('admin.dashboard');
+    }
+
+    $admin = User::query()->where('email', $credentials['email'])->first();
+
+    if (! $admin || ! Hash::check($credentials['password'], (string) $admin->password)) {
         return back()
             ->withErrors(['email' => 'Thông tin đăng nhập quản trị không đúng.'])
             ->withInput();
     }
 
+    if (($admin->status ?? true) === false) {
+        return back()
+            ->withErrors(['email' => 'Tài khoản quản trị đã bị khóa.'])
+            ->withInput();
+    }
+
+    if (($admin->role ?? 'user') !== 'admin') {
+        return back()
+            ->withErrors(['email' => 'Tài khoản chưa có quyền quản trị.'])
+            ->withInput();
+    }
+
     session([
         'admin_authenticated' => true,
-        'admin_email' => $credentials['email'],
+        'admin_email' => $admin->email,
+        'admin_user_id' => (string) $admin->getKey(),
     ]);
 
     return redirect()->route('admin.dashboard');
 })->name('admin.login.submit');
 
 Route::post('/admin/logout', function () {
-    session()->forget(['admin_authenticated', 'admin_email']);
+    session()->forget(['admin_authenticated', 'admin_email', 'admin_user_id']);
 
     return redirect()->route('admin.login')->with('status', 'Đã đăng xuất quản trị.');
 })->name('admin.logout');
@@ -853,6 +1164,7 @@ Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::delete('/movies/{movie}', [AdminController::class, 'deleteMovie'])->name('movies.delete');
 
     Route::get('/rooms', [AdminController::class, 'rooms'])->name('rooms.index');
+    Route::get('/cinemas', fn () => redirect()->route('admin.settings.index'))->name('cinemas.index');
     Route::post('/rooms', [AdminController::class, 'storeRoom'])->name('rooms.store');
     Route::put('/rooms/{room}', [AdminController::class, 'updateRoom'])->name('rooms.update');
     Route::delete('/rooms/{room}', [AdminController::class, 'deleteRoom'])->name('rooms.delete');
@@ -874,4 +1186,3 @@ Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::get('/settings', [AdminController::class, 'settings'])->name('settings.index');
     Route::put('/settings', [AdminController::class, 'updateSettings'])->name('settings.update');
 });
-
