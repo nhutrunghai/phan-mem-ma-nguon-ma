@@ -150,7 +150,7 @@ class BookingController extends Controller
 
         if ($booking->payment_status === 'paid') {
             return redirect()
-                ->route('account.demo', ['tab' => 'history'])
+                ->route('account.show', ['tab' => 'history'])
                 ->with('status', 'Đơn vé này đã được thanh toán.');
         }
 
@@ -191,7 +191,7 @@ class BookingController extends Controller
         ])->save();
 
         return redirect()
-            ->route('account.demo', ['tab' => 'history'])
+            ->route('account.show', ['tab' => 'history'])
             ->with('status', 'Đã mô phỏng thanh toán VNPay thành công cho đơn vé ' . $booking->qr_code . '.');
     }
 
@@ -279,13 +279,13 @@ class BookingController extends Controller
         $bookingId = $this->payments->extractVnpayBookingId($payload);
 
         if (! $this->payments->verifyVnpayReturn($payload) || $bookingId === null) {
-            return redirect()->route('account.demo', ['tab' => 'history'])
+            return redirect()->route('account.show', ['tab' => 'history'])
                 ->with('status', 'Xác thực thanh toán VNPay không hợp lệ.');
         }
 
         $booking = Booking::query()->find($bookingId);
         if ($booking === null) {
-            return redirect()->route('account.demo', ['tab' => 'history'])
+            return redirect()->route('account.show', ['tab' => 'history'])
                 ->with('status', 'Không tìm thấy đơn vé sau thanh toán.');
         }
 
@@ -324,7 +324,7 @@ class BookingController extends Controller
         }
 
         return redirect()
-            ->route('account.demo', ['tab' => 'history'])
+            ->route('account.show', ['tab' => 'history'])
             ->with('status', 'Thanh toán VNPay thành công cho đơn vé ' . $booking->qr_code . '.');
     }
 

@@ -29,7 +29,7 @@
         'password' => 'Đổi mật khẩu',
     ];
 
-    $bookings = $bookings ?? session('demo_bookings', []);
+    $bookings = $bookings ?? [];
     $emptyText = 'Chưa cập nhật';
     $avatarLetter = strtoupper(mb_substr((string) ($profile['name'] ?: 'B'), 0, 1));
 @endphp
@@ -50,12 +50,12 @@
                     <ul class="member-menu">
                         @foreach ($tabs as $key => $label)
                             <li class="{{ $activeTab === $key ? 'is-active' : '' }}">
-                                <a href="{{ route('account.demo', ['tab' => $key]) }}">{{ $label }}</a>
+                                <a href="{{ route('account.show', ['tab' => $key]) }}">{{ $label }}</a>
                             </li>
                         @endforeach
                     </ul>
 
-                    <a class="member-logout" href="{{ route('auth.demo.logout') }}">Đăng xuất</a>
+                    <a class="member-logout" href="{{ route('auth.logout') }}">Đăng xuất</a>
                 </aside>
 
                 <div class="member-content">
@@ -66,7 +66,7 @@
                     @endif
 
                     @if ($activeTab === 'profile')
-                        <form class="member-panel" method="post" action="{{ route('account.demo.update') }}">
+                        <form class="member-panel" method="post" action="{{ route('account.update') }}">
                             @csrf
                             <div class="member-panel__head">
                                 <h1>Thông tin tài khoản</h1>

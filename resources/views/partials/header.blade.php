@@ -16,13 +16,13 @@
                     @if ($demoUser)
                         <ul class="list-unstyled list-inline pull-right" style="margin-bottom: 4px; margin-top: 4px;">
                             <li>
-                                <a href="{{ route('account.demo') }}">
+                                <a href="{{ route('account.show') }}">
                                     <i class="fa fa-user-circle-o"></i>
                                     {{ $demoUser['name'] }}
                                 </a>
                             </li>
                             <li style="border-left: 1px solid; padding-left: 10px !important;">
-                                <a href="{{ route('auth.demo.logout') }}">Đăng xuất</a>
+                                <a href="{{ route('auth.logout') }}">Đăng xuất</a>
                             </li>
                         </ul>
                     @else

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Admin\AdminController;
@@ -22,208 +22,208 @@ function betaTrackerMovies(): array
         [
             'id' => 'phi-phong-quy-mau-rung-thieng',
             'section' => 'now-showing',
-            'title' => 'Phí Phông: Quỷ Máu Rừng Thiêng',
-            'genre' => 'Kinh dị, Giật gân',
+            'title' => 'Ph� Ph�ng: Qu? M�u R?ng Thi�ng',
+            'genre' => 'Kinh d?, Gi?t g�n',
             'duration' => 120,
             'label' => 'C16',
             'tag' => 'HOT',
             'poster' => 'https://files.betacorp.vn/media/images/2026/03/26/anh-chup-man-hinh-2026-03-26-114032-114119-260326-54.png',
             'buyUrl' => '',
-            'description' => 'Phí Phông, loài quỷ khát máu trong truyền thuyết dân gian của đồng bào miền núi gây ám ảnh bao đời nay. Phim xoay quanh Còn (Kiều Minh Tuấn) và Dương (Minh Anh), hai pháp sư tập sự lên núi cứu người mẹ đang bị lời nguyền Phí Phông đánh gục.',
+            'description' => 'Ph� Ph�ng, lo�i qu? kh�t m�u trong truy?n thuy?t d�n gian c?a d?ng b�o mi?n n�i g�y �m ?nh bao d?i nay. Phim xoay quanh C�n (Ki?u Minh Tu?n) v� Duong (Minh Anh), hai ph�p su t?p s? l�n n�i c?u ngu?i m? dang b? l?i nguy?n Ph� Ph�ng d�nh g?c.',
             'releaseDate' => '20/04/2026',
-            'language' => 'Tiếng Việt',
+            'language' => 'Ti?ng Vi?t',
             'trailer' => 'https://www.youtube.com/embed/LDvCnwE6TtA',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Đỗ Quốc Trung'],
-                ['label' => 'Diễn viên', 'value' => 'Kiều Minh Tuấn, Nina Nutthacha Padovan, Diệp Bảo Ngọc, Đoàn Minh Anh, NSƯT Hạnh Thuý,...'],
-                ['label' => 'Thể loại', 'value' => 'Kinh dị, Giật gân'],
-                ['label' => 'Thời lượng', 'value' => '120 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Việt'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '20/04/2026'],
+                ['label' => '�?o di?n', 'value' => '�? Qu?c Trung'],
+                ['label' => 'Di?n vi�n', 'value' => 'Ki?u Minh Tu?n, Nina Nutthacha Padovan, Di?p B?o Ng?c, �o�n Minh Anh, NSUT H?nh Thu�,...'],
+                ['label' => 'Th? lo?i', 'value' => 'Kinh d?, Gi?t g�n'],
+                ['label' => 'Th?i lu?ng', 'value' => '120 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Vi?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '20/04/2026'],
             ],
         ],
         [
             'id' => 'anh-hung',
             'section' => 'now-showing',
-            'title' => 'Anh Hùng',
-            'genre' => 'Tâm lý, Gia đình',
+            'title' => 'Anh H�ng',
+            'genre' => 'T�m l�, Gia d�nh',
             'duration' => 122,
             'label' => 'C13',
             'tag' => 'HOT',
             'poster' => 'https://files.betacorp.vn/media/images/2026/03/31/400wx633h-113142-310326-81.jpg',
             'buyUrl' => '',
-            'description' => 'Câu chuyện phim theo chân Hùng (Thái Hòa) - người cha đơn thân kiêm tài xế taxi và đồng nghiệp hãng xe là Tuấn (Võ Tấn Phát) bị cuốn vào một phi vụ lừa đảo từ thiện tiền tỉ trong khi sinh mạng cô con gái nhỏ của anh đang nằm gọn trong tay tử thần.',
+            'description' => 'C�u chuy?n phim theo ch�n H�ng (Th�i H�a) - ngu?i cha don th�n ki�m t�i x? taxi v� d?ng nghi?p h�ng xe l� Tu?n (V� T?n Ph�t) b? cu?n v�o m?t phi v? l?a d?o t? thi?n ti?n t? trong khi sinh m?ng c� con g�i nh? c?a anh dang n?m g?n trong tay t? th?n.',
             'releaseDate' => '24/04/2026',
-            'language' => 'Tiếng Việt',
+            'language' => 'Ti?ng Vi?t',
             'trailer' => 'https://www.youtube.com/embed/P74tpiZ8kuU',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Võ Thạch Thảo'],
-                ['label' => 'Diễn viên', 'value' => 'Thái Hoà, Võ Tấn Phát, Đoàn Thế Vinh, Phương Thanh, Hồng Ánh, NSƯT Lê Thiện, Hoàng Minh Triết, Gia Tuệ...'],
-                ['label' => 'Thể loại', 'value' => 'Tâm lý, Gia đình'],
-                ['label' => 'Thời lượng', 'value' => '122 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Việt'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '24/04/2026'],
+                ['label' => '�?o di?n', 'value' => 'V� Th?ch Th?o'],
+                ['label' => 'Di?n vi�n', 'value' => 'Th�i Ho�, V� T?n Ph�t, �o�n Th? Vinh, Phuong Thanh, H?ng �nh, NSUT L� Thi?n, Ho�ng Minh Tri?t, Gia Tu?...'],
+                ['label' => 'Th? lo?i', 'value' => 'T�m l�, Gia d�nh'],
+                ['label' => 'Th?i lu?ng', 'value' => '122 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Vi?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '24/04/2026'],
             ],
         ],
         [
             'id' => 'dai-tiec-trang-mau-8',
             'section' => 'now-showing',
-            'title' => 'Đại Tiệc Trăng Máu 8',
-            'genre' => 'Hài hước, Kinh dị',
+            'title' => '�?i Ti?c Trang M�u 8',
+            'genre' => 'H�i hu?c, Kinh d?',
             'duration' => 130,
             'label' => 'C16',
             'tag' => 'HOT',
             'poster' => 'https://files.betacorp.vn/media/images/2026/04/16/400x633-102941-160426-44.jpg',
             'buyUrl' => '',
-            'description' => 'Đại Tiệc Trăng Máu 8 theo chân một vị đạo diễn hay bị coi thường trong dự án thử thách nhất đời ông: thực hiện một bộ phim dài 35 phút chỉ với một cú máy.',
+            'description' => '�?i Ti?c Trang M�u 8 theo ch�n m?t v? d?o di?n hay b? coi thu?ng trong d? �n th? th�ch nh?t d?i �ng: th?c hi?n m?t b? phim d�i 35 ph�t ch? v?i m?t c� m�y.',
             'releaseDate' => '24/04/2026',
-            'language' => 'Tiếng Việt',
+            'language' => 'Ti?ng Vi?t',
             'trailer' => 'https://www.youtube.com/embed/NZ9-wGErh4o',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Phan Gia Nhật Linh'],
-                ['label' => 'Diễn viên', 'value' => 'Vân Sơn, Lê Khánh, Miu Lê, Liên Bỉnh Phát, Quốc Khánh, Quỳnh Lý, Lâm Thanh Mỹ, Quang Minh, Hứa Vĩ Văn, Hồng Ánh, NSƯT Đức Khuê, Charlie Nguyễn...'],
-                ['label' => 'Thể loại', 'value' => 'Hài hước, Kinh dị'],
-                ['label' => 'Thời lượng', 'value' => '130 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Việt'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '24/04/2026'],
+                ['label' => '�?o di?n', 'value' => 'Phan Gia Nh?t Linh'],
+                ['label' => 'Di?n vi�n', 'value' => 'V�n Son, L� Kh�nh, Miu L�, Li�n B?nh Ph�t, Qu?c Kh�nh, Qu?nh L�, L�m Thanh M?, Quang Minh, H?a Vi Van, H?ng �nh, NSUT �?c Khu�, Charlie Nguy?n...'],
+                ['label' => 'Th? lo?i', 'value' => 'H�i hu?c, Kinh d?'],
+                ['label' => 'Th?i lu?ng', 'value' => '130 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Vi?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '24/04/2026'],
             ],
         ],
         [
             'id' => 'heo-nam-mong',
             'section' => 'now-showing',
-            'title' => 'Heo Năm Móng',
-            'genre' => 'Kinh dị',
+            'title' => 'Heo Nam M�ng',
+            'genre' => 'Kinh d?',
             'duration' => 103,
             'label' => 'C18',
             'tag' => '',
             'poster' => 'https://files.betacorp.vn/media/images/2026/04/08/anh-chup-man-hinh-2026-04-08-161626-161707-080426-39.png',
             'buyUrl' => '',
-            'description' => 'Dựa trên truyền thuyết rùng rợn về "Cô Năm Hợi" và linh hồn bị mắc kẹt trong thân xác heo.',
+            'description' => 'D?a tr�n truy?n thuy?t r�ng r?n v? "C� Nam H?i" v� linh h?n b? m?c k?t trong th�n x�c heo.',
             'releaseDate' => '24/04/2026',
-            'language' => 'Tiếng Việt',
+            'language' => 'Ti?ng Vi?t',
             'trailer' => 'https://www.youtube.com/embed/ShknvbpzZxg',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Võ Thanh Hòa'],
-                ['label' => 'Diễn viên', 'value' => 'Võ Tấn Phát, Trần Ngọc Vàng, Nhật Ý, Thanh Thủy,..'],
-                ['label' => 'Thể loại', 'value' => 'Kinh dị'],
-                ['label' => 'Thời lượng', 'value' => '103 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Việt'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '24/04/2026'],
+                ['label' => '�?o di?n', 'value' => 'V� Thanh H�a'],
+                ['label' => 'Di?n vi�n', 'value' => 'V� T?n Ph�t, Tr?n Ng?c V�ng, Nh?t �, Thanh Th?y,..'],
+                ['label' => 'Th? lo?i', 'value' => 'Kinh d?'],
+                ['label' => 'Th?i lu?ng', 'value' => '103 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Vi?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '24/04/2026'],
             ],
         ],
         [
             'id' => 'trum-so',
             'section' => 'now-showing',
-            'title' => 'Trùm Sò',
-            'genre' => 'Hài hước',
+            'title' => 'Tr�m S�',
+            'genre' => 'H�i hu?c',
             'duration' => 105,
             'label' => 'K',
             'tag' => '',
             'poster' => 'https://files.betacorp.vn/media/images/2026/04/10/400x633-1-141724-100426-34.jpg',
             'buyUrl' => '',
-            'description' => 'Ở Làng Sứa Đỏ - một ngôi làng nhỏ xa xôi heo hút, hạn hán triền miên, người dân ai cũng nghèo cũng khổ, chỉ riêng Trùm Sò là giàu nứt đố đổ vách.',
+            'description' => '? L�ng S?a �? - m?t ng�i l�ng nh? xa x�i heo h�t, h?n h�n tri?n mi�n, ngu?i d�n ai cung ngh�o cung kh?, ch? ri�ng Tr�m S� l� gi�u n?t d? d? v�ch.',
             'releaseDate' => '24/04/2026',
-            'language' => 'Tiếng Việt',
+            'language' => 'Ti?ng Vi?t',
             'trailer' => 'https://www.youtube.com/embed/QoKBpq_p61Q',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Đỗ Đức Thịnh'],
-                ['label' => 'Diễn viên', 'value' => 'Đức Thịnh, Phương Nam, Mai Phương, Doãn Quốc Đam, Hoàng Tóc Dài,...'],
-                ['label' => 'Thể loại', 'value' => 'Hài hước'],
-                ['label' => 'Thời lượng', 'value' => '105 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Việt'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '24/04/2026'],
+                ['label' => '�?o di?n', 'value' => '�? �?c Th?nh'],
+                ['label' => 'Di?n vi�n', 'value' => '�?c Th?nh, Phuong Nam, Mai Phuong, Do�n Qu?c �am, Ho�ng T�c D�i,...'],
+                ['label' => 'Th? lo?i', 'value' => 'H�i hu?c'],
+                ['label' => 'Th?i lu?ng', 'value' => '105 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Vi?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '24/04/2026'],
             ],
         ],
         [
             'id' => 'hen-em-ngay-nhat-thuc',
             'section' => 'now-showing',
-            'title' => 'Hẹn Em Ngày Nhật Thực',
-            'genre' => 'Tâm lý, Gia đình',
+            'title' => 'H?n Em Ng�y Nh?t Th?c',
+            'genre' => 'T�m l�, Gia d�nh',
             'duration' => 118,
             'label' => 'C16',
             'tag' => '',
             'poster' => 'https://files.betacorp.vn/media/images/2026/03/18/teaser-hennt-cinema-150342-180326-62.jpg',
             'buyUrl' => '',
-            'description' => 'Năm 1995, khi đang đứng trước một quyết định quan trọng của cuộc đời, Ân bất ngờ bị kéo trở lại quá khứ bởi những bức thư tình chưa từng trao tay.',
+            'description' => 'Nam 1995, khi dang d?ng tru?c m?t quy?t d?nh quan tr?ng c?a cu?c d?i, �n b?t ng? b? k�o tr? l?i qu� kh? b?i nh?ng b?c thu t�nh chua t?ng trao tay.',
             'releaseDate' => '30/03/2026',
-            'language' => 'Tiếng Việt',
+            'language' => 'Ti?ng Vi?t',
             'trailer' => 'https://www.youtube.com/embed/xeuiol66BkA',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Lê Thiện Viễn'],
-                ['label' => 'Diễn viên', 'value' => 'Đoàn Thiên Ân, Khương Lê, NSND Lê Khanh, Huỳnh Phương, Nguyên Thảo, NSND Kim Xuân, Thanh Sơn, Hứa Vĩ Văn, Lâm Vỹ Dạ, Hứa Minh Đạt.'],
-                ['label' => 'Thể loại', 'value' => 'Tâm lý, Gia đình'],
-                ['label' => 'Thời lượng', 'value' => '118 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Việt'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '30/03/2026'],
+                ['label' => '�?o di?n', 'value' => 'L� Thi?n Vi?n'],
+                ['label' => 'Di?n vi�n', 'value' => '�o�n Thi�n �n, Khuong L�, NSND L� Khanh, Hu?nh Phuong, Nguy�n Th?o, NSND Kim Xu�n, Thanh Son, H?a Vi Van, L�m V? D?, H?a Minh �?t.'],
+                ['label' => 'Th? lo?i', 'value' => 'T�m l�, Gia d�nh'],
+                ['label' => 'Th?i lu?ng', 'value' => '118 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Vi?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '30/03/2026'],
             ],
         ],
         [
             'id' => 'cu-nhay-ky-dieu',
             'section' => 'now-showing',
-            'title' => 'Cú Nhảy Kỳ Diệu',
-            'genre' => 'Hoạt hình, Phiêu lưu',
+            'title' => 'C� Nh?y K? Di?u',
+            'genre' => 'Ho?t h�nh, Phi�u luu',
             'duration' => 105,
             'label' => 'P',
             'tag' => '',
             'poster' => 'https://files.betacorp.vn/media/images/2026/02/26/anh-chup-man-hinh-2026-02-26-151006-151102-260226-84.png',
             'buyUrl' => '',
-            'description' => 'Câu chuyện xoay quanh Mabel, nữ sinh đại học 19 tuổi với tình yêu mãnh liệt dành cho động vật, đã nắm bắt cơ hội sử dụng công nghệ cho phép ý thức “nhảy” vào một chú hải ly rô-bốt.',
+            'description' => 'C�u chuy?n xoay quanh Mabel, n? sinh d?i h?c 19 tu?i v?i t�nh y�u m�nh li?t d�nh cho d?ng v?t, d� n?m b?t co h?i s? d?ng c�ng ngh? cho ph�p � th?c �nh?y� v�o m?t ch� h?i ly r�-b?t.',
             'releaseDate' => '13/03/2026',
-            'language' => 'Tiếng Việt',
+            'language' => 'Ti?ng Vi?t',
             'trailer' => 'https://www.youtube.com/embed/CHINiUp2L0g',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Daniel Chong'],
-                ['label' => 'Diễn viên', 'value' => ''],
-                ['label' => 'Thể loại', 'value' => 'Hoạt hình, Phiêu lưu'],
-                ['label' => 'Thời lượng', 'value' => '105 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Việt'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '13/03/2026'],
+                ['label' => '�?o di?n', 'value' => 'Daniel Chong'],
+                ['label' => 'Di?n vi�n', 'value' => ''],
+                ['label' => 'Th? lo?i', 'value' => 'Ho?t h�nh, Phi�u luu'],
+                ['label' => 'Th?i lu?ng', 'value' => '105 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Vi?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '13/03/2026'],
             ],
         ],
         [
             'id' => 'michael',
             'section' => 'now-showing',
             'title' => 'Michael',
-            'genre' => 'Âm Nhạc',
+            'genre' => '�m Nh?c',
             'duration' => 127,
             'label' => 'K',
             'tag' => '',
             'poster' => 'https://files.betacorp.vn/media/images/2026/04/13/anh-chup-man-hinh-2026-04-13-090338-090425-130426-13.png',
             'buyUrl' => '',
-            'description' => 'Michael là tác phẩm điện ảnh khắc họa cuộc đời và di sản của một trong những nghệ sĩ có ảnh hưởng nhất mà thế giới từng biết đến.',
+            'description' => 'Michael l� t�c ph?m di?n ?nh kh?c h?a cu?c d?i v� di s?n c?a m?t trong nh?ng ngh? si c� ?nh hu?ng nh?t m� th? gi?i t?ng bi?t d?n.',
             'releaseDate' => '22/04/2026',
-            'language' => 'Tiếng Anh',
+            'language' => 'Ti?ng Anh',
             'trailer' => 'https://www.youtube.com/embed/I7T5VK3zqbY',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Antoine Fuqua'],
-                ['label' => 'Diễn viên', 'value' => 'Jaafar Jackson, Nia Long, Laura Harrier, Juliano Krue Valdi, cùng Miles Teller và Colman Domingo'],
-                ['label' => 'Thể loại', 'value' => 'Âm Nhạc'],
-                ['label' => 'Thời lượng', 'value' => '127 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Anh'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '22/04/2026'],
+                ['label' => '�?o di?n', 'value' => 'Antoine Fuqua'],
+                ['label' => 'Di?n vi�n', 'value' => 'Jaafar Jackson, Nia Long, Laura Harrier, Juliano Krue Valdi, c�ng Miles Teller v� Colman Domingo'],
+                ['label' => 'Th? lo?i', 'value' => '�m Nh?c'],
+                ['label' => 'Th?i lu?ng', 'value' => '127 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Anh'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '22/04/2026'],
             ],
         ],
         [
             'id' => 'phim-shin-cau-be-but-chi',
             'section' => 'now-showing',
-            'title' => 'Phim Shin - Cậu Bé Bút Chì',
-            'genre' => 'Hoạt hình, Gia đình',
+            'title' => 'Phim Shin - C?u B� B�t Ch�',
+            'genre' => 'Ho?t h�nh, Gia d�nh',
             'duration' => 104,
             'label' => 'P',
             'tag' => '',
             'poster' => 'https://files.betacorp.vn/media/images/2026/04/23/poster-shin-2020-4x5-174632-230426-77.png',
             'buyUrl' => '',
-            'description' => 'Bộ phim xoay quanh một vương quốc lơ lửng mang tên Rakuga, tồn tại nhờ nguồn năng lượng đến từ những nét vẽ của con người.',
+            'description' => 'B? phim xoay quanh m?t vuong qu?c lo l?ng mang t�n Rakuga, t?n t?i nh? ngu?n nang lu?ng d?n t? nh?ng n�t v? c?a con ngu?i.',
             'releaseDate' => '01/05/2026',
-            'language' => 'Tiếng Nhật',
+            'language' => 'Ti?ng Nh?t',
             'trailer' => 'https://www.youtube.com/embed/KyyoTlt5VJo',
             'details' => [
-                ['label' => 'Đạo diễn', 'value' => 'Masakazu Hashimoto'],
-                ['label' => 'Diễn viên', 'value' => 'Akiko Yajima Shin Yumiko Kobayashi, Miki Narahashi,Toshiyuki Morikawa'],
-                ['label' => 'Thể loại', 'value' => 'Hoạt hình, Gia đình'],
-                ['label' => 'Thời lượng', 'value' => '104 phút'],
-                ['label' => 'Ngôn ngữ', 'value' => 'Tiếng Nhật'],
-                ['label' => 'Ngày khởi chiếu', 'value' => '01/05/2026'],
+                ['label' => '�?o di?n', 'value' => 'Masakazu Hashimoto'],
+                ['label' => 'Di?n vi�n', 'value' => 'Akiko Yajima Shin Yumiko Kobayashi, Miki Narahashi,Toshiyuki Morikawa'],
+                ['label' => 'Th? lo?i', 'value' => 'Ho?t h�nh, Gia d�nh'],
+                ['label' => 'Th?i lu?ng', 'value' => '104 ph�t'],
+                ['label' => 'Ng�n ng?', 'value' => 'Ti?ng Nh?t'],
+                ['label' => 'Ng�y kh?i chi?u', 'value' => '01/05/2026'],
             ],
         ],
     ];
@@ -306,12 +306,12 @@ function betaNavItems(array $siteData): array
     return collect($siteData['nav'] ?? [])->map(function (array $item) {
         $label = (string) ($item['label'] ?? '');
 
-        if (in_array(betaRepairMojibakeString($label), ['LỊCH CHIẾU THEO RẠP'], true)) {
+        if (in_array(betaRepairMojibakeString($label), ['L?CH CHI?U THEO R?P'], true)) {
             $item['href'] = route('schedule.index');
         } elseif ($label === 'PHIM') {
             $item['href'] = route('movies.index');
-        } elseif (in_array(betaRepairMojibakeString($label), ['THÀNH VIÊN'], true)) {
-            $item['href'] = route('account.demo');
+        } elseif (in_array(betaRepairMojibakeString($label), ['TH�NH VI�N'], true)) {
+            $item['href'] = route('account.show');
         } else {
             $item['href'] = '#';
         }
@@ -479,7 +479,7 @@ Route::get('/lich-chieu', function () {
     }
 
     return view('schedule', [
-        'title' => 'Lịch chiếu - Beta Cinemas',
+        'title' => 'L?ch chi?u - Beta Cinemas',
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
         'footer' => $siteData['footer'] ?? [],
@@ -526,10 +526,10 @@ Route::get('/phim/{id}', function (string $id) {
     abort_if($movie === null, 404);
 
     $movie['details'] = $movie['details'] ?? [
-        ['label' => 'Thể loại', 'value' => $movie['genre'] ?? 'Đang cập nhật'],
-        ['label' => 'Thời lượng', 'value' => (($movie['duration'] ?? null) ? ($movie['duration'] . ' phút') : 'Đang cập nhật')],
-        ['label' => 'Ngôn ngữ', 'value' => $movie['language'] ?? 'Tiếng Việt'],
-        ['label' => 'Ngày khởi chiếu', 'value' => $movie['releaseDate'] ?? 'Đang cập nhật'],
+        ['label' => 'Th? lo?i', 'value' => $movie['genre'] ?? '�ang c?p nh?t'],
+        ['label' => 'Th?i lu?ng', 'value' => (($movie['duration'] ?? null) ? ($movie['duration'] . ' ph�t') : '�ang c?p nh?t')],
+        ['label' => 'Ng�n ng?', 'value' => $movie['language'] ?? 'Ti?ng Vi?t'],
+        ['label' => 'Ng�y kh?i chi?u', 'value' => $movie['releaseDate'] ?? '�ang c?p nh?t'],
     ];
     $movie['scheduleDates'] = $movie['scheduleDates'] ?? [];
     $movie['showtimeGroups'] = $movie['showtimeGroups'] ?? [];
@@ -537,106 +537,13 @@ Route::get('/phim/{id}', function (string $id) {
     $movie['showtimes'] = $movie['showtimes'] ?? [];
 
     return view('movie-detail', [
-        'title' => ($movie['title'] ?? 'Chi tiết phim') . ' - Beta Cinemas',
+        'title' => ($movie['title'] ?? 'Chi ti?t phim') . ' - Beta Cinemas',
         'movie' => $movie,
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
         'footer' => $siteData['footer'] ?? [],
     ]);
 })->name('movies.show');
-
-Route::get('/dat-ve-demo/{id}', function (Request $request, string $id) {
-    $siteData = betaSiteData();
-    $movies = collect(betaMergedMovies($siteData));
-    $movie = $movies->firstWhere('id', $id);
-
-    abort_if($movie === null, 404);
-
-    $selectedDate = trim((string) $request->query('date', $movie['releaseDate'] ?? '01/05/2026'));
-    $selectedTime = trim((string) $request->query('time', '19:00'));
-    $selectedFormat = trim((string) $request->query('format', '2D Phụ đề'));
-
-    $seatRows = [
-        'H' => range(11, 1),
-        'G' => range(11, 1),
-        'F' => range(9, 1),
-        'E' => range(9, 1),
-        'D' => range(10, 1),
-        'C' => range(10, 1),
-        'B' => range(10, 1),
-        'A' => range(10, 1),
-    ];
-
-    $soldSeats = ['F7', 'D5', 'C1', 'B4'];
-    $heldSeats = ['E4', 'E5', 'D6'];
-    $reservedSeats = ['H3', 'H4', 'G5'];
-    $preselectedSeats = [];
-
-    return view('booking.demo-seats', [
-        'title' => 'Đặt vé - ' . ($movie['title'] ?? 'Beta Cinemas'),
-        'movie' => $movie,
-        'selectedDate' => $selectedDate,
-        'selectedTime' => $selectedTime,
-        'selectedFormat' => $selectedFormat,
-        'seatRows' => $seatRows,
-        'soldSeats' => $soldSeats,
-        'heldSeats' => $heldSeats,
-        'reservedSeats' => $reservedSeats,
-        'preselectedSeats' => $preselectedSeats,
-    ]);
-})->name('booking.demo.seats');
-
-Route::post('/dat-ve-demo/{id}', function (Request $request, string $id) {
-    $siteData = betaSiteData();
-    $movies = collect(betaMergedMovies($siteData));
-    $movie = $movies->firstWhere('id', $id);
-
-    abort_if($movie === null, 404);
-
-    if (!session()->has('demo_user')) {
-        return redirect()->to(route('auth.login.form') . '#login')
-            ->with('status', 'Vui lòng đăng nhập trước khi tiếp tục đặt vé.');
-    }
-
-    $validated = $request->validate([
-        'show_date' => ['required', 'string', 'max:80'],
-        'show_time' => ['required', 'string', 'max:40'],
-        'format' => ['required', 'string', 'max:80'],
-        'seats' => ['required', 'string', 'max:200'],
-    ]);
-
-    $seats = collect(explode(',', $validated['seats']))
-        ->map(fn(string $seat): string => trim($seat))
-        ->filter()
-        ->unique()
-        ->values()
-        ->all();
-
-    if ($seats === []) {
-        return back()->withErrors(['seats' => 'Vui lòng chọn ít nhất một ghế.'])->withInput();
-    }
-
-    $bookings = session('demo_bookings', []);
-    $booking = [
-        'code' => 'BC' . now()->format('His'),
-        'movie_id' => $id,
-        'movie_title' => $movie['title'] ?? 'Beta Cinemas',
-        'show_date' => $validated['show_date'],
-        'show_time' => $validated['show_time'],
-        'format' => $validated['format'],
-        'seats' => $seats,
-        'total' => count($seats) * 50000,
-        'status' => 'Chờ thanh toán',
-        'created_at' => now()->format('d/m/Y H:i'),
-    ];
-
-    array_unshift($bookings, $booking);
-    session(['demo_bookings' => array_slice($bookings, 0, 10)]);
-
-    return redirect()
-        ->route('booking.demo.payment', ['code' => $booking['code']])
-        ->with('status', 'Đã giữ ghế ' . implode(', ', $seats) . ' cho phim ' . ($movie['title'] ?? 'Beta Cinemas') . '. Vui lòng thanh toán VNPay.');
-})->name('booking.demo.store');
 
 Route::get('/dat-ve/{id}', [BookingController::class, 'show'])->name('booking.seats');
 Route::post('/dat-ve/{id}', [BookingController::class, 'store'])->name('booking.store');
@@ -646,34 +553,6 @@ Route::post('/thanh-toan/ipn/sepay', [BookingController::class, 'sePayWebhook'])
 Route::post('/api/v1/check-payment', [BookingController::class, 'sePayWebhook'])->name('payment.sepay.webhook');
 Route::get('/thanh-toan/{booking}', [BookingController::class, 'paymentPage'])->name('bookings.payment');
 Route::post('/thanh-toan/{booking}', [BookingController::class, 'confirmPayment'])->name('bookings.payment.confirm');
-Route::get('/thanh-toan-demo/{code}', function (string $code) {
-    $booking = collect(session('demo_bookings', []))->firstWhere('code', $code);
-
-    abort_if($booking === null, 404);
-
-    return view('payment-demo', [
-        'title' => 'Thanh toán SePay - Beta Cinemas',
-        'booking' => $booking,
-    ]);
-})->name('booking.demo.payment');
-Route::post('/thanh-toan-demo/{code}', function (string $code) {
-    $bookings = collect(session('demo_bookings', []))
-        ->map(function (array $booking) use ($code) {
-            if (($booking['code'] ?? '') === $code) {
-                $booking['status'] = 'Đã thanh toán';
-            }
-
-            return $booking;
-        })
-        ->values()
-        ->all();
-
-    session(['demo_bookings' => $bookings]);
-
-    return redirect()
-        ->route('account.demo', ['tab' => 'history'])
-        ->with('status', 'Đã mô phỏng thanh toán SePay thành công cho đơn vé ' . $code . '.');
-})->name('booking.demo.payment.confirm');
 
 Route::get('/thong-tin-rap', function () {
     return view('cinemas-info');
@@ -693,7 +572,7 @@ Route::get('/nhuong-quyen', function () {
 
 Route::get('/thanh-vien', function () {
     if (betaRefreshActiveDemoUserSession()) {
-        return redirect()->route('account.demo');
+        return redirect()->route('account.show');
     }
 
     return redirect()->to(route('auth.login.form') . '#login');
@@ -707,7 +586,7 @@ Route::get('/demo-auth/login', function (Request $request) {
     if (! $user || ! Hash::check($password, (string) $user->password)) {
         return redirect()
             ->to(route('auth.login.form') . '#login')
-            ->withErrors(['email' => 'Email hoặc mật khẩu không đúng.'])
+            ->withErrors(['email' => 'Email ho?c m?t kh?u kh�ng d�ng.'])
             ->withInput(['email' => $email]);
     }
 
@@ -716,20 +595,20 @@ Route::get('/demo-auth/login', function (Request $request) {
 
         return redirect()
             ->to(route('auth.login.form') . '#login')
-            ->withErrors(['email' => 'Tài khoản đã bị khóa.'])
+            ->withErrors(['email' => 'T�i kho?n d� b? kh�a.'])
             ->withInput(['email' => $email]);
     }
 
     session(['demo_user' => betaDemoUserSessionPayload($user)]);
 
-    return redirect()->route('account.demo');
-})->name('auth.demo.login');
+    return redirect()->route('account.show');
+})->name('auth.login.submit');
 
 Route::get('/dang-nhap', function () {
     $siteData = betaSiteData();
 
     return view('auth', [
-        'title' => 'Đăng nhập - Beta Cinemas',
+        'title' => '�ang nh?p - Beta Cinemas',
         'mode' => 'login',
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
@@ -747,13 +626,13 @@ Route::post('/quen-mat-khau/gui-ma', function (Request $request) {
 
     if (! $user) {
         return back()
-            ->withErrors(['email' => 'Email này chưa được đăng ký.'])
+            ->withErrors(['email' => 'Email n�y chua du?c dang k�.'])
             ->withInput(['email' => $email]);
     }
 
     if (($user->status ?? true) === false) {
         return back()
-            ->withErrors(['email' => 'Tài khoản đã bị khóa, không thể đặt lại mật khẩu.'])
+            ->withErrors(['email' => 'T�i kho?n d� b? kh�a, kh�ng th? d?t l?i m?t kh?u.'])
             ->withInput(['email' => $email]);
     }
 
@@ -774,9 +653,9 @@ Route::post('/quen-mat-khau/gui-ma', function (Request $request) {
 
     try {
         Mail::raw(
-            "Mã OTP đặt lại mật khẩu Beta Cinemas của bạn là: {$code}\n\nMã này hết hạn sau 10 phút.",
+            "M� OTP d?t l?i m?t kh?u Beta Cinemas c?a b?n l�: {$code}\n\nM� n�y h?t h?n sau 10 ph�t.",
             function ($message) use ($email): void {
-                $message->to($email)->subject('Mã OTP đặt lại mật khẩu Beta Cinemas');
+                $message->to($email)->subject('M� OTP d?t l?i m?t kh?u Beta Cinemas');
             }
         );
     } catch (Throwable) {
@@ -786,18 +665,18 @@ Route::post('/quen-mat-khau/gui-ma', function (Request $request) {
             ->delete();
 
         return back()
-            ->withErrors(['email' => 'Không gửi được email OTP. Vui lòng thử lại sau.'])
+            ->withErrors(['email' => 'Kh�ng g?i du?c email OTP. Vui l�ng th? l?i sau.'])
             ->withInput(['email' => $email]);
     }
 
     return redirect()
         ->route('password.reset.form', ['email' => $email])
-        ->with('status', 'Mã OTP đã được gửi về email của bạn.');
+        ->with('status', 'M� OTP d� du?c g?i v? email c?a b?n.');
 })->name('password.otp.send');
 
 Route::get('/dat-lai-mat-khau', function (Request $request) {
     return view('password-reset', [
-        'title' => 'Đặt lại mật khẩu | Beta Cinemas',
+        'title' => '�?t l?i m?t kh?u | Beta Cinemas',
         'email' => trim((string) $request->query('email', '')),
     ]);
 })->name('password.reset.form');
@@ -819,7 +698,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
 
     if (! $otp) {
         return back()
-            ->withErrors(['otp' => 'Mã OTP không tồn tại hoặc đã hết hạn.'])
+            ->withErrors(['otp' => 'M� OTP kh�ng t?n t?i ho?c d� h?t h?n.'])
             ->withInput(['email' => $email]);
     }
 
@@ -827,7 +706,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
         $otp->forceFill(['used_at' => now()])->save();
 
         return back()
-            ->withErrors(['otp' => 'Mã OTP đã bị khóa do nhập sai quá nhiều lần. Vui lòng gửi mã mới.'])
+            ->withErrors(['otp' => 'M� OTP d� b? kh�a do nh?p sai qu� nhi?u l?n. Vui l�ng g?i m� m?i.'])
             ->withInput(['email' => $email]);
     }
 
@@ -835,7 +714,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
         $otp->increment('attempts');
 
         return back()
-            ->withErrors(['otp' => 'Mã OTP không đúng.'])
+            ->withErrors(['otp' => 'M� OTP kh�ng d�ng.'])
             ->withInput(['email' => $email]);
     }
 
@@ -843,7 +722,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
 
     if (! $user || ($user->status ?? true) === false) {
         return back()
-            ->withErrors(['email' => 'Tài khoản không tồn tại hoặc đã bị khóa.'])
+            ->withErrors(['email' => 'T�i kho?n kh�ng t?n t?i ho?c d� b? kh�a.'])
             ->withInput(['email' => $email]);
     }
 
@@ -861,7 +740,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
 
     return redirect()
         ->to(route('auth.login.form') . '#login')
-        ->with('status', 'Đã đổi mật khẩu. Vui lòng đăng nhập lại.');
+        ->with('status', '�� d?i m?t kh?u. Vui l�ng dang nh?p l?i.');
 })->name('password.reset.update');
 
 Route::get('/demo-auth/register', function (Request $request) {
@@ -910,14 +789,14 @@ Route::get('/demo-auth/register', function (Request $request) {
         'gender' => $data['gender'] ?? '',
     ])]);
 
-    return redirect()->route('account.demo');
-})->name('auth.demo.register');
+    return redirect()->route('account.show');
+})->name('auth.register.submit');
 
 Route::get('/dang-ky', function () {
     $siteData = betaSiteData();
 
     return view('auth', [
-        'title' => 'Đăng ký - Beta Cinemas',
+        'title' => '�ang k� - Beta Cinemas',
         'mode' => 'register',
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
@@ -929,7 +808,7 @@ Route::get('/dang-xuat', function () {
     session()->forget('demo_user');
 
     return redirect('/');
-})->name('auth.demo.logout');
+})->name('auth.logout');
 
 Route::get('/tai-khoan', function (Request $request) {
     if (! betaRefreshActiveDemoUserSession()) {
@@ -978,8 +857,8 @@ Route::get('/tai-khoan', function (Request $request) {
                         ->all(),
                     'total' => (int) $booking->total_price,
                     'status' => $booking->booking_status === 'expired'
-                        ? 'Hết hạn'
-                        : ($booking->payment_status === 'paid' ? 'Đã thanh toán' : 'Chờ thanh toán'),
+                        ? 'H?t h?n'
+                        : ($booking->payment_status === 'paid' ? '�� thanh to�n' : 'Ch? thanh to�n'),
                     'is_expired' => $booking->booking_status === 'expired',
                     'is_pending_payment' => $booking->booking_status !== 'expired' && $booking->payment_status !== 'paid',
                     'payment_url' => $booking->booking_status !== 'expired'
@@ -990,25 +869,12 @@ Route::get('/tai-khoan', function (Request $request) {
             });
     }
 
-    $sessionBookings = collect(session('demo_bookings', []))
-        ->map(function (array $booking) {
-            $status = (string) ($booking['status'] ?? '');
-            $isPaid = str_contains($status, 'Đã thanh toán') || str_contains($status, 'Da thanh toan');
-
-            return array_merge($booking, [
-                'is_pending_payment' => ! $isPaid,
-                'payment_url' => !empty($booking['code'])
-                    ? route('booking.demo.payment', ['code' => $booking['code']], false)
-                    : null,
-            ]);
-        });
-
     return view('account', [
-        'title' => 'Tài khoản | Beta Cinemas',
+        'title' => 'T�i kho?n | Beta Cinemas',
         'activeTab' => $activeTab,
-        'bookings' => $sessionBookings->concat($bookings)->values()->all(),
+        'bookings' => $bookings->values()->all(),
     ]);
-})->name('account.demo');
+})->name('account.show');
 
 Route::post('/tai-khoan', function (Request $request) {
     if (! betaRefreshActiveDemoUserSession()) {
@@ -1058,7 +924,7 @@ Route::post('/tai-khoan', function (Request $request) {
 
         if ($duplicateEmail) {
             return back()
-                ->withErrors(['email' => 'Email này đã được sử dụng bởi tài khoản khác.'])
+                ->withErrors(['email' => 'Email n�y d� du?c s? d?ng b?i t�i kho?n kh�c.'])
                 ->withInput();
         }
 
@@ -1087,9 +953,9 @@ Route::post('/tai-khoan', function (Request $request) {
     session(['demo_user' => $updatedProfile]);
 
     return redirect()
-        ->route('account.demo', ['tab' => 'profile'])
-        ->with('status', 'Đã cập nhật thông tin tài khoản.');
-})->name('account.demo.update');
+        ->route('account.show', ['tab' => 'profile'])
+        ->with('status', '�� c?p nh?t th�ng tin t�i kho?n.');
+})->name('account.update');
 
 Route::get('/admin/login', function () {
     if (session('admin_authenticated') === true) {
@@ -1122,19 +988,19 @@ Route::post('/admin/login', function (Request $request) {
 
     if (! $admin || ! Hash::check($credentials['password'], (string) $admin->password)) {
         return back()
-            ->withErrors(['email' => 'Thông tin đăng nhập quản trị không đúng.'])
+            ->withErrors(['email' => 'Th�ng tin dang nh?p qu?n tr? kh�ng d�ng.'])
             ->withInput();
     }
 
     if (($admin->status ?? true) === false) {
         return back()
-            ->withErrors(['email' => 'Tài khoản quản trị đã bị khóa.'])
+            ->withErrors(['email' => 'T�i kho?n qu?n tr? d� b? kh�a.'])
             ->withInput();
     }
 
     if (($admin->role ?? 'user') !== 'admin') {
         return back()
-            ->withErrors(['email' => 'Tài khoản chưa có quyền quản trị.'])
+            ->withErrors(['email' => 'T�i kho?n chua c� quy?n qu?n tr?.'])
             ->withInput();
     }
 
@@ -1150,7 +1016,7 @@ Route::post('/admin/login', function (Request $request) {
 Route::post('/admin/logout', function () {
     session()->forget(['admin_authenticated', 'admin_email', 'admin_user_id']);
 
-    return redirect()->route('admin.login')->with('status', 'Đã đăng xuất quản trị.');
+    return redirect()->route('admin.login')->with('status', '�� dang xu?t qu?n tr?.');
 })->name('admin.logout');
 
 Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {

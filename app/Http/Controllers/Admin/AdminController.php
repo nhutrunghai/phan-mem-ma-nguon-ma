@@ -199,6 +199,7 @@ class AdminController extends Controller
             'rooms' => $rooms,
             'moviesById' => $movies->keyBy(fn ($movie) => (string) $movie->getKey()),
             'roomsById' => $rooms->keyBy(fn ($room) => (string) $room->getKey()),
+            'settings' => $this->adminSettings(),
         ]);
     }
 

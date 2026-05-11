@@ -59,9 +59,9 @@
                 <div class="topbar-spacer"></div>
                 <div class="topbar-links">
                     @if ($demoUser)
-                        <a href="{{ route('account.demo') }}">{{ $demoUser['name'] }}</a>
+                        <a href="{{ route('account.show') }}">{{ $demoUser['name'] }}</a>
                         <span>|</span>
-                        <a href="{{ route('auth.demo.logout') }}">Đăng xuất</a>
+                        <a href="{{ route('auth.logout') }}">Đăng xuất</a>
                     @else
                         @foreach ($topLinks as $index => $link)
                             <a href="{{ $link['href'] ?? '#' }}">{{ $link['label'] ?? '' }}</a>

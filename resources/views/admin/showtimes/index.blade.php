@@ -26,7 +26,7 @@
             </div>
             <div class="form-group"><label>Bắt đầu</label><input class="form-control" type="datetime-local" name="start_time" required></div>
             <div class="form-group"><label>Kết thúc</label><input class="form-control" type="datetime-local" name="end_time" required></div>
-            <div class="form-group"><label>Giá vé</label><input class="form-control" type="number" name="price" value="75000" required></div>
+            <div class="form-group"><label>Giá vé</label><input class="form-control" type="number" name="price" value="{{ old('price', $settings['default_ticket_price'] ?? 0) }}" required></div>
             <div class="form-group"><label>Định dạng</label><input class="form-control" name="format" value="2D Phụ đề" required></div>
             <div class="form-group full"><button class="btn btn-primary" type="submit">Thêm suất chiếu</button></div>
         </form>

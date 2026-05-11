@@ -321,8 +321,8 @@
                 </div>
                 @if ($demoUser)
                 <ul class="list-unstyled list-inline pull-right" style="margin-bottom: 4px;margin-top: 4px;">
-                    <li><a href="{{ route('account.demo') }}">Xin chào: {{ $demoUser['name'] ?? 'Beta Member' }}</a></li>
-                    <li style="border-left: 1px solid; padding-left: 10px !important;"><a href="{{ route('auth.demo.logout') }}">Đăng xuất</a></li>
+                    <li><a href="{{ route('account.show') }}">Xin chào: {{ $demoUser['name'] ?? 'Beta Member' }}</a></li>
+                    <li style="border-left: 1px solid; padding-left: 10px !important;"><a href="{{ route('auth.logout') }}">Đăng xuất</a></li>
                 </ul>
                 @else
                 <ul class="list-unstyled list-inline pull-right" style="margin-bottom: 4px;margin-top: 4px;">
@@ -1584,8 +1584,8 @@ https://www.betacinemas.vn/thong-tin-chung.htm#tab-9</p>
 <script>
 (function () {
     var defaultTab = @json($defaultTab);
-    var loginUrl = @json(route('auth.demo.login'));
-    var registerUrl = @json(route('auth.demo.register'));
+    var loginUrl = @json(route('auth.login.submit'));
+    var registerUrl = @json(route('auth.register.submit'));
     var forgotPasswordUrl = @json(route('password.otp.send'));
     var csrfToken = @json(csrf_token());
     function isEmail(value) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value); }

@@ -103,7 +103,7 @@
                             <button type="submit" name="method" value="vnpay" class="btn-mua-ve">Thanh toán qua VNPay</button>
                         @endif
                     </form>
-                    <a class="btn-mua-ve" href="{{ route('account.demo', ['tab' => 'history']) }}">Xem lịch sử</a>
+                    <a class="btn-mua-ve" href="{{ route('account.show', ['tab' => 'history']) }}">Xem lịch sử</a>
                 </div>
             </div>
         </div>
