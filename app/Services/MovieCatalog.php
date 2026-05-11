@@ -10,80 +10,17 @@ use Illuminate\Support\Carbon;
 
 class MovieCatalog
 {
-    public function loadSiteData(): array
+    public function activeMovies(): array
     {
-        $dataPath = resource_path('data/web-home.json');
-
-        if (! is_readable($dataPath)) {
-            return [];
-        }
-
-        $decoded = json_decode((string) file_get_contents($dataPath), true);
-
-        return is_array($decoded) ? $decoded : [];
-    }
-
-    public function mergedMovies(?array $siteData = null, array $trackerMovies = []): array
-    {
-        $siteData ??= $this->loadSiteData();
-        $staticMovies = $this->staticMovies($siteData, $trackerMovies);
-        $dbMovies = $this->databaseMovies();
-
-        if ($dbMovies === []) {
-            return $staticMovies;
-        }
-
-        return collect($dbMovies)
-            ->sortBy(fn (array $movie) => (empty($movie['scheduleDates']) ? '1' : '0') . '|' . (string) ($movie['title'] ?? ''))
-            ->values()
-            ->all();
-    }
-
-    public function findMovie(string $id, ?array $siteData = null, array $trackerMovies = []): ?array
-    {
-        $movie = collect($this->mergedMovies($siteData, $trackerMovies))->firstWhere('id', $id);
-
-        return is_array($movie) ? $movie : null;
-    }
-
-    private function staticMovies(array $siteData, array $trackerMovies): array
-    {
-        $tracker = collect($trackerMovies)->map(function (array $movie) {
-            $movie['buyUrl'] = route('movies.show', ['id' => $movie['id']]);
-
-            return $movie;
-        });
-
-        $movies = collect($siteData['movies'] ?? [])->map(function (array $movie) {
-            $buyUrl = (string) ($movie['buyUrl'] ?? '');
-
-            if (($movie['id'] ?? null) !== null) {
-                $movie['buyUrl'] = route('movies.show', ['id' => $movie['id']]);
-            } elseif (str_ends_with($buyUrl, '.php') || str_contains($buyUrl, '.php?')) {
-                $movie['buyUrl'] = '#';
-            }
-
-            return $movie;
-        })->reject(fn (array $movie) => ($movie['section'] ?? null) === 'now-showing')->values();
-
-        return $tracker->concat($movies)->values()->all();
-    }
-
-    private function databaseMovies(): array
-    {
-        try {
-            $movies = Movie::query()
-                ->with(['showtimes' => fn ($query) => $query
-                    ->with('room')
-                    ->where('is_active', true)
-                    ->where('start_time', '>=', now())
-                    ->orderBy('start_time')])
+        $movies = Movie::query()
+            ->with(['showtimes' => fn ($query) => $query
+                ->with('room')
                 ->where('is_active', true)
-                ->orderBy('release_date')
-                ->get();
-        } catch (\Throwable) {
-            return [];
-        }
+                ->where('start_time', '>=', now())
+                ->orderBy('start_time')])
+            ->where('is_active', true)
+            ->orderBy('release_date')
+            ->get();
 
         return $movies
             ->sortBy(fn (Movie $movie) => ($movie->section === 'now-showing' ? '0' : '1') . '|' . (string) $movie->release_date)
@@ -92,7 +29,33 @@ class MovieCatalog
             ->all();
     }
 
-    private function mapMovie(Movie $movie): array
+    public function databaseMovies(): array
+    {
+        return $this->activeMovies();
+    }
+
+    public function findMovieBySlug(string $slug): ?array
+    {
+        $movie = Movie::query()
+            ->with(['showtimes' => function ($query) {
+                $query->with('room')
+                    ->where('is_active', true)
+                    ->where('start_time', '>=', now())
+                    ->orderBy('start_time');
+            }])
+            ->where('slug', $slug)
+            ->where('is_active', true)
+            ->first();
+
+        return $movie instanceof Movie ? $this->mapMovie($movie) : null;
+    }
+
+    public function findMovie(string $id): ?array
+    {
+        return $this->findMovieBySlug($id);
+    }
+
+    public function mapMovie(Movie $movie): array
     {
         $showtimes = $movie->showtimes;
         $scheduleDates = $showtimes

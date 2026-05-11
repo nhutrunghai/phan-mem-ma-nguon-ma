@@ -29,7 +29,7 @@ class BookingController extends Controller
     {
         $this->releaseExpiredHolds();
 
-        $movie = $this->catalog->findMovie($id, null, $this->trackerMovies()) ?? abort(404);
+        $movie = $this->catalog->findMovieBySlug($id) ?? abort(404);
         $selectedDate = trim((string) $request->query('date', $movie['releaseDate'] ?? now()->format('d/m/Y')));
         $selectedTime = trim((string) $request->query('time', '19:00'));
         $selectedFormat = trim((string) $request->query('format', '2D Phụ đề'));
@@ -63,7 +63,7 @@ class BookingController extends Controller
                 ->with('status', 'Vui lòng đăng nhập trước khi tiếp tục đặt vé.');
         }
 
-        $movie = $this->catalog->findMovie($id, null, $this->trackerMovies()) ?? abort(404);
+        $movie = $this->catalog->findMovieBySlug($id) ?? abort(404);
         $validated = $request->validate([
             'show_date' => ['required', 'string', 'max:40'],
             'show_time' => ['required', 'string', 'max:20'],
@@ -393,11 +393,6 @@ class BookingController extends Controller
         $this->ensureRoomSeats($showtime->room);
 
         return $showtime;
-    }
-
-    private function trackerMovies(): array
-    {
-        return function_exists('betaTrackerMovies') ? betaTrackerMovies() : [];
     }
 
     private function authorizeBooking(Booking $booking): void

@@ -16,219 +16,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
-function betaTrackerMovies(): array
-{
-    return [
-        [
-            'id' => 'phi-phong-quy-mau-rung-thieng',
-            'section' => 'now-showing',
-            'title' => 'Phí Phông: Qu? Máu R?ng Thiêng',
-            'genre' => 'Kinh d?, Gi?t gân',
-            'duration' => 120,
-            'label' => 'C16',
-            'tag' => 'HOT',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/03/26/anh-chup-man-hinh-2026-03-26-114032-114119-260326-54.png',
-            'buyUrl' => '',
-            'description' => 'Phí Phông, loài qu? khát máu trong truy?n thuy?t dân gian c?a d?ng bào mi?n núi gây ám ?nh bao d?i nay. Phim xoay quanh Còn (Ki?u Minh Tu?n) và Duong (Minh Anh), hai pháp su t?p s? lên núi c?u ngu?i m? dang b? l?i nguy?n Phí Phông dánh g?c.',
-            'releaseDate' => '20/04/2026',
-            'language' => 'Ti?ng Vi?t',
-            'trailer' => 'https://www.youtube.com/embed/LDvCnwE6TtA',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Ð? Qu?c Trung'],
-                ['label' => 'Di?n viên', 'value' => 'Ki?u Minh Tu?n, Nina Nutthacha Padovan, Di?p B?o Ng?c, Ðoàn Minh Anh, NSUT H?nh Thuý,...'],
-                ['label' => 'Th? lo?i', 'value' => 'Kinh d?, Gi?t gân'],
-                ['label' => 'Th?i lu?ng', 'value' => '120 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Vi?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '20/04/2026'],
-            ],
-        ],
-        [
-            'id' => 'anh-hung',
-            'section' => 'now-showing',
-            'title' => 'Anh Hùng',
-            'genre' => 'Tâm lý, Gia dình',
-            'duration' => 122,
-            'label' => 'C13',
-            'tag' => 'HOT',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/03/31/400wx633h-113142-310326-81.jpg',
-            'buyUrl' => '',
-            'description' => 'Câu chuy?n phim theo chân Hùng (Thái Hòa) - ngu?i cha don thân kiêm tài x? taxi và d?ng nghi?p hãng xe là Tu?n (Võ T?n Phát) b? cu?n vào m?t phi v? l?a d?o t? thi?n ti?n t? trong khi sinh m?ng cô con gái nh? c?a anh dang n?m g?n trong tay t? th?n.',
-            'releaseDate' => '24/04/2026',
-            'language' => 'Ti?ng Vi?t',
-            'trailer' => 'https://www.youtube.com/embed/P74tpiZ8kuU',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Võ Th?ch Th?o'],
-                ['label' => 'Di?n viên', 'value' => 'Thái Hoà, Võ T?n Phát, Ðoàn Th? Vinh, Phuong Thanh, H?ng Ánh, NSUT Lê Thi?n, Hoàng Minh Tri?t, Gia Tu?...'],
-                ['label' => 'Th? lo?i', 'value' => 'Tâm lý, Gia dình'],
-                ['label' => 'Th?i lu?ng', 'value' => '122 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Vi?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '24/04/2026'],
-            ],
-        ],
-        [
-            'id' => 'dai-tiec-trang-mau-8',
-            'section' => 'now-showing',
-            'title' => 'Ð?i Ti?c Trang Máu 8',
-            'genre' => 'Hài hu?c, Kinh d?',
-            'duration' => 130,
-            'label' => 'C16',
-            'tag' => 'HOT',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/04/16/400x633-102941-160426-44.jpg',
-            'buyUrl' => '',
-            'description' => 'Ð?i Ti?c Trang Máu 8 theo chân m?t v? d?o di?n hay b? coi thu?ng trong d? án th? thách nh?t d?i ông: th?c hi?n m?t b? phim dài 35 phút ch? v?i m?t cú máy.',
-            'releaseDate' => '24/04/2026',
-            'language' => 'Ti?ng Vi?t',
-            'trailer' => 'https://www.youtube.com/embed/NZ9-wGErh4o',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Phan Gia Nh?t Linh'],
-                ['label' => 'Di?n viên', 'value' => 'Vân Son, Lê Khánh, Miu Lê, Liên B?nh Phát, Qu?c Khánh, Qu?nh Lý, Lâm Thanh M?, Quang Minh, H?a Vi Van, H?ng Ánh, NSUT Ð?c Khuê, Charlie Nguy?n...'],
-                ['label' => 'Th? lo?i', 'value' => 'Hài hu?c, Kinh d?'],
-                ['label' => 'Th?i lu?ng', 'value' => '130 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Vi?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '24/04/2026'],
-            ],
-        ],
-        [
-            'id' => 'heo-nam-mong',
-            'section' => 'now-showing',
-            'title' => 'Heo Nam Móng',
-            'genre' => 'Kinh d?',
-            'duration' => 103,
-            'label' => 'C18',
-            'tag' => '',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/04/08/anh-chup-man-hinh-2026-04-08-161626-161707-080426-39.png',
-            'buyUrl' => '',
-            'description' => 'D?a trên truy?n thuy?t rùng r?n v? "Cô Nam H?i" và linh h?n b? m?c k?t trong thân xác heo.',
-            'releaseDate' => '24/04/2026',
-            'language' => 'Ti?ng Vi?t',
-            'trailer' => 'https://www.youtube.com/embed/ShknvbpzZxg',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Võ Thanh Hòa'],
-                ['label' => 'Di?n viên', 'value' => 'Võ T?n Phát, Tr?n Ng?c Vàng, Nh?t Ý, Thanh Th?y,..'],
-                ['label' => 'Th? lo?i', 'value' => 'Kinh d?'],
-                ['label' => 'Th?i lu?ng', 'value' => '103 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Vi?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '24/04/2026'],
-            ],
-        ],
-        [
-            'id' => 'trum-so',
-            'section' => 'now-showing',
-            'title' => 'Trùm Sò',
-            'genre' => 'Hài hu?c',
-            'duration' => 105,
-            'label' => 'K',
-            'tag' => '',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/04/10/400x633-1-141724-100426-34.jpg',
-            'buyUrl' => '',
-            'description' => '? Làng S?a Ð? - m?t ngôi làng nh? xa xôi heo hút, h?n hán tri?n miên, ngu?i dân ai cung nghèo cung kh?, ch? riêng Trùm Sò là giàu n?t d? d? vách.',
-            'releaseDate' => '24/04/2026',
-            'language' => 'Ti?ng Vi?t',
-            'trailer' => 'https://www.youtube.com/embed/QoKBpq_p61Q',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Ð? Ð?c Th?nh'],
-                ['label' => 'Di?n viên', 'value' => 'Ð?c Th?nh, Phuong Nam, Mai Phuong, Doãn Qu?c Ðam, Hoàng Tóc Dài,...'],
-                ['label' => 'Th? lo?i', 'value' => 'Hài hu?c'],
-                ['label' => 'Th?i lu?ng', 'value' => '105 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Vi?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '24/04/2026'],
-            ],
-        ],
-        [
-            'id' => 'hen-em-ngay-nhat-thuc',
-            'section' => 'now-showing',
-            'title' => 'H?n Em Ngày Nh?t Th?c',
-            'genre' => 'Tâm lý, Gia dình',
-            'duration' => 118,
-            'label' => 'C16',
-            'tag' => '',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/03/18/teaser-hennt-cinema-150342-180326-62.jpg',
-            'buyUrl' => '',
-            'description' => 'Nam 1995, khi dang d?ng tru?c m?t quy?t d?nh quan tr?ng c?a cu?c d?i, Ân b?t ng? b? kéo tr? l?i quá kh? b?i nh?ng b?c thu tình chua t?ng trao tay.',
-            'releaseDate' => '30/03/2026',
-            'language' => 'Ti?ng Vi?t',
-            'trailer' => 'https://www.youtube.com/embed/xeuiol66BkA',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Lê Thi?n Vi?n'],
-                ['label' => 'Di?n viên', 'value' => 'Ðoàn Thiên Ân, Khuong Lê, NSND Lê Khanh, Hu?nh Phuong, Nguyên Th?o, NSND Kim Xuân, Thanh Son, H?a Vi Van, Lâm V? D?, H?a Minh Ð?t.'],
-                ['label' => 'Th? lo?i', 'value' => 'Tâm lý, Gia dình'],
-                ['label' => 'Th?i lu?ng', 'value' => '118 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Vi?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '30/03/2026'],
-            ],
-        ],
-        [
-            'id' => 'cu-nhay-ky-dieu',
-            'section' => 'now-showing',
-            'title' => 'Cú Nh?y K? Di?u',
-            'genre' => 'Ho?t hình, Phiêu luu',
-            'duration' => 105,
-            'label' => 'P',
-            'tag' => '',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/02/26/anh-chup-man-hinh-2026-02-26-151006-151102-260226-84.png',
-            'buyUrl' => '',
-            'description' => 'Câu chuy?n xoay quanh Mabel, n? sinh d?i h?c 19 tu?i v?i tình yêu mãnh li?t dành cho d?ng v?t, dã n?m b?t co h?i s? d?ng công ngh? cho phép ý th?c “nh?y” vào m?t chú h?i ly rô-b?t.',
-            'releaseDate' => '13/03/2026',
-            'language' => 'Ti?ng Vi?t',
-            'trailer' => 'https://www.youtube.com/embed/CHINiUp2L0g',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Daniel Chong'],
-                ['label' => 'Di?n viên', 'value' => ''],
-                ['label' => 'Th? lo?i', 'value' => 'Ho?t hình, Phiêu luu'],
-                ['label' => 'Th?i lu?ng', 'value' => '105 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Vi?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '13/03/2026'],
-            ],
-        ],
-        [
-            'id' => 'michael',
-            'section' => 'now-showing',
-            'title' => 'Michael',
-            'genre' => 'Âm Nh?c',
-            'duration' => 127,
-            'label' => 'K',
-            'tag' => '',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/04/13/anh-chup-man-hinh-2026-04-13-090338-090425-130426-13.png',
-            'buyUrl' => '',
-            'description' => 'Michael là tác ph?m di?n ?nh kh?c h?a cu?c d?i và di s?n c?a m?t trong nh?ng ngh? si có ?nh hu?ng nh?t mà th? gi?i t?ng bi?t d?n.',
-            'releaseDate' => '22/04/2026',
-            'language' => 'Ti?ng Anh',
-            'trailer' => 'https://www.youtube.com/embed/I7T5VK3zqbY',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Antoine Fuqua'],
-                ['label' => 'Di?n viên', 'value' => 'Jaafar Jackson, Nia Long, Laura Harrier, Juliano Krue Valdi, cùng Miles Teller và Colman Domingo'],
-                ['label' => 'Th? lo?i', 'value' => 'Âm Nh?c'],
-                ['label' => 'Th?i lu?ng', 'value' => '127 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Anh'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '22/04/2026'],
-            ],
-        ],
-        [
-            'id' => 'phim-shin-cau-be-but-chi',
-            'section' => 'now-showing',
-            'title' => 'Phim Shin - C?u Bé Bút Chì',
-            'genre' => 'Ho?t hình, Gia dình',
-            'duration' => 104,
-            'label' => 'P',
-            'tag' => '',
-            'poster' => 'https://files.betacorp.vn/media/images/2026/04/23/poster-shin-2020-4x5-174632-230426-77.png',
-            'buyUrl' => '',
-            'description' => 'B? phim xoay quanh m?t vuong qu?c lo l?ng mang tên Rakuga, t?n t?i nh? ngu?n nang lu?ng d?n t? nh?ng nét v? c?a con ngu?i.',
-            'releaseDate' => '01/05/2026',
-            'language' => 'Ti?ng Nh?t',
-            'trailer' => 'https://www.youtube.com/embed/KyyoTlt5VJo',
-            'details' => [
-                ['label' => 'Ð?o di?n', 'value' => 'Masakazu Hashimoto'],
-                ['label' => 'Di?n viên', 'value' => 'Akiko Yajima Shin Yumiko Kobayashi, Miki Narahashi,Toshiyuki Morikawa'],
-                ['label' => 'Th? lo?i', 'value' => 'Ho?t hình, Gia dình'],
-                ['label' => 'Th?i lu?ng', 'value' => '104 phút'],
-                ['label' => 'Ngôn ng?', 'value' => 'Ti?ng Nh?t'],
-                ['label' => 'Ngày kh?i chi?u', 'value' => '01/05/2026'],
-            ],
-        ],
-    ];
-}
-
 function betaDemoUserSessionPayload(User $user): array
 {
     return [
@@ -320,11 +107,6 @@ function betaNavItems(array $siteData): array
     })->all();
 }
 
-function betaMergedMovies(array $siteData): array
-{
-    return betaRepairMovieText(app(MovieCatalog::class)->mergedMovies($siteData, betaTrackerMovies()));
-}
-
 function betaRepairMojibakeString(string $value): string
 {
     if (!preg_match('/(?:\x{00C3}|\x{00C2}|\x{00C6}|\x{00C4}|\x{00E1}\x{00BA}|\x{00E1}\x{00BB}|\x{00E2}\x{20AC})/u', $value)) {
@@ -402,14 +184,14 @@ Route::get('/', function () {
         'navItems' => betaResolvedNavItems($siteData),
         'slides' => $siteData['hero'] ?? [],
         'movieTabs' => $siteData['movieTabs'] ?? [],
-        'movies' => betaMergedMovies($siteData),
+        'movies' => app(MovieCatalog::class)->activeMovies(),
         'footer' => $siteData['footer'] ?? [],
     ]);
 });
 
 Route::get('/lich-chieu', function () {
     $siteData = betaSiteData();
-    $movies = betaMergedMovies($siteData);
+    $movies = app(MovieCatalog::class)->activeMovies();
     $topScheduleDates = [];
     $search = trim((string) request()->query('q', ''));
     $genre = trim((string) request()->query('genre', ''));
@@ -494,8 +276,9 @@ Route::get('/lich-chieu', function () {
 Route::get('/phim', function (Request $request) {
     $siteData = betaSiteData();
     $movieTabs = $siteData['movieTabs'] ?? [];
-    $movies = betaMergedMovies($siteData);
-    $activeTab = (string) $request->query('tab', 'upcoming');
+    $movies = app(MovieCatalog::class)->activeMovies();
+    $defaultTab = collect($movieTabs)->firstWhere('active', true)['id'] ?? 'now-showing';
+    $activeTab = (string) $request->query('tab', $defaultTab);
     $search = (string) $request->query('q', '');
     $genre = (string) $request->query('genre', '');
 
@@ -520,24 +303,13 @@ Route::get('/phim', function (Request $request) {
 
 Route::get('/phim/{id}', function (string $id) {
     $siteData = betaSiteData();
-    $movies = collect(betaMergedMovies($siteData));
-    $movie = $movies->firstWhere('id', $id);
+    $movie = app(MovieCatalog::class)->findMovieBySlug($id);
 
     abort_if($movie === null, 404);
 
-    $movie['details'] = $movie['details'] ?? [
-        ['label' => 'Th? lo?i', 'value' => $movie['genre'] ?? 'Ðang c?p nh?t'],
-        ['label' => 'Th?i lu?ng', 'value' => (($movie['duration'] ?? null) ? ($movie['duration'] . ' phút') : 'Ðang c?p nh?t')],
-        ['label' => 'Ngôn ng?', 'value' => $movie['language'] ?? 'Ti?ng Vi?t'],
-        ['label' => 'Ngày kh?i chi?u', 'value' => $movie['releaseDate'] ?? 'Ðang c?p nh?t'],
-    ];
-    $movie['scheduleDates'] = $movie['scheduleDates'] ?? [];
-    $movie['showtimeGroups'] = $movie['showtimeGroups'] ?? [];
-    $movie['scheduleByDate'] = $movie['scheduleByDate'] ?? [];
-    $movie['showtimes'] = $movie['showtimes'] ?? [];
 
     return view('movie-detail', [
-        'title' => ($movie['title'] ?? 'Chi ti?t phim') . ' - Beta Cinemas',
+        'title' => ($movie['title'] ?? 'Chi tiet phim') . ' - Beta Cinemas',
         'movie' => $movie,
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
@@ -954,7 +726,7 @@ Route::post('/tai-khoan', function (Request $request) {
 
     return redirect()
         ->route('account.show', ['tab' => 'profile'])
-        ->with('status', 'Ðã c?p nh?t thông tin tài kho?n.');
+        ->with('status', 'Da cap nhat thong tin tai khoan.');
 })->name('account.update');
 
 Route::get('/admin/login', function () {
