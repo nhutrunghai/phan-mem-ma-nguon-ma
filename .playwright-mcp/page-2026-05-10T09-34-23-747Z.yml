@@ -1,0 +1,22 @@
+- main [ref=e2]:
+  - region "Đăng nhập quản trị" [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: B
+        - generic [ref=e7]: Beta Cinemas
+      - generic [ref=e8]:
+        - heading "Quản trị rạp chiếu phim" [level=1] [ref=e9]
+        - paragraph [ref=e10]: Theo dõi lịch chiếu, phòng chiếu, đặt vé và nội dung phim trong một khu vực riêng.
+      - generic "Phân hệ quản trị" [ref=e11]:
+        - generic [ref=e12]: Phim
+        - generic [ref=e13]: Suất chiếu
+        - generic [ref=e14]: Đặt vé
+    - generic [ref=e15]:
+      - heading "Đăng nhập quản trị" [level=1] [ref=e16]
+      - paragraph [ref=e17]: Sử dụng tài khoản quản trị để tiếp tục.
+      - generic [ref=e18]: Email
+      - textbox "Email" [active] [ref=e19]
+      - generic [ref=e20]: Mật khẩu
+      - textbox "Mật khẩu" [ref=e21]
+      - button "Đăng nhập" [ref=e22] [cursor=pointer]
+      - generic [ref=e23]: Bảng quản trị Beta Cinemas

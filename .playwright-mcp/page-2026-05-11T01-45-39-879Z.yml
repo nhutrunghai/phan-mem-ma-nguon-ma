@@ -1,0 +1,18 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - heading "Không thể truy cập trang web này" [level=1] [ref=e7]
+    - paragraph [ref=e8]:
+      - strong [ref=e9]: 127.0.0.1
+      - text: đã bất ngờ đóng kết nối.
+    - generic [ref=e10]:
+      - paragraph [ref=e11]: "Hãy thử:"
+      - list [ref=e12]:
+        - listitem [ref=e13]: Kiểm tra kết nối
+        - listitem [ref=e14]:
+          - link "Kiểm tra proxy và tường lửa" [ref=e15] [cursor=pointer]:
+            - /url: "#buttons"
+        - listitem [ref=e16]:
+          - link "Chạy Chẩn đoán mạng của Windows" [ref=e17] [cursor=pointer]:
+            - /url: javascript:diagnoseErrors()
+    - generic [ref=e18]: ERR_CONNECTION_CLOSED
+  - button "Chi tiết" [ref=e20] [cursor=pointer]

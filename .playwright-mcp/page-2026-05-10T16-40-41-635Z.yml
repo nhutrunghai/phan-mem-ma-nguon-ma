@@ -1,0 +1,455 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - link "English" [ref=e9] [cursor=pointer]:
+        - /url: "#"
+        - img "English" [ref=e10]
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Tester" [ref=e13] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/tai-khoan
+            - text: Tester
+        - listitem [ref=e14]:
+          - link "Đăng xuất" [ref=e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/dang-xuat
+    - generic [ref=e18]:
+      - link "Beta Cinemas" [ref=e19] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000
+        - img "Beta Cinemas" [ref=e20]
+      - text: 
+      - generic [ref=e21]:
+        - list:
+          - listitem [ref=e22]:
+            - link "LỊCH CHIẾU THEO RẠP" [ref=e23] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/lich-chieu
+          - listitem [ref=e24]:
+            - link "PHIM" [ref=e25] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim
+          - listitem [ref=e26]:
+            - link "RẠP" [ref=e27] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e28]:
+            - link "GIÁ VÉ" [ref=e29] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e30]:
+            - link "TIN MỚI VÀ ƯU ĐÃI" [ref=e31] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e32]:
+            - link "NHƯỢNG QUYỀN" [ref=e33] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e34]:
+            - link "THÀNH VIÊN" [ref=e35] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/tai-khoan
+  - main [ref=e36]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - link "Trang chủ" [ref=e41] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000
+        - text: "> Đặt vé > Báu Vật Trời Cho"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: Theo quy định của cục điện ảnh, phim này không dành cho khán giả dưới 13 tuổi.
+          - generic [ref=e45]:
+            - generic [ref=e46]: Ghế trống
+            - generic [ref=e48]: Ghế đang chọn
+            - generic [ref=e50]: Ghế đang giữ
+            - generic [ref=e52]: Ghế đã bán
+            - generic [ref=e54]: Ghế đặt trước
+          - generic [ref=e57]: MÀN HÌNH CHIẾU
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - button "H11" [ref=e61] [cursor=pointer]:
+                - generic [ref=e63]: H11
+              - button "H10" [ref=e65] [cursor=pointer]:
+                - generic [ref=e67]: H10
+              - button "H9" [ref=e69] [cursor=pointer]:
+                - generic [ref=e71]: H9
+              - button "H8" [ref=e73] [cursor=pointer]:
+                - generic [ref=e75]: H8
+              - button "H7" [ref=e77] [cursor=pointer]:
+                - generic [ref=e79]: H7
+              - button "H6" [ref=e81] [cursor=pointer]:
+                - generic [ref=e83]: H6
+              - button "H5" [ref=e85] [cursor=pointer]:
+                - generic [ref=e87]: H5
+              - button "H4" [ref=e89] [cursor=pointer]:
+                - generic [ref=e91]: H4
+              - button "H3" [ref=e93] [cursor=pointer]:
+                - generic [ref=e95]: H3
+              - button "H2" [ref=e97] [cursor=pointer]:
+                - generic [ref=e99]: H2
+              - button "H1" [ref=e101] [cursor=pointer]:
+                - generic [ref=e103]: H1
+            - generic [ref=e105]:
+              - button "G11" [ref=e106] [cursor=pointer]:
+                - generic [ref=e108]: G11
+              - button "G10" [ref=e110] [cursor=pointer]:
+                - generic [ref=e112]: G10
+              - button "G9" [ref=e114] [cursor=pointer]:
+                - generic [ref=e116]: G9
+              - button "G8" [ref=e118] [cursor=pointer]:
+                - generic [ref=e120]: G8
+              - button "G7" [ref=e122] [cursor=pointer]:
+                - generic [ref=e124]: G7
+              - button "G6" [ref=e126] [cursor=pointer]:
+                - generic [ref=e128]: G6
+              - button "G5" [ref=e130] [cursor=pointer]:
+                - generic [ref=e132]: G5
+              - button "G4" [ref=e134] [cursor=pointer]:
+                - generic [ref=e136]: G4
+              - button "G3" [ref=e138] [cursor=pointer]:
+                - generic [ref=e140]: G3
+              - button "G2" [ref=e142] [cursor=pointer]:
+                - generic [ref=e144]: G2
+              - button "G1" [ref=e146] [cursor=pointer]:
+                - generic [ref=e148]: G1
+            - generic [ref=e150]:
+              - button "F9" [ref=e151] [cursor=pointer]:
+                - generic [ref=e153]: F9
+              - button "F8" [ref=e155] [cursor=pointer]:
+                - generic [ref=e157]: F8
+              - button "F7" [ref=e159] [cursor=pointer]:
+                - generic [ref=e161]: F7
+              - button "F6" [ref=e163] [cursor=pointer]:
+                - generic [ref=e165]: F6
+              - button "F5" [ref=e167] [cursor=pointer]:
+                - generic [ref=e169]: F5
+              - button "F4" [ref=e171] [cursor=pointer]:
+                - generic [ref=e173]: F4
+              - button "F3" [ref=e175] [cursor=pointer]:
+                - generic [ref=e177]: F3
+              - button "F2" [ref=e179] [cursor=pointer]:
+                - generic [ref=e181]: F2
+              - button "F1" [ref=e183] [cursor=pointer]:
+                - generic [ref=e185]: F1
+            - generic [ref=e187]:
+              - button "E9" [ref=e188] [cursor=pointer]:
+                - generic [ref=e190]: E9
+              - button "E8" [ref=e192] [cursor=pointer]:
+                - generic [ref=e194]: E8
+              - button "E7" [ref=e196] [cursor=pointer]:
+                - generic [ref=e198]: E7
+              - button "E6" [ref=e200] [cursor=pointer]:
+                - generic [ref=e202]: E6
+              - button "E5" [ref=e204] [cursor=pointer]:
+                - generic [ref=e206]: E5
+              - button "E4" [ref=e208] [cursor=pointer]:
+                - generic [ref=e210]: E4
+              - button "E3" [ref=e212] [cursor=pointer]:
+                - generic [ref=e214]: E3
+              - button "E2" [ref=e216] [cursor=pointer]:
+                - generic [ref=e218]: E2
+              - button "E1" [ref=e220] [cursor=pointer]:
+                - generic [ref=e222]: E1
+            - generic [ref=e224]:
+              - button "D10" [ref=e225] [cursor=pointer]:
+                - generic [ref=e227]: D10
+              - button "D9" [ref=e229] [cursor=pointer]:
+                - generic [ref=e231]: D9
+              - button "D8" [ref=e233] [cursor=pointer]:
+                - generic [ref=e235]: D8
+              - button "D7" [ref=e237] [cursor=pointer]:
+                - generic [ref=e239]: D7
+              - button "D6" [ref=e241] [cursor=pointer]:
+                - generic [ref=e243]: D6
+              - button "D5" [ref=e245] [cursor=pointer]:
+                - generic [ref=e247]: D5
+              - button "D4" [ref=e249] [cursor=pointer]:
+                - generic [ref=e251]: D4
+              - button "D3" [ref=e253] [cursor=pointer]:
+                - generic [ref=e255]: D3
+              - button "D2" [ref=e257] [cursor=pointer]:
+                - generic [ref=e259]: D2
+              - button "D1" [ref=e261] [cursor=pointer]:
+                - generic [ref=e263]: D1
+            - generic [ref=e265]:
+              - button "C10" [ref=e266] [cursor=pointer]:
+                - generic [ref=e268]: C10
+              - button "C9" [ref=e270] [cursor=pointer]:
+                - generic [ref=e272]: C9
+              - button "C8" [ref=e274] [cursor=pointer]:
+                - generic [ref=e276]: C8
+              - button "C7" [ref=e278] [cursor=pointer]:
+                - generic [ref=e280]: C7
+              - button "C6" [ref=e282] [cursor=pointer]:
+                - generic [ref=e284]: C6
+              - button "C5" [ref=e286] [cursor=pointer]:
+                - generic [ref=e288]: C5
+              - button "C4" [ref=e290] [cursor=pointer]:
+                - generic [ref=e292]: C4
+              - button "C3" [ref=e294] [cursor=pointer]:
+                - generic [ref=e296]: C3
+              - button "C2" [ref=e298] [cursor=pointer]:
+                - generic [ref=e300]: C2
+              - button "C1" [ref=e302] [cursor=pointer]:
+                - generic [ref=e304]: C1
+            - generic [ref=e306]:
+              - button "B10" [ref=e307] [cursor=pointer]:
+                - generic [ref=e309]: B10
+              - button "B9" [ref=e311] [cursor=pointer]:
+                - generic [ref=e313]: B9
+              - button "B8" [ref=e315] [cursor=pointer]:
+                - generic [ref=e317]: B8
+              - button "B7" [ref=e319] [cursor=pointer]:
+                - generic [ref=e321]: B7
+              - button "B6" [ref=e323] [cursor=pointer]:
+                - generic [ref=e325]: B6
+              - button "B5" [ref=e327] [cursor=pointer]:
+                - generic [ref=e329]: B5
+              - button "B4" [ref=e331] [cursor=pointer]:
+                - generic [ref=e333]: B4
+              - button "B3" [ref=e335] [cursor=pointer]:
+                - generic [ref=e337]: B3
+              - button "B2" [ref=e339] [cursor=pointer]:
+                - generic [ref=e341]: B2
+              - button "B1" [ref=e343] [cursor=pointer]:
+                - generic [ref=e345]: B1
+            - generic [ref=e347]:
+              - button "A10" [ref=e348] [cursor=pointer]:
+                - generic [ref=e350]: A10
+              - button "A9" [ref=e352] [cursor=pointer]:
+                - generic [ref=e354]: A9
+              - button "A8" [ref=e356] [cursor=pointer]:
+                - generic [ref=e358]: A8
+              - button "A7" [ref=e360] [cursor=pointer]:
+                - generic [ref=e362]: A7
+              - button "A6" [ref=e364] [cursor=pointer]:
+                - generic [ref=e366]: A6
+              - button "A5" [ref=e368] [cursor=pointer]:
+                - generic [ref=e370]: A5
+              - button "A4" [ref=e372] [cursor=pointer]:
+                - generic [ref=e374]: A4
+              - button "A3" [ref=e376] [cursor=pointer]:
+                - generic [ref=e378]: A3
+              - button "A2" [ref=e380] [cursor=pointer]:
+                - generic [ref=e382]: A2
+              - button "A1" [ref=e384] [cursor=pointer]:
+                - generic [ref=e386]: A1
+          - generic [ref=e388]:
+            - generic [ref=e390]:
+              - generic [ref=e391]: Ghế thường
+              - generic [ref=e393]: Ghế VIP
+              - generic [ref=e395]: Ghế đôi
+            - generic [ref=e397]:
+              - generic [ref=e398]: Tổng tiền
+              - generic [ref=e399]: 0 vnđ
+        - complementary [ref=e400]:
+          - generic [ref=e401]:
+            - generic [ref=e402]:
+              - img "Báu Vật Trời Cho" [ref=e404]
+              - generic [ref=e405]:
+                - heading "Báu Vật Trời Cho" [level=1] [ref=e406]
+                - generic [ref=e407]: 2D Phụ đề
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - generic [ref=e410]:
+                  - generic [ref=e411]: 
+                  - text: Thể loại
+                - generic [ref=e412]: Gia đình, Tình cảm, Hài hước
+              - generic [ref=e413]:
+                - generic [ref=e414]:
+                  - generic [ref=e415]: 
+                  - text: Thời lượng
+                - generic [ref=e416]: 124 phút
+              - generic [ref=e417]:
+                - generic [ref=e418]:
+                  - generic [ref=e419]: 
+                  - text: Ngày chiếu
+                - generic [ref=e420]: 11/05
+              - generic [ref=e421]:
+                - generic [ref=e422]:
+                  - generic [ref=e423]: 
+                  - text: Giờ chiếu
+                - generic [ref=e424]: 09:00
+              - generic [ref=e425]:
+                - generic [ref=e426]:
+                  - generic [ref=e427]: 
+                  - text: Ghế ngồi
+                - generic [ref=e428]: Chưa chọn ghế
+            - button "TIẾP TỤC" [disabled] [ref=e429]
+            - generic [ref=e430]: Vui lòng chọn ghế để tiếp tục.
+  - generic [ref=e433]:
+    - generic [ref=e434]:
+      - list:
+        - listitem [ref=e435]:
+          - link "Beta Cinemas" [ref=e436] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000
+            - img "Beta Cinemas" [ref=e437]
+        - listitem [ref=e438]:
+          - generic [ref=e439]: 
+          - link "Tuyển dụng" [ref=e440] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e441]:
+          - generic [ref=e442]: 
+          - link "Giới thiệu" [ref=e443] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e444]:
+          - generic [ref=e445]: 
+          - link "Liên hệ" [ref=e446] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e447]:
+          - generic [ref=e448]: 
+          - link "F.A.Q" [ref=e449] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e450]:
+          - generic [ref=e451]: 
+          - link "Hoạt động xã hội" [ref=e452] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e453]:
+          - generic [ref=e454]: 
+          - link "Điều khoản sử dụng" [ref=e455] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e456]:
+          - generic [ref=e457]: 
+          - link "Chính sách thanh toán, đổi trả - hoàn vé" [ref=e458] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e459]:
+          - generic [ref=e460]: 
+          - link "Liên hệ quảng cáo" [ref=e461] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e462]:
+          - generic [ref=e463]: 
+          - link "Điều khoản bảo mật" [ref=e464] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e465]:
+          - generic [ref=e466]: 
+          - link "Hướng dẫn đặt vé online" [ref=e467] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e468]:
+        - heading "Tải ứng dụng" [level=2] [ref=e469]
+        - list:
+          - listitem [ref=e470]:
+            - generic [ref=e471]: 
+            - link "Beta Cinemas cho iOS" [ref=e472] [cursor=pointer]:
+              - /url: https://apps.apple.com/vn/app/beta-cinemas/id1403107666?l=vi
+          - listitem [ref=e473]:
+            - generic [ref=e474]: 
+            - link "Beta Cinemas cho Android" [ref=e475] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.beta.betacineplex&hl=vi
+    - generic [ref=e476]:
+      - generic [ref=e477]:
+        - heading "CỤM RẠP BETA" [level=2] [ref=e478]
+        - list [ref=e479]:
+          - listitem [ref=e480]:
+            - generic [ref=e481]: 
+            - link "Beta Cinemas Xuân Thủy, Hà Nội - Hotline 0333 023 183" [ref=e482] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e483]:
+            - generic [ref=e484]: 
+            - link "Beta Cinemas Tây Sơn, Hà Nội - Hotline 0976 894 773" [ref=e485] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e486]:
+            - generic [ref=e487]: 
+            - link "Beta Cinemas Vĩnh Yên, Phú Thọ - Hotline 0977 632 215" [ref=e488] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e489]:
+            - generic [ref=e490]: 
+            - link "Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873" [ref=e491] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e492]:
+            - generic [ref=e493]: 
+            - link "Beta Cinemas Lào Cai - Hotline 0358 968 970" [ref=e494] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e495]:
+            - generic [ref=e496]: 
+            - link "Beta Cinemas Trần Quang Khải, TP Hồ Chí Minh - Hotline 1900 638 362" [ref=e497] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e498]:
+            - generic [ref=e499]: 
+            - link "Beta Cinemas TRMall Phú Quốc, An Giang - Hotline 0983 474 440" [ref=e500] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e501]:
+            - generic [ref=e502]: 
+            - link "Beta Cinemas Empire Bình Dương, TP Hồ Chí Minh - Hotline 0784 531 525" [ref=e503] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e504]:
+            - generic [ref=e505]: 
+            - link "Beta Cinemas Quang Trung, TP Hồ Chí Minh - Hotline 0706 075 509" [ref=e506] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e507]:
+            - generic [ref=e508]: 
+            - link "Beta Cinemas Giải Phóng, Hà Nội - Hotline 0585 680 360" [ref=e509] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e510]:
+            - generic [ref=e511]: 
+            - link "Beta Cinemas Thanh Xuân, Hà Nội - Hotline 082 4812878" [ref=e512] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e513]:
+            - generic [ref=e514]: 
+            - link "Beta Cinemas Mỹ Đình, Hà Nội - Hotline 0866 154 610" [ref=e515] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e516]:
+            - generic [ref=e517]: 
+            - link "Beta Cinemas Đan Phượng, Hà Nội - Hotline 0983 901 714" [ref=e518] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e519]:
+            - generic [ref=e520]: 
+            - link "Beta Cinemas Thái Nguyên - Hotline 0867 460 053" [ref=e521] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e522]:
+            - generic [ref=e523]: 
+            - link "Beta Cinemas Thanh Hóa - Hotline 0325 360 249" [ref=e524] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e525]:
+            - generic [ref=e526]: 
+            - link "Beta Cinemas Bắc Giang, Bắc Ninh - Hotline 0866 493 413" [ref=e527] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e528]:
+            - generic [ref=e529]: 
+            - link "Beta Cinemas Nha Trang, Khánh Hòa - Hotline 0399 475 165" [ref=e530] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e531]:
+            - generic [ref=e532]: 
+            - link "Beta Cinemas Biên Hòa, Đồng Nai - Hotline 0979 460 002" [ref=e533] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e534]:
+            - generic [ref=e535]: 
+            - link "Beta Cinemas Long Khánh, Đồng Nai - Hotline 0925 165 684" [ref=e536] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e537]:
+            - generic [ref=e538]: 
+            - link "Beta Cinemas Hồ Tràm, TP Hồ Chí Minh - Hotline 0254 3788601" [ref=e539] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e540]:
+            - generic [ref=e541]: 
+            - link "Beta Cinemas Tân Uyên, TP Hồ Chí Minh - Hotline 0937 905 925" [ref=e542] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e543]:
+        - generic [ref=e544]:
+          - heading "LIÊN HỆ" [level=2] [ref=e545]
+          - generic [ref=e546]:
+            - heading "CÔNG TY CỔ PHẦN BETA MEDIA" [level=5] [ref=e547]
+            - 'heading "Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội" [level=6] [ref=e548]'
+            - 'heading "Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, Phường Tương Mai, Thành phố Hà Nội, Việt Nam" [level=6] [ref=e549]'
+            - paragraph
+            - heading "Liên hệ chăm sóc khách hàng:" [level=5] [ref=e550]
+            - 'heading "Hotline: 1900 636807" [level=6] [ref=e551]'
+            - 'heading "Email: mkt@betacinemas.vn" [level=6] [ref=e552]'
+            - paragraph
+            - paragraph
+            - heading "LIÊN HỆ QUẢNG CÁO:" [level=5] [ref=e553]
+            - 'heading "Hotline: 0934 632 682" [level=6] [ref=e554]'
+            - 'heading "Email: ad@betagroup.vn" [level=6] [ref=e555]'
+            - paragraph
+            - paragraph
+            - heading "LIÊN HỆ HỢP TÁC KINH DOANH:" [level=5] [ref=e556]
+            - 'heading "Hotline: 1800 646420" [level=6] [ref=e557]'
+            - 'heading "Email: bachtx@betagroup.vn" [level=6] [ref=e558]'
+            - paragraph
+        - generic [ref=e559]:
+          - heading "KẾT NỐI VỚI CHÚNG TÔI" [level=2] [ref=e560]
+          - generic [ref=e561]:
+            - list [ref=e562]:
+              - listitem [ref=e563]:
+                - link [ref=e564] [cursor=pointer]:
+                  - /url: https://www.facebook.com/betacinemas
+              - listitem [ref=e565]:
+                - link [ref=e566] [cursor=pointer]:
+                  - /url: https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw
+              - listitem [ref=e567]:
+                - link [ref=e568] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@beta_cinemas
+              - listitem [ref=e569]:
+                - link [ref=e570] [cursor=pointer]:
+                  - /url: https://www.instagram.com/betacinemas/
+            - img "Đã thông báo Bộ Công Thương" [ref=e571]

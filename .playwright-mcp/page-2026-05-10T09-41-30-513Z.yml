@@ -1,0 +1,474 @@
+- generic [ref=e2]:
+  - generic [ref=e5]:
+    - link "Đăng nhập" [ref=e6] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/dang-nhap
+    - generic [ref=e7]: "|"
+    - link "Đăng ký" [ref=e8] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/dang-ky
+    - generic [ref=e9]: GB
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - link "Beta Cinemas" [ref=e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000
+        - img "Beta Cinemas" [ref=e13]
+      - navigation [ref=e14]:
+        - link "LỊCH CHIẾU THEO RẠP" [ref=e15] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/lich-chieu
+        - link "PHIM" [ref=e16] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/phim
+        - link "RẠP" [ref=e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/thong-tin-rap
+        - link "GIÁ VÉ" [ref=e18] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/gia-ve
+        - link "TIN MỚI VÀ ƯU ĐÃI" [ref=e19] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/tin-moi-va-uu-dai
+        - link "NHƯỢNG QUYỀN" [ref=e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/nhuong-quyen
+        - link "THÀNH VIÊN" [ref=e21] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/thanh-vien
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - textbox "Tìm theo tên phim" [ref=e25]
+        - textbox "Lọc theo thể loại" [ref=e26]
+        - button "Lọc" [ref=e27] [cursor=pointer]
+        - link "Xóa lọc" [ref=e28] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/lich-chieu
+      - link "24/04" [ref=e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/lich-chieu?date=24%2F04&q=&genre=
+        - generic [ref=e31]: 24/04
+      - generic [ref=e32]:
+        - article [ref=e33]:
+          - img "Đại Tiệc Trăng Máu 8" [ref=e35]
+          - generic [ref=e36]:
+            - heading "Đại Tiệc Trăng Máu 8" [level=1] [ref=e37]
+            - generic [ref=e38]:
+              - generic [ref=e39]: Hài hước, Kinh dị
+              - generic [ref=e40]: 130 phút
+            - generic [ref=e41]: Suất chiếu muộn từ 22h00
+            - generic [ref=e43]:
+              - generic [ref=e44]: 2D Phu de
+              - link "19:00 80 ghế trống" [ref=e46] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/dat-ve/dai-tiec-trang-mau-8?showtime=69fedf040a5c52fc9b02cbdb&date=24%2F04&time=19%3A00&format=2D%20Phu%20de
+                - generic [ref=e47]: 19:00
+                - generic [ref=e48]: 80 ghế trống
+        - article [ref=e49]:
+          - img "Cú Nhảy Kỳ Diệu" [ref=e51]
+          - generic [ref=e52]:
+            - heading "Cú Nhảy Kỳ Diệu" [level=1] [ref=e53]
+            - generic [ref=e54]:
+              - generic [ref=e55]: Hoạt hình, Phiêu lưu
+              - generic [ref=e56]: 105 phút
+            - generic [ref=e57]: Suất chiếu muộn từ 22h00
+            - generic [ref=e59]:
+              - generic [ref=e60]: 2D PHỤ ĐỀ
+              - generic [ref=e61]:
+                - link "15:45 80 ghế trống" [ref=e62] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cu-nhay-ky-dieu?showtime=69f915277df53c218d04aa6a&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e63]: 15:45
+                  - generic [ref=e64]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e65] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cu-nhay-ky-dieu?showtime=69f915277df53c218d04aa6b&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e66]: 18:00
+                  - generic [ref=e67]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e68] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cu-nhay-ky-dieu?showtime=69f915277df53c218d04aa6c&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e69]: 19:00
+                  - generic [ref=e70]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e71] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cu-nhay-ky-dieu?showtime=69f915277df53c218d04aa6d&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e72]: 20:15
+                  - generic [ref=e73]: 80 ghế trống
+        - article [ref=e74]:
+          - img "Đếm Ngày Xa Mẹ" [ref=e76]
+          - generic [ref=e77]:
+            - heading "Đếm Ngày Xa Mẹ" [level=1] [ref=e78]
+            - generic [ref=e79]:
+              - generic [ref=e80]: Gia đình
+              - generic [ref=e81]: 109 phút
+            - generic [ref=e82]: Suất chiếu muộn từ 22h00
+            - generic [ref=e84]:
+              - generic [ref=e85]: 2D PHỤ ĐỀ
+              - generic [ref=e86]:
+                - link "15:45 80 ghế trống" [ref=e87] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/dem-ngay-xa-me?showtime=69f915277df53c218d04aa77&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e88]: 15:45
+                  - generic [ref=e89]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e90] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/dem-ngay-xa-me?showtime=69f915277df53c218d04aa78&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e91]: 18:00
+                  - generic [ref=e92]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e93] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/dem-ngay-xa-me?showtime=69f915277df53c218d04aa79&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e94]: 19:00
+                  - generic [ref=e95]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e96] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/dem-ngay-xa-me?showtime=69f915277df53c218d04aa7a&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e97]: 20:15
+                  - generic [ref=e98]: 80 ghế trống
+        - article [ref=e99]:
+          - img "Lời Nguyền Thư Việ..." [ref=e101]
+          - generic [ref=e102]:
+            - heading "Lời Nguyền Thư Việ..." [level=1] [ref=e103]
+            - generic [ref=e104]:
+              - generic [ref=e105]: Hoạt hình, Bí ẩn
+              - generic [ref=e106]: 85 phút
+            - generic [ref=e107]: Suất chiếu muộn từ 22h00
+            - generic [ref=e109]:
+              - generic [ref=e110]: 2D PHỤ ĐỀ
+              - generic [ref=e111]:
+                - link "15:45 80 ghế trống" [ref=e112] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/loi-nguyen-thu-vien?showtime=69f915277df53c218d04aa84&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e113]: 15:45
+                  - generic [ref=e114]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e115] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/loi-nguyen-thu-vien?showtime=69f915277df53c218d04aa85&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e116]: 18:00
+                  - generic [ref=e117]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e118] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/loi-nguyen-thu-vien?showtime=69f915277df53c218d04aa86&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e119]: 19:00
+                  - generic [ref=e120]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e121] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/loi-nguyen-thu-vien?showtime=69f915277df53c218d04aa87&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e122]: 20:15
+                  - generic [ref=e123]: 80 ghế trống
+        - article [ref=e124]:
+          - img "Nhà Mình Đi Thôi" [ref=e126]
+          - generic [ref=e127]:
+            - heading "Nhà Mình Đi Thôi" [level=1] [ref=e128]
+            - generic [ref=e129]:
+              - generic [ref=e130]: Hài hước, Gia đình, Phiêu lưu
+              - generic [ref=e131]: 115 phút
+            - generic [ref=e132]: Suất chiếu muộn từ 22h00
+            - generic [ref=e134]:
+              - generic [ref=e135]: 2D PHỤ ĐỀ
+              - generic [ref=e136]:
+                - link "15:45 80 ghế trống" [ref=e137] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-minh-di-thoi?showtime=69f915277df53c218d04aa91&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e138]: 15:45
+                  - generic [ref=e139]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e140] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-minh-di-thoi?showtime=69f915277df53c218d04aa92&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e141]: 18:00
+                  - generic [ref=e142]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e143] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-minh-di-thoi?showtime=69f915277df53c218d04aa93&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e144]: 19:00
+                  - generic [ref=e145]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e146] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-minh-di-thoi?showtime=69f915277df53c218d04aa94&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e147]: 20:15
+                  - generic [ref=e148]: 80 ghế trống
+        - article [ref=e149]:
+          - img "Quốc Bảo" [ref=e151]
+          - generic [ref=e152]:
+            - heading "Quốc Bảo" [level=1] [ref=e153]
+            - generic [ref=e154]:
+              - generic [ref=e155]: Kịch
+              - generic [ref=e156]: 174 phút
+            - generic [ref=e157]: Suất chiếu muộn từ 22h00
+            - generic [ref=e159]:
+              - generic [ref=e160]: 2D PHỤ ĐỀ
+              - generic [ref=e161]:
+                - link "15:45 80 ghế trống" [ref=e162] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quoc-bao?showtime=69f915277df53c218d04aa9e&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e163]: 15:45
+                  - generic [ref=e164]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e165] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quoc-bao?showtime=69f915277df53c218d04aa9f&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e166]: 18:00
+                  - generic [ref=e167]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e168] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quoc-bao?showtime=69f915277df53c218d04aaa0&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e169]: 19:00
+                  - generic [ref=e170]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e171] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quoc-bao?showtime=69f915277df53c218d04aaa1&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e172]: 20:15
+                  - generic [ref=e173]: 80 ghế trống
+        - article [ref=e174]:
+          - img "Quỷ Nhập Tràng 2" [ref=e176]
+          - generic [ref=e177]:
+            - heading "Quỷ Nhập Tràng 2" [level=1] [ref=e178]
+            - generic [ref=e179]:
+              - generic [ref=e180]: Kinh dị, Hồi Hộp
+              - generic [ref=e181]: 127 phút
+            - generic [ref=e182]: Suất chiếu muộn từ 22h00
+            - generic [ref=e184]:
+              - generic [ref=e185]: 2D PHỤ ĐỀ
+              - generic [ref=e186]:
+                - link "15:45 80 ghế trống" [ref=e187] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quy-nhap-trang-2?showtime=69f915277df53c218d04aaab&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e188]: 15:45
+                  - generic [ref=e189]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e190] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quy-nhap-trang-2?showtime=69f915277df53c218d04aaac&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e191]: 18:00
+                  - generic [ref=e192]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e193] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quy-nhap-trang-2?showtime=69f915277df53c218d04aaad&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e194]: 19:00
+                  - generic [ref=e195]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e196] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/quy-nhap-trang-2?showtime=69f915277df53c218d04aaae&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e197]: 20:15
+                  - generic [ref=e198]: 80 ghế trống
+        - article [ref=e199]:
+          - img "Tài" [ref=e201]
+          - generic [ref=e202]:
+            - heading "Tài" [level=1] [ref=e203]
+            - generic [ref=e204]:
+              - generic [ref=e205]: Tâm lý, Gia đình, Hành động
+              - generic [ref=e206]: 101 phút
+            - generic [ref=e207]: Suất chiếu muộn từ 22h00
+            - generic [ref=e209]:
+              - generic [ref=e210]: 2D PHỤ ĐỀ
+              - generic [ref=e211]:
+                - link "15:45 80 ghế trống" [ref=e212] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tai?showtime=69f915277df53c218d04aab8&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e213]: 15:45
+                  - generic [ref=e214]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e215] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tai?showtime=69f915277df53c218d04aab9&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e216]: 18:00
+                  - generic [ref=e217]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e218] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tai?showtime=69f915277df53c218d04aaba&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e219]: 19:00
+                  - generic [ref=e220]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e221] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tai?showtime=69f915277df53c218d04aabb&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e222]: 20:15
+                  - generic [ref=e223]: 80 ghế trống
+        - article [ref=e224]:
+          - img "Tội Phạm 101" [ref=e226]
+          - generic [ref=e227]:
+            - heading "Tội Phạm 101" [level=1] [ref=e228]
+            - generic [ref=e229]:
+              - generic [ref=e230]: Tội Phạm, Giật gân
+              - generic [ref=e231]: 140 phút
+            - generic [ref=e232]: Suất chiếu muộn từ 22h00
+            - generic [ref=e234]:
+              - generic [ref=e235]: 2D PHỤ ĐỀ
+              - generic [ref=e236]:
+                - link "15:45 80 ghế trống" [ref=e237] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/toi-pham-101?showtime=69f915277df53c218d04aac5&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e238]: 15:45
+                  - generic [ref=e239]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e240] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/toi-pham-101?showtime=69f915277df53c218d04aac6&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e241]: 18:00
+                  - generic [ref=e242]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e243] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/toi-pham-101?showtime=69f915277df53c218d04aac7&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e244]: 19:00
+                  - generic [ref=e245]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e246] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/toi-pham-101?showtime=69f915277df53c218d04aac8&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e247]: 20:15
+                  - generic [ref=e248]: 80 ghế trống
+        - article [ref=e249]:
+          - img "Mùi Phở" [ref=e251]
+          - generic [ref=e252]:
+            - heading "Mùi Phở" [level=1] [ref=e253]
+            - generic [ref=e254]:
+              - generic [ref=e255]: Hài hước, Tình cảm, Gia đình
+              - generic [ref=e256]: 111 phút
+            - generic [ref=e257]: Suất chiếu muộn từ 22h00
+            - generic [ref=e259]:
+              - generic [ref=e260]: 2D PHỤ ĐỀ
+              - generic [ref=e261]:
+                - link "14:45 80 ghế trống" [ref=e262] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/mui-pho?showtime=69f915277df53c218d04aa25&date=24%2F04&time=14%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e263]: 14:45
+                  - generic [ref=e264]: 80 ghế trống
+                - link "16:00 80 ghế trống" [ref=e265] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/mui-pho?showtime=69f915277df53c218d04aa26&date=24%2F04&time=16%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e266]: 16:00
+                  - generic [ref=e267]: 80 ghế trống
+                - link "17:00 80 ghế trống" [ref=e268] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/mui-pho?showtime=69f915277df53c218d04aa27&date=24%2F04&time=17%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e269]: 17:00
+                  - generic [ref=e270]: 80 ghế trống
+                - link "17:45 80 ghế trống" [ref=e271] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/mui-pho?showtime=69f915277df53c218d04aa28&date=24%2F04&time=17%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e272]: 17:45
+                  - generic [ref=e273]: 80 ghế trống
+        - article [ref=e274]:
+          - img "Cảm Ơn Người Đã Th..." [ref=e276]
+          - generic [ref=e277]:
+            - heading "Cảm Ơn Người Đã Th..." [level=1] [ref=e278]
+            - generic [ref=e279]:
+              - generic [ref=e280]: Tình cảm, Gia đình
+              - generic [ref=e281]: 137 phút
+            - generic [ref=e282]: Suất chiếu muộn từ 22h00
+            - generic [ref=e284]:
+              - generic [ref=e285]: 2D PHỤ ĐỀ
+              - generic [ref=e286]:
+                - link "15:45 80 ghế trống" [ref=e287] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cam-on-nguoi-da-th...?showtime=69f915277df53c218d04aa5d&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e288]: 15:45
+                  - generic [ref=e289]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e290] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cam-on-nguoi-da-th...?showtime=69f915277df53c218d04aa5e&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e291]: 18:00
+                  - generic [ref=e292]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e293] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cam-on-nguoi-da-th...?showtime=69f915277df53c218d04aa5f&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e294]: 19:00
+                  - generic [ref=e295]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e296] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/cam-on-nguoi-da-th...?showtime=69f915277df53c218d04aa60&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e297]: 20:15
+                  - generic [ref=e298]: 80 ghế trống
+        - article [ref=e299]:
+          - img "Thỏ Ơi!!" [ref=e301]
+          - generic [ref=e302]:
+            - heading "Thỏ Ơi!!" [level=1] [ref=e303]
+            - generic [ref=e304]:
+              - generic [ref=e305]: Tình cảm, Tâm lý
+              - generic [ref=e306]: 127 phút
+            - generic [ref=e307]: Suất chiếu muộn từ 22h00
+            - generic [ref=e309]:
+              - generic [ref=e310]: 2D PHỤ ĐỀ
+              - generic [ref=e311]:
+                - link "15:45 80 ghế trống" [ref=e312] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tho-oi?showtime=69f915277df53c218d04aa36&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e313]: 15:45
+                  - generic [ref=e314]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e315] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tho-oi?showtime=69f915277df53c218d04aa37&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e316]: 18:00
+                  - generic [ref=e317]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e318] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tho-oi?showtime=69f915277df53c218d04aa38&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e319]: 19:00
+                  - generic [ref=e320]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e321] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/tho-oi?showtime=69f915277df53c218d04aa39&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e322]: 20:15
+                  - generic [ref=e323]: 80 ghế trống
+        - article [ref=e324]:
+          - img "Báu Vật Trời Cho" [ref=e326]
+          - generic [ref=e327]:
+            - heading "Báu Vật Trời Cho" [level=1] [ref=e328]
+            - generic [ref=e329]:
+              - generic [ref=e330]: Gia đình, Tình cảm, Hài hước
+              - generic [ref=e331]: 124 phút
+            - generic [ref=e332]: Suất chiếu muộn từ 22h00
+            - generic [ref=e334]:
+              - generic [ref=e335]: 2D PHỤ ĐỀ
+              - generic [ref=e336]:
+                - link "15:45 80 ghế trống" [ref=e337] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/bau-vat-troi-cho?showtime=69f915277df53c218d04aa43&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e338]: 15:45
+                  - generic [ref=e339]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e340] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/bau-vat-troi-cho?showtime=69f915277df53c218d04aa44&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e341]: 18:00
+                  - generic [ref=e342]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e343] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/bau-vat-troi-cho?showtime=69f915277df53c218d04aa45&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e344]: 19:00
+                  - generic [ref=e345]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e346] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/bau-vat-troi-cho?showtime=69f915277df53c218d04aa46&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e347]: 20:15
+                  - generic [ref=e348]: 80 ghế trống
+        - article [ref=e349]:
+          - img "Nhà Ba Tôi Một Phò..." [ref=e351]
+          - generic [ref=e352]:
+            - heading "Nhà Ba Tôi Một Phò..." [level=1] [ref=e353]
+            - generic [ref=e354]:
+              - generic [ref=e355]: Hài hước, Gia đình
+              - generic [ref=e356]: 126 phút
+            - generic [ref=e357]: Suất chiếu muộn từ 22h00
+            - generic [ref=e359]:
+              - generic [ref=e360]: 2D PHỤ ĐỀ
+              - generic [ref=e361]:
+                - link "15:45 80 ghế trống" [ref=e362] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-ba-toi-mot-pho?showtime=69f915277df53c218d04aa50&date=24%2F04&time=15%3A45&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e363]: 15:45
+                  - generic [ref=e364]: 80 ghế trống
+                - link "18:00 80 ghế trống" [ref=e365] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-ba-toi-mot-pho?showtime=69f915277df53c218d04aa51&date=24%2F04&time=18%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e366]: 18:00
+                  - generic [ref=e367]: 80 ghế trống
+                - link "19:00 80 ghế trống" [ref=e368] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-ba-toi-mot-pho?showtime=69f915277df53c218d04aa52&date=24%2F04&time=19%3A00&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e369]: 19:00
+                  - generic [ref=e370]: 80 ghế trống
+                - link "20:15 80 ghế trống" [ref=e371] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/dat-ve/nha-ba-toi-mot-pho?showtime=69f915277df53c218d04aa53&date=24%2F04&time=20%3A15&format=2D%20PH%E1%BB%A4%20%C4%90%E1%BB%80
+                  - generic [ref=e372]: 20:15
+                  - generic [ref=e373]: 80 ghế trống
+  - contentinfo [ref=e374]:
+    - generic [ref=e375]:
+      - generic [ref=e376]:
+        - img "Beta Cinemas" [ref=e378]
+        - list [ref=e379]:
+          - listitem [ref=e380]:
+            - link "Tuyển dụng" [ref=e381] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e382]:
+            - link "Giới thiệu" [ref=e383] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e384]:
+            - link "Liên hệ" [ref=e385] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e386]:
+            - link "F.A.Q" [ref=e387] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e388]:
+            - link "Hoạt động xã hội" [ref=e389] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e390]:
+            - link "Điều khoản sử dụng" [ref=e391] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e392]:
+            - link "Chính sách thanh toán, đổi trả - hoàn vé" [ref=e393] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e394]:
+            - link "Liên hệ quảng cáo" [ref=e395] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e396]:
+            - link "Điều khoản bảo mật" [ref=e397] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e398]:
+            - link "Hướng dẫn đặt vé online" [ref=e399] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e400]:
+        - heading "CỤM RẠP BETA" [level=4] [ref=e401]
+        - list [ref=e402]:
+          - listitem [ref=e403]: Beta Cinemas Xuân Thủy, Hà Nội - Hotline 0333 023 183
+          - listitem [ref=e404]: Beta Cinemas Tây Sơn, Hà Nội - Hotline 0976 894 773
+          - listitem [ref=e405]: Beta Cinemas Vĩnh Yên, Phú Thọ - Hotline 0977 632 215
+          - listitem [ref=e406]: Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873
+          - listitem [ref=e407]: Beta Cinemas Lào Cai - Hotline 0358 968 970
+          - listitem [ref=e408]: Beta Cinemas Trần Quang Khải, TP Hồ Chí Minh - Hotline 1900 638 362
+          - listitem [ref=e409]: Beta Cinemas TRMall Phú Quốc, An Giang - Hotline 0983 474 440
+          - listitem [ref=e410]: Beta Cinemas Empire Bình Dương, TP Hồ Chí Minh - Hotline 0784 531 525
+          - listitem [ref=e411]: Beta Cinemas Quang Trung, TP Hồ Chí Minh - Hotline 0706 075 509
+          - listitem [ref=e412]: Beta Cinemas Giải Phóng, Hà Nội - Hotline 0585 680 360
+          - listitem [ref=e413]: Beta Cinemas Thanh Xuân, Hà Nội - Hotline 082 4812878
+          - listitem [ref=e414]: Beta Cinemas Mỹ Đình, Hà Nội - Hotline 0866 154 610
+          - listitem [ref=e415]: Beta Cinemas Đan Phượng, Hà Nội - Hotline 0983 901 714
+          - listitem [ref=e416]: Beta Cinemas Thái Nguyên - Hotline 0867 460 053
+          - listitem [ref=e417]: Beta Cinemas Thanh Hóa - Hotline 0325 360 249
+          - listitem [ref=e418]: Beta Cinemas Bắc Giang, Bắc Ninh - Hotline 0866 493 413
+          - listitem [ref=e419]: Beta Cinemas Nha Trang, Khánh Hòa - Hotline 0399 475 165
+          - listitem [ref=e420]: Beta Cinemas Biên Hòa, Đồng Nai - Hotline 0979 460 002
+          - listitem [ref=e421]: Beta Cinemas Long Khánh, Đồng Nai - Hotline 0925 165 684
+          - listitem [ref=e422]: Beta Cinemas Hồ Tràm, TP Hồ Chí Minh - Hotline 0254 3788601
+          - listitem [ref=e423]: Beta Cinemas Tân Uyên, TP Hồ Chí Minh - Hotline 0937 905 925
+      - generic [ref=e424]:
+        - heading "LIÊN HỆ" [level=4] [ref=e425]
+        - paragraph [ref=e426]:
+          - strong [ref=e427]: CÔNG TY CỔ PHẦN BETA MEDIA
+        - paragraph [ref=e428]: "Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội"
+        - paragraph [ref=e429]: "Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, Phường Tương Mai, Thành phố Hà Nội, Việt Nam"
+        - paragraph [ref=e430]:
+          - strong [ref=e431]: "Liên hệ chăm sóc khách hàng:"
+        - paragraph [ref=e432]: "Hotline: 1900 636807"
+        - paragraph [ref=e433]: "Email: mkt@betacinemas.vn"

@@ -1,0 +1,305 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - link "English" [ref=e9] [cursor=pointer]:
+        - /url: "#"
+        - img "English" [ref=e10]
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Admin" [ref=e13] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/tai-khoan
+            - text: Admin
+        - listitem [ref=e14]:
+          - link "Đăng xuất" [ref=e15] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/dang-xuat
+    - generic [ref=e18]:
+      - link "Beta Cinemas" [ref=e19] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000
+        - img "Beta Cinemas" [ref=e20]
+      - text: 
+      - generic [ref=e21]:
+        - list:
+          - listitem [ref=e22]:
+            - link "LỊCH CHIẾU THEO RẠP" [ref=e23] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/lich-chieu
+          - listitem [ref=e24]:
+            - link "PHIM" [ref=e25] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim
+          - listitem [ref=e26]:
+            - link "RẠP" [ref=e27] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e28]:
+            - link "GIÁ VÉ" [ref=e29] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e30]:
+            - link "TIN MỚI VÀ ƯU ĐÃI" [ref=e31] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e32]:
+            - link "NHƯỢNG QUYỀN" [ref=e33] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e34]:
+            - link "THÀNH VIÊN" [ref=e35] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/tai-khoan
+  - main [ref=e36]:
+    - generic [ref=e39]:
+      - complementary [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: A
+          - generic [ref=e43]:
+            - heading "Admin" [level=2] [ref=e44]
+            - paragraph [ref=e45]: admin@example.com
+        - list [ref=e46]:
+          - listitem [ref=e47]:
+            - link "Thông tin tài khoản" [ref=e48] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/tai-khoan?tab=profile
+          - listitem [ref=e49]:
+            - link "Lịch sử giao dịch" [ref=e50] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/tai-khoan?tab=history
+          - listitem [ref=e51]:
+            - link "Điểm Beta" [ref=e52] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/tai-khoan?tab=points
+          - listitem [ref=e53]:
+            - link "Đổi mật khẩu" [ref=e54] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/tai-khoan?tab=password
+        - link "Đăng xuất" [ref=e55] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/dang-xuat
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Thông tin tài khoản" [level=1] [ref=e59]
+          - generic [ref=e60]: Đã đăng nhập thành công
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]: Ảnh đại diện
+            - generic [ref=e64]:
+              - generic [ref=e65]: A
+              - generic [ref=e66]:
+                - generic [ref=e67] [cursor=pointer]: Chọn ảnh
+                - button "Chọn ảnh" [ref=e68]
+                - paragraph [ref=e69]: Hỗ trợ JPG, PNG, WEBP. Đây là giao diện upload tạm thời.
+          - generic [ref=e70]:
+            - generic [ref=e71]: Họ tên
+            - textbox [ref=e72]: Admin
+          - generic [ref=e73]:
+            - generic [ref=e74]: Email
+            - textbox [ref=e75]: admin@example.com
+          - generic [ref=e76]:
+            - generic [ref=e77]: Số điện thoại
+            - textbox [ref=e78]: 0987 654 321
+          - generic [ref=e79]:
+            - generic [ref=e80]: Ngày sinh
+            - textbox [ref=e81]: 01/01/2000
+          - generic [ref=e82]:
+            - generic [ref=e83]: Giới tính
+            - textbox [ref=e84]: Nam
+          - generic [ref=e85]:
+            - generic [ref=e86]: CMND / CCCD
+            - textbox [ref=e87]: "012345678901"
+          - generic [ref=e88]:
+            - generic [ref=e89]: Tỉnh / Thành phố
+            - combobox [ref=e90]:
+              - option "Thái Nguyên" [selected]
+              - option "Hà Nội"
+              - option "TP. Hồ Chí Minh"
+              - option "Thanh Hóa"
+          - generic [ref=e91]:
+            - generic [ref=e92]: Quận / Huyện
+            - combobox [ref=e93]:
+              - option "TP. Thái Nguyên" [selected]
+              - option "Ba Đình"
+              - option "Cầu Giấy"
+              - option "Quận 1"
+          - generic [ref=e94]:
+            - generic [ref=e95]: Địa chỉ
+            - textbox [ref=e96]: Số 595 đường Giải Phóng, Phường Tương Mai
+          - generic [ref=e97]:
+            - generic [ref=e98]: Rạp yêu thích
+            - textbox [ref=e99]: Beta Thái Nguyên
+          - generic [ref=e100]:
+            - generic [ref=e101]: Mã thành viên
+            - textbox [ref=e102]: BETA-000128
+        - button "Cập nhật thông tin" [ref=e104] [cursor=pointer]
+  - generic [ref=e107]:
+    - generic [ref=e108]:
+      - list:
+        - listitem [ref=e109]:
+          - link "Beta Cinemas" [ref=e110] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000
+            - img "Beta Cinemas" [ref=e111]
+        - listitem [ref=e112]:
+          - generic [ref=e113]: 
+          - link "Tuyển dụng" [ref=e114] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e115]:
+          - generic [ref=e116]: 
+          - link "Giới thiệu" [ref=e117] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e118]:
+          - generic [ref=e119]: 
+          - link "Liên hệ" [ref=e120] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e121]:
+          - generic [ref=e122]: 
+          - link "F.A.Q" [ref=e123] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e124]:
+          - generic [ref=e125]: 
+          - link "Hoạt động xã hội" [ref=e126] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e127]:
+          - generic [ref=e128]: 
+          - link "Điều khoản sử dụng" [ref=e129] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e130]:
+          - generic [ref=e131]: 
+          - link "Chính sách thanh toán, đổi trả - hoàn vé" [ref=e132] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e133]:
+          - generic [ref=e134]: 
+          - link "Liên hệ quảng cáo" [ref=e135] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e136]:
+          - generic [ref=e137]: 
+          - link "Điều khoản bảo mật" [ref=e138] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e139]:
+          - generic [ref=e140]: 
+          - link "Hướng dẫn đặt vé online" [ref=e141] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e142]:
+        - heading "Tải ứng dụng" [level=2] [ref=e143]
+        - list:
+          - listitem [ref=e144]:
+            - generic [ref=e145]: 
+            - link "Beta Cinemas cho iOS" [ref=e146] [cursor=pointer]:
+              - /url: https://apps.apple.com/vn/app/beta-cinemas/id1403107666?l=vi
+          - listitem [ref=e147]:
+            - generic [ref=e148]: 
+            - link "Beta Cinemas cho Android" [ref=e149] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.beta.betacineplex&hl=vi
+    - generic [ref=e150]:
+      - generic [ref=e151]:
+        - heading "CỤM RẠP BETA" [level=2] [ref=e152]
+        - list [ref=e153]:
+          - listitem [ref=e154]:
+            - generic [ref=e155]: 
+            - link "Beta Cinemas Xuân Thủy, Hà Nội - Hotline 0333 023 183" [ref=e156] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e157]:
+            - generic [ref=e158]: 
+            - link "Beta Cinemas Tây Sơn, Hà Nội - Hotline 0976 894 773" [ref=e159] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e160]:
+            - generic [ref=e161]: 
+            - link "Beta Cinemas Vĩnh Yên, Phú Thọ - Hotline 0977 632 215" [ref=e162] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e163]:
+            - generic [ref=e164]: 
+            - link "Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873" [ref=e165] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e166]:
+            - generic [ref=e167]: 
+            - link "Beta Cinemas Lào Cai - Hotline 0358 968 970" [ref=e168] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e169]:
+            - generic [ref=e170]: 
+            - link "Beta Cinemas Trần Quang Khải, TP Hồ Chí Minh - Hotline 1900 638 362" [ref=e171] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e172]:
+            - generic [ref=e173]: 
+            - link "Beta Cinemas TRMall Phú Quốc, An Giang - Hotline 0983 474 440" [ref=e174] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e175]:
+            - generic [ref=e176]: 
+            - link "Beta Cinemas Empire Bình Dương, TP Hồ Chí Minh - Hotline 0784 531 525" [ref=e177] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e178]:
+            - generic [ref=e179]: 
+            - link "Beta Cinemas Quang Trung, TP Hồ Chí Minh - Hotline 0706 075 509" [ref=e180] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e181]:
+            - generic [ref=e182]: 
+            - link "Beta Cinemas Giải Phóng, Hà Nội - Hotline 0585 680 360" [ref=e183] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e184]:
+            - generic [ref=e185]: 
+            - link "Beta Cinemas Thanh Xuân, Hà Nội - Hotline 082 4812878" [ref=e186] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e187]:
+            - generic [ref=e188]: 
+            - link "Beta Cinemas Mỹ Đình, Hà Nội - Hotline 0866 154 610" [ref=e189] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e190]:
+            - generic [ref=e191]: 
+            - link "Beta Cinemas Đan Phượng, Hà Nội - Hotline 0983 901 714" [ref=e192] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e193]:
+            - generic [ref=e194]: 
+            - link "Beta Cinemas Thái Nguyên - Hotline 0867 460 053" [ref=e195] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e196]:
+            - generic [ref=e197]: 
+            - link "Beta Cinemas Thanh Hóa - Hotline 0325 360 249" [ref=e198] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e199]:
+            - generic [ref=e200]: 
+            - link "Beta Cinemas Bắc Giang, Bắc Ninh - Hotline 0866 493 413" [ref=e201] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e202]:
+            - generic [ref=e203]: 
+            - link "Beta Cinemas Nha Trang, Khánh Hòa - Hotline 0399 475 165" [ref=e204] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e205]:
+            - generic [ref=e206]: 
+            - link "Beta Cinemas Biên Hòa, Đồng Nai - Hotline 0979 460 002" [ref=e207] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e208]:
+            - generic [ref=e209]: 
+            - link "Beta Cinemas Long Khánh, Đồng Nai - Hotline 0925 165 684" [ref=e210] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e211]:
+            - generic [ref=e212]: 
+            - link "Beta Cinemas Hồ Tràm, TP Hồ Chí Minh - Hotline 0254 3788601" [ref=e213] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e214]:
+            - generic [ref=e215]: 
+            - link "Beta Cinemas Tân Uyên, TP Hồ Chí Minh - Hotline 0937 905 925" [ref=e216] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e217]:
+        - generic [ref=e218]:
+          - heading "LIÊN HỆ" [level=2] [ref=e219]
+          - generic [ref=e220]:
+            - heading "CÔNG TY CỔ PHẦN BETA MEDIA" [level=5] [ref=e221]
+            - 'heading "Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội" [level=6] [ref=e222]'
+            - 'heading "Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, Phường Tương Mai, Thành phố Hà Nội, Việt Nam" [level=6] [ref=e223]'
+            - paragraph
+            - heading "Liên hệ chăm sóc khách hàng:" [level=5] [ref=e224]
+            - 'heading "Hotline: 1900 636807" [level=6] [ref=e225]'
+            - 'heading "Email: mkt@betacinemas.vn" [level=6] [ref=e226]'
+            - paragraph
+            - paragraph
+            - heading "LIÊN HỆ QUẢNG CÁO:" [level=5] [ref=e227]
+            - 'heading "Hotline: 0934 632 682" [level=6] [ref=e228]'
+            - 'heading "Email: ad@betagroup.vn" [level=6] [ref=e229]'
+            - paragraph
+            - paragraph
+            - heading "LIÊN HỆ HỢP TÁC KINH DOANH:" [level=5] [ref=e230]
+            - 'heading "Hotline: 1800 646420" [level=6] [ref=e231]'
+            - 'heading "Email: bachtx@betagroup.vn" [level=6] [ref=e232]'
+            - paragraph
+        - generic [ref=e233]:
+          - heading "KẾT NỐI VỚI CHÚNG TÔI" [level=2] [ref=e234]
+          - generic [ref=e235]:
+            - list [ref=e236]:
+              - listitem [ref=e237]:
+                - link [ref=e238] [cursor=pointer]:
+                  - /url: https://www.facebook.com/betacinemas
+              - listitem [ref=e239]:
+                - link [ref=e240] [cursor=pointer]:
+                  - /url: https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw
+              - listitem [ref=e241]:
+                - link [ref=e242] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@beta_cinemas
+              - listitem [ref=e243]:
+                - link [ref=e244] [cursor=pointer]:
+                  - /url: https://www.instagram.com/betacinemas/
+            - img "Đã thông báo Bộ Công Thương" [ref=e245]

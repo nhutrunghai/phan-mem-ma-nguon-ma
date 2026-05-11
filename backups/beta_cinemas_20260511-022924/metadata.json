@@ -1,0 +1,43 @@
+{
+    "database": "beta_cinemas",
+    "connection": "mongodb",
+    "exported_at": "2026-05-11T02:29:24+00:00",
+    "collections": [
+        {
+            "name": "admin_settings",
+            "count": 1
+        },
+        {
+            "name": "booking_seats",
+            "count": 5
+        },
+        {
+            "name": "bookings",
+            "count": 4
+        },
+        {
+            "name": "movies",
+            "count": 16
+        },
+        {
+            "name": "payments",
+            "count": 8
+        },
+        {
+            "name": "rooms",
+            "count": 3
+        },
+        {
+            "name": "seats",
+            "count": 240
+        },
+        {
+            "name": "showtimes",
+            "count": 281
+        },
+        {
+            "name": "users",
+            "count": 8
+        }
+    ]
+}

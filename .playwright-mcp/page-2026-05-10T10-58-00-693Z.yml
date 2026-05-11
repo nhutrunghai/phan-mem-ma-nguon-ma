@@ -1,0 +1,460 @@
+- generic [ref=e2]:
+  - generic [ref=e5]:
+    - link "Đăng nhập" [ref=e6] [cursor=pointer]:
+      - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/dang-nhap
+    - text: "|"
+    - link "Đăng ký" [ref=e7] [cursor=pointer]:
+      - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/dang-ky
+    - text: 🇬🇧
+  - banner [ref=e8]:
+    - generic [ref=e9]:
+      - link "Beta Cinemas" [ref=e10] [cursor=pointer]:
+        - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev
+        - img "Beta Cinemas" [ref=e11]
+      - navigation [ref=e12]:
+        - link "LỊCH CHIẾU THEO RẠP" [ref=e13] [cursor=pointer]:
+          - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/lich-chieu
+        - link "PHIM" [ref=e14] [cursor=pointer]:
+          - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+        - link "RẠP" [ref=e15] [cursor=pointer]:
+          - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/thong-tin-rap
+        - link "GIÁ VÉ" [ref=e16] [cursor=pointer]:
+          - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/gia-ve
+        - link "TIN MỚI VÀ ƯU ĐÃI" [ref=e17] [cursor=pointer]:
+          - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/tin-moi-va-uu-dai
+        - link "NHƯỢNG QUYỀN" [ref=e18] [cursor=pointer]:
+          - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/nhuong-quyen
+        - link "THÀNH VIÊN" [ref=e19] [cursor=pointer]:
+          - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/thanh-vien
+  - main [ref=e20]:
+    - generic [ref=e22]:
+      - button "Trước" [ref=e23]: ‹
+      - generic [ref=e24]:
+        - article [ref=e25]:
+          - img "Beta Cinemas" [ref=e26]
+        - article [ref=e27]:
+          - img "Beta Cinemas" [ref=e28]
+        - article [ref=e29]:
+          - img "Beta Cinemas" [ref=e30]
+        - article [ref=e31]:
+          - img "Beta Cinemas" [ref=e32]
+      - button "Sau" [ref=e33]: ›
+    - generic [ref=e35]:
+      - tablist "Danh sách phim" [ref=e37]:
+        - listitem [ref=e38]:
+          - button "PHIM SẮP CHIẾU" [ref=e39]:
+            - heading "PHIM SẮP CHIẾU" [level=1] [ref=e40]
+        - listitem [ref=e41]:
+          - button "PHIM ĐANG CHIẾU" [ref=e42]:
+            - heading "PHIM ĐANG CHIẾU" [level=1] [ref=e43]
+        - listitem [ref=e44]:
+          - button "SUẤT CHIẾU ĐẶC BIỆT" [ref=e45]:
+            - heading "SUẤT CHIẾU ĐẶC BIỆT" [level=1] [ref=e46]
+      - generic [ref=e47]:
+        - article [ref=e48]:
+          - link "Báu Vật Trời Cho HOT T13" [ref=e49] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/bau-vat-troi-cho
+            - img "Báu Vật Trời Cho" [ref=e50]
+            - text: HOT T13
+          - heading "Báu Vật Trời Cho" [level=3] [ref=e51]:
+            - link "Báu Vật Trời Cho" [ref=e52] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/bau-vat-troi-cho
+          - paragraph [ref=e53]:
+            - strong [ref=e54]: "Thể loại:"
+            - text: Gia đình, Tình cảm, Hài hước
+          - paragraph [ref=e55]:
+            - strong [ref=e56]: "Thời lượng:"
+            - text: 124 phút
+          - link "✦ MUA VÉ" [ref=e57] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/bau-vat-troi-cho
+        - article [ref=e58]:
+          - link "Cú Nhảy Kỳ Diệu P" [ref=e59] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/cu-nhay-ky-dieu
+            - img "Cú Nhảy Kỳ Diệu" [ref=e60]
+            - text: P
+          - heading "Cú Nhảy Kỳ Diệu" [level=3] [ref=e61]:
+            - link "Cú Nhảy Kỳ Diệu" [ref=e62] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/cu-nhay-ky-dieu
+          - paragraph [ref=e63]:
+            - strong [ref=e64]: "Thể loại:"
+            - text: Hoạt hình, Phiêu lưu
+          - paragraph [ref=e65]:
+            - strong [ref=e66]: "Thời lượng:"
+            - text: 105 phút
+          - link "✦ MUA VÉ" [ref=e67] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/cu-nhay-ky-dieu
+        - article [ref=e68]:
+          - link "Cảm Ơn Người Đã Th... HOT T16" [ref=e69] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/cam-on-nguoi-da-th...
+            - img "Cảm Ơn Người Đã Th..." [ref=e70]
+            - text: HOT T16
+          - heading "Cảm Ơn Người Đã Th..." [level=3] [ref=e71]:
+            - link "Cảm Ơn Người Đã Th..." [ref=e72] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/cam-on-nguoi-da-th...
+          - paragraph [ref=e73]:
+            - strong [ref=e74]: "Thể loại:"
+            - text: Tình cảm, Gia đình
+          - paragraph [ref=e75]:
+            - strong [ref=e76]: "Thời lượng:"
+            - text: 137 phút
+          - link "✦ MUA VÉ" [ref=e77] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/cam-on-nguoi-da-th...
+        - article [ref=e78]:
+          - link "Lời Nguyền Thư Việ... T16" [ref=e79] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/loi-nguyen-thu-vien
+            - img "Lời Nguyền Thư Việ..." [ref=e80]
+            - text: T16
+          - heading "Lời Nguyền Thư Việ..." [level=3] [ref=e81]:
+            - link "Lời Nguyền Thư Việ..." [ref=e82] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/loi-nguyen-thu-vien
+          - paragraph [ref=e83]:
+            - strong [ref=e84]: "Thể loại:"
+            - text: Hoạt hình, Bí ẩn
+          - paragraph [ref=e85]:
+            - strong [ref=e86]: "Thời lượng:"
+            - text: 85 phút
+          - link "✦ MUA VÉ" [ref=e87] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/loi-nguyen-thu-vien
+        - article [ref=e88]:
+          - link "Mùi Phở HOT K" [ref=e89] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/mui-pho
+            - img "Mùi Phở" [ref=e90]
+            - text: HOT K
+          - heading "Mùi Phở" [level=3] [ref=e91]:
+            - link "Mùi Phở" [ref=e92] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/mui-pho
+          - paragraph [ref=e93]:
+            - strong [ref=e94]: "Thể loại:"
+            - text: Hài hước, Tình cảm, Gia đình
+          - paragraph [ref=e95]:
+            - strong [ref=e96]: "Thời lượng:"
+            - text: 111 phút
+          - link "✦ MUA VÉ" [ref=e97] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/mui-pho
+        - article [ref=e98]:
+          - link "Nhà Ba Tôi Một Phò... HOT K" [ref=e99] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/nha-ba-toi-mot-pho
+            - img "Nhà Ba Tôi Một Phò..." [ref=e100]
+            - text: HOT K
+          - heading "Nhà Ba Tôi Một Phò..." [level=3] [ref=e101]:
+            - link "Nhà Ba Tôi Một Phò..." [ref=e102] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/nha-ba-toi-mot-pho
+          - paragraph [ref=e103]:
+            - strong [ref=e104]: "Thể loại:"
+            - text: Hài hước, Gia đình
+          - paragraph [ref=e105]:
+            - strong [ref=e106]: "Thời lượng:"
+            - text: 126 phút
+          - link "✦ MUA VÉ" [ref=e107] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/nha-ba-toi-mot-pho
+        - article [ref=e108]:
+          - link "Nhà Mình Đi Thôi P" [ref=e109] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/nha-minh-di-thoi
+            - img "Nhà Mình Đi Thôi" [ref=e110]
+            - text: P
+          - heading "Nhà Mình Đi Thôi" [level=3] [ref=e111]:
+            - link "Nhà Mình Đi Thôi" [ref=e112] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/nha-minh-di-thoi
+          - paragraph [ref=e113]:
+            - strong [ref=e114]: "Thể loại:"
+            - text: Hài hước, Gia đình, Phiêu lưu
+          - paragraph [ref=e115]:
+            - strong [ref=e116]: "Thời lượng:"
+            - text: 115 phút
+          - link "✦ MUA VÉ" [ref=e117] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/nha-minh-di-thoi
+        - article [ref=e118]:
+          - link "Quốc Bảo T16" [ref=e119] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/quoc-bao
+            - img "Quốc Bảo" [ref=e120]
+            - text: T16
+          - heading "Quốc Bảo" [level=3] [ref=e121]:
+            - link "Quốc Bảo" [ref=e122] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/quoc-bao
+          - paragraph [ref=e123]:
+            - strong [ref=e124]: "Thể loại:"
+            - text: Kịch
+          - paragraph [ref=e125]:
+            - strong [ref=e126]: "Thời lượng:"
+            - text: 174 phút
+          - link "✦ MUA VÉ" [ref=e127] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/quoc-bao
+        - article [ref=e128]:
+          - link "Quỷ Nhập Tràng 2 T18" [ref=e129] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/quy-nhap-trang-2
+            - img "Quỷ Nhập Tràng 2" [ref=e130]
+            - text: T18
+          - heading "Quỷ Nhập Tràng 2" [level=3] [ref=e131]:
+            - link "Quỷ Nhập Tràng 2" [ref=e132] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/quy-nhap-trang-2
+          - paragraph [ref=e133]:
+            - strong [ref=e134]: "Thể loại:"
+            - text: Kinh dị, Hồi Hộp
+          - paragraph [ref=e135]:
+            - strong [ref=e136]: "Thời lượng:"
+            - text: 127 phút
+          - link "✦ MUA VÉ" [ref=e137] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/quy-nhap-trang-2
+        - article [ref=e138]:
+          - link "Thỏ Ơi!! HOT P" [ref=e139] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/tho-oi
+            - img "Thỏ Ơi!!" [ref=e140]
+            - text: HOT P
+          - heading "Thỏ Ơi!!" [level=3] [ref=e141]:
+            - link "Thỏ Ơi!!" [ref=e142] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/tho-oi
+          - paragraph [ref=e143]:
+            - strong [ref=e144]: "Thể loại:"
+            - text: Tình cảm, Tâm lý
+          - paragraph [ref=e145]:
+            - strong [ref=e146]: "Thời lượng:"
+            - text: 127 phút
+          - link "✦ MUA VÉ" [ref=e147] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/tho-oi
+        - article [ref=e148]:
+          - link "Tài T16" [ref=e149] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/tai
+            - img "Tài" [ref=e150]
+            - text: T16
+          - heading "Tài" [level=3] [ref=e151]:
+            - link "Tài" [ref=e152] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/tai
+          - paragraph [ref=e153]:
+            - strong [ref=e154]: "Thể loại:"
+            - text: Tâm lý, Gia đình, Hành động
+          - paragraph [ref=e155]:
+            - strong [ref=e156]: "Thời lượng:"
+            - text: 101 phút
+          - link "✦ MUA VÉ" [ref=e157] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/tai
+        - article [ref=e158]:
+          - link "Tội Phạm 101 T18" [ref=e159] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/toi-pham-101
+            - img "Tội Phạm 101" [ref=e160]
+            - text: T18
+          - heading "Tội Phạm 101" [level=3] [ref=e161]:
+            - link "Tội Phạm 101" [ref=e162] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/toi-pham-101
+          - paragraph [ref=e163]:
+            - strong [ref=e164]: "Thể loại:"
+            - text: Tội Phạm, Giật gân
+          - paragraph [ref=e165]:
+            - strong [ref=e166]: "Thời lượng:"
+            - text: 140 phút
+          - link "✦ MUA VÉ" [ref=e167] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/toi-pham-101
+        - article [ref=e168]:
+          - link "Đại Tiệc Trăng Máu 8 HOT C16" [ref=e169] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/dai-tiec-trang-mau-8
+            - img "Đại Tiệc Trăng Máu 8" [ref=e170]
+            - text: HOT C16
+          - heading "Đại Tiệc Trăng Máu 8" [level=3] [ref=e171]:
+            - link "Đại Tiệc Trăng Máu 8" [ref=e172] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/dai-tiec-trang-mau-8
+          - paragraph [ref=e173]:
+            - strong [ref=e174]: "Thể loại:"
+            - text: Hài hước, Kinh dị
+          - paragraph [ref=e175]:
+            - strong [ref=e176]: "Thời lượng:"
+            - text: 130 phút
+          - link "✦ MUA VÉ" [ref=e177] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/dai-tiec-trang-mau-8
+        - article [ref=e178]:
+          - link "Đếm Ngày Xa Mẹ T16" [ref=e179] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/dem-ngay-xa-me
+            - img "Đếm Ngày Xa Mẹ" [ref=e180]
+            - text: T16
+          - heading "Đếm Ngày Xa Mẹ" [level=3] [ref=e181]:
+            - link "Đếm Ngày Xa Mẹ" [ref=e182] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/dem-ngay-xa-me
+          - paragraph [ref=e183]:
+            - strong [ref=e184]: "Thể loại:"
+            - text: Gia đình
+          - paragraph [ref=e185]:
+            - strong [ref=e186]: "Thời lượng:"
+            - text: 109 phút
+          - link "✦ MUA VÉ" [ref=e187] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/dem-ngay-xa-me
+        - article [ref=e188]:
+          - link "Anh Hùng HOT C13" [ref=e189] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/anh-hung
+            - img "Anh Hùng" [ref=e190]
+            - text: HOT C13
+          - heading "Anh Hùng" [level=3] [ref=e191]:
+            - link "Anh Hùng" [ref=e192] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/anh-hung
+          - paragraph [ref=e193]:
+            - strong [ref=e194]: "Thể loại:"
+            - text: Tâm lý, Gia đình
+          - paragraph [ref=e195]:
+            - strong [ref=e196]: "Thời lượng:"
+            - text: 122 phút
+          - link "✦ MUA VÉ" [ref=e197] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+        - article [ref=e198]:
+          - link "Heo Năm Móng C18" [ref=e199] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/heo-nam-mong
+            - img "Heo Năm Móng" [ref=e200]
+            - text: C18
+          - heading "Heo Năm Móng" [level=3] [ref=e201]:
+            - link "Heo Năm Móng" [ref=e202] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/heo-nam-mong
+          - paragraph [ref=e203]:
+            - strong [ref=e204]: "Thể loại:"
+            - text: Kinh dị
+          - paragraph [ref=e205]:
+            - strong [ref=e206]: "Thời lượng:"
+            - text: 103 phút
+          - link "✦ MUA VÉ" [ref=e207] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+        - article [ref=e208]:
+          - link "Hẹn Em Ngày Nhật Thực C16" [ref=e209] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/hen-em-ngay-nhat-thuc
+            - img "Hẹn Em Ngày Nhật Thực" [ref=e210]
+            - text: C16
+          - heading "Hẹn Em Ngày Nhật Thực" [level=3] [ref=e211]:
+            - link "Hẹn Em Ngày Nhật Thực" [ref=e212] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/hen-em-ngay-nhat-thuc
+          - paragraph [ref=e213]:
+            - strong [ref=e214]: "Thể loại:"
+            - text: Tâm lý, Gia đình
+          - paragraph [ref=e215]:
+            - strong [ref=e216]: "Thời lượng:"
+            - text: 118 phút
+          - link "✦ MUA VÉ" [ref=e217] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+        - article [ref=e218]:
+          - link "Michael K" [ref=e219] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/michael
+            - img "Michael" [ref=e220]
+            - text: K
+          - heading "Michael" [level=3] [ref=e221]:
+            - link "Michael" [ref=e222] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/michael
+          - paragraph [ref=e223]:
+            - strong [ref=e224]: "Thể loại:"
+            - text: Âm Nhạc
+          - paragraph [ref=e225]:
+            - strong [ref=e226]: "Thời lượng:"
+            - text: 127 phút
+          - link "✦ MUA VÉ" [ref=e227] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+        - article [ref=e228]:
+          - link "Phim Shin - Cậu Bé Bút Chì P" [ref=e229] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/phim-shin-cau-be-but-chi
+            - img "Phim Shin - Cậu Bé Bút Chì" [ref=e230]
+            - text: P
+          - heading "Phim Shin - Cậu Bé Bút Chì" [level=3] [ref=e231]:
+            - link "Phim Shin - Cậu Bé Bút Chì" [ref=e232] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/phim-shin-cau-be-but-chi
+          - paragraph [ref=e233]:
+            - strong [ref=e234]: "Thể loại:"
+            - text: Hoạt hình, Gia đình
+          - paragraph [ref=e235]:
+            - strong [ref=e236]: "Thời lượng:"
+            - text: 104 phút
+          - link "✦ MUA VÉ" [ref=e237] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+        - article [ref=e238]:
+          - 'link "Phí Phông: Quỷ Máu Rừng Thiêng HOT C16" [ref=e239] [cursor=pointer]':
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/phi-phong-quy-mau-rung-thieng
+            - 'img "Phí Phông: Quỷ Máu Rừng Thiêng" [ref=e240]'
+            - text: HOT C16
+          - 'heading "Phí Phông: Quỷ Máu Rừng Thiêng" [level=3] [ref=e241]':
+            - 'link "Phí Phông: Quỷ Máu Rừng Thiêng" [ref=e242] [cursor=pointer]':
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/phi-phong-quy-mau-rung-thieng
+          - paragraph [ref=e243]:
+            - strong [ref=e244]: "Thể loại:"
+            - text: Kinh dị, Giật gân
+          - paragraph [ref=e245]:
+            - strong [ref=e246]: "Thời lượng:"
+            - text: 120 phút
+          - link "✦ MUA VÉ" [ref=e247] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+        - article [ref=e248]:
+          - link "Trùm Sò K" [ref=e249] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/trum-so
+            - img "Trùm Sò" [ref=e250]
+            - text: K
+          - heading "Trùm Sò" [level=3] [ref=e251]:
+            - link "Trùm Sò" [ref=e252] [cursor=pointer]:
+              - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim/trum-so
+          - paragraph [ref=e253]:
+            - strong [ref=e254]: "Thể loại:"
+            - text: Hài hước
+          - paragraph [ref=e255]:
+            - strong [ref=e256]: "Thời lượng:"
+            - text: 105 phút
+          - link "✦ MUA VÉ" [ref=e257] [cursor=pointer]:
+            - /url: http://skinhead-diploma-sarcastic.ngrok-free.dev/phim
+  - contentinfo [ref=e258]:
+    - generic [ref=e259]:
+      - generic [ref=e260]:
+        - generic [ref=e261]:
+          - generic [ref=e262]: beta
+          - generic [ref=e263]: cinemas
+        - list [ref=e264]:
+          - listitem [ref=e265]:
+            - link "Tuyển dụng" [ref=e266] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e267]:
+            - link "Giới thiệu" [ref=e268] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e269]:
+            - link "Liên hệ" [ref=e270] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e271]:
+            - link "F.A.Q" [ref=e272] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e273]:
+            - link "Hoạt động xã hội" [ref=e274] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e275]:
+            - link "Điều khoản sử dụng" [ref=e276] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e277]:
+            - link "Chính sách thanh toán, đổi trả - hoàn vé" [ref=e278] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e279]:
+            - link "Liên hệ quảng cáo" [ref=e280] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e281]:
+            - link "Điều khoản bảo mật" [ref=e282] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e283]:
+            - link "Hướng dẫn đặt vé online" [ref=e284] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e285]:
+        - heading "CỤM RẠP BETA" [level=4] [ref=e286]
+        - list [ref=e287]:
+          - listitem [ref=e288]: Beta Cinemas Xuân Thủy, Hà Nội - Hotline 0333 023 183
+          - listitem [ref=e289]: Beta Cinemas Tây Sơn, Hà Nội - Hotline 0976 894 773
+          - listitem [ref=e290]: Beta Cinemas Vĩnh Yên, Phú Thọ - Hotline 0977 632 215
+          - listitem [ref=e291]: Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873
+          - listitem [ref=e292]: Beta Cinemas Lào Cai - Hotline 0358 968 970
+          - listitem [ref=e293]: Beta Cinemas Trần Quang Khải, TP Hồ Chí Minh - Hotline 1900 638 362
+          - listitem [ref=e294]: Beta Cinemas TRMall Phú Quốc, An Giang - Hotline 0983 474 440
+          - listitem [ref=e295]: Beta Cinemas Empire Bình Dương, TP Hồ Chí Minh - Hotline 0784 531 525
+          - listitem [ref=e296]: Beta Cinemas Quang Trung, TP Hồ Chí Minh - Hotline 0706 075 509
+          - listitem [ref=e297]: Beta Cinemas Giải Phóng, Hà Nội - Hotline 0585 680 360
+          - listitem [ref=e298]: Beta Cinemas Thanh Xuân, Hà Nội - Hotline 082 4812878
+          - listitem [ref=e299]: Beta Cinemas Mỹ Đình, Hà Nội - Hotline 0866 154 610
+          - listitem [ref=e300]: Beta Cinemas Đan Phượng, Hà Nội - Hotline 0983 901 714
+          - listitem [ref=e301]: Beta Cinemas Thái Nguyên - Hotline 0867 460 053
+          - listitem [ref=e302]: Beta Cinemas Thanh Hóa - Hotline 0325 360 249
+          - listitem [ref=e303]: Beta Cinemas Bắc Giang, Bắc Ninh - Hotline 0866 493 413
+          - listitem [ref=e304]: Beta Cinemas Nha Trang, Khánh Hòa - Hotline 0399 475 165
+          - listitem [ref=e305]: Beta Cinemas Biên Hòa, Đồng Nai - Hotline 0979 460 002
+          - listitem [ref=e306]: Beta Cinemas Long Khánh, Đồng Nai - Hotline 0925 165 684
+          - listitem [ref=e307]: Beta Cinemas Hồ Tràm, TP Hồ Chí Minh - Hotline 0254 3788601
+          - listitem [ref=e308]: Beta Cinemas Tân Uyên, TP Hồ Chí Minh - Hotline 0937 905 925
+      - generic [ref=e309]:
+        - heading "LIÊN HỆ" [level=4] [ref=e310]
+        - paragraph [ref=e311]:
+          - strong [ref=e312]: CÔNG TY CỔ PHẦN BETA MEDIA
+        - paragraph [ref=e313]: "Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội"
+        - paragraph [ref=e314]: "Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, Phường Tương Mai, Thành phố Hà Nội, Việt Nam"
+        - paragraph [ref=e315]:
+          - strong [ref=e316]: "Liên hệ chăm sóc khách hàng:"
+        - paragraph [ref=e317]: "Hotline: 1900 636807"
+        - paragraph [ref=e318]: "Email: mkt@betacinemas.vn"

@@ -1,0 +1,139 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - link "Beta Quản trị" [ref=e4] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - generic [ref=e6]: 
+      - generic [ref=e7]: Beta Quản trị
+    - list [ref=e8]:
+      - listitem [ref=e9]:
+        - link "Tổng quan" [ref=e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=e11]: 
+          - text: Tổng quan
+      - listitem [ref=e12]:
+        - link "Phim" [ref=e13] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/movies
+          - generic [ref=e14]: 
+          - text: Phim
+      - listitem [ref=e15]:
+        - link "Phòng chiếu" [ref=e16] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/rooms
+          - generic [ref=e17]: 
+          - text: Phòng chiếu
+      - listitem [ref=e18]:
+        - link "Suất chiếu" [ref=e19] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/showtimes
+          - generic [ref=e20]: 
+          - text: Suất chiếu
+      - listitem [ref=e21]:
+        - link "Đặt vé" [ref=e22] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/bookings
+          - generic [ref=e23]: 
+          - text: Đặt vé
+      - listitem [ref=e24]:
+        - link "Người dùng" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/users
+          - generic [ref=e26]: 
+          - text: Người dùng
+    - generic [ref=e27]:
+      - generic [ref=e28]: admin@example.com
+      - button "Đăng xuất" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 
+        - generic [ref=e32]: Đăng xuất
+  - generic [ref=e33]:
+    - banner [ref=e34]:
+      - heading "Tổng quan" [level=1] [ref=e35]
+    - main [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - strong [ref=e39]: "16"
+          - generic [ref=e40]: Phim
+        - generic [ref=e41]:
+          - strong [ref=e42]: "3"
+          - generic [ref=e43]: Phòng chiếu
+        - generic [ref=e44]:
+          - strong [ref=e45]: "281"
+          - generic [ref=e46]: Suất chiếu
+        - generic [ref=e47]:
+          - strong [ref=e48]: "3"
+          - generic [ref=e49]: Đơn còn hiệu lực
+        - generic [ref=e50]:
+          - strong [ref=e51]: "3"
+          - generic [ref=e52]: Đơn đã thanh toán
+        - generic [ref=e53]:
+          - strong [ref=e54]: 300,000đ
+          - generic [ref=e55]: Doanh thu xác nhận
+        - generic [ref=e56]:
+          - strong [ref=e57]: "0"
+          - generic [ref=e58]: Đơn đang giữ ghế
+        - generic [ref=e59]:
+          - strong [ref=e60]: "1"
+          - generic [ref=e61]: Đơn hết hạn
+        - generic [ref=e62]:
+          - strong [ref=e63]: "8"
+          - generic [ref=e64]: Người dùng
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - heading "Đặt vé gần đây" [level=2] [ref=e67]
+          - link "Xem tất cả" [ref=e68] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/bookings
+            - generic [ref=e69]: 
+            - text: Xem tất cả
+        - table [ref=e72]:
+          - rowgroup [ref=e73]:
+            - row "Mã vé Phim Tổng tiền Thanh toán Đặt vé" [ref=e74]:
+              - columnheader "Mã vé" [ref=e75]
+              - columnheader "Phim" [ref=e76]
+              - columnheader "Tổng tiền" [ref=e77]
+              - columnheader "Thanh toán" [ref=e78]
+              - columnheader "Đặt vé" [ref=e79]
+              - columnheader [ref=e80]
+          - rowgroup [ref=e81]:
+            - row "BK-3QXXC4VROR Báu Vật Trời Cho 75,000đ Chờ cổng thanh toán Hết hạn giữ ghế Chi tiết" [ref=e82]:
+              - cell "BK-3QXXC4VROR" [ref=e83]:
+                - strong [ref=e84]: BK-3QXXC4VROR
+              - cell "Báu Vật Trời Cho" [ref=e85]
+              - cell "75,000đ" [ref=e86]
+              - cell "Chờ cổng thanh toán" [ref=e87]:
+                - generic [ref=e88]: Chờ cổng thanh toán
+              - cell "Hết hạn giữ ghế" [ref=e89]:
+                - generic [ref=e90]: Hết hạn giữ ghế
+              - cell "Chi tiết" [ref=e91]:
+                - link "Chi tiết" [ref=e92] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/bookings/6a00c8722e2c69c66904a807
+            - row "BK-G8CRHKL7QI Báu Vật Trời Cho 150,000đ Đã thanh toán Đã đặt Chi tiết" [ref=e93]:
+              - cell "BK-G8CRHKL7QI" [ref=e94]:
+                - strong [ref=e95]: BK-G8CRHKL7QI
+              - cell "Báu Vật Trời Cho" [ref=e96]
+              - cell "150,000đ" [ref=e97]
+              - cell "Đã thanh toán" [ref=e98]:
+                - generic [ref=e99]: Đã thanh toán
+              - cell "Đã đặt" [ref=e100]:
+                - generic [ref=e101]: Đã đặt
+              - cell "Chi tiết" [ref=e102]:
+                - link "Chi tiết" [ref=e103] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/bookings/6a00c8342e2c69c66904a803
+            - row "BK-AXCKYCHNUO Báu Vật Trời Cho 75,000đ Đã thanh toán Đã đặt Chi tiết" [ref=e104]:
+              - cell "BK-AXCKYCHNUO" [ref=e105]:
+                - strong [ref=e106]: BK-AXCKYCHNUO
+              - cell "Báu Vật Trời Cho" [ref=e107]
+              - cell "75,000đ" [ref=e108]
+              - cell "Đã thanh toán" [ref=e109]:
+                - generic [ref=e110]: Đã thanh toán
+              - cell "Đã đặt" [ref=e111]:
+                - generic [ref=e112]: Đã đặt
+              - cell "Chi tiết" [ref=e113]:
+                - link "Chi tiết" [ref=e114] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/bookings/6a00c55a5f3381a1ee05ec36
+            - row "BK-2NTBGMFEYV Báu Vật Trời Cho 75,000đ Đã thanh toán Đã đặt Chi tiết" [ref=e115]:
+              - cell "BK-2NTBGMFEYV" [ref=e116]:
+                - strong [ref=e117]: BK-2NTBGMFEYV
+              - cell "Báu Vật Trời Cho" [ref=e118]
+              - cell "75,000đ" [ref=e119]
+              - cell "Đã thanh toán" [ref=e120]:
+                - generic [ref=e121]: Đã thanh toán
+              - cell "Đã đặt" [ref=e122]:
+                - generic [ref=e123]: Đã đặt
+              - cell "Chi tiết" [ref=e124]:
+                - link "Chi tiết" [ref=e125] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/bookings/6a00c3b65f3381a1ee05ec32

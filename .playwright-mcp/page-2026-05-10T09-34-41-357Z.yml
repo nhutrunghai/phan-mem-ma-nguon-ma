@@ -1,0 +1,301 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - link "Beta Quản trị" [ref=e4] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - generic [ref=e6]: 
+      - generic [ref=e7]: Beta Quản trị
+    - list [ref=e8]:
+      - listitem [ref=e9]:
+        - link "Tổng quan" [ref=e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=e11]: 
+          - text: Tổng quan
+      - listitem [ref=e12]:
+        - link "Phim" [ref=e13] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/movies
+          - generic [ref=e14]: 
+          - text: Phim
+      - listitem [ref=e15]:
+        - link "Phòng chiếu" [ref=e16] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/rooms
+          - generic [ref=e17]: 
+          - text: Phòng chiếu
+      - listitem [ref=e18]:
+        - link "Suất chiếu" [ref=e19] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/showtimes
+          - generic [ref=e20]: 
+          - text: Suất chiếu
+      - listitem [ref=e21]:
+        - link "Đặt vé" [ref=e22] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/bookings
+          - generic [ref=e23]: 
+          - text: Đặt vé
+      - listitem [ref=e24]:
+        - link "Người dùng" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/users
+          - generic [ref=e26]: 
+          - text: Người dùng
+    - generic [ref=e27]:
+      - generic [ref=e28]: admin@example.com
+      - button "Đăng xuất" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 
+        - generic [ref=e32]: Đăng xuất
+  - generic [ref=e33]:
+    - banner [ref=e34]:
+      - heading "Quản lý suất chiếu" [level=1] [ref=e35]
+    - main [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Thêm suất chiếu" [level=2] [ref=e39]
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: Phim
+            - combobox [ref=e44]:
+              - option "Chọn phim" [selected]
+              - option "Anh Hùng"
+              - option "Báu Vật Trời Cho"
+              - option "Cú Nhảy Kỳ Diệu"
+              - option "Cảm Ơn Người Đã Th..."
+              - option "Lời Nguyền Thư Việ..."
+              - option "Mùi Phở"
+              - option "Nhà Ba Tôi Một Phò..."
+              - option "Nhà Mình Đi Thôi"
+              - 'option "Phí Phông: Quỷ Máu Rừng Thiêng"'
+              - option "Quốc Bảo"
+              - option "Quỷ Nhập Tràng 2"
+              - option "Thỏ Ơi!!"
+              - option "Tài"
+              - option "Tội Phạm 101"
+              - option "Đại Tiệc Trăng Máu 8"
+              - option "Đếm Ngày Xa Mẹ"
+          - generic [ref=e45]:
+            - generic [ref=e46]: Phòng
+            - combobox [ref=e47]:
+              - option "Chọn phòng" [selected]
+              - option "Phong 1"
+              - option "Phong 2"
+              - option "Phong 3"
+          - generic [ref=e48]:
+            - generic [ref=e49]: Bắt đầu
+            - textbox [ref=e50]
+          - generic [ref=e51]:
+            - generic [ref=e52]: Kết thúc
+            - textbox [ref=e53]
+          - generic [ref=e54]:
+            - generic [ref=e55]: Giá vé
+            - spinbutton [ref=e56]: "75000"
+          - generic [ref=e57]:
+            - generic [ref=e58]: Định dạng
+            - textbox [ref=e59]: 2D Phụ đề
+          - button "Thêm suất chiếu" [ref=e61] [cursor=pointer]
+      - generic [ref=e62]:
+        - heading "Danh sách suất chiếu" [level=2] [ref=e64]
+        - generic [ref=e65]:
+          - table [ref=e67]:
+            - rowgroup [ref=e68]:
+              - row "Phim Phòng Bắt đầu Giá Thao tác" [ref=e69]:
+                - columnheader "Phim" [ref=e70]
+                - columnheader "Phòng" [ref=e71]
+                - columnheader "Bắt đầu" [ref=e72]
+                - columnheader "Giá" [ref=e73]
+                - columnheader "Thao tác" [ref=e74]
+            - rowgroup [ref=e75]:
+              - row "Mùi Phở Phong 1 10/05/2026 19:00 75,000đ 2026-05-10T19:00 2026-05-10T20:51 75000 2D Lưu Xóa" [ref=e76]:
+                - cell "Mùi Phở" [ref=e77]
+                - cell "Phong 1" [ref=e78]
+                - cell "10/05/2026 19:00" [ref=e79]
+                - cell "75,000đ" [ref=e80]
+                - cell "2026-05-10T19:00 2026-05-10T20:51 75000 2D Lưu Xóa" [ref=e81]:
+                  - generic [ref=e82]:
+                    - textbox [ref=e83]: 2026-05-10T19:00
+                    - textbox [ref=e84]: 2026-05-10T20:51
+                    - spinbutton [ref=e85]: "75000"
+                    - textbox [ref=e86]: 2D
+                    - button "Lưu" [ref=e87] [cursor=pointer]
+                  - button "Xóa" [ref=e89] [cursor=pointer]
+              - row "Mùi Phở Phong 3 10/05/2026 19:00 75,000đ 2026-05-10T19:00 2026-05-10T20:51 75000 2D Lưu Xóa" [ref=e90]:
+                - cell "Mùi Phở" [ref=e91]
+                - cell "Phong 3" [ref=e92]
+                - cell "10/05/2026 19:00" [ref=e93]
+                - cell "75,000đ" [ref=e94]
+                - cell "2026-05-10T19:00 2026-05-10T20:51 75000 2D Lưu Xóa" [ref=e95]:
+                  - generic [ref=e96]:
+                    - textbox [ref=e97]: 2026-05-10T19:00
+                    - textbox [ref=e98]: 2026-05-10T20:51
+                    - spinbutton [ref=e99]: "75000"
+                    - textbox [ref=e100]: 2D
+                    - button "Lưu" [ref=e101] [cursor=pointer]
+                  - button "Xóa" [ref=e103] [cursor=pointer]
+              - 'row "Phí Phông: Quỷ Máu Rừng Thiêng Phong 1 05/05/2026 19:00 75,000đ 2026-05-05T19:00 2026-05-05T21:00 75000 2D Phu de Lưu Xóa" [ref=e104]':
+                - 'cell "Phí Phông: Quỷ Máu Rừng Thiêng" [ref=e105]'
+                - cell "Phong 1" [ref=e106]
+                - cell "05/05/2026 19:00" [ref=e107]
+                - cell "75,000đ" [ref=e108]
+                - cell "2026-05-05T19:00 2026-05-05T21:00 75000 2D Phu de Lưu Xóa" [ref=e109]:
+                  - generic [ref=e110]:
+                    - textbox [ref=e111]: 2026-05-05T19:00
+                    - textbox [ref=e112]: 2026-05-05T21:00
+                    - spinbutton [ref=e113]: "75000"
+                    - textbox [ref=e114]: 2D Phu de
+                    - button "Lưu" [ref=e115] [cursor=pointer]
+                  - button "Xóa" [ref=e117] [cursor=pointer]
+              - row "Mùi Phở Phong 1 02/05/2026 17:45 75,000đ 2026-05-02T17:45 2026-05-02T19:36 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e118]:
+                - cell "Mùi Phở" [ref=e119]
+                - cell "Phong 1" [ref=e120]
+                - cell "02/05/2026 17:45" [ref=e121]
+                - cell "75,000đ" [ref=e122]
+                - cell "2026-05-02T17:45 2026-05-02T19:36 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e123]:
+                  - generic [ref=e124]:
+                    - textbox [ref=e125]: 2026-05-02T17:45
+                    - textbox [ref=e126]: 2026-05-02T19:36
+                    - spinbutton [ref=e127]: "75000"
+                    - textbox [ref=e128]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e129] [cursor=pointer]
+                  - button "Xóa" [ref=e131] [cursor=pointer]
+              - row "Mùi Phở Phong 1 02/05/2026 17:00 75,000đ 2026-05-02T17:00 2026-05-02T18:51 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e132]:
+                - cell "Mùi Phở" [ref=e133]
+                - cell "Phong 1" [ref=e134]
+                - cell "02/05/2026 17:00" [ref=e135]
+                - cell "75,000đ" [ref=e136]
+                - cell "2026-05-02T17:00 2026-05-02T18:51 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e137]:
+                  - generic [ref=e138]:
+                    - textbox [ref=e139]: 2026-05-02T17:00
+                    - textbox [ref=e140]: 2026-05-02T18:51
+                    - spinbutton [ref=e141]: "75000"
+                    - textbox [ref=e142]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e143] [cursor=pointer]
+                  - button "Xóa" [ref=e145] [cursor=pointer]
+              - row "Mùi Phở Phong 1 02/05/2026 16:00 75,000đ 2026-05-02T16:00 2026-05-02T17:51 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e146]:
+                - cell "Mùi Phở" [ref=e147]
+                - cell "Phong 1" [ref=e148]
+                - cell "02/05/2026 16:00" [ref=e149]
+                - cell "75,000đ" [ref=e150]
+                - cell "2026-05-02T16:00 2026-05-02T17:51 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e151]:
+                  - generic [ref=e152]:
+                    - textbox [ref=e153]: 2026-05-02T16:00
+                    - textbox [ref=e154]: 2026-05-02T17:51
+                    - spinbutton [ref=e155]: "75000"
+                    - textbox [ref=e156]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e157] [cursor=pointer]
+                  - button "Xóa" [ref=e159] [cursor=pointer]
+              - row "Mùi Phở Phong 1 02/05/2026 14:45 75,000đ 2026-05-02T14:45 2026-05-02T16:36 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e160]:
+                - cell "Mùi Phở" [ref=e161]
+                - cell "Phong 1" [ref=e162]
+                - cell "02/05/2026 14:45" [ref=e163]
+                - cell "75,000đ" [ref=e164]
+                - cell "2026-05-02T14:45 2026-05-02T16:36 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e165]:
+                  - generic [ref=e166]:
+                    - textbox [ref=e167]: 2026-05-02T14:45
+                    - textbox [ref=e168]: 2026-05-02T16:36
+                    - spinbutton [ref=e169]: "75000"
+                    - textbox [ref=e170]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e171] [cursor=pointer]
+                  - button "Xóa" [ref=e173] [cursor=pointer]
+              - row "Nhà Mình Đi Thôi Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T22:10 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e174]:
+                - cell "Nhà Mình Đi Thôi" [ref=e175]
+                - cell "Phong 1" [ref=e176]
+                - cell "01/05/2026 20:15" [ref=e177]
+                - cell "75,000đ" [ref=e178]
+                - cell "2026-05-01T20:15 2026-05-01T22:10 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e179]:
+                  - generic [ref=e180]:
+                    - textbox [ref=e181]: 2026-05-01T20:15
+                    - textbox [ref=e182]: 2026-05-01T22:10
+                    - spinbutton [ref=e183]: "75000"
+                    - textbox [ref=e184]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e185] [cursor=pointer]
+                  - button "Xóa" [ref=e187] [cursor=pointer]
+              - row "Thỏ Ơi!! Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T22:22 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e188]:
+                - cell "Thỏ Ơi!!" [ref=e189]
+                - cell "Phong 1" [ref=e190]
+                - cell "01/05/2026 20:15" [ref=e191]
+                - cell "75,000đ" [ref=e192]
+                - cell "2026-05-01T20:15 2026-05-01T22:22 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e193]:
+                  - generic [ref=e194]:
+                    - textbox [ref=e195]: 2026-05-01T20:15
+                    - textbox [ref=e196]: 2026-05-01T22:22
+                    - spinbutton [ref=e197]: "75000"
+                    - textbox [ref=e198]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e199] [cursor=pointer]
+                  - button "Xóa" [ref=e201] [cursor=pointer]
+              - row "Cảm Ơn Người Đã Th... Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T22:32 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e202]:
+                - cell "Cảm Ơn Người Đã Th..." [ref=e203]
+                - cell "Phong 1" [ref=e204]
+                - cell "01/05/2026 20:15" [ref=e205]
+                - cell "75,000đ" [ref=e206]
+                - cell "2026-05-01T20:15 2026-05-01T22:32 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e207]:
+                  - generic [ref=e208]:
+                    - textbox [ref=e209]: 2026-05-01T20:15
+                    - textbox [ref=e210]: 2026-05-01T22:32
+                    - spinbutton [ref=e211]: "75000"
+                    - textbox [ref=e212]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e213] [cursor=pointer]
+                  - button "Xóa" [ref=e215] [cursor=pointer]
+              - row "Quốc Bảo Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T23:09 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e216]:
+                - cell "Quốc Bảo" [ref=e217]
+                - cell "Phong 1" [ref=e218]
+                - cell "01/05/2026 20:15" [ref=e219]
+                - cell "75,000đ" [ref=e220]
+                - cell "2026-05-01T20:15 2026-05-01T23:09 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e221]:
+                  - generic [ref=e222]:
+                    - textbox [ref=e223]: 2026-05-01T20:15
+                    - textbox [ref=e224]: 2026-05-01T23:09
+                    - spinbutton [ref=e225]: "75000"
+                    - textbox [ref=e226]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e227] [cursor=pointer]
+                  - button "Xóa" [ref=e229] [cursor=pointer]
+              - row "Nhà Ba Tôi Một Phò... Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T22:21 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e230]:
+                - cell "Nhà Ba Tôi Một Phò..." [ref=e231]
+                - cell "Phong 1" [ref=e232]
+                - cell "01/05/2026 20:15" [ref=e233]
+                - cell "75,000đ" [ref=e234]
+                - cell "2026-05-01T20:15 2026-05-01T22:21 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e235]:
+                  - generic [ref=e236]:
+                    - textbox [ref=e237]: 2026-05-01T20:15
+                    - textbox [ref=e238]: 2026-05-01T22:21
+                    - spinbutton [ref=e239]: "75000"
+                    - textbox [ref=e240]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e241] [cursor=pointer]
+                  - button "Xóa" [ref=e243] [cursor=pointer]
+              - row "Báu Vật Trời Cho Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T22:19 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e244]:
+                - cell "Báu Vật Trời Cho" [ref=e245]
+                - cell "Phong 1" [ref=e246]
+                - cell "01/05/2026 20:15" [ref=e247]
+                - cell "75,000đ" [ref=e248]
+                - cell "2026-05-01T20:15 2026-05-01T22:19 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e249]:
+                  - generic [ref=e250]:
+                    - textbox [ref=e251]: 2026-05-01T20:15
+                    - textbox [ref=e252]: 2026-05-01T22:19
+                    - spinbutton [ref=e253]: "75000"
+                    - textbox [ref=e254]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e255] [cursor=pointer]
+                  - button "Xóa" [ref=e257] [cursor=pointer]
+              - row "Đếm Ngày Xa Mẹ Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T22:04 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e258]:
+                - cell "Đếm Ngày Xa Mẹ" [ref=e259]
+                - cell "Phong 1" [ref=e260]
+                - cell "01/05/2026 20:15" [ref=e261]
+                - cell "75,000đ" [ref=e262]
+                - cell "2026-05-01T20:15 2026-05-01T22:04 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e263]:
+                  - generic [ref=e264]:
+                    - textbox [ref=e265]: 2026-05-01T20:15
+                    - textbox [ref=e266]: 2026-05-01T22:04
+                    - spinbutton [ref=e267]: "75000"
+                    - textbox [ref=e268]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e269] [cursor=pointer]
+                  - button "Xóa" [ref=e271] [cursor=pointer]
+              - row "Tài Phong 1 01/05/2026 20:15 75,000đ 2026-05-01T20:15 2026-05-01T21:56 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e272]:
+                - cell "Tài" [ref=e273]
+                - cell "Phong 1" [ref=e274]
+                - cell "01/05/2026 20:15" [ref=e275]
+                - cell "75,000đ" [ref=e276]
+                - cell "2026-05-01T20:15 2026-05-01T21:56 75000 2D PHỤ ĐỀ Lưu Xóa" [ref=e277]:
+                  - generic [ref=e278]:
+                    - textbox [ref=e279]: 2026-05-01T20:15
+                    - textbox [ref=e280]: 2026-05-01T21:56
+                    - spinbutton [ref=e281]: "75000"
+                    - textbox [ref=e282]: 2D PHỤ ĐỀ
+                    - button "Lưu" [ref=e283] [cursor=pointer]
+                  - button "Xóa" [ref=e285] [cursor=pointer]
+          - navigation "Pagination Navigation" [ref=e286]:
+            - generic [ref=e287]:
+              - text: « Previous
+              - link "Next »" [ref=e288] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/showtimes?page=2

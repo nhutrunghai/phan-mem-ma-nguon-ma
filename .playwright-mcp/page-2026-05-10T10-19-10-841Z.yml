@@ -1,0 +1,366 @@
+- generic [ref=e2]:
+  - generic [ref=e5]:
+    - link "Đăng nhập" [ref=e6] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/dang-nhap
+    - generic [ref=e7]: "|"
+    - link "Đăng ký" [ref=e8] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/dang-ky
+    - generic [ref=e9]: 🇬🇧
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - link "Beta Cinemas" [ref=e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000
+        - img "Beta Cinemas" [ref=e13]
+      - navigation [ref=e14]:
+        - link "LỊCH CHIẾU THEO RẠP" [ref=e15] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/lich-chieu
+        - link "PHIM" [ref=e16] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/phim
+        - link "RẠP" [ref=e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/thong-tin-rap
+        - link "GIÁ VÉ" [ref=e18] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/gia-ve
+        - link "TIN MỚI VÀ ƯU ĐÃI" [ref=e19] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/tin-moi-va-uu-dai
+        - link "NHƯỢNG QUYỀN" [ref=e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/nhuong-quyen
+        - link "THÀNH VIÊN" [ref=e21] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/thanh-vien
+  - main [ref=e22]:
+    - generic [ref=e24]:
+      - button "Trước" [ref=e25] [cursor=pointer]: ‹
+      - generic [ref=e26]:
+        - article [ref=e27]:
+          - img "Beta Cinemas" [ref=e28]
+        - article [ref=e29]:
+          - img "Beta Cinemas" [ref=e30]
+        - article [ref=e31]:
+          - img "Beta Cinemas" [ref=e32]
+        - article [ref=e33]:
+          - img "Beta Cinemas" [ref=e34]
+      - button "Sau" [ref=e35] [cursor=pointer]: ›
+    - generic [ref=e43]:
+      - tablist "Danh sách phim" [ref=e45]:
+        - listitem [ref=e46]:
+          - button "PHIM SẮP CHIẾU" [ref=e47] [cursor=pointer]:
+            - heading "PHIM SẮP CHIẾU" [level=1] [ref=e48]
+        - listitem [ref=e49]:
+          - button "PHIM ĐANG CHIẾU" [ref=e50] [cursor=pointer]:
+            - heading "PHIM ĐANG CHIẾU" [level=1] [ref=e51]
+        - listitem [ref=e52]:
+          - button "SUẤT CHIẾU ĐẶC BIỆT" [ref=e53] [cursor=pointer]:
+            - heading "SUẤT CHIẾU ĐẶC BIỆT" [level=1] [ref=e54]
+      - generic [ref=e55]:
+        - article [ref=e56]:
+          - link "Báu Vật Trời Cho HOT T13" [ref=e57] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/bau-vat-troi-cho
+            - img "Báu Vật Trời Cho" [ref=e58]
+            - generic [ref=e59]: HOT
+            - generic [ref=e60]: T13
+          - heading "Báu Vật Trời Cho" [level=3] [ref=e61]:
+            - link "Báu Vật Trời Cho" [ref=e62] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/bau-vat-troi-cho
+          - paragraph [ref=e63]:
+            - strong [ref=e64]: "Thể loại:"
+            - text: Gia đình, Tình cảm, Hài hước
+          - paragraph [ref=e65]:
+            - strong [ref=e66]: "Thời lượng:"
+            - text: 124 phút
+          - link "✦ MUA VÉ" [ref=e67] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/bau-vat-troi-cho
+            - generic [ref=e68]: ✦
+            - text: MUA VÉ
+        - article [ref=e69]:
+          - link "Cảm Ơn Người Đã Th... HOT T16" [ref=e70] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/cam-on-nguoi-da-th...
+            - img "Cảm Ơn Người Đã Th..." [ref=e71]
+            - generic [ref=e72]: HOT
+            - generic [ref=e73]: T16
+          - heading "Cảm Ơn Người Đã Th..." [level=3] [ref=e74]:
+            - link "Cảm Ơn Người Đã Th..." [ref=e75] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/cam-on-nguoi-da-th...
+          - paragraph [ref=e76]:
+            - strong [ref=e77]: "Thể loại:"
+            - text: Tình cảm, Gia đình
+          - paragraph [ref=e78]:
+            - strong [ref=e79]: "Thời lượng:"
+            - text: 137 phút
+          - link "✦ MUA VÉ" [ref=e80] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/cam-on-nguoi-da-th...
+            - generic [ref=e81]: ✦
+            - text: MUA VÉ
+        - article [ref=e82]:
+          - link "Mùi Phở HOT K" [ref=e83] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/mui-pho
+            - img "Mùi Phở" [ref=e84]
+            - generic [ref=e85]: HOT
+            - generic [ref=e86]: K
+          - heading "Mùi Phở" [level=3] [ref=e87]:
+            - link "Mùi Phở" [ref=e88] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/mui-pho
+          - paragraph [ref=e89]:
+            - strong [ref=e90]: "Thể loại:"
+            - text: Hài hước, Tình cảm, Gia đình
+          - paragraph [ref=e91]:
+            - strong [ref=e92]: "Thời lượng:"
+            - text: 111 phút
+          - link "✦ MUA VÉ" [ref=e93] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/mui-pho
+            - generic [ref=e94]: ✦
+            - text: MUA VÉ
+        - article [ref=e95]:
+          - link "Nhà Ba Tôi Một Phò... HOT K" [ref=e96] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/nha-ba-toi-mot-pho
+            - img "Nhà Ba Tôi Một Phò..." [ref=e97]
+            - generic [ref=e98]: HOT
+            - generic [ref=e99]: K
+          - heading "Nhà Ba Tôi Một Phò..." [level=3] [ref=e100]:
+            - link "Nhà Ba Tôi Một Phò..." [ref=e101] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/nha-ba-toi-mot-pho
+          - paragraph [ref=e102]:
+            - strong [ref=e103]: "Thể loại:"
+            - text: Hài hước, Gia đình
+          - paragraph [ref=e104]:
+            - strong [ref=e105]: "Thời lượng:"
+            - text: 126 phút
+          - link "✦ MUA VÉ" [ref=e106] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/nha-ba-toi-mot-pho
+            - generic [ref=e107]: ✦
+            - text: MUA VÉ
+        - article [ref=e108]:
+          - link "Thỏ Ơi!! HOT P" [ref=e109] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/tho-oi
+            - img "Thỏ Ơi!!" [ref=e110]
+            - generic [ref=e111]: HOT
+            - generic [ref=e112]: P
+          - heading "Thỏ Ơi!!" [level=3] [ref=e113]:
+            - link "Thỏ Ơi!!" [ref=e114] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/tho-oi
+          - paragraph [ref=e115]:
+            - strong [ref=e116]: "Thể loại:"
+            - text: Tình cảm, Tâm lý
+          - paragraph [ref=e117]:
+            - strong [ref=e118]: "Thời lượng:"
+            - text: 127 phút
+          - link "✦ MUA VÉ" [ref=e119] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/tho-oi
+            - generic [ref=e120]: ✦
+            - text: MUA VÉ
+        - article [ref=e121]:
+          - link "Đại Tiệc Trăng Máu 8 HOT C16" [ref=e122] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/dai-tiec-trang-mau-8
+            - img "Đại Tiệc Trăng Máu 8" [ref=e123]
+            - generic [ref=e124]: HOT
+            - generic [ref=e125]: C16
+          - heading "Đại Tiệc Trăng Máu 8" [level=3] [ref=e126]:
+            - link "Đại Tiệc Trăng Máu 8" [ref=e127] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/dai-tiec-trang-mau-8
+          - paragraph [ref=e128]:
+            - strong [ref=e129]: "Thể loại:"
+            - text: Hài hước, Kinh dị
+          - paragraph [ref=e130]:
+            - strong [ref=e131]: "Thời lượng:"
+            - text: 130 phút
+          - link "✦ MUA VÉ" [ref=e132] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/dai-tiec-trang-mau-8
+            - generic [ref=e133]: ✦
+            - text: MUA VÉ
+        - article [ref=e134]:
+          - link "Anh Hùng HOT C13" [ref=e135] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/anh-hung
+            - img "Anh Hùng" [ref=e136]
+            - generic [ref=e137]: HOT
+            - generic [ref=e138]: C13
+          - heading "Anh Hùng" [level=3] [ref=e139]:
+            - link "Anh Hùng" [ref=e140] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/anh-hung
+          - paragraph [ref=e141]:
+            - strong [ref=e142]: "Thể loại:"
+            - text: Tâm lý, Gia đình
+          - paragraph [ref=e143]:
+            - strong [ref=e144]: "Thời lượng:"
+            - text: 122 phút
+          - link "✦ MUA VÉ" [ref=e145] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim
+            - generic [ref=e146]: ✦
+            - text: MUA VÉ
+        - article [ref=e147]:
+          - link "Heo Năm Móng C18" [ref=e148] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/heo-nam-mong
+            - img "Heo Năm Móng" [ref=e149]
+            - generic [ref=e150]: C18
+          - heading "Heo Năm Móng" [level=3] [ref=e151]:
+            - link "Heo Năm Móng" [ref=e152] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/heo-nam-mong
+          - paragraph [ref=e153]:
+            - strong [ref=e154]: "Thể loại:"
+            - text: Kinh dị
+          - paragraph [ref=e155]:
+            - strong [ref=e156]: "Thời lượng:"
+            - text: 103 phút
+          - link "✦ MUA VÉ" [ref=e157] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim
+            - generic [ref=e158]: ✦
+            - text: MUA VÉ
+        - article [ref=e159]:
+          - link "Hẹn Em Ngày Nhật Thực C16" [ref=e160] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/hen-em-ngay-nhat-thuc
+            - img "Hẹn Em Ngày Nhật Thực" [ref=e161]
+            - generic [ref=e162]: C16
+          - heading "Hẹn Em Ngày Nhật Thực" [level=3] [ref=e163]:
+            - link "Hẹn Em Ngày Nhật Thực" [ref=e164] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/hen-em-ngay-nhat-thuc
+          - paragraph [ref=e165]:
+            - strong [ref=e166]: "Thể loại:"
+            - text: Tâm lý, Gia đình
+          - paragraph [ref=e167]:
+            - strong [ref=e168]: "Thời lượng:"
+            - text: 118 phút
+          - link "✦ MUA VÉ" [ref=e169] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim
+            - generic [ref=e170]: ✦
+            - text: MUA VÉ
+        - article [ref=e171]:
+          - link "Michael K" [ref=e172] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/michael
+            - img "Michael" [ref=e173]
+            - generic [ref=e174]: K
+          - heading "Michael" [level=3] [ref=e175]:
+            - link "Michael" [ref=e176] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/michael
+          - paragraph [ref=e177]:
+            - strong [ref=e178]: "Thể loại:"
+            - text: Âm Nhạc
+          - paragraph [ref=e179]:
+            - strong [ref=e180]: "Thời lượng:"
+            - text: 127 phút
+          - link "✦ MUA VÉ" [ref=e181] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim
+            - generic [ref=e182]: ✦
+            - text: MUA VÉ
+        - article [ref=e183]:
+          - link "Phim Shin - Cậu Bé Bút Chì P" [ref=e184] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/phim-shin-cau-be-but-chi
+            - img "Phim Shin - Cậu Bé Bút Chì" [ref=e185]
+            - generic [ref=e186]: P
+          - heading "Phim Shin - Cậu Bé Bút Chì" [level=3] [ref=e187]:
+            - link "Phim Shin - Cậu Bé Bút Chì" [ref=e188] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/phim-shin-cau-be-but-chi
+          - paragraph [ref=e189]:
+            - strong [ref=e190]: "Thể loại:"
+            - text: Hoạt hình, Gia đình
+          - paragraph [ref=e191]:
+            - strong [ref=e192]: "Thời lượng:"
+            - text: 104 phút
+          - link "✦ MUA VÉ" [ref=e193] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim
+            - generic [ref=e194]: ✦
+            - text: MUA VÉ
+        - article [ref=e195]:
+          - 'link "Phí Phông: Quỷ Máu Rừng Thiêng HOT C16" [ref=e196] [cursor=pointer]':
+            - /url: http://127.0.0.1:8000/phim/phi-phong-quy-mau-rung-thieng
+            - 'img "Phí Phông: Quỷ Máu Rừng Thiêng" [ref=e197]'
+            - generic [ref=e198]: HOT
+            - generic [ref=e199]: C16
+          - 'heading "Phí Phông: Quỷ Máu Rừng Thiêng" [level=3] [ref=e200]':
+            - 'link "Phí Phông: Quỷ Máu Rừng Thiêng" [ref=e201] [cursor=pointer]':
+              - /url: http://127.0.0.1:8000/phim/phi-phong-quy-mau-rung-thieng
+          - paragraph [ref=e202]:
+            - strong [ref=e203]: "Thể loại:"
+            - text: Kinh dị, Giật gân
+          - paragraph [ref=e204]:
+            - strong [ref=e205]: "Thời lượng:"
+            - text: 120 phút
+          - link "✦ MUA VÉ" [ref=e206] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim
+            - generic [ref=e207]: ✦
+            - text: MUA VÉ
+        - article [ref=e208]:
+          - link "Trùm Sò K" [ref=e209] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim/trum-so
+            - img "Trùm Sò" [ref=e210]
+            - generic [ref=e211]: K
+          - heading "Trùm Sò" [level=3] [ref=e212]:
+            - link "Trùm Sò" [ref=e213] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/phim/trum-so
+          - paragraph [ref=e214]:
+            - strong [ref=e215]: "Thể loại:"
+            - text: Hài hước
+          - paragraph [ref=e216]:
+            - strong [ref=e217]: "Thời lượng:"
+            - text: 105 phút
+          - link "✦ MUA VÉ" [ref=e218] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/phim
+            - generic [ref=e219]: ✦
+            - text: MUA VÉ
+  - contentinfo [ref=e220]:
+    - generic [ref=e221]:
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - generic [ref=e224]: beta
+          - generic [ref=e225]: cinemas
+        - list [ref=e226]:
+          - listitem [ref=e227]:
+            - link "Tuyển dụng" [ref=e228] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e229]:
+            - link "Giới thiệu" [ref=e230] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e231]:
+            - link "Liên hệ" [ref=e232] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e233]:
+            - link "F.A.Q" [ref=e234] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e235]:
+            - link "Hoạt động xã hội" [ref=e236] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e237]:
+            - link "Điều khoản sử dụng" [ref=e238] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e239]:
+            - link "Chính sách thanh toán, đổi trả - hoàn vé" [ref=e240] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e241]:
+            - link "Liên hệ quảng cáo" [ref=e242] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e243]:
+            - link "Điều khoản bảo mật" [ref=e244] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e245]:
+            - link "Hướng dẫn đặt vé online" [ref=e246] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e247]:
+        - heading "CỤM RẠP BETA" [level=4] [ref=e248]
+        - list [ref=e249]:
+          - listitem [ref=e250]: Beta Cinemas Xuân Thủy, Hà Nội - Hotline 0333 023 183
+          - listitem [ref=e251]: Beta Cinemas Tây Sơn, Hà Nội - Hotline 0976 894 773
+          - listitem [ref=e252]: Beta Cinemas Vĩnh Yên, Phú Thọ - Hotline 0977 632 215
+          - listitem [ref=e253]: Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873
+          - listitem [ref=e254]: Beta Cinemas Lào Cai - Hotline 0358 968 970
+          - listitem [ref=e255]: Beta Cinemas Trần Quang Khải, TP Hồ Chí Minh - Hotline 1900 638 362
+          - listitem [ref=e256]: Beta Cinemas TRMall Phú Quốc, An Giang - Hotline 0983 474 440
+          - listitem [ref=e257]: Beta Cinemas Empire Bình Dương, TP Hồ Chí Minh - Hotline 0784 531 525
+          - listitem [ref=e258]: Beta Cinemas Quang Trung, TP Hồ Chí Minh - Hotline 0706 075 509
+          - listitem [ref=e259]: Beta Cinemas Giải Phóng, Hà Nội - Hotline 0585 680 360
+          - listitem [ref=e260]: Beta Cinemas Thanh Xuân, Hà Nội - Hotline 082 4812878
+          - listitem [ref=e261]: Beta Cinemas Mỹ Đình, Hà Nội - Hotline 0866 154 610
+          - listitem [ref=e262]: Beta Cinemas Đan Phượng, Hà Nội - Hotline 0983 901 714
+          - listitem [ref=e263]: Beta Cinemas Thái Nguyên - Hotline 0867 460 053
+          - listitem [ref=e264]: Beta Cinemas Thanh Hóa - Hotline 0325 360 249
+          - listitem [ref=e265]: Beta Cinemas Bắc Giang, Bắc Ninh - Hotline 0866 493 413
+          - listitem [ref=e266]: Beta Cinemas Nha Trang, Khánh Hòa - Hotline 0399 475 165
+          - listitem [ref=e267]: Beta Cinemas Biên Hòa, Đồng Nai - Hotline 0979 460 002
+          - listitem [ref=e268]: Beta Cinemas Long Khánh, Đồng Nai - Hotline 0925 165 684
+          - listitem [ref=e269]: Beta Cinemas Hồ Tràm, TP Hồ Chí Minh - Hotline 0254 3788601
+          - listitem [ref=e270]: Beta Cinemas Tân Uyên, TP Hồ Chí Minh - Hotline 0937 905 925
+      - generic [ref=e271]:
+        - heading "LIÊN HỆ" [level=4] [ref=e272]
+        - paragraph [ref=e273]:
+          - strong [ref=e274]: CÔNG TY CỔ PHẦN BETA MEDIA
+        - paragraph [ref=e275]: "Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội"
+        - paragraph [ref=e276]: "Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, Phường Tương Mai, Thành phố Hà Nội, Việt Nam"
+        - paragraph [ref=e277]:
+          - strong [ref=e278]: "Liên hệ chăm sóc khách hàng:"
+        - paragraph [ref=e279]: "Hotline: 1900 636807"
+        - paragraph [ref=e280]: "Email: mkt@betacinemas.vn"
