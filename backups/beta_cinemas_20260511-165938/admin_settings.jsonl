@@ -1,0 +1,1 @@
+{ "_id" : { "$oid" : "69f9ac5dc245ffe3cd04ce5b" }, "key" : "admin_settings", "type" : "admin", "value" : "{\"site_name\":\"Beta Cinemas\",\"support_phone\":\"1900 636807\",\"default_ticket_price\":\"75000\",\"booking_hold_minutes\":\"10\"}", "updated_at" : { "$date" : { "$numberLong" : "1777970269659" } }, "created_at" : { "$date" : { "$numberLong" : "1777970269659" } } }
