@@ -1,14 +1,10 @@
 <?php
 
-use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\BookingController;
 use App\Models\Booking;
 use App\Models\BookingSeat;
-use App\Models\Movie;
 use App\Models\PasswordResetOtp;
-use App\Models\Room;
-use App\Models\Seat;
-use App\Models\Showtime;
 use App\Models\User;
 use App\Services\MovieCatalog;
 use Illuminate\Http\Request;
@@ -93,11 +89,11 @@ function betaNavItems(array $siteData): array
     return collect($siteData['nav'] ?? [])->map(function (array $item) {
         $label = (string) ($item['label'] ?? '');
 
-        if (in_array(betaRepairMojibakeString($label), ['L?CH CHI?U THEO R?P'], true)) {
+        if (in_array(betaRepairMojibakeString($label), ['LỊCH CHIẾU THEO RẠP'], true)) {
             $item['href'] = route('schedule.index');
         } elseif ($label === 'PHIM') {
             $item['href'] = route('movies.index');
-        } elseif (in_array(betaRepairMojibakeString($label), ['TH�NH VI�N'], true)) {
+        } elseif (in_array(betaRepairMojibakeString($label), ['THÀNH VIÊN'], true)) {
             $item['href'] = route('account.show');
         } else {
             $item['href'] = '#';
@@ -109,13 +105,13 @@ function betaNavItems(array $siteData): array
 
 function betaRepairMojibakeString(string $value): string
 {
-    if (!preg_match('/(?:\x{00C3}|\x{00C2}|\x{00C6}|\x{00C4}|\x{00E1}\x{00BA}|\x{00E1}\x{00BB}|\x{00E2}\x{20AC})/u', $value)) {
+    if (! preg_match('/(?:\x{00C3}|\x{00C2}|\x{00C6}|\x{00C4}|\x{00E1}\x{00BA}|\x{00E1}\x{00BB}|\x{00E2}\x{20AC})/u', $value)) {
         return $value;
     }
 
     $bytes = @mb_convert_encoding($value, 'Windows-1252', 'UTF-8');
 
-    if (!is_string($bytes) || !mb_check_encoding($bytes, 'UTF-8')) {
+    if (! is_string($bytes) || ! mb_check_encoding($bytes, 'UTF-8')) {
         return $value;
     }
 
@@ -147,11 +143,11 @@ function betaFilterMovies(array $movies, string $tab = '', string $search = '', 
             return false;
         }
 
-        if ($search !== '' && !str_contains($movieTitle, $search)) {
+        if ($search !== '' && ! str_contains($movieTitle, $search)) {
             return false;
         }
 
-        if ($genre !== '' && !str_contains($movieGenre, $genre)) {
+        if ($genre !== '' && ! str_contains($movieGenre, $genre)) {
             return false;
         }
 
@@ -199,14 +195,14 @@ Route::get('/lich-chieu', function () {
     $movies = betaFilterMovies($movies, '', $search, $genre);
 
     foreach ($movies as $movie) {
-        if (!empty($movie['scheduleDates'])) {
+        if (! empty($movie['scheduleDates'])) {
             $topScheduleDates = $movie['scheduleDates'];
             break;
         }
     }
 
     $availableDateKeys = collect($topScheduleDates)
-        ->map(fn(array $date): string => trim(($date['label'] ?? '') . ($date['suffix'] ?? '')))
+        ->map(fn (array $date): string => trim(($date['label'] ?? '').($date['suffix'] ?? '')))
         ->filter()
         ->values()
         ->all();
@@ -215,7 +211,7 @@ Route::get('/lich-chieu', function () {
         : ($availableDateKeys[0] ?? '');
 
     $topScheduleDates = collect($topScheduleDates)->map(function (array $date) use ($activeScheduleDate) {
-        $key = trim(($date['label'] ?? '') . ($date['suffix'] ?? ''));
+        $key = trim(($date['label'] ?? '').($date['suffix'] ?? ''));
         $date['active'] = $key === $activeScheduleDate;
 
         return $date;
@@ -229,20 +225,20 @@ Route::get('/lich-chieu', function () {
 
         if ($selectedDate === '') {
             foreach ($scheduleDates as $date) {
-                if (!empty($date['active'])) {
-                    $selectedDate = trim(($date['label'] ?? '') . ($date['suffix'] ?? ''));
+                if (! empty($date['active'])) {
+                    $selectedDate = trim(($date['label'] ?? '').($date['suffix'] ?? ''));
                     break;
                 }
             }
         }
 
-        if ($selectedDate === '' && !empty($scheduleDates)) {
-            $selectedDate = trim(($scheduleDates[0]['label'] ?? '') . ($scheduleDates[0]['suffix'] ?? ''));
+        if ($selectedDate === '' && ! empty($scheduleDates)) {
+            $selectedDate = trim(($scheduleDates[0]['label'] ?? '').($scheduleDates[0]['suffix'] ?? ''));
         }
 
         $activeGroups = $movie['showtimeGroups'] ?? [];
         foreach ($scheduleByDate as $date) {
-            $key = trim(($date['label'] ?? '') . ($date['suffix'] ?? ''));
+            $key = trim(($date['label'] ?? '').($date['suffix'] ?? ''));
             if ($key === $selectedDate) {
                 $activeGroups = $date['groups'] ?? $activeGroups;
                 break;
@@ -261,7 +257,7 @@ Route::get('/lich-chieu', function () {
     }
 
     return view('schedule', [
-        'title' => 'L?ch chi?u - Beta Cinemas',
+        'title' => 'Lịch chiếu - Beta Cinemas',
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
         'footer' => $siteData['footer'] ?? [],
@@ -282,7 +278,7 @@ Route::get('/phim', function (Request $request) {
     $search = (string) $request->query('q', '');
     $genre = (string) $request->query('genre', '');
 
-    if (!in_array($activeTab, array_column($movieTabs, 'id'), true)) {
+    if (! in_array($activeTab, array_column($movieTabs, 'id'), true)) {
         $activeTab = $movieTabs[0]['id'] ?? 'upcoming';
     }
 
@@ -307,9 +303,8 @@ Route::get('/phim/{id}', function (string $id) {
 
     abort_if($movie === null, 404);
 
-
     return view('movie-detail', [
-        'title' => ($movie['title'] ?? 'Chi tiet phim') . ' - Beta Cinemas',
+        'title' => ($movie['title'] ?? 'Chi tiết phim').' - Beta Cinemas',
         'movie' => $movie,
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
@@ -345,7 +340,7 @@ Route::get('/thanh-vien', function () {
         return redirect()->route('account.show');
     }
 
-    return redirect()->to(route('auth.login.form') . '#login');
+    return redirect()->to(route('auth.login.form').'#login');
 })->name('member.index');
 
 Route::get('/demo-auth/login', function (Request $request) {
@@ -355,8 +350,8 @@ Route::get('/demo-auth/login', function (Request $request) {
 
     if (! $user || ! Hash::check($password, (string) $user->password)) {
         return redirect()
-            ->to(route('auth.login.form') . '#login')
-            ->withErrors(['email' => 'Email ho?c m?t kh?u kh�ng d�ng.'])
+            ->to(route('auth.login.form').'#login')
+            ->withErrors(['email' => 'Email hoặc mật khẩu không đúng.'])
             ->withInput(['email' => $email]);
     }
 
@@ -364,8 +359,8 @@ Route::get('/demo-auth/login', function (Request $request) {
         session()->forget(['demo_user', 'admin_authenticated', 'admin_email', 'admin_user_id']);
 
         return redirect()
-            ->to(route('auth.login.form') . '#login')
-            ->withErrors(['email' => 'T�i kho?n d� b? kh�a.'])
+            ->to(route('auth.login.form').'#login')
+            ->withErrors(['email' => 'Tài khoản đã bị khóa.'])
             ->withInput(['email' => $email]);
     }
 
@@ -378,7 +373,7 @@ Route::get('/dang-nhap', function () {
     $siteData = betaSiteData();
 
     return view('auth', [
-        'title' => '�ang nh?p - Beta Cinemas',
+        'title' => 'Đăng nhập - Beta Cinemas',
         'mode' => 'login',
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
@@ -396,13 +391,13 @@ Route::post('/quen-mat-khau/gui-ma', function (Request $request) {
 
     if (! $user) {
         return back()
-            ->withErrors(['email' => 'Email n�y chua du?c dang k�.'])
+            ->withErrors(['email' => 'Email này chưa được đăng ký.'])
             ->withInput(['email' => $email]);
     }
 
     if (($user->status ?? true) === false) {
         return back()
-            ->withErrors(['email' => 'T�i kho?n d� b? kh�a, kh�ng th? d?t l?i m?t kh?u.'])
+            ->withErrors(['email' => 'Tài khoản đã bị khóa, không thể đặt lại mật khẩu.'])
             ->withInput(['email' => $email]);
     }
 
@@ -423,9 +418,9 @@ Route::post('/quen-mat-khau/gui-ma', function (Request $request) {
 
     try {
         Mail::raw(
-            "M� OTP d?t l?i m?t kh?u Beta Cinemas c?a b?n l�: {$code}\n\nM� n�y h?t h?n sau 10 ph�t.",
+            "Mã OTP đặt lại mật khẩu Beta Cinemas của bạn là: {$code}\n\nMã này hết hạn sau 10 phút.",
             function ($message) use ($email): void {
-                $message->to($email)->subject('M� OTP d?t l?i m?t kh?u Beta Cinemas');
+                $message->to($email)->subject('Mã OTP đặt lại mật khẩu Beta Cinemas');
             }
         );
     } catch (Throwable) {
@@ -435,18 +430,18 @@ Route::post('/quen-mat-khau/gui-ma', function (Request $request) {
             ->delete();
 
         return back()
-            ->withErrors(['email' => 'Kh�ng g?i du?c email OTP. Vui l�ng th? l?i sau.'])
+            ->withErrors(['email' => 'Không gửi được email OTP. Vui lòng thử lại sau.'])
             ->withInput(['email' => $email]);
     }
 
     return redirect()
         ->route('password.reset.form', ['email' => $email])
-        ->with('status', 'M� OTP d� du?c g?i v? email c?a b?n.');
+        ->with('status', 'Mã OTP đã được gửi về email của bạn.');
 })->name('password.otp.send');
 
 Route::get('/dat-lai-mat-khau', function (Request $request) {
     return view('password-reset', [
-        'title' => '�?t l?i m?t kh?u | Beta Cinemas',
+        'title' => 'Đặt lại mật khẩu | Beta Cinemas',
         'email' => trim((string) $request->query('email', '')),
     ]);
 })->name('password.reset.form');
@@ -468,7 +463,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
 
     if (! $otp) {
         return back()
-            ->withErrors(['otp' => 'M� OTP kh�ng t?n t?i ho?c d� h?t h?n.'])
+            ->withErrors(['otp' => 'Mã OTP không tồn tại hoặc đã hết hạn.'])
             ->withInput(['email' => $email]);
     }
 
@@ -476,7 +471,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
         $otp->forceFill(['used_at' => now()])->save();
 
         return back()
-            ->withErrors(['otp' => 'M� OTP d� b? kh�a do nh?p sai qu� nhi?u l?n. Vui l�ng g?i m� m?i.'])
+            ->withErrors(['otp' => 'Mã OTP đã bị khóa do nhập sai quá nhiều lần. Vui lòng gửi mã mới.'])
             ->withInput(['email' => $email]);
     }
 
@@ -484,7 +479,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
         $otp->increment('attempts');
 
         return back()
-            ->withErrors(['otp' => 'M� OTP kh�ng d�ng.'])
+            ->withErrors(['otp' => 'Mã OTP không đúng.'])
             ->withInput(['email' => $email]);
     }
 
@@ -492,7 +487,7 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
 
     if (! $user || ($user->status ?? true) === false) {
         return back()
-            ->withErrors(['email' => 'T�i kho?n kh�ng t?n t?i ho?c d� b? kh�a.'])
+            ->withErrors(['email' => 'Tài khoản không tồn tại hoặc đã bị khóa.'])
             ->withInput(['email' => $email]);
     }
 
@@ -509,8 +504,8 @@ Route::post('/dat-lai-mat-khau', function (Request $request) {
     session()->forget('demo_user');
 
     return redirect()
-        ->to(route('auth.login.form') . '#login')
-        ->with('status', '�� d?i m?t kh?u. Vui l�ng dang nh?p l?i.');
+        ->to(route('auth.login.form').'#login')
+        ->with('status', 'Đã đổi mật khẩu. Vui lòng đăng nhập lại.');
 })->name('password.reset.update');
 
 Route::get('/demo-auth/register', function (Request $request) {
@@ -566,7 +561,7 @@ Route::get('/dang-ky', function () {
     $siteData = betaSiteData();
 
     return view('auth', [
-        'title' => '�ang k� - Beta Cinemas',
+        'title' => 'Đăng ký - Beta Cinemas',
         'mode' => 'register',
         'topLinks' => betaTopLinks($siteData),
         'navItems' => betaResolvedNavItems($siteData),
@@ -582,13 +577,13 @@ Route::get('/dang-xuat', function () {
 
 Route::get('/tai-khoan', function (Request $request) {
     if (! betaRefreshActiveDemoUserSession()) {
-        return redirect()->to(route('auth.login.form') . '#login');
+        return redirect()->to(route('auth.login.form').'#login');
     }
 
     $activeTab = $request->query('tab', 'profile');
     $allowedTabs = ['profile', 'history', 'points', 'password'];
 
-    if (!in_array($activeTab, $allowedTabs, true)) {
+    if (! in_array($activeTab, $allowedTabs, true)) {
         $activeTab = 'profile';
     }
 
@@ -613,6 +608,7 @@ Route::get('/tai-khoan', function (Request $request) {
                 $showtime = $booking->showtime;
                 $movie = $showtime?->movie;
                 $room = $showtime?->room;
+
                 return [
                     'booking_id' => (string) $booking->getKey(),
                     'code' => $booking->qr_code,
@@ -621,14 +617,14 @@ Route::get('/tai-khoan', function (Request $request) {
                     'show_date' => $showtime?->start_time?->format('d/m/Y') ?? '',
                     'show_time' => $showtime?->start_time?->format('H:i') ?? '',
                     'seats' => $booking->seats
-                        ->map(fn(BookingSeat $bookingSeat) => $bookingSeat->seat?->seat_number)
+                        ->map(fn (BookingSeat $bookingSeat) => $bookingSeat->seat?->seat_number)
                         ->filter()
                         ->values()
                         ->all(),
                     'total' => (int) $booking->total_price,
                     'status' => $booking->booking_status === 'expired'
-                        ? 'Het han'
-                        : ($booking->payment_status === 'paid' ? 'Da thanh toan' : 'Cho thanh toan'),
+                        ? 'Hết hạn'
+                        : ($booking->payment_status === 'paid' ? 'Đã thanh toán' : 'Chờ thanh toán'),
                     'is_expired' => $booking->booking_status === 'expired',
                     'is_pending_payment' => $booking->booking_status !== 'expired' && $booking->payment_status !== 'paid',
                     'payment_url' => $booking->booking_status !== 'expired'
@@ -640,7 +636,7 @@ Route::get('/tai-khoan', function (Request $request) {
     }
 
     return view('account', [
-        'title' => 'T�i kho?n | Beta Cinemas',
+        'title' => 'Tài khoản | Beta Cinemas',
         'activeTab' => $activeTab,
         'bookings' => $bookings->values()->all(),
     ]);
@@ -648,7 +644,7 @@ Route::get('/tai-khoan', function (Request $request) {
 
 Route::post('/tai-khoan', function (Request $request) {
     if (! betaRefreshActiveDemoUserSession()) {
-        return redirect()->to(route('auth.login.form') . '#login');
+        return redirect()->to(route('auth.login.form').'#login');
     }
 
     $validated = $request->validate([
@@ -681,7 +677,7 @@ Route::post('/tai-khoan', function (Request $request) {
     ]);
 
     if (empty($updatedProfile['member_code'])) {
-        $updatedProfile['member_code'] = 'BC' . now()->format('ymdHis');
+        $updatedProfile['member_code'] = 'BC'.now()->format('ymdHis');
     }
 
     $userId = $demoUser['id'] ?? null;
@@ -694,7 +690,7 @@ Route::post('/tai-khoan', function (Request $request) {
 
         if ($duplicateEmail) {
             return back()
-                ->withErrors(['email' => 'Email n�y d� du?c s? d?ng b?i t�i kho?n kh�c.'])
+                ->withErrors(['email' => 'Email này đã được sử dụng bởi tài khoản khác.'])
                 ->withInput();
         }
 
@@ -703,7 +699,7 @@ Route::post('/tai-khoan', function (Request $request) {
         if (! $user || ($user->status ?? true) === false) {
             session()->forget('demo_user');
 
-            return redirect()->to(route('auth.login.form') . '#login');
+            return redirect()->to(route('auth.login.form').'#login');
         }
 
         $user->forceFill([
@@ -724,7 +720,7 @@ Route::post('/tai-khoan', function (Request $request) {
 
     return redirect()
         ->route('account.show', ['tab' => 'profile'])
-        ->with('status', 'Da cap nhat thong tin tai khoan.');
+        ->with('status', 'Đã cập nhật thông tin tài khoản.');
 })->name('account.update');
 
 Route::get('/admin/login', function () {
@@ -758,19 +754,19 @@ Route::post('/admin/login', function (Request $request) {
 
     if (! $admin || ! Hash::check($credentials['password'], (string) $admin->password)) {
         return back()
-            ->withErrors(['email' => 'Th�ng tin dang nh?p qu?n tr? kh�ng d�ng.'])
+            ->withErrors(['email' => 'Thông tin đăng nhập quản trị không đúng.'])
             ->withInput();
     }
 
     if (($admin->status ?? true) === false) {
         return back()
-            ->withErrors(['email' => 'T�i kho?n qu?n tr? d� b? kh�a.'])
+            ->withErrors(['email' => 'Tài khoản quản trị đã bị khóa.'])
             ->withInput();
     }
 
     if (($admin->role ?? 'user') !== 'admin') {
         return back()
-            ->withErrors(['email' => 'T�i kho?n chua c� quy?n qu?n tr?.'])
+            ->withErrors(['email' => 'Tài khoản chưa có quyền quản trị.'])
             ->withInput();
     }
 
@@ -786,7 +782,7 @@ Route::post('/admin/login', function (Request $request) {
 Route::post('/admin/logout', function () {
     session()->forget(['admin_authenticated', 'admin_email', 'admin_user_id']);
 
-    return redirect()->route('admin.login')->with('status', '�� dang xu?t qu?n tr?.');
+    return redirect()->route('admin.login')->with('status', 'Đã đăng xuất quản trị.');
 })->name('admin.logout');
 
 Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
